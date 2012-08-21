@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-21 11:02+0200\n"
-"PO-Revision-Date: 2012-08-21 11:07+0100\n"
+"POT-Creation-Date: 2012-08-21 16:04+0200\n"
+"PO-Revision-Date: 2012-08-21 16:06+0100\n"
 "Last-Translator: Test <test@example.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "Kann ich den Live-Update-Service nutzen?"
 msgid "Do I need to use the Safe Mode Hack?"
 msgstr "Muss ich den Safe-Mode-Hack verwenden?"
 
-#: check/index.php:42 check/install.php:94 check/validate.php:75
+#: check/index.php:42 check/install.php:94 check/validate.php:76
 msgid "Installation"
 msgstr "Installation"
 
@@ -97,6 +97,11 @@ msgstr ""
 msgid "Manual installation"
 msgstr "Manuelle Installation"
 
+#: check/install.php:111
+#, php-format
+msgid "Go to %s and download the latest Contao version."
+msgstr "Gehen Sie zu %s und laden Sie die neueste Contao-Version herunter."
+
 #: check/install.php:112
 msgid ""
 "Extract the download archive and upload the files to your server using an (S)"
@@ -131,7 +136,7 @@ msgid "Open the Contao install tool"
 msgstr "Zum Contao-Installtool"
 
 #: check/install.php:123 check/live-update.php:112 check/repository.php:45
-#: check/safe-mode-hack.php:134 check/validate.php:114
+#: check/safe-mode-hack.php:134 check/validate.php:115
 msgid "Go back"
 msgstr "Zurück"
 
@@ -394,7 +399,7 @@ msgstr "Erstelle eine Testdatei"
 #: check/safe-mode-hack.php:118
 #, php-format
 msgid "The test file could be created (owner: %s, chmod: %s)."
-msgstr "Die Testdatei wurde erstelle (Besitzer: %s, Zugriffsrechte: %s)."
+msgstr "Die Testdatei wurde erstellt (Besitzer: %s, Zugriffsrechte: %s)."
 
 #: check/safe-mode-hack.php:120
 msgid "The test file could not be created."
@@ -435,15 +440,15 @@ msgstr "Sie müssen den Safe-Mode-Hack auf diesem Server nicht verwenden."
 msgid "You do need the Safe Mode Hack on this server."
 msgstr "Sie müssen den Safe-Mode-Hack auf diesem Server verwenden."
 
-#: check/validate.php:71
+#: check/validate.php:72
 msgid "Validate an installation"
 msgstr "Eine Installation prüfen"
 
-#: check/validate.php:76
+#: check/validate.php:77
 msgid "Could not find a Contao installation."
 msgstr "Keine Contao-Installation gefunden."
 
-#: check/validate.php:77
+#: check/validate.php:78
 msgid ""
 "To validate an existing installation, please upload the \"check\" folder to "
 "your installation directory."
@@ -451,16 +456,16 @@ msgstr ""
 "Um eine bestehende Installation zu prüfen, laden Sie bitte den Ordner \"check"
 "\" in Ihr Installationsverzeichnis."
 
-#: check/validate.php:81
+#: check/validate.php:82
 msgid "Unknown version"
 msgstr "Unbekannte Version"
 
-#: check/validate.php:82
+#: check/validate.php:83
 #, php-format
 msgid "The installed version %s is not (yet) supported."
 msgstr "Die installierte Version %s wird (noch) nicht unterstützt."
 
-#: check/validate.php:83
+#: check/validate.php:84
 msgid ""
 "There is no version file for your Contao installation. Are you using a "
 "stable Contao version and do you have the latest version of the Contao Check?"
@@ -468,18 +473,18 @@ msgstr ""
 "Es gibt keine Versionsdatei für Ihre Contao-Installation. Verwenden Sie eine "
 "stabile Contao-Version und haben Sie die neueste Version des Contao-Check?"
 
-#: check/validate.php:88
+#: check/validate.php:89
 msgid "Missing files"
 msgstr "Fehlende Dateien"
 
-#: check/validate.php:98
+#: check/validate.php:99
 msgid "Corrupt files"
 msgstr "Beschädigte Dateien"
 
-#: check/validate.php:108
+#: check/validate.php:109
 msgid "Your installation is up to date."
 msgstr "Ihre Installation ist aktuell."
 
-#: check/validate.php:110
+#: check/validate.php:111
 msgid "Your installation is not up to date."
 msgstr "Ihre Installation ist nicht aktuell."
