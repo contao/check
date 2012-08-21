@@ -11,6 +11,7 @@
  */
 
 require 'bootstrap.php';
+define('TL_ROOT', dirname(__DIR__));
 
 // Find the constants.php
 if (file_exists("../system/constants.php")) {
@@ -104,7 +105,7 @@ if ($found !== false) {
     </div>
   <?php endif; ?>
   <div class="row">
-    <?php if (empty($errors)): ?>
+    <?php if (empty($errors['missing']) && empty($errors['corrupt'])): ?>
 	  <p class="confirm large"><?php echo _('Your installation is up to date.') ?></p>
 	<?php else: ?>
 	  <p class="error large"><?php echo _('Your installation is not up to date.') ?></p>
