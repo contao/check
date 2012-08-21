@@ -1,0 +1,156 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Contao Open Source CMS
+ * 
+ * Copyright (C) 2005-2012 Leo Feyer
+ * 
+ * @package Check
+ * @link    http://contao.org
+ * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ */
+
+error_reporting(E_ALL^E_NOTICE);
+
+// Validate the given path
+if (empty($argv[1])) {
+	die("Please provide the installation path as argument\n");
+}
+if (!is_dir($argv[1]) || !file_exists($argv[1] . '/system/initialize.php')) {
+	die("The installation path does not exist or does not point to a Contao installation\n");
+}
+
+define('TL_ROOT', $argv[1]);
+
+// Include the constants.php file
+if (file_exists($argv[1] . '/system/constants.php')) {
+	include $argv[1] . '/system/constants.php';
+} elseif (file_exists($argv[1] . '/system/config/constants.php')) {
+	include $argv[1] . '/system/config/constants.php';
+}
+
+$json = array();
+
+// Get all files
+$it = new RecursiveIteratorIterator(
+	new RecursiveDirectoryIterator($argv[1], FilesystemIterator::UNIX_PATHS)
+);
+
+// Excludes
+while ($it->valid()) {
+	if ($it->isDot() || $it->isDir()) {
+		$it->next(); continue;
+	}
+
+	// System and IDE files
+	if ($it->getFilename() == '.DS_Store') {
+		$it->next(); continue;
+	}
+	if (strncmp($it->getSubPathName(), '.git/', 5) === 0) {
+		$it->next(); continue;
+	}
+	if (strncmp($it->getSubPathName(), '.idea/', 6) === 0) {
+		$it->next(); continue;
+	}
+
+	// Files in the root folder
+	if ($it->getSubPathName() == '.htaccess') {
+		$it->next(); continue;
+	}
+	if ($it->getSubPathName() == 'basic.css') {
+		$it->next(); continue;
+	}
+	if ($it->getSubPathName() == 'music_academy.css') {
+		$it->next(); continue;
+	}
+	if ($it->getSubPathName() == 'news.xml') {
+		$it->next(); continue;
+	}
+	if ($it->getSubPathName() == 'print.css') {
+		$it->next(); continue;
+	}
+
+	// Not to be touched Contao files
+	if ($it->getSubPathName() == 'system/config/dcaconfig.php') {
+		$it->next(); continue;
+	}
+	if ($it->getSubPathName() == 'system/config/initconfig.php') {
+		$it->next(); continue;
+	}
+	if ($it->getSubPathName() == 'system/config/langconfig.php') {
+		$it->next(); continue;
+	}
+	if ($it->getSubPathName() == 'system/config/localconfig.php') {
+		$it->next(); continue;
+	}
+
+	// Compiled assets
+	if (strncmp($it->getSubPathName(), 'assets/css/', 11) === 0) {
+		if ($it->getSubPathName() != 'assets/css/index.html') {
+			$it->next(); continue;
+		}
+	}
+	if (strncmp($it->getSubPathName(), 'assets/images/', 14) === 0) {
+		if ($it->getSubPathName() != 'assets/images/index.html') {
+			$it->next(); continue;
+		}
+	}
+	if (strncmp($it->getSubPathName(), 'assets/js/', 10) === 0) {
+		if ($it->getSubPathName() != 'assets/js/index.html') {
+			$it->next(); continue;
+		}
+	}
+
+	// System files like cache files or log files
+	if (strncmp($it->getSubPathName(), 'system/cache/', 13) === 0) {
+		if ($it->getSubPathName() != 'system/cache/.htaccess') {
+			$it->next(); continue;
+		}
+	}
+	if (strncmp($it->getSubPathName(), 'system/logs/', 11) === 0) {
+		if ($it->getSubPathName() != 'system/logs/.htaccess') {
+			$it->next(); continue;
+		}
+	}
+	if (strncmp($it->getSubPathName(), 'system/html/', 11) === 0) {
+		if ($it->getSubPathName() != 'system/html/index.html') {
+			$it->next(); continue;
+		}
+	}
+	if (strncmp($it->getSubPathName(), 'system/scripts/', 15) === 0) {
+		if ($it->getSubPathName() != 'system/scripts/index.html') {
+			$it->next(); continue;
+		}
+	}
+	if (strncmp($it->getSubPathName(), 'system/tmp/', 10) === 0) {
+		if ($it->getSubPathName() != 'system/tmp/.htaccess') {
+			$it->next(); continue;
+		}
+	}
+
+	$content = file_get_contents($it->getPathName());
+
+	// Remove carriage returns
+	$buffer = str_replace("\r", '', $content);
+	$md5_file = substr(md5($buffer), 0, 10);
+
+	// Remove comments
+	$buffer = preg_replace('@/\*.*\*/@Us', '', $buffer);
+	$md5_code = substr(md5($buffer), 0, 10);
+
+	// Store the file name and hashes
+	if ($md5_file == $md5_code) {
+		$json[] = array($it->getSubPathName(), $md5_file);
+	} else {
+		$json[] = array($it->getSubPathName(), $md5_file, $md5_code);
+	}
+
+	echo '  Added ' . $it->getSubPathName() . "\n";
+
+	$it->next();
+	unset($buffer);
+}
+
+file_put_contents('check/versions/' . VERSION . '.' . BUILD . '.json', json_encode($json));
+echo 'Added check/versions/' . VERSION . '.' . BUILD . '.json' . "\n";
