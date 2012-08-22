@@ -217,6 +217,3 @@ class Bootstrap
 $objBootstrap = new Bootstrap();
 $objBootstrap->kickstart();
 
-
-print_r($_SESSION);
-
