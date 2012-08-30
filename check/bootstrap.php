@@ -22,7 +22,7 @@ class Bootstrap
 {
 
 	/**
-	 * Start the session
+	 * Start the session and set the locale
 	 */
 	public function initialize()
 	{
@@ -30,14 +30,17 @@ class Bootstrap
 
 		session_start();
 
-		$this->getLanguage();
+		$locale = $this->getLanguage();
+		$this->setLocale($locale);
 	}
 
 
 	/**
-	 * Determine the user language
+	 * Determine the user language and return the locale
+	 * 
+	 * @return string The locale 
 	 */
-	protected function getLanguage()
+	public function getLanguage()
 	{
 		$locale = '';
 
@@ -81,7 +84,7 @@ class Bootstrap
 			$_SESSION['C_LANGUAGE'] = $locale;
 		}
 
-		$this->setLocale($locale);
+		return $locale;
 	}
 
 
@@ -95,27 +98,6 @@ class Bootstrap
 	protected function isLocale($locale)
 	{
 		return preg_match('/^[a-z]{2}(_[A-Z]{2})?$/', $locale);
-	}
-
-
-	/**
-	 * Set a locale and initialize gettext
-	 * 
-	 * @param string $locale The locale
-	 * 
-	 * @throws Exception If the locale is not valid
-	 */
-	protected function setLocale($locale)
-	{
-		if (!$this->isLocale($locale)) {
-			throw new Exception("Unknown locale $locale");
-		}
-
-		putenv("LC_ALL=$locale");
-		setlocale(LC_ALL, $locale);
-		bindtextdomain('messages', __DIR__ . '/locale');
-		textdomain('messages');
-		bind_textdomain_codeset('messages', 'UTF-8');
 	}
 
 
@@ -149,6 +131,27 @@ class Bootstrap
 		}
 
 		return $return;
+	}
+
+
+	/**
+	 * Set a locale and initialize the PHP gettext extension
+	 * 
+	 * @param string $locale The locale
+	 * 
+	 * @throws Exception In case the locale is not valid
+	 */
+	public function setLocale($locale)
+	{
+		if (!$this->isLocale($locale)) {
+			throw new Exception("Unknown locale $locale");
+		}
+
+		putenv("LC_ALL=$locale");
+		setlocale(LC_ALL, $locale);
+		bindtextdomain('messages', __DIR__ . '/locale');
+		textdomain('messages');
+		bind_textdomain_codeset('messages', 'UTF-8');
 	}
 }
 
