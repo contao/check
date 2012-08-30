@@ -2,9 +2,9 @@
 
 /**
  * Contao Open Source CMS
- *
+ * 
  * Copyright (C) 2005-2012 Leo Feyer
- *
+ * 
  * @package Check
  * @link    http://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -12,208 +12,145 @@
 
 
 /**
- * Class Bootstrap
- * Contain methods to boot the contao check
+ * Initialize the Contao Check
+ * 
+ * @package   Check
+ * @author    Leo Feyer <https://github.com/leofeyer>
+ * @copyright Leo Feyer 2012
  */
 class Bootstrap
 {
-	/**
-	 * Kickstart the contao check
-	 *
-	 * @param	void
-	 * @return	void
-	 */
-	public function kickstart()
-	{
-		$this->setPhpOptions();
-		$this->determineUserLanguage();
-	}
-
 
 	/**
-	 * Set some PHP options
-	 *
-	 * @param	void
-	 * @return	void
+	 * Start the session
 	 */
-	protected function setPhpOptions()
+	public function initialize()
 	{
-		// enable error reporting, but hide notices
 		error_reporting(E_ALL^E_NOTICE);
-		ini_set('display_errors', '1');
 
-		// start the session
 		session_start();
+
+		$this->getLanguage();
 	}
 
 
 	/**
-	 * Determine the user language based on
-	 * the HTTP_ACCEPT_LANGUAGE or the GET param lng
-	 *
-	 * @param	void
-	 * @return	void
+	 * Determine the user language
 	 */
-	protected function determineUserLanguage()
+	protected function getLanguage()
 	{
-		// create some variables
-		$strLocale = '';
-		$strLng = filter_input(INPUT_GET, 'lng', FILTER_SANITIZE_STRING);
+		$locale = '';
 
-		// check if the user forces a language with the $_GET param lng
-		if (isset($_GET['lng']))
-		{
-			// check if the value is a valid language identifier. Example: en_US
-			if ($this->isValidLocale($strLng))
-			{
-				// the user has requested a valid language
-				$strLocale = $strLng;
-
-				// storing this information in the session
-				$_SESSION['C_LANGUAGE'] = $strLng;
+		if (isset($_GET['lng'])) {
+			if ($this->isLocale($_GET['lng'])) {
+				$locale = $_GET['lng'];
+				$_SESSION['C_LANGUAGE'] = $_GET['lng'];
 			}
-		}
+		} elseif (isset($_SESSION['C_LANGUAGE'])) {
+			$locale = $_SESSION['C_LANGUAGE'];
+		} else {
+			$locales = scandir('locale');
+			$accepted = $this->getAcceptedLanguages();
 
-		// if there is no language request, check if we already have one in the session
-		elseif (isset($_SESSION['C_LANGUAGE']))
-		{
-			$strLocale = $_SESSION['C_LANGUAGE'];
-		}
+			// Check the first eight entries
+			for ($i=0; $i<8; $i++) {
+				$tag = $accepted[$i];
 
-		// nope, no language requested. Now we try to use one based on the HTTP request
-		else
-		{
-			// get some values
-			$arrRequestedLanguages = $this->getRequestedLanguages();
-			$arrAvailableLanguages = $this->getAvailableLanguages();
+				// Find the locale or ISO language code
+				if (in_array($tag, $locales)) {
+					$locale = $tag;
+				} else {
+					$matches = array_values(preg_grep("/^$tag/", $locales));
 
+					if (!empty($matches)) {
+						$locale = $matches[0];
+					}
+				}
 
-			// check if one of the requested languages is available
-			foreach ($arrRequestedLanguages as $v)
-			{
-				if (in_array($v, $arrAvailableLanguages))
-				{
-					$strLocale = $v;
-					$_SESSION['C_LANGUAGE'] = $v;
-
-					// first match wins, so we break out of the foreach
+				// Store the locale in the session
+				if ($locale != '') {
+					$_SESSION['C_LANGUAGE'] = $locale;
 					break;
 				}
 			}
 		}
 
-
-		// if there is noting valid, we use en_US like evey
-		// other developer in the world. Fuck british!
-		if ($strLocale == '')
-		{
-			$strLocale = 'en_US';
-			$_SESSION['C_LANGUAGE'] = 'en_US';
+		// Fall back to English
+		if ($locale == '') {
+			$locale = 'en_US';
+			$_SESSION['C_LANGUAGE'] = $locale;
 		}
 
-		// set the locales and kickstart gettext
-		$this->setLocale($strLocale);
+		$this->setLocale($locale);
 	}
 
 
 	/**
-	 * Set the determined locale and enable the gettext support
-	 *
-	 * @param	string	$strLocale	The locale witch should be used
-	 * @return	void
-	 * @throws	Exception			Throws an exception if there is no translation available
+	 * Validate a locale
+	 * 
+	 * @param string $locale The locale string (e.g. "en" or "en_US")
+	 * 
+	 * @return boolean True if the locale is valid
 	 */
-	protected function setLocale($strLocale)
+	protected function isLocale($locale)
 	{
-		// check if the given locale is valid
-		if ($this->isValidLocale($strLocale))
-		{
-			// set some environment vars and bind gettext
-			putenv('LC_ALL=' . $strLocale);
-			setlocale(LC_ALL, $strLocale);
-			bindtextdomain('messages', __DIR__ . '/locale');
-			textdomain('messages');
-			bind_textdomain_codeset('messages', 'UTF-8');
-
-			return;
-		}
-
-		throw new Exception(sprintf('Unknown locale %s', $strLocale), 1);
+		return preg_match('/^[a-z]{2}(_[A-Z]{2})?$/', $locale);
 	}
 
 
 	/**
-	 * Check if the given locale is valid
-	 * Example: en_US
-	 *
-	 * @param	string	$strLocale	The locale you want to check
-	 * @return	bool				Return true if it's a valid locale, otherwize false
+	 * Set a locale and initialize gettext
+	 * 
+	 * @param string $locale The locale
+	 * 
+	 * @throws Exception If the locale is not valid
 	 */
-	protected function isValidLocale($strLocale)
+	protected function setLocale($locale)
 	{
-		if (preg_match('/^[a-z]{2}(_[A-Z]{2})?$/', $strLocale))
-		{
-			return true;
+		if (!$this->isLocale($locale)) {
+			throw new Exception("Unknown locale $locale");
 		}
 
-		return false;
+		putenv("LC_ALL=$locale");
+		setlocale(LC_ALL, $locale);
+		bindtextdomain('messages', __DIR__ . '/locale');
+		textdomain('messages');
+		bind_textdomain_codeset('messages', 'UTF-8');
 	}
 
 
 	/**
-	 * Return all available translations as array
-	 *
-	 * @param	void
-	 * @return	array	An array witch all available translations
+	 * Return the accepted languages as an array
+	 * 
+	 * @return array The locale array
+	 * 
+	 * @author Leo Unglaub <https://github.com/LeoUnglaub>
 	 */
-	protected function getAvailableLanguages()
+	protected function getAcceptedLanguages()
 	{
-		$arrFileSystem = glob('locale/[a-z][a-z]_[A-Z][A-Z]*', GLOB_ONLYDIR);
-		$arrLanguages = array();
+		$return = array();
+		$accepted = array();
 
-		// sadly we have to remove the directory path from every entry
-		foreach ($arrFileSystem as $v)
-		{
-			$arrLanguages[] = str_replace('locale/', '', $v);
-		}
+		// The implementation differs from the original implementation and also works with .jp browsers
+		preg_match_all('/([a-z]{1,8}(-[a-z]{1,8})?)\s*(;\s*q\s*=\s*(1|0\.[0-9]+))?/i', $_SERVER['HTTP_ACCEPT_LANGUAGE'], $accepted);
 
-		return $arrLanguages;
-	}
+		// Remove all invalid locales
+		foreach ($accepted[1] as $v) {
+			$chunks = explode('-', $v);
+			$locale = $chunks[0];
 
+			if (isset($chunks[1])) {
+				$locale .= '_' . strtoupper($chunks[1]);
+			}
 
-	/**
-	 * Return all requested langugages as an array. All q factors and
-	 * non valid locales are removed from the array
-	 *
-	 * @param	void
-	 * @return	array	Return an array with all
-	 */
-	protected function getRequestedLanguages()
-	{
-		$arrReturn = array();
-
-		// split all accept languages from there q factors
-		// NOTE: different than the original implementation, this also works with .jp browsers
-		preg_match_all('/([a-z]{1,8}(-[a-z]{1,8})?)\s*(;\s*q\s*=\s*(1|0\.[0-9]+))?/i', $_SERVER['HTTP_ACCEPT_LANGUAGE'], $arrHttpLangs);
-
-		// remove all invalid locales from the array
-		foreach ($arrHttpLangs[1] as $v)
-		{
-			$arrChunks = explode('-', $v);
-			$strLocale = $arrChunks[0] . '_' . strtoupper($arrChunks[1]);
-
-			if ($this->isValidLocale($strLocale))
-			{
-				$arrReturn[] = $strLocale;
+			if ($this->isLocale($locale)) {
+				$return[] = $locale;
 			}
 		}
 
-		return $arrReturn;
+		return $return;
 	}
 }
 
-
-// create the Bootstrap object and kickstart the contao check
-$objBootstrap = new Bootstrap();
-$objBootstrap->kickstart();
-
+$bootstrap = new Bootstrap;
+$bootstrap->initialize();
