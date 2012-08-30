@@ -84,6 +84,11 @@ class LiveUpdate
 			return false;
 		}
 
+		// The issues have been fixed in version 4.0.9
+		if (version_compare(ioncube_loader_version(), '4.0.9', '>=')) {
+			return false;
+		}
+
 		$this->available = false;
 		return true;
 	}
@@ -180,10 +185,10 @@ $update = new LiveUpdate();
   <div class="row">
     <h2>ionCube Loader</h2>
     <?php if (!$update->hasIonCube()): ?>
-      <p class="confirm"><?php echo _('The ionCube Loader is not enabled.') ?></p>
+      <p class="confirm"><?php echo _('The ionCube Loader is not enabled or at least at version 4.0.9.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The ionCube Loader is enabled.') ?></p>
-      <p class="explain"><?php printf(_('At the time being, the ionCube Loader is incompatible with Phar archives. This is a bug in the software which the vendor has to fix. Until then, the only thing you can do is to disable the ionCube Loader. More information is available here: %s'), '<a href="http://forum.ioncube.com/viewtopic.php?p=8867">http://forum.ioncube.com/viewtopic.php?p=8867</a>') ?></p>
+      <p class="error"><?php echo _('An old version of the ionCube Loader prior to version 4.0.9 is installed.') ?></p>
+      <p class="explain"><?php printf(_('Before version 4.0.9, the ionCube Loader was incompatible with Phar archives. Either upgrade to the latest version or disable the module. More information is available here: %s'), '<a href="http://forum.ioncube.com/viewtopic.php?p=8867">http://forum.ioncube.com/viewtopic.php?p=8867</a>') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
