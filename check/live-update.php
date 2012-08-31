@@ -12,28 +12,144 @@
 
 require 'bootstrap.php';
 
-// PHP 5.3
-$php_version = phpversion();
-$php_version_ok = version_compare($php_version, '5.3.2', '>');
 
-// Phar extension
-$phar_ok = extension_loaded('Phar');
+/**
+ * Check the Live Update requirements
+ * 
+ * @package   Check
+ * @author    Leo Feyer <https://github.com/leofeyer>
+ * @copyright Leo Feyer 2012
+ */
+class LiveUpdate
+{
 
-// ionCube Loader
-$ioncube_ok = !extension_loaded('ionCube Loader');
+	/**
+	 * Availability
+	 * @var boolean
+	 */
+	protected $available = true;
 
-// Suhosin extension (not the patch!)
-$suhosin = ini_get('suhosin.executor.include.whitelist');
-$suhosin_ok = ($suhosin === false || stripos($suhosin, 'phar') !== false);
 
-// Detect Unicode
-$unicode = ini_get('detect_unicode');
-$unicode_ok = ($unicode == '' || $unicode == 0 || $unicode == 'Off');
+	/**
+	 * Return the availability of the Live Update
+	 * 
+	 * @return boolean True if the Live Update can be used
+	 */
+	public function isAvailable()
+	{
+		return $this->available;
+	}
 
-// FastCGI+eAccelerator
-$fast_cgi = (php_sapi_name() == 'cgi-fcgi');
-$eaccelerator = extension_loaded('eaccelerator') && ini_get('eaccelerator.enable');
-$fast_cgi_ok = (!$fast_cgi && !$eaccelerator); 
+
+	/**
+	 * Check whether the PHP version is at least 5.3.2
+	 * 
+	 * @return boolean True if the PHP version is at least 5.3.2
+	 */
+	public function hasPhp532()
+	{
+		if (version_compare(phpversion(), '5.3.2', '>=')) {
+			return true;
+		}
+
+		$this->available = false;
+		return false;
+	}
+
+
+	/**
+	 * Check whether the PHP Phar extension is available
+	 * 
+	 * @return boolean True if the PHP Phar extension is available
+	 */
+	public function hasPhar()
+	{
+		if (extension_loaded('Phar')) {
+			return true;
+		}
+
+		$this->available = false;
+		return false;
+	}
+
+
+	/**
+	 * Check whether the ionCube Loader is enabled
+	 * 
+	 * @return boolean True if the ionCube Loader is enabled
+	 */
+	public function hasIonCube()
+	{
+		if (!extension_loaded('ionCube Loader')) {
+			return false;
+		}
+
+		// The issues have been fixed in version 4.0.9
+		if (version_compare(ioncube_loader_version(), '4.0.9', '>=')) {
+			return false;
+		}
+
+		$this->available = false;
+		return true;
+	}
+
+
+	/**
+	 * Check whether the PHP Suhosin extension is enabled
+	 * 
+	 * @return boolean True if the PHP Suhosin extension is enabled
+	 */
+	public function hasSuhosin()
+	{
+		$suhosin = ini_get('suhosin.executor.include.whitelist');
+
+		if ($suhosin === false || stripos($suhosin, 'phar') !== false) {
+			return false;
+		}
+
+		$this->available = false;
+		return true;
+	}
+
+
+	/**
+	 * Check whether detect_unicode is enabled
+	 * 
+	 * @return boolean True if detect_unicode is enabled
+	 */
+	public function hasDetectUnicode()
+	{
+		$unicode = ini_get('detect_unicode');
+
+		if ($unicode == '' || $unicode == 0 || $unicode == 'Off') {
+			return false;
+		}
+
+		$this->available = false;
+		return true;
+	}
+
+
+	/**
+	 * Check whether PHP is run as FastCGI with the eAccelerator
+	 * 
+	 * @return boolean True if PHP is run as FastCGI with the eAccelerator
+	 */
+	public function isFastCgiEaccelerator()
+	{
+		$fast_cgi = (php_sapi_name() == 'cgi-fcgi');
+		$eaccelerator = extension_loaded('eaccelerator') && ini_get('eaccelerator.enable');
+
+		if (!$fast_cgi && !$eaccelerator) {
+			return false;
+		}
+
+		$this->available = false;
+		return true;
+	}
+}
+
+$update = new LiveUpdate();
 
 ?>
 <!DOCTYPE html>
@@ -50,16 +166,16 @@ $fast_cgi_ok = (!$fast_cgi && !$eaccelerator);
   </div>
   <div class="row">
     <h2><?php echo _('PHP 5.3.2 or greater') ?></h2>
-    <?php if ($php_version_ok): ?>
-      <p class="confirm"><?php printf(_('You have PHP version %s.'), $php_version) ?></p>
+    <?php if ($update->hasPhp532()): ?>
+      <p class="confirm"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
     <?php else: ?>
-      <p class="error"><?php printf(_('You have PHP version %s.'), $php_version) ?></p>
+      <p class="error"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
       <p class="explain"><?php printf(_('Phar has been added to the PHP core in version 5.3, so you require at least PHP version 5.3.2 to use .phar files. If you have PHP 5.2, you might be able to use .phar files by installing the PECL phar extension (see %s).'), '<a href="http://pecl.php.net/package/phar">http://pecl.php.net/package/phar</a>') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
     <h2><?php echo _('PHP Phar extension') ?></h2>
-    <?php if ($phar_ok): ?>
+    <?php if ($update->hasPhar()): ?>
       <p class="confirm"><?php echo _('The PHP Phar extension is enabled.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('The PHP Phar extension is not enabled.') ?></p>
@@ -68,16 +184,16 @@ $fast_cgi_ok = (!$fast_cgi && !$eaccelerator);
   </div>
   <div class="row">
     <h2>ionCube Loader</h2>
-    <?php if ($ioncube_ok): ?>
-      <p class="confirm"><?php echo _('The ionCube Loader is not enabled.') ?></p>
+    <?php if (!$update->hasIonCube()): ?>
+      <p class="confirm"><?php echo _('The ionCube Loader is not enabled or at least at version 4.0.9.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The ionCube Loader is enabled.') ?></p>
-      <p class="explain"><?php printf(_('At the time being, the ionCube Loader is incompatible with Phar archives. This is a bug in the software which the vendor has to fix. Until then, the only thing you can do is to disable the ionCube Loader. More information is available here: %s'), '<a href="http://forum.ioncube.com/viewtopic.php?p=8867">http://forum.ioncube.com/viewtopic.php?p=8867</a>') ?></p>
+      <p class="error"><?php echo _('An old version of the ionCube Loader prior to version 4.0.9 is installed.') ?></p>
+      <p class="explain"><?php printf(_('Before version 4.0.9, the ionCube Loader was incompatible with Phar archives. Either upgrade to the latest version or disable the module. More information is available here: %s'), '<a href="http://forum.ioncube.com/viewtopic.php?p=8867">http://forum.ioncube.com/viewtopic.php?p=8867</a>') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
     <h2><?php echo _('Suhosin extension') ?></h2>
-    <?php if ($suhosin_ok): ?>
+    <?php if (!$update->hasSuhosin()): ?>
       <p class="confirm"><?php echo _('The Suhosin extension is not installed or correctly configured for .phar files.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('The Suhosin extension does not allow to run .phar files.') ?></p>
@@ -86,7 +202,7 @@ $fast_cgi_ok = (!$fast_cgi && !$eaccelerator);
   </div>
   <div class="row">
     <h2><?php echo _('Detect Unicode') ?></h2>
-    <?php if ($unicode_ok): ?>
+    <?php if (!$update->hasDetectUnicode()): ?>
       <p class="confirm"><?php echo _('The --enable-zend-multibyte flag is not set or detect_unicode is disabled.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('The detect_unicode settings on your server are not correct.') ?></p>
@@ -95,7 +211,7 @@ $fast_cgi_ok = (!$fast_cgi && !$eaccelerator);
   </div>
   <div class="row">
     <h2>FastCGI+eAccelerator</h2>
-    <?php if ($fast_cgi_ok): ?>
+    <?php if (!$update->isFastCgiEaccelerator()): ?>
       <p class="confirm"><?php echo _('You are not using FastCGI and eAccelerator.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('You are using FastCGI and eAccelerator.') ?></p>
@@ -103,7 +219,7 @@ $fast_cgi_ok = (!$fast_cgi && !$eaccelerator);
     <?php endif; ?>
   </div>
   <div class="row">
-    <?php if ($php_version_ok && $phar_ok && $ioncube_ok && $suhosin_ok && $unicode_ok && $fast_cgi_ok): ?>
+    <?php if ($update->isAvailable()): ?>
 	  <p class="confirm large"><?php echo _('You can use the Live Update on this server.') ?></p>
 	<?php else: ?>
 	  <p class="error large"><?php echo _('You cannot use the Live Update on this server.') ?></p>

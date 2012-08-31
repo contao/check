@@ -12,73 +12,275 @@
 
 require 'bootstrap.php';
 
-// Check for shell_exec() or exec()
-if (function_exists('shell_exec')) {
-	$exec = 'shell_exec';
-} elseif (function_exists('exec')) {
-	$exec = 'exec';
-}
 
-// Check for wget and unzip
-if ($exec) {
-	function do_exec($str) {
-		global $exec;
-		return trim($exec($str));
+/**
+ * Download a Contao .zip archive and extract it
+ * 
+ * @package   Check
+ * @author    Leo Feyer <https://github.com/leofeyer>
+ * @copyright Leo Feyer 2012
+ */
+class Installer
+{
+
+	/**
+	 * Shell function
+	 * @var string
+	 */
+	protected $shell;
+
+	/**
+	 * Shell download command
+	 * @var string
+	 */
+	protected $download;
+
+	/**
+	 * Shell unzip command
+	 * @var string
+	 */
+	protected $unzip;
+
+	/**
+	 * Target directory
+	 * @var string
+	 */
+	protected $target;
+
+	/**
+	 * Target version
+	 * @var string
+	 */
+	protected $version;
+
+	/**
+	 * PHP requirements met
+	 * @var boolean
+	 */
+	protected $php = false;
+
+	/**
+	 * Installer availability
+	 * @var boolean
+	 */
+	protected $available = true;
+
+
+	/**
+	 * Check the requirements and start the installation
+	 */
+	public function run()
+	{
+		if (!$this->canUseShell() && !$this->canUsePhp()) {
+			$this->available = false;
+		} else {
+			$this->install();
+		}
 	}
-	if (do_exec('which wget') != '' && do_exec('which unzip') != '') {
-		$cli = true;
+
+
+	/**
+	 * Check whether the shell can be used to install Contao
+	 * 
+	 * @return boolean True if the shell can be used to install Contao
+	 */
+	protected function canUseShell()
+	{
+		// Check for shell_exec() or exec()
+		if (function_exists('shell_exec')) {
+			$this->shell = 'shell_exec';
+		} elseif (function_exists('exec')) {
+			$this->shell = 'exec';
+		}
+
+		// Return if we cannot access the shell
+		if ($this->shell == '') {
+			return false;
+		}
+
+		// Check for wget or curl
+		if ($this->exec('which wget') != '') {
+			$this->download = 'wget';
+		} elseif ($this->exec('which curl') != '') {
+			$this->download = 'curl';
+		}
+
+		// Return if we cannot download on the shell
+		if ($this->download == '') {
+			return false;
+		}
+
+		// Check for unzip
+		if ($this->exec('which unzip') != '') {
+			$this->unzip = 'unzip';
+		}
+
+		// Return if we cannot unzip on the shell
+		if ($this->unzip == '') {
+			return false;
+		}
+
+		return true;
+	}
+
+
+	/**
+	 * Check whether PHP can be used to install Contao
+	 * 
+	 * @return boolean True if PHP can be used to install Contao
+	 */
+	protected function canUsePhp()
+	{
+		// Check whether cURL and Zip are available
+		if (!extension_loaded('curl') || !extension_loaded('zip')) {
+			return false;
+		}
+
+		// Try to write a file
+		if (@file_put_contents('download', '') === false) {
+			return false;
+		}
+
+		$this->php = true;
+		@unlink('download');
+
+		return true;
+	}
+
+
+	/**
+	 * Execute a shell command and trim the result
+	 * 
+	 * @param string $command The shell command
+	 * 
+	 * @return string The trimmed output string
+	 */
+	protected function exec($command)
+	{
+		$function = $this->shell;
+		return trim($function($command));
+	}
+
+
+	/**
+	 * Retrieve information using cURL
+	 * 
+	 * @param string $url The URL
+	 * 
+	 * @return string The output string
+	 */
+	protected function curl($url)
+	{
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_URL, $url);
+		$return = curl_exec($ch);
+		curl_close($ch);
+
+		return $return;
+	}
+
+
+	/**
+	 * Check whether the automatic installation is possible
+	 * 
+	 * @return boolean True if the automatic installation is possible
+	 */
+	public function available()
+	{
+		return $this->available;
+	}
+
+
+	/**
+	 * Return the available version numbers
+	 * 
+	 * @return array The versions array
+	 */
+	public function versions()
+	{
+		$versions = array();
+
+		$files = scandir('versions');
+		natsort($files);
+		$files = array_reverse($files);
+
+		// Get the version numbers
+		foreach ($files as $file) {
+			list($maj, $min, $bfx, $ext) = explode('.', $file);
+
+			if ($ext == 'json') {
+				$versions["$maj.$min"][] = "$maj.$min.$bfx";
+			}
+		}
+
+		return $versions;
+	}
+
+
+	/**
+	 * Start the installation
+	 * 
+	 * @throws Exception In case the version number is invalid
+	 */
+	protected function install()
+	{
+		if (!isset($_POST['version'])) {
+			return;
+		}
+
+		$target = dirname(__DIR__);
+
+		// Check whether the target path is writable
+		if (!is_writable($target)) {
+			return;
+		}
+
+		$version = filter_var($_POST['version'], FILTER_SANITIZE_STRING);
+
+		// Validate the version number
+		if (!file_exists('versions/' . $version . '.json')) {
+			throw new Exception("Invalid version number $version");
+		}
+
+		list($maj, $min, $bfx) = explode('.', $version);
+		$url = "http://sourceforge.net/projects/contao/files/$maj.$min/contao-$maj.$min.$bfx.zip/download";
+
+		if ($this->php === false) {
+			if ($this->download == 'wget') {
+				$this->exec("wget $url");
+			} elseif ($this->download == 'curl') {
+				$this->exec("curl -s -L $url > download");
+			}
+
+			// Extract
+			if (file_exists('download')) {
+				$this->exec($this->unzip . ' download');			
+				$this->exec('rm download');
+				$folder = $this->exec('ls -d contao-*');
+				$this->exec("mv $folder/* ../");
+				$this->exec("rm -rf $folder");
+			}
+		} else {
+			file_put_contents('download', $this->curl($url));
+
+			// Extract
+			if (file_exists('download')) {
+				$zip = new ZipArchive;
+				$zip->open('download');
+				$zip->extractTo($target);
+				$zip->close();
+				unlink('download');
+			}
+		}
 	}
 }
 
-// Check for cURL and Zip
-if ($cli !== true) {
-	$curl = extension_loaded('curl');
-	$zip = extension_loaded('zip');
 
-	// Try to write a file
-	@file_put_contents('download', '');
-	$create = (@file_exists('download') && @is_writable('download'));
-	@unlink('download');
-
-	$php = ($curl && $zip && $create);
-}
-
-// Start the installation
-if (isset($_GET['download'])) {
-	if ($cli) {
-		$version = cli_installation();
-	} elseif ($php) {
-		$version = php_installation();
-	} 	
-}
-
-// CLI installation
-function cli_installation() {
-	do_exec("wget http://sourceforge.net/projects/contao/files/latest/download");
-	do_exec("unzip download");
-	do_exec("rm download");
-	return do_exec('ls -d contao-*');
-}
-
-// PHP installation
-function php_installation() {
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_HEADER, false);
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_URL, 'http://sourceforge.net/projects/contao/files/latest/download');
-	file_put_contents('download', curl_exec($ch));
-	curl_close($ch);
-
-	$zip = new ZipArchive;
-	$zip->open('download');
-	$zip->extractTo('.');
-	$zip->close();
-
-	unlink('download');
-	$matches = array_values(preg_grep('/^contao-/', scandir('.')));
-	return $matches[0];
-}
+$installer = new Installer;
+$installer->run();
 
 ?>
 <!DOCTYPE html>
@@ -95,32 +297,48 @@ function php_installation() {
   </div>
   <div class="row">
     <h2><?php echo _('Web installer') ?></h2>
-    <?php if ($cli): ?>
-      <p class="confirm"><?php printf(_('Will be using %s(), wget and unzip for the installation.'), $exec) ?></p>
-    <?php elseif ($php): ?>
-      <p class="confirm"><?php echo _('Will be using cURL and Zip for the installation.') ?></p>
+    <?php if ($installer->available()): ?>
+      <p class="confirm"><?php echo _('The automatic installation is possible on your server.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('The automatic installation is not possible on your server.') ?></p>
       <p class="explain"><?php echo _('Your PHP installation does not meet the requirements to use the command line, does not have enough permissions to create files and folders or does not have the required PHP extensions "cURL" and "Zip".') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <?php if (!$cli && !$php): ?>
+    <?php if (!$installer->available()): ?>
       <h2><?php echo _('Manual installation') ?></h2>
       <ul>
         <li><?php printf('Go to %s and download the latest Contao version.', '<a href="http://sourceforge.net/projects/contao/files/">sourceforge.net</a>') ?></li>
         <li><?php echo _('Extract the download archive and upload the files to your server using an (S)FTP client.') ?></li>
         <li><?php echo _('Open the Contao install tool by adding "/contao" to the URL of your installation.') ?></li>
       </ul>
-    <?php elseif (!isset($_GET['download'])): ?>
-      <p><a href="install.php?download" class="btn"><?php echo _('Start the installation') ?></a></p>
+    <?php elseif (!isset($_POST['version'])): ?>
+      <h2><?php echo _('Target version') ?></h2>
+      <form method="post">
+        <p class="versions">
+          <select name="version">
+          <?php
+            foreach ($installer->versions() as $group=>$versions) {
+              echo '<optgroup label="' . $group . '">';
+              foreach ($versions as $version) {
+                echo '<option value="' . $version . '">Contao ' . $version . '</option>';
+			  }
+              echo '</optgroup>';
+            }
+          ?>
+          </select>
+        </p>
+        <p class="explain"><?php echo _('Attention: Deprecated versions might contain security issues! Please install the latest stable version or the latest long term support version.') ?></p>
+        <p class="mt"><input class="btn" type="submit" value="<?php echo _('Start the installation') ?>"></p>
+      </form>
     <?php else: ?>
       <h2><?php echo _('Installation complete') ?></h2>
-      <p class="confirm"><?php printf(_('Contao has been installed in %s/%s.'), __DIR__, $version) ?></p>
-      <p class="mt"><a href="<?php echo $version ?>/contao/install.php" class="btn"><?php echo _('Open the Contao install tool') ?></a></p>
+      <p class="confirm"><?php printf(_('Contao has been installed in %s.'), dirname(__DIR__)) ?></p>
+      <p class="mt"><a href="../contao/install.php" class="btn"><?php echo _('Open the Contao install tool') ?></a></p>
     <?php endif; ?>
   </div>
   <p class="back"><a href="."><?php echo _('Go back') ?></a></p>
 </div>
+<script src="assets/script.js"></script>
 </body>
 </html>

@@ -10,51 +10,151 @@
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
-// Hide E_NOTICE
-error_reporting(E_ALL^E_NOTICE);
 
-// Start the session
-session_start();
+/**
+ * Initialize the Contao Check
+ * 
+ * @package   Check
+ * @author    Leo Feyer <https://github.com/leofeyer>
+ * @copyright Leo Feyer 2012
+ */
+class Bootstrap
+{
 
-// Determine the user language
-if (isset($_GET['lng'])) {
-	if (preg_match('/^[a-z]{2}(_[A-Z]{2})?$/', $_GET['lng'])) {
-		$locale = $_GET['lng'];
-		$_SESSION['C_LANGUAGE'] = $_GET['lng'];
+	/**
+	 * Start the session and set the locale
+	 */
+	public function initialize()
+	{
+		error_reporting(E_ALL^E_NOTICE);
+
+		session_start();
+
+		$locale = $this->getLanguage();
+		$this->setLocale($locale);
 	}
-} elseif (isset($_SESSION['C_LANGUAGE'])) {
-	$locale = $_SESSION['C_LANGUAGE'];
-} else {
-	$accepted = array();
-	$languages = explode(',', strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']));
-	$locales = scandir('locale');
 
-	for ($i=0; $i<8; $i++) {
-		$tag = substr($languages[$i], 0, 2);
-		if ($tag != '' && preg_match('/^[a-z]{2}$/', $tag)) {
-			$matches = array_values(preg_grep("/^$tag/", $locales));
-			if (!empty($matches)) {
-				$locale = $matches[0];
-				$_SESSION['C_LANGUAGE'] = $matches[0];
-				break;
+
+	/**
+	 * Determine the user language and return the locale
+	 * 
+	 * @return string The locale 
+	 */
+	public function getLanguage()
+	{
+		$locale = '';
+
+		if (isset($_GET['lng'])) {
+			if ($this->isLocale($_GET['lng'])) {
+				$locale = $_GET['lng'];
+				$_SESSION['C_LANGUAGE'] = $_GET['lng'];
+			}
+		} elseif (isset($_SESSION['C_LANGUAGE'])) {
+			$locale = $_SESSION['C_LANGUAGE'];
+		} else {
+			$locales = scandir('locale');
+			$accepted = $this->getAcceptedLanguages();
+			$limit = min(count($accepted), 8);
+
+			// Check the first eight entries
+			for ($i=0; $i<$limit; $i++) {
+				$tag = $accepted[$i];
+
+				// Find the locale or ISO language code
+				if (in_array($tag, $locales)) {
+					$locale = $tag;
+				} else {
+					$matches = array_values(preg_grep("/^$tag/", $locales));
+
+					if (!empty($matches)) {
+						$locale = $matches[0];
+					}
+				}
+
+				// Store the locale in the session
+				if ($locale != '') {
+					$_SESSION['C_LANGUAGE'] = $locale;
+					break;
+				}
 			}
 		}
+
+		// Fall back to English
+		if ($locale == '') {
+			$locale = 'en_US';
+			$_SESSION['C_LANGUAGE'] = $locale;
+		}
+
+		return $locale;
+	}
+
+
+	/**
+	 * Validate a locale
+	 * 
+	 * @param string $locale The locale string (e.g. "en" or "en_US")
+	 * 
+	 * @return boolean True if the locale is valid
+	 */
+	protected function isLocale($locale)
+	{
+		return preg_match('/^[a-z]{2}(_[A-Z]{2})?$/', $locale);
+	}
+
+
+	/**
+	 * Return the accepted languages as an array
+	 * 
+	 * @return array The locale array
+	 * 
+	 * @author Leo Unglaub <https://github.com/LeoUnglaub>
+	 */
+	protected function getAcceptedLanguages()
+	{
+		$return = array();
+		$accepted = array();
+
+		// The implementation differs from the original implementation and also works with .jp browsers
+		preg_match_all('/([a-z]{1,8}(-[a-z]{1,8})?)\s*(;\s*q\s*=\s*(1|0\.[0-9]+))?/i', $_SERVER['HTTP_ACCEPT_LANGUAGE'], $accepted);
+
+		// Remove all invalid locales
+		foreach ($accepted[1] as $v) {
+			$chunks = explode('-', $v);
+			$locale = $chunks[0];
+
+			if (isset($chunks[1])) {
+				$locale .= '_' . strtoupper($chunks[1]);
+			}
+
+			if ($this->isLocale($locale)) {
+				$return[] = $locale;
+			}
+		}
+
+		return $return;
+	}
+
+
+	/**
+	 * Set a locale and initialize the PHP gettext extension
+	 * 
+	 * @param string $locale The locale
+	 * 
+	 * @throws Exception In case the locale is not valid
+	 */
+	public function setLocale($locale)
+	{
+		if (!$this->isLocale($locale)) {
+			throw new Exception("Unknown locale $locale");
+		}
+
+		putenv("LC_ALL=$locale");
+		setlocale(LC_ALL, $locale);
+		bindtextdomain('messages', __DIR__ . '/locale');
+		textdomain('messages');
+		bind_textdomain_codeset('messages', 'UTF-8');
 	}
 }
 
-// Fall back to English
-if (!$locale) {
-	$locale = 'en_GB';
-	$_SESSION['C_LANGUAGE'] = 'en_GB';
-}
-
-// Set the locale
-if (preg_match('/^[a-z]{2}(_[A-Z]{2})?$/', $locale)) {
-	putenv("LC_ALL=$locale");
-	setlocale(LC_ALL, $locale);
-	bindtextdomain('messages', __DIR__ . '/locale');
-	textdomain('messages');
-	bind_textdomain_codeset('messages', 'UTF-8');
-} else {
-	die("Unknown locale $locale");
-}
+$bootstrap = new Bootstrap;
+$bootstrap->initialize();
