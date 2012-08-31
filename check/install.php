@@ -195,39 +195,35 @@ class Installer
 
 
 	/**
-	 * Return all tagged Contao versions as array
+	 * Return the available version numbers
 	 * 
-	 * @return array The tags array
+	 * @return array The versions array
 	 */
-	public function tags()
+	public function versions()
 	{
-		// Download the JSON file
-		if ($this->php === false) {
-			if ($this->download === 'curl') {
-				$json = $this->exec('curl https://api.github.com/repos/contao/core/tags');
-			} elseif ($this->download === 'wget') {
-				$json = $this->exec('wget -qO- https://api.github.com/repos/contao/core/tags');
-			}
-		} else {
-			$json = $this->curl('https://api.github.com/repos/contao/core/tags');
-		}
+		$versions = array();
 
-		$tags = array();
+		$files = scandir('versions');
+		natsort($files);
+		$files = array_reverse($files);
 
-		// Prepare the return array
-		foreach (json_decode($json) as $tag) {
-			if (preg_match('/^[0-9\.]+$/', $tag->name)) {
-				$tags[] = $tag->name;
+		// Get the version numbers
+		foreach ($files as $file) {
+			list($maj, $min, $bfx, $ext) = explode('.', $file);
+
+			if ($ext == 'json') {
+				$versions["$maj.$min"][] = "$maj.$min.$bfx";
 			}
 		}
 
-		natsort($tags);
-		return array_reverse($tags);
+		return $versions;
 	}
 
 
 	/**
 	 * Start the installation
+	 * 
+	 * @throws Exception In case the version number is invalid
 	 */
 	protected function install()
 	{
@@ -237,12 +233,20 @@ class Installer
 
 		$target = dirname(__DIR__);
 
+		// Check whether the target path is writable
 		if (!is_writable($target)) {
 			return;
 		}
 
 		$version = filter_var($_POST['version'], FILTER_SANITIZE_STRING);
-		$url = 'https://github.com/contao/core/zipball/' . $version;
+
+		// Validate the version number
+		if (!file_exists('versions/' . $version . '.json')) {
+			throw new Exception("Invalid version number $version");
+		}
+
+		list($maj, $min, $bfx) = explode('.', $version);
+		$url = "http://sourceforge.net/projects/contao/files/$maj.$min/contao-$maj.$min.$bfx.zip/download";
 
 		if ($this->php === false) {
 			if ($this->download == 'wget') {
@@ -310,15 +314,23 @@ $installer->run();
         <li><?php echo _('Open the Contao install tool by adding "/contao" to the URL of your installation.') ?></li>
       </ul>
     <?php elseif (!isset($_POST['version'])): ?>
+      <h2><?php echo _('Target version') ?></h2>
       <form method="post">
-        <select name="version">
-        <?php
-          foreach ($installer->tags() as $tag) {
-            echo '<option value="' . $tag . '">' . $tag . '</option>';
-          }
-        ?>
-        </select>
-        <input class="btn" type="submit" value="<?php echo _('Start the installation') ?>" />
+        <p class="versions">
+          <select name="version">
+          <?php
+            foreach ($installer->versions() as $group=>$versions) {
+              echo '<optgroup label="' . $group . '">';
+              foreach ($versions as $version) {
+                echo '<option value="' . $version . '">Contao ' . $version . '</option>';
+			  }
+              echo '</optgroup>';
+            }
+          ?>
+          </select>
+        </p>
+        <p class="explain"><?php echo _('Attention: Deprecated versions might contain security issues! Please install the latest stable version or the latest long term support version.') ?></p>
+        <p class="mt"><input class="btn" type="submit" value="<?php echo _('Start the installation') ?>"></p>
       </form>
     <?php else: ?>
       <h2><?php echo _('Installation complete') ?></h2>
@@ -328,5 +340,6 @@ $installer->run();
   </div>
   <p class="back"><a href="."><?php echo _('Go back') ?></a></p>
 </div>
+<script src="assets/script.js"></script>
 </body>
 </html>

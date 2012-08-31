@@ -54,9 +54,10 @@ class Bootstrap
 		} else {
 			$locales = scandir('locale');
 			$accepted = $this->getAcceptedLanguages();
+			$limit = min(count($accepted), 8);
 
 			// Check the first eight entries
-			for ($i=0; $i<8; $i++) {
+			for ($i=0; $i<$limit; $i++) {
 				$tag = $accepted[$i];
 
 				// Find the locale or ISO language code
