@@ -308,7 +308,7 @@ $installer->run();
     <?php if (!$installer->available()): ?>
       <h2><?php echo _('Manual installation') ?></h2>
       <ul>
-        <li><?php printf('Go to %s and download the latest Contao version.', '<a href="http://sourceforge.net/projects/contao/files/">sourceforge.net</a>') ?></li>
+        <li><?php printf(_('Go to %s and download the latest Contao version.'), '<a href="http://sourceforge.net/projects/contao/files/">sourceforge.net</a>') ?></li>
         <li><?php echo _('Extract the download archive and upload the files to your server using an (S)FTP client.') ?></li>
         <li><?php echo _('Open the Contao install tool by adding "/contao" to the URL of your installation.') ?></li>
       </ul>
