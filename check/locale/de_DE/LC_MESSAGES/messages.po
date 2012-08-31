@@ -10,9 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
-"Report-Msgid-Bugs-To: https://github.com/contao/check/issues\n"
-"POT-Creation-Date: 2012-08-21 16:04+0200\n"
-"PO-Revision-Date: 2012-08-30 12:17+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-31 17:48+0200\n"
+"PO-Revision-Date: 2012-08-31 18:01+0100\n"
 "Last-Translator: Leo Feyer <http://contao.org>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -39,13 +39,13 @@ msgstr "Kann ich das Extension Repository nutzen?"
 
 #: check/index.php:37
 msgid "Can I use the Live Update Service?"
-msgstr "Kann ich den Live-Update-Service nutzen?"
+msgstr "Kann ich den Live Update-Service nutzen?"
 
 #: check/index.php:38
 msgid "Do I need to use the Safe Mode Hack?"
-msgstr "Muss ich den Safe-Mode-Hack verwenden?"
+msgstr "Muss ich den Safe Mode Hack verwenden?"
 
-#: check/index.php:42 check/install.php:94 check/validate.php:76
+#: check/index.php:42 check/install.php:296 check/validate.php:237
 msgid "Installation"
 msgstr "Installation"
 
@@ -69,24 +69,19 @@ msgstr ""
 "zu installieren. Ist Contao bereits installiert, können Sie die Installation "
 "prüfen lassen und nach fehlenden oder beschädigten Dateien suchen."
 
-#: check/install.php:97
+#: check/install.php:299
 msgid "Web installer"
 msgstr "Web-Installer"
 
-#: check/install.php:99
-#, php-format
-msgid "Will be using %s(), wget and unzip for the installation."
-msgstr "Die Installation erfolgt mittels %s(), wget und unzip."
+#: check/install.php:301
+msgid "The automatic installation is possible on your server."
+msgstr "Die automatische Installation ist auf Ihrem Server möglich."
 
-#: check/install.php:101
-msgid "Will be using cURL and Zip for the installation."
-msgstr "Die Installation erfolgt mittels cURL und Zip."
-
-#: check/install.php:103
+#: check/install.php:303
 msgid "The automatic installation is not possible on your server."
 msgstr "Die automatische Installation ist auf Ihrem Server nicht möglich."
 
-#: check/install.php:104
+#: check/install.php:304
 msgid ""
 "Your PHP installation does not meet the requirements to use the command "
 "line, does not have enough permissions to create files and folders or does "
@@ -97,16 +92,16 @@ msgstr ""
 "Dateien und Ordner anzulegen, oder wurde ohne die benötigten PHP-"
 "Erweiterungen \"cURL\" und \"Zip\" kompiliert."
 
-#: check/install.php:109
+#: check/install.php:309
 msgid "Manual installation"
 msgstr "Manuelle Installation"
 
-#: check/install.php:111
+#: check/install.php:311
 #, php-format
 msgid "Go to %s and download the latest Contao version."
 msgstr "Gehen Sie zu %s und laden Sie die neueste Contao-Version herunter."
 
-#: check/install.php:112
+#: check/install.php:312
 msgid ""
 "Extract the download archive and upload the files to your server using an (S)"
 "FTP client."
@@ -114,7 +109,7 @@ msgstr ""
 "Entpacken Sie das Download-Archiv und übertragen Sie die Dateien mit einem "
 "(S)FTP-Programm auf Ihren Server."
 
-#: check/install.php:113
+#: check/install.php:313
 msgid ""
 "Open the Contao install tool by adding \"/contao\" to the URL of your "
 "installation."
@@ -122,42 +117,55 @@ msgstr ""
 "Öffnen Sie das Contao-Installtool, indem Sie \"/contao\" der URL Ihrer "
 "Installation anhängen."
 
-#: check/install.php:116
+#: check/install.php:316
+msgid "Target version"
+msgstr "Zielversion"
+
+#: check/install.php:331
+msgid ""
+"Attention: Deprecated versions might contain security issues! Please install "
+"the latest stable version or the latest long term support version."
+msgstr ""
+"Achtung: Veraltete Versionen können Sicherheitslücken enthalten! "
+"Installieren Sie die aktuelle Version oder die aktuelle Long-Term-Support-"
+"Version."
+
+#: check/install.php:332
 msgid "Start the installation"
 msgstr "Installation starten"
 
-#: check/install.php:118
+#: check/install.php:335
 msgid "Installation complete"
 msgstr "Installation abgeschlossen"
 
-#: check/install.php:119
+#: check/install.php:336
 #, php-format
-msgid "Contao has been installed in %s/%s."
-msgstr "Contao wurde im Ordner %s/%s installiert."
+msgid "Contao has been installed in %s."
+msgstr "Contao wurde im Ordner %s installiert."
 
-#: check/install.php:120
+#: check/install.php:337
 msgid "Open the Contao install tool"
 msgstr "Zum Contao-Installtool"
 
-#: check/install.php:123 check/live-update.php:112 check/repository.php:45
-#: check/safe-mode-hack.php:134 check/validate.php:115
+#: check/install.php:340 check/live-update.php:228 check/repository.php:119
+#: check/safe-mode-hack.php:306 check/validate.php:276
 msgid "Go back"
 msgstr "Zurück"
 
-#: check/live-update.php:49
+#: check/live-update.php:165
 msgid "Live Update"
 msgstr "Live Update"
 
-#: check/live-update.php:52
+#: check/live-update.php:168
 msgid "PHP 5.3.2 or greater"
 msgstr "PHP 5.3.2 oder größer"
 
-#: check/live-update.php:54 check/live-update.php:56
+#: check/live-update.php:170 check/live-update.php:172
 #, php-format
 msgid "You have PHP version %s."
 msgstr "Sie haben die PHP-Version %s."
 
-#: check/live-update.php:57
+#: check/live-update.php:173
 #, php-format
 msgid ""
 "Phar has been added to the PHP core in version 5.3, so you require at least "
@@ -169,19 +177,19 @@ msgstr ""
 "einsetzen, können Sie die Unterstützung von .phar-Dateien eventuell mit "
 "Hilfe der PECL Phar-Erweiterung nachrüsten (siehe %s)."
 
-#: check/live-update.php:61
+#: check/live-update.php:177
 msgid "PHP Phar extension"
 msgstr "PHP Phar-Erweiterung"
 
-#: check/live-update.php:63
+#: check/live-update.php:179
 msgid "The PHP Phar extension is enabled."
 msgstr "Die PHP Phar-Erweiterung ist aktiv."
 
-#: check/live-update.php:65
+#: check/live-update.php:181
 msgid "The PHP Phar extension is not enabled."
 msgstr "Die PHP Phar-Erweiterung ist nicht aktiv."
 
-#: check/live-update.php:66
+#: check/live-update.php:182
 msgid ""
 "The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be "
 "explicitly disabled using the --disable-phar flag. Recompile PHP without the "
@@ -191,32 +199,35 @@ msgstr ""
 "explizit mit dem Flag --disable--phar deaktiviert werden. Kompilieren Sie "
 "PHP erneut ohne das Flag."
 
-#: check/live-update.php:72
-msgid "The ionCube Loader is not enabled."
-msgstr "Der ionCube-Loader ist nicht aktiv."
+#: check/live-update.php:188
+msgid "The ionCube Loader is not enabled or at least at version 4.0.9."
+msgstr ""
+"Der ionCube-Loader ist nicht aktiv oder liegt mindestens in der Version "
+"4.0.9 vor."
 
-#: check/live-update.php:74
-msgid "The ionCube Loader is enabled."
-msgstr "Der ionCube-Loader ist aktiv."
+#: check/live-update.php:190
+msgid ""
+"An old version of the ionCube Loader prior to version 4.0.9 is installed."
+msgstr ""
+"Eine alte Version des ionCube Loader kleiner der Version 4.0.9 ist "
+"installiert."
 
-#: check/live-update.php:75
+#: check/live-update.php:191
 #, php-format
 msgid ""
-"At the time being, the ionCube Loader is incompatible with Phar archives. "
-"This is a bug in the software which the vendor has to fix. Until then, the "
-"only thing you can do is to disable the ionCube Loader. More information is "
-"available here: %s"
+"Before version 4.0.9, the ionCube Loader was incompatible with Phar "
+"archives. Either upgrade to the latest version or disable the module. More "
+"information is available here: %s"
 msgstr ""
-"Momentan ist der ionCube-Loader nicht kompatibel zu Phar-Archiven. Dies ist "
-"ein Fehler in der Software, den der Hersteller beheben muss. Bis dahin "
-"bleibt Ihnen nur, den ionCube-Loader zu deaktivieren. Weitere Informationen "
-"finden Sie hier: %s"
+"Vor Version 4.0.9 konnte der ionCube Loader keine Phar-Archive verarbeiten. "
+"Installieren Sie entweder die aktuelle Version oder deaktivieren Sie da "
+"Modul. Weitere Informationen finden Sie hier: %s"
 
-#: check/live-update.php:79
+#: check/live-update.php:195
 msgid "Suhosin extension"
 msgstr "Suhosin-Erweiterung"
 
-#: check/live-update.php:81
+#: check/live-update.php:197
 msgid ""
 "The Suhosin extension is not installed or correctly configured for .phar "
 "files."
@@ -224,11 +235,11 @@ msgstr ""
 "Die Suhosin-Erweiterung ist nicht installiert oder korrekt für die Nutzung "
 "von .phar-Dateien konfiguriert."
 
-#: check/live-update.php:83
+#: check/live-update.php:199
 msgid "The Suhosin extension does not allow to run .phar files."
 msgstr "Die Suhosin-Erweiterung verhindert die Ausführung von .phar-Dateien."
 
-#: check/live-update.php:84
+#: check/live-update.php:200
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
 "<code>suhosin.executor.include.whitelist = phar</code>."
@@ -236,22 +247,22 @@ msgstr ""
 "Sie müssen \"phar\" in Ihrer php.ini zur Liste der erlaubten Streams "
 "hinzufügen: <code>suhosin.executor.include.whitelist = phar</code>."
 
-#: check/live-update.php:88
+#: check/live-update.php:204
 msgid "Detect Unicode"
 msgstr "Detect Unicode"
 
-#: check/live-update.php:90
+#: check/live-update.php:206
 msgid ""
 "The --enable-zend-multibyte flag is not set or detect_unicode is disabled."
 msgstr ""
 "Das Flag --enable-zend-multibyte ist nicht gesetzt oder detect_unicode ist "
 "deaktiviert."
 
-#: check/live-update.php:92
+#: check/live-update.php:208
 msgid "The detect_unicode settings on your server are not correct."
 msgstr "Die detect_unicode-Einstellungen auf Ihrem Server sind nicht korrekt."
 
-#: check/live-update.php:93
+#: check/live-update.php:209
 #, php-format
 msgid ""
 "If PHP is compiled with the --enable-zend-multibyte flag, you have to "
@@ -264,15 +275,15 @@ msgstr ""
 "= Off</code>. Dies ist ein PHP-Bug, der in zukünftigen Versionen eventuell "
 "behoben wird. Weitere Informationen dazu finden Sie hier: %s"
 
-#: check/live-update.php:99
+#: check/live-update.php:215
 msgid "You are not using FastCGI and eAccelerator."
 msgstr "Sie verwenden kein FastCGI mit dem eAccelerator."
 
-#: check/live-update.php:101
+#: check/live-update.php:217
 msgid "You are using FastCGI and eAccelerator."
 msgstr "Sie verwenden FastCGI mit dem eAccelerator."
 
-#: check/live-update.php:102
+#: check/live-update.php:218
 msgid ""
 "It seems that FastCGI in combination with the eAccelerator extension is "
 "buggy when it comes to Phar archives. You can either disable the "
@@ -283,31 +294,31 @@ msgstr ""
 "korrekt verarbeiten. Sie können den eAccelerator entweder deaktivieren oder "
 "durch einen anderen PHP-Cache (z.B. FastCGI-APC) ersetzen."
 
-#: check/live-update.php:107
+#: check/live-update.php:223
 msgid "You can use the Live Update on this server."
 msgstr "Sie können das Live Update auf diesem Server verwenden."
 
-#: check/live-update.php:109
+#: check/live-update.php:225
 msgid "You cannot use the Live Update on this server."
 msgstr "Sie können das Live Update auf diesem Server nicht verwenden."
 
-#: check/repository.php:27
+#: check/repository.php:92
 msgid "Extension Repository"
 msgstr "Extension Repository"
 
-#: check/repository.php:30
+#: check/repository.php:95
 msgid "PHP SOAP extension"
 msgstr "PHP SOAP-Erweiterung"
 
-#: check/repository.php:32
+#: check/repository.php:97
 msgid "The PHP SOAP extension is available."
 msgstr "Die PHP SOAP-Erweiterung ist verfügbar."
 
-#: check/repository.php:34
+#: check/repository.php:99
 msgid "The PHP SOAP extension is not available."
 msgstr "Die PHP SOAP-Erweiterung ist nicht verfügbar."
 
-#: check/repository.php:35
+#: check/repository.php:100
 #, php-format
 msgid ""
 "The PHP SOAP extension is required to communicate with the Extension "
@@ -320,31 +331,51 @@ msgstr ""
 "Flag --enable-soap aktivieren. Je nach Contao-Version können Sie eventuell "
 "auch die %s-Erweiterung verwenden."
 
-#: check/repository.php:40
+#: check/repository.php:104
+msgid "Connection test"
+msgstr "Verbindungstest"
+
+#: check/repository.php:106
+msgid "A connection to contao.org could be established."
+msgstr "Die Verbindung zu contao.org konnte hergestellt werden."
+
+#: check/repository.php:108
+msgid "A connection to contao.org could not be established."
+msgstr "Die Verbindung zu contao.org konnte nicht hergestellt werden."
+
+#: check/repository.php:109
+msgid ""
+"Maybe the request has been blocked by a firewall. Please contact your server "
+"administrator."
+msgstr ""
+"Eventuell wurde die Anfrage von einer Firewall blockiert. Bitte kontaktieren "
+"Sie Ihren Serveradministrator."
+
+#: check/repository.php:114
 msgid "You can use the Extension Repository on this server."
 msgstr "Sie können das Extension Repository auf diesem Server verwenden."
 
-#: check/repository.php:42
+#: check/repository.php:116
 msgid "You cannot use the Extension Repository on this server."
 msgstr "Sie können das Extension Repository auf diesem Server nicht verwenden."
 
-#: check/safe-mode-hack.php:92
+#: check/safe-mode-hack.php:264
 msgid "Safe Mode Hack"
 msgstr "Safe Mode Hack"
 
-#: check/safe-mode-hack.php:95
+#: check/safe-mode-hack.php:267
 msgid "php.ini settings"
 msgstr "php.ini-Einstellungen"
 
-#: check/safe-mode-hack.php:97
+#: check/safe-mode-hack.php:269
 msgid "The PHP safe_mode is not enabled."
 msgstr "Der PHP safe_mode ist nicht aktiv."
 
-#: check/safe-mode-hack.php:99
+#: check/safe-mode-hack.php:271
 msgid "The PHP safe_mode is enabled."
 msgstr "Der PHP safe_mode ist aktiv."
 
-#: check/safe-mode-hack.php:100
+#: check/safe-mode-hack.php:272
 msgid ""
 "It is recommended to disable the safe_mode in your php.ini or server control "
 "panel, otherwise you will have to use the Contao Safe Mode Hack to create or "
@@ -352,24 +383,24 @@ msgid ""
 "the performance of your website."
 msgstr ""
 "Es wird empfohlen, den safe_mode in Ihrer php.ini oder Ihrem Server-Control-"
-"Panel zu deaktivieren, da Sie andernfalls den Contao Safe-Mode-Hack für "
-"Dateioperationen verwenden müssen. Die Verwendung des Safe-Mode-Hack wirkt "
+"Panel zu deaktivieren, da Sie andernfalls den Contao Safe Mode Hack für "
+"Dateioperationen verwenden müssen. Die Verwendung des Safe Mode Hack wirkt "
 "sich negativ auf die Performance Ihrer Webseite aus."
 
-#: check/safe-mode-hack.php:104
+#: check/safe-mode-hack.php:276
 msgid "Creating a test folder"
 msgstr "Erstelle einen Testordner"
 
-#: check/safe-mode-hack.php:106
+#: check/safe-mode-hack.php:278
 #, php-format
 msgid "The test folder could be created (owner: %s, chmod: %s)."
 msgstr "Der Testordner wurde erstellt (Besitzer: %s, Zugriffsrechte: %s)."
 
-#: check/safe-mode-hack.php:108
+#: check/safe-mode-hack.php:280
 msgid "The test folder could not be created."
 msgstr "Der Testordner konnte nicht erstellt werden."
 
-#: check/safe-mode-hack.php:109
+#: check/safe-mode-hack.php:281
 msgid ""
 "It seems that the PHP process does not have enough permissions to create "
 "folders on your server."
@@ -377,13 +408,13 @@ msgstr ""
 "Der PHP-Prozess hat scheinbar nicht genug Rechte, um Ordner auf Ihrem Server "
 "zu erstellen."
 
-#: check/safe-mode-hack.php:111
+#: check/safe-mode-hack.php:283
 msgid "The test folder does not have the correct owner or chmod settings."
 msgstr ""
 "Der Testordner hat nicht den richtigen Besitzer und die richtigen "
 "Zugriffsrechte."
 
-#: check/safe-mode-hack.php:112
+#: check/safe-mode-hack.php:284
 #, php-format
 msgid ""
 "The test folder is owned by %s (should be %s) and has the chmod settings %s "
@@ -392,24 +423,24 @@ msgstr ""
 "Der Testordner gehört %s (sollte %s gehören) und hat die Zugriffsrechte %s "
 "(sollte %s sein)."
 
-#: check/safe-mode-hack.php:112
+#: check/safe-mode-hack.php:284
 msgid "775, 755 or 750"
 msgstr "775, 755 oder 750"
 
-#: check/safe-mode-hack.php:116
+#: check/safe-mode-hack.php:288
 msgid "Creating a test file"
 msgstr "Erstelle eine Testdatei"
 
-#: check/safe-mode-hack.php:118
+#: check/safe-mode-hack.php:290
 #, php-format
 msgid "The test file could be created (owner: %s, chmod: %s)."
 msgstr "Die Testdatei wurde erstellt (Besitzer: %s, Zugriffsrechte: %s)."
 
-#: check/safe-mode-hack.php:120
+#: check/safe-mode-hack.php:292
 msgid "The test file could not be created."
 msgstr "Die Testdatei konnte nicht erstellt werden."
 
-#: check/safe-mode-hack.php:121
+#: check/safe-mode-hack.php:293
 msgid ""
 "It seems that the PHP process does not have enough permissions to create "
 "files on your server."
@@ -417,13 +448,13 @@ msgstr ""
 "Der PHP-Prozess hat scheinbar nicht genug Rechte, um Dateien auf Ihrem "
 "Server zu erstellen."
 
-#: check/safe-mode-hack.php:123
+#: check/safe-mode-hack.php:295
 msgid "The test file does not have the correct owner or chmod settings."
 msgstr ""
 "Die Testdate hat nicht den richtigen Besitzer und die richtigen "
 "Zugriffsrechte."
 
-#: check/safe-mode-hack.php:124
+#: check/safe-mode-hack.php:296
 #, php-format
 msgid ""
 "The test file is owned by %s (should be %s) and has the chmod settings %s "
@@ -432,27 +463,27 @@ msgstr ""
 "Die Testdatei gehört %s (sollte %s gehören) und hat die Zugriffsrechte %s "
 "(sollte %s sein)."
 
-#: check/safe-mode-hack.php:124
+#: check/safe-mode-hack.php:296
 msgid "664, 644, 660 or 640"
 msgstr "664, 644, 660 oder 640"
 
-#: check/safe-mode-hack.php:129
+#: check/safe-mode-hack.php:301
 msgid "You do not need the Safe Mode Hack on this server."
-msgstr "Sie müssen den Safe-Mode-Hack auf diesem Server nicht verwenden."
+msgstr "Sie müssen den Safe Mode Hack auf diesem Server nicht verwenden."
 
-#: check/safe-mode-hack.php:131
+#: check/safe-mode-hack.php:303
 msgid "You do need the Safe Mode Hack on this server."
-msgstr "Sie müssen den Safe-Mode-Hack auf diesem Server verwenden."
+msgstr "Sie müssen den Safe Mode Hack auf diesem Server verwenden."
 
-#: check/validate.php:72
+#: check/validate.php:233
 msgid "Validate an installation"
 msgstr "Eine Installation prüfen"
 
-#: check/validate.php:77
+#: check/validate.php:238
 msgid "Could not find a Contao installation."
 msgstr "Keine Contao-Installation gefunden."
 
-#: check/validate.php:78
+#: check/validate.php:239
 msgid ""
 "To validate an existing installation, please upload the \"check\" folder to "
 "your installation directory."
@@ -460,16 +491,16 @@ msgstr ""
 "Um eine bestehende Installation zu prüfen, laden Sie bitte den Ordner \"check"
 "\" in Ihr Installationsverzeichnis."
 
-#: check/validate.php:82
+#: check/validate.php:243
 msgid "Unknown version"
 msgstr "Unbekannte Version"
 
-#: check/validate.php:83
+#: check/validate.php:244
 #, php-format
 msgid "The installed version %s is not (yet) supported."
 msgstr "Die installierte Version %s wird (noch) nicht unterstützt."
 
-#: check/validate.php:84
+#: check/validate.php:245
 msgid ""
 "There is no version file for your Contao installation. Are you using a "
 "stable Contao version and do you have the latest version of the Contao Check?"
@@ -477,18 +508,27 @@ msgstr ""
 "Es gibt keine Versionsdatei für Ihre Contao-Installation. Verwenden Sie eine "
 "stabile Contao-Version und haben Sie die neueste Version des Contao-Check?"
 
-#: check/validate.php:89
+#: check/validate.php:250
 msgid "Missing files"
 msgstr "Fehlende Dateien"
 
-#: check/validate.php:99
+#: check/validate.php:260
 msgid "Corrupt files"
 msgstr "Beschädigte Dateien"
 
-#: check/validate.php:109
+#: check/validate.php:270
 msgid "Your installation is up to date."
 msgstr "Ihre Installation ist aktuell."
 
-#: check/validate.php:111
+#: check/validate.php:272
 msgid "Your installation is not up to date."
 msgstr "Ihre Installation ist nicht aktuell."
+
+#~ msgid "Will be using %s(), wget and unzip for the installation."
+#~ msgstr "Die Installation erfolgt mittels %s(), wget und unzip."
+
+#~ msgid "Will be using cURL and Zip for the installation."
+#~ msgstr "Die Installation erfolgt mittels cURL und Zip."
+
+#~ msgid "The ionCube Loader is enabled."
+#~ msgstr "Der ionCube-Loader ist aktiv."
