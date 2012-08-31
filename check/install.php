@@ -75,7 +75,7 @@ class Installer
 			$this->available = false;
 		} else {
 			$this->install();
-		}	
+		}
 	}
 
 
