@@ -282,7 +282,6 @@ class Installer
 $installer = new Installer;
 $installer->run();
 
-
 ?>
 <!DOCTYPE html>
 <html>
