@@ -36,7 +36,7 @@ either using the command line or the built-in PHP functions.
 ### Command line requirements
 
  * `shell_exec()` or `exec()`
- * `wget`
+ * `wget` or `curl`
  * `unzip`
 
 ### PHP built-in requirements
