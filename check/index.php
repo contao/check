@@ -17,7 +17,7 @@ require 'bootstrap.php';
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Contao Check</title>
+  <title>Contao Check <?php echo CONTAO_CHECK_VERSION ?></title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -44,7 +44,7 @@ require 'bootstrap.php';
         <li><a href="install.php"><?php echo _('Install the latest Contao version') ?></a></li>
         <li><a href="validate.php"><?php echo _('Validate an existing Contao installation') ?></a></li>
       </ul>
-      <p class="explain mt"><?php echo _('If the automatic installation fails, the installer will give you an overview of the necessary steps to install Contao manually. If you have installed Contao already, you can validate your installation and have the script check for missing or corrupt files.') ?></p>
+      <p class="explain mt"><?php printf(_('Contao Check %s | Contao Open Source CMS system requirements | More information at %s'), CONTAO_CHECK_VERSION, '<a href="http://contao.org">contao.org</a>') ?></p>
     </div>
   <?php endif; ?>
 </div>
