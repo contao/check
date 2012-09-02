@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 3.0 (2012-XX-XX)
+------------------------
+
+### Changed
+Changed the appearance to match the Contao back end (see #10).
+
+
 Version 2.0 (2012-09-02)
 ------------------------
 

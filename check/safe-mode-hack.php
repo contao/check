@@ -259,11 +259,12 @@ $smh = new SafeModeHack;
 </head>
 <body>
 <div id="wrapper">
+  <h1>Contao Check</h1>
   <div class="row">
-    <h1>Contao Check <small><?php echo _('Safe Mode Hack') ?></small></h1>
+    <h2><?php echo _('Safe Mode Hack') ?></2>
   </div>
   <div class="row">
-    <h2><?php echo _('php.ini settings') ?></h2>
+    <h3><?php echo _('php.ini settings') ?></h3>
     <?php if (!$smh->isEnabled()): ?>
       <p class="confirm"><?php echo _('The PHP safe_mode is not enabled.') ?></p>
     <?php else: ?>
@@ -272,7 +273,7 @@ $smh = new SafeModeHack;
     <?php endif; ?>
   </div>
   <div class="row">
-    <h2><?php echo _('Creating a test folder') ?></h2>
+    <h3><?php echo _('Creating a test folder') ?></h3>
     <?php if ($smh->canCreateFolder()): ?>
       <p class="confirm"><?php printf(_('The test folder could be created (owner: %s, chmod: %s).'), $smh->getFolderOwner(), $smh->getTestFolderChmod()) ?></p>
     <?php elseif ($smh->getTestFolderChmod() === null): ?>
@@ -284,7 +285,7 @@ $smh = new SafeModeHack;
     <?php endif; ?>
   </div>
   <div class="row">
-    <h2><?php echo _('Creating a test file') ?></h2>
+    <h3><?php echo _('Creating a test file') ?></h3>
     <?php if ($smh->canCreateFile()): ?>
       <p class="confirm"><?php printf(_('The test file could be created (owner: %s, chmod: %s).'), $smh->getFileOwner(), $smh->getTestFileChmod()) ?></p>
     <?php elseif ($smh->getTestFileChmod() === null): ?>
