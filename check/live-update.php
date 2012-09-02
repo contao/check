@@ -156,7 +156,7 @@ $update = new LiveUpdate();
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Contao Check</title>
+  <title>Contao Check <?php echo CONTAO_CHECK_VERSION ?></title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
