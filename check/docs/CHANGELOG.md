@@ -1,7 +1,7 @@
 Contao Check Changelog
 ======================
 
-Version 3.0 (2012-XX-XX)
+Version 2.1 (2012-XX-XX)
 ------------------------
 
 ### Changed
