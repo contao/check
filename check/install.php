@@ -292,11 +292,12 @@ $installer->run();
 </head>
 <body>
 <div id="wrapper">
+  <h1>Contao Check</h1>
   <div class="row">
-    <h1>Contao Check <small><?php echo _('Installation') ?></small></h1>
+    <h2><?php echo _('Installation') ?></h2>
   </div>
   <div class="row">
-    <h2><?php echo _('Web installer') ?></h2>
+    <h3><?php echo _('Web installer') ?></h3>
     <?php if ($installer->available()): ?>
       <p class="confirm"><?php echo _('The automatic installation is possible on your server.') ?></p>
     <?php else: ?>
@@ -306,16 +307,16 @@ $installer->run();
   </div>
   <div class="row">
     <?php if (!$installer->available()): ?>
-      <h2><?php echo _('Manual installation') ?></h2>
+      <h3><?php echo _('Manual installation') ?></h3>
       <ul>
         <li><?php printf(_('Go to %s and download the latest Contao version.'), '<a href="http://sourceforge.net/projects/contao/files/">sourceforge.net</a>') ?></li>
         <li><?php echo _('Extract the download archive and upload the files to your server using an (S)FTP client.') ?></li>
         <li><?php echo _('Open the Contao install tool by adding "/contao" to the URL of your installation.') ?></li>
       </ul>
     <?php elseif (!isset($_POST['version'])): ?>
-      <h2><?php echo _('Target version') ?></h2>
+      <h3><?php echo _('Target version') ?></h3>
       <form method="post">
-        <p class="versions">
+        <div class="versions">
           <select name="version">
           <?php
             foreach ($installer->versions() as $group=>$versions) {
@@ -327,7 +328,7 @@ $installer->run();
             }
           ?>
           </select>
-        </p>
+        </div>
         <p class="explain"><?php echo _('Attention: Deprecated versions might contain security issues! Please install the latest stable version or the latest long term support version.') ?></p>
         <p class="mt"><input class="btn" type="submit" value="<?php echo _('Start the installation') ?>"></p>
       </form>

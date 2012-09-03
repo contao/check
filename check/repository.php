@@ -88,11 +88,12 @@ $repository = new Repository();
 </head>
 <body>
 <div id="wrapper">
+  <h1>Contao Check</h1>
   <div class="row">
-    <h1>Contao Check <small><?php echo _('Extension Repository') ?></small></h1>
+    <h2><?php echo _('Extension Repository') ?></h2>
   </div>
   <div class="row">
-    <h2><?php echo _('PHP SOAP extension') ?></h2>
+    <h3><?php echo _('PHP SOAP extension') ?></h3>
     <?php if ($repository->hasSoap()): ?>
       <p class="confirm"><?php echo _('The PHP SOAP extension is available.') ?></p>
     <?php else: ?>
@@ -101,7 +102,7 @@ $repository = new Repository();
     <?php endif; ?>
   </div>
   <div class="row">
-    <h2><?php echo _('Connection test') ?></h2>
+    <h3><?php echo _('Connection test') ?></h3>
     <?php if ($repository->canConnect()): ?>
       <p class="confirm"><?php echo _('A connection to contao.org could be established.') ?></p>
     <?php else: ?>
