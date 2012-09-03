@@ -229,25 +229,26 @@ $validator->run();
 </head>
 <body>
 <div id="wrapper">
+  <h1>Contao Check</h1>
   <div class="row">
-    <h1>Contao Check  <small><?php echo _('Validate an installation') ?></small></h1>
+    <h2><?php echo _('Validate an installation') ?></h2>
   </div>
   <?php if (!$validator->hasConstants()): ?>
     <div class="row">
-      <h2><?php echo _('Installation') ?></h2>
+      <h3><?php echo _('Installation') ?></h3>
       <p class="error"><?php echo _('Could not find a Contao installation.') ?></p>
       <p class="explain"><?php echo _('To validate an existing installation, please upload the "check" folder to your installation directory.') ?></p>
     </div>
   <?php elseif (!$validator->isSupportedVersion()): ?>
     <div class="row">
-      <h2><?php echo _('Unknown version') ?></h2>
+      <h3><?php echo _('Unknown version') ?></h3>
       <p class="error"><?php printf(_('The installed version %s is not (yet) supported.'), VERSION . '.' . BUILD) ?></p>
       <p class="explain"><?php echo _('There is no version file for your Contao installation. Are you using a stable Contao version and do you have the latest version of the Contao Check?') ?></p>
     </div>
   <?php else: ?>
   <?php if ($validator->hasMissing()): ?>
     <div class="row">
-      <h2><?php echo _('Missing files') ?></h2>
+      <h3><?php echo _('Missing files') ?></h3>
       <ul class="validate">
         <?php foreach ($validator->getMissing() as $file): ?>
           <li><?php echo $file ?></li>
@@ -257,7 +258,7 @@ $validator->run();
   <?php endif; ?>
   <?php if ($validator->hasCorrupt()): ?>
     <div class="row">
-      <h2><?php echo _('Corrupt files') ?></h2>
+      <h3><?php echo _('Corrupt files') ?></h3>
       <ul class="validate">
         <?php foreach ($validator->getCorrupt() as $file): ?>
           <li><?php echo $file ?></li>

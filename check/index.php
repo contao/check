@@ -22,8 +22,9 @@ require 'bootstrap.php';
 </head>
 <body>
 <div id="wrapper">
+  <h1>Contao Check</h1>
   <div class="row">
-    <h1>Contao Check <small><?php echo _('Overview') ?></small></h1>
+	<h2><?php echo _('Overview') ?></h2>
   </div>
   <?php if (version_compare(phpversion(), '5.3.2', '<')): ?>
     <div class="row">
@@ -31,7 +32,7 @@ require 'bootstrap.php';
     </div>
   <?php else: ?>
     <div class="row">
-      <h2><?php echo _('Requirements') ?></h2>
+      <h3><?php echo _('Requirements') ?></h3>
       <ul>
         <li><a href="repository.php"><?php echo _('Can I use the Extension Repository?') ?></a></li>
         <li><a href="live-update.php"><?php echo _('Can I use the Live Update Service?') ?></a></li>
@@ -39,7 +40,7 @@ require 'bootstrap.php';
       </ul>
     </div>
     <div class="row">
-      <h2><?php echo _('Installation') ?></h2>
+      <h3><?php echo _('Installation') ?></h3>
       <ul>
         <li><a href="install.php"><?php echo _('Install the latest Contao version') ?></a></li>
         <li><a href="validate.php"><?php echo _('Validate an existing Contao installation') ?></a></li>

@@ -161,11 +161,12 @@ $update = new LiveUpdate();
 </head>
 <body>
 <div id="wrapper">
+  <h1>Contao Check</h1>
   <div class="row">
-    <h1>Contao Check <small><?php echo _('Live Update') ?></small></h1>
+    <h2><?php echo _('Live Update') ?></h2>
   </div>
   <div class="row">
-    <h2><?php echo _('PHP 5.3.2 or greater') ?></h2>
+    <h3><?php echo _('PHP 5.3.2 or greater') ?></h3>
     <?php if ($update->hasPhp532()): ?>
       <p class="confirm"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
     <?php else: ?>
@@ -174,7 +175,7 @@ $update = new LiveUpdate();
     <?php endif; ?>
   </div>
   <div class="row">
-    <h2><?php echo _('PHP Phar extension') ?></h2>
+    <h3><?php echo _('PHP Phar extension') ?></h3>
     <?php if ($update->hasPhar()): ?>
       <p class="confirm"><?php echo _('The PHP Phar extension is enabled.') ?></p>
     <?php else: ?>
@@ -183,7 +184,7 @@ $update = new LiveUpdate();
     <?php endif; ?>
   </div>
   <div class="row">
-    <h2>ionCube Loader</h2>
+    <h3>ionCube Loader</h3>
     <?php if (!$update->hasIonCube()): ?>
       <p class="confirm"><?php echo _('The ionCube Loader is not enabled or at least at version 4.0.9.') ?></p>
     <?php else: ?>
@@ -192,7 +193,7 @@ $update = new LiveUpdate();
     <?php endif; ?>
   </div>
   <div class="row">
-    <h2><?php echo _('Suhosin extension') ?></h2>
+    <h3><?php echo _('Suhosin extension') ?></h3>
     <?php if (!$update->hasSuhosin()): ?>
       <p class="confirm"><?php echo _('The Suhosin extension is not installed or correctly configured for .phar files.') ?></p>
     <?php else: ?>
@@ -201,7 +202,7 @@ $update = new LiveUpdate();
     <?php endif; ?>
   </div>
   <div class="row">
-    <h2><?php echo _('Detect Unicode') ?></h2>
+    <h3><?php echo _('Detect Unicode') ?></h3>
     <?php if (!$update->hasDetectUnicode()): ?>
       <p class="confirm"><?php echo _('The --enable-zend-multibyte flag is not set or detect_unicode is disabled.') ?></p>
     <?php else: ?>
@@ -210,7 +211,7 @@ $update = new LiveUpdate();
     <?php endif; ?>
   </div>
   <div class="row">
-    <h2>FastCGI+eAccelerator</h2>
+    <h3>FastCGI+eAccelerator</h3>
     <?php if (!$update->isFastCgiEaccelerator()): ?>
       <p class="confirm"><?php echo _('You are not using FastCGI and eAccelerator.') ?></p>
     <?php else: ?>
