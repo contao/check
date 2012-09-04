@@ -1,7 +1,7 @@
 Contao Check Changelog
 ======================
 
-Version 2.2 (2012-XX-XX)
+Version 2.2 (2012-09-04)
 ------------------------
 
 ### Fixed
