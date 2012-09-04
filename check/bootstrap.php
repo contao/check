@@ -150,12 +150,21 @@ class Bootstrap
 			throw new Exception("Unknown locale $locale");
 		}
 
+		if (!extension_loaded('gettext')) {
+			return;
+		}
+
 		putenv("LC_ALL=$locale");
 		setlocale(LC_ALL, $locale);
 		bindtextdomain('messages', __DIR__ . '/locale');
 		textdomain('messages');
 		bind_textdomain_codeset('messages', 'UTF-8');
 	}
+}
+
+// Add the gettext function
+if (!extension_loaded('gettext')) {
+	function _($str) { return $str; }
 }
 
 $bootstrap = new Bootstrap;

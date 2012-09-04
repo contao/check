@@ -5,6 +5,9 @@ Version 2.2 (2012-XX-XX)
 ------------------------
 
 ### Fixed
+Make the script work even if the PHP gettext extension is missing (see #13).
+
+### Fixed
 Only FastCGI AND eAccelerator is a problem (see #14).
 
 
