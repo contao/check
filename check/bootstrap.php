@@ -30,7 +30,7 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '2.1');
+		define('CONTAO_CHECK_VERSION', '2.2');
 		define('IS_WINDOWS', (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'));
 
 		$this->setLocale($this->getLanguage());
@@ -150,12 +150,21 @@ class Bootstrap
 			throw new Exception("Unknown locale $locale");
 		}
 
+		if (!extension_loaded('gettext')) {
+			return;
+		}
+
 		putenv("LC_ALL=$locale");
 		setlocale(LC_ALL, $locale);
 		bindtextdomain('messages', __DIR__ . '/locale');
 		textdomain('messages');
 		bind_textdomain_codeset('messages', 'UTF-8');
 	}
+}
+
+// Add the gettext function
+if (!extension_loaded('gettext')) {
+	function _($str) { return $str; }
 }
 
 $bootstrap = new Bootstrap;

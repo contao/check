@@ -329,12 +329,12 @@ $installer->run();
           ?>
           </select>
         </div>
-        <p class="explain"><?php echo _('Attention: Deprecated versions might contain security issues! Please install the latest stable version or the latest long term support version.') ?></p>
+        <p class="explain"><?php echo _('Attention: Deprecated versions might contain security vulnerabilities! Please install the latest stable version or the latest LTS version (long term support version).') ?></p>
         <p class="mt"><input class="btn" type="submit" value="<?php echo _('Start the installation') ?>"></p>
       </form>
     <?php else: ?>
       <h2><?php echo _('Installation complete') ?></h2>
-      <p class="confirm"><?php printf(_('Contao has been installed in %s.'), dirname(__DIR__)) ?></p>
+      <p class="confirm"><?php printf(_('Contao %s has been installed in %s.'), filter_var($_POST['version'], FILTER_SANITIZE_STRING), dirname(__DIR__)) ?></p>
       <p class="mt"><a href="../contao/install.php" class="btn"><?php echo _('Open the Contao install tool') ?></a></p>
     <?php endif; ?>
   </div>

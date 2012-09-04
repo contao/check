@@ -1,7 +1,17 @@
 Contao Check Changelog
 ======================
 
-Version 2.1 (2012-XX-XX)
+Version 2.2 (2012-09-04)
+------------------------
+
+### Fixed
+Make the script work even if the PHP gettext extension is missing (see #13).
+
+### Fixed
+Only FastCGI AND eAccelerator is a problem (see #14).
+
+
+Version 2.1 (2012-09-03)
 ------------------------
 
 ### Changed
