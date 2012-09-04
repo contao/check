@@ -140,7 +140,7 @@ class LiveUpdate
 		$fast_cgi = (php_sapi_name() == 'cgi-fcgi');
 		$eaccelerator = extension_loaded('eaccelerator') && ini_get('eaccelerator.enable');
 
-		if (!$fast_cgi && !$eaccelerator) {
+		if (!$fast_cgi || !$eaccelerator) {
 			return false;
 		}
 
