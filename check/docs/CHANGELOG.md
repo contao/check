@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 2.3 (2012-XX-XX)
+------------------------
+
+### Fixed
+Correctly determin the ionCube Loader version (see #17).
+
+
 Version 2.2 (2012-09-04)
 ------------------------
 
