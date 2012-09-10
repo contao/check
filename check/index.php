@@ -87,12 +87,12 @@ $version = new PhpVersion();
     <h3>PHP <?php echo phpversion() ?></h3>
     <ul>
       <?php if ($version->supportsContao2()): ?>
-        <li class="confirm"><?php printf(_('You can install Contao 2.x (requires PHP %s+)'), $version->getContao2Version()) ?></li>
+        <li class="confirm"><?php echo _('You can install Contao 2.x') ?></li>
       <?php else: ?>
         <li class="error"><?php printf(_('You cannot install Contao 2.x (requires PHP %s+)'), $version->getContao2Version()) ?></li>
       <?php endif; ?>
       <?php if ($version->supportsContao3()): ?>
-        <li class="confirm"><?php printf(_('You can install Contao 3.x (requires PHP %s+)'), $version->getContao3Version()) ?></li>
+        <li class="confirm"><?php echo _('You can install Contao 3.x') ?></li>
       <?php else: ?>
         <li class="error"><?php printf(_('You cannot install Contao 3.x (requires PHP %s+)'), $version->getContao3Version()) ?></li>
       <?php endif; ?>

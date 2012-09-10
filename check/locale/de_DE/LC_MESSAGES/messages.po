@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-10 17:18+0200\n"
-"PO-Revision-Date: 2012-09-10 17:20+0100\n"
+"POT-Creation-Date: 2012-09-10 17:22+0200\n"
+"PO-Revision-Date: 2012-09-10 17:23+0100\n"
 "Last-Translator: Leo Feyer <http://contao.org>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,9 +25,8 @@ msgid "Overview"
 msgstr "Übersicht"
 
 #: check/index.php:90
-#, php-format
-msgid "You can install Contao 2.x (requires PHP %s+)"
-msgstr "Sie können Contao 2.x installieren (benötigt PHP %s+)"
+msgid "You can install Contao 2.x"
+msgstr "Sie können Contao 2.x installieren"
 
 #: check/index.php:92
 #, php-format
@@ -35,9 +34,8 @@ msgid "You cannot install Contao 2.x (requires PHP %s+)"
 msgstr "Sie können Contao 2.x nicht installieren (benötigt PHP %s+)"
 
 #: check/index.php:95
-#, php-format
-msgid "You can install Contao 3.x (requires PHP %s+)"
-msgstr "Sie können Contao 3.x installieren (benötigt PHP %s+)"
+msgid "You can install Contao 3.x"
+msgstr "Sie können Contao 3.x installieren"
 
 #: check/index.php:97
 #, php-format
