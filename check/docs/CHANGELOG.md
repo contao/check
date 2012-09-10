@@ -5,6 +5,9 @@ Version 2.3 (2012-XX-XX)
 ------------------------
 
 ### Fixed
+Better web installer requirements check (see #15 and #18).
+
+### Fixed
 Check the Contao 2 and 3 PHP requirements separately (see #16).
 
 ### Fixed
