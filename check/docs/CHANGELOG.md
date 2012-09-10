@@ -5,6 +5,9 @@ Version 2.3 (2012-XX-XX)
 ------------------------
 
 ### Fixed
+Check the Contao 2 and 3 PHP requirements separately (see #16).
+
+### Fixed
 Correctly determin the ionCube Loader version (see #17).
 
 
