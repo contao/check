@@ -5,6 +5,9 @@ Version 2.3 (2012-XX-XX)
 ------------------------
 
 ### Fixed
+Also move hidden files when installing Contao (see #22).
+
+### Fixed
 Better web installer requirements check (see #15 and #18).
 
 ### Fixed

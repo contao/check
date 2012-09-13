@@ -344,6 +344,7 @@ class Installer
 				$this->exec('rm download');
 				$folder = $this->exec('ls -d contao-*');
 				$this->exec("mv $folder/* ../");
+				$this->exec("mv $folder/.[a-z]* ../"); // see #22
 				$this->exec("rm -rf $folder");
 			}
 		} else {
