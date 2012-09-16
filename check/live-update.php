@@ -85,7 +85,7 @@ class LiveUpdate
 		}
 
 		// The issues have been fixed in version 4.0.9
-		if (version_compare(ioncube_loader_version(), '4.0.9', '>=')) {
+		if (ioncube_loader_iversion() >= 40009) {
 			return false;
 		}
 

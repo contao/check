@@ -42,12 +42,6 @@ class Installer
 	protected $unzip;
 
 	/**
-	 * Target directory
-	 * @var string
-	 */
-	protected $target;
-
-	/**
 	 * Target version
 	 * @var string
 	 */
@@ -65,17 +59,81 @@ class Installer
 	 */
 	protected $available = true;
 
+	/**
+	 * FTP required
+	 * @var boolean
+	 */
+	protected $ftp = false;
+
+	/**
+	 * Existing installation
+	 * @var boolean
+	 */
+	protected $existing = null;
+
 
 	/**
 	 * Check the requirements and start the installation
 	 */
 	public function run()
 	{
-		if (!$this->canUseShell() && !$this->canUsePhp()) {
+		if ($this->hasInstallation()) {
+			return;
+		}	
+
+		if (!$this->canInstall()) {
+			$this->ftp = true;
+		} elseif (!$this->canUseShell() && !$this->canUsePhp()) {
 			$this->available = false;
 		} else {
 			$this->install();
 		}
+	}
+
+
+	/**
+	 * Make sure there is no existing installation
+	 * 
+	 * @return boolean True if there is no existing installation
+	 */
+	protected function canInstall()
+	{
+		$safe_mode = ini_get('safe_mode');
+
+		// Safe mode enabled
+		if ($safe_mode != '' && $safe_mode != 0 && $safe_mode != 'Off') {
+			return false;
+		}
+
+		// Try to create a folder
+		if (@mkdir('test') === false) {
+			return false;
+		} else {
+			clearstatcache();
+			$self = posix_getpwuid(@fileowner(__DIR__));
+			$test = posix_getpwuid(@fileowner('test'));
+			@rmdir('test');
+
+			if ($self != $test) {
+				return false;
+			}
+		}
+
+		// Try to create a file
+		if (@file_put_contents('test.txt', '') === false) {
+			return false;
+		} else {
+			clearstatcache();
+			$self = posix_getpwuid(@fileowner(__FILE__));
+			$test = posix_getpwuid(@fileowner('test.txt'));
+			@unlink('test.txt');
+
+			if ($self != $test) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 
@@ -188,9 +246,41 @@ class Installer
 	 * 
 	 * @return boolean True if the automatic installation is possible
 	 */
-	public function available()
+	public function isAvailable()
 	{
 		return $this->available;
+	}
+
+
+	/**
+	 * Check whether FTP is required to install Contao
+	 * 
+	 * @return boolean True if FTP is required to install Contao
+	 */
+	public function requiresFtp()
+	{
+		return $this->ftp;
+	}
+
+
+	/**
+	 * Check whether there is an existing installation already
+	 * 
+	 * @return boolean True if there is an existing installation
+	 */
+	public function hasInstallation()
+	{
+		if ($this->existing === null) {
+			if (file_exists("../system/constants.php")) {
+				$this->existing = true;
+			} elseif (file_exists("../system/config/constants.php")) {
+				$this->existing = true;
+			} else {
+				$this->existing = false;
+			}
+		}
+
+		return $this->existing;
 	}
 
 
@@ -199,7 +289,7 @@ class Installer
 	 * 
 	 * @return array The versions array
 	 */
-	public function versions()
+	public function getVersions()
 	{
 		$versions = array();
 
@@ -227,14 +317,7 @@ class Installer
 	 */
 	protected function install()
 	{
-		if (!isset($_POST['version'])) {
-			return;
-		}
-
-		$target = dirname(__DIR__);
-
-		// Check whether the target path is writable
-		if (!is_writable($target)) {
+		if (!isset($_POST['version']) || $this->ftp) {
 			return;
 		}
 
@@ -250,7 +333,7 @@ class Installer
 
 		if ($this->php === false) {
 			if ($this->download == 'wget') {
-				$this->exec("wget $url");
+				$this->exec("wget -O download $url");
 			} elseif ($this->download == 'curl') {
 				$this->exec("curl -s -L $url > download");
 			}
@@ -261,6 +344,7 @@ class Installer
 				$this->exec('rm download');
 				$folder = $this->exec('ls -d contao-*');
 				$this->exec("mv $folder/* ../");
+				$this->exec("mv $folder/.[a-z]* ../"); // see #22
 				$this->exec("rm -rf $folder");
 			}
 		} else {
@@ -270,7 +354,7 @@ class Installer
 			if (file_exists('download')) {
 				$zip = new ZipArchive;
 				$zip->open('download');
-				$zip->extractTo($target);
+				$zip->extractTo(dirname(__DIR__));
 				$zip->close();
 				unlink('download');
 			}
@@ -298,46 +382,52 @@ $installer->run();
   </div>
   <div class="row">
     <h3><?php echo _('Web installer') ?></h3>
-    <?php if ($installer->available()): ?>
+    <?php if ($installer->hasInstallation()): ?>
+      <p class="error"><?php printf(_('There is a Contao installation already. Are you looking for the %s?'), '<a href="http://luid.inetrobots.com" target="_blank">Live Update</a>') ?></p>
+    <?php elseif ($installer->requiresFtp()): ?>
+      <p class="error"><?php echo _('The automatic installation is not possible on your server due to safe_mode or file permission restrictions.') ?></p>
+    <?php elseif ($installer->isAvailable()): ?>
       <p class="confirm"><?php echo _('The automatic installation is possible on your server.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('The automatic installation is not possible on your server.') ?></p>
       <p class="explain"><?php echo _('Your PHP installation does not meet the requirements to use the command line, does not have enough permissions to create files and folders or does not have the required PHP extensions "cURL" and "Zip".') ?></p>
     <?php endif; ?>
   </div>
-  <div class="row">
-    <?php if (!$installer->available()): ?>
-      <h3><?php echo _('Manual installation') ?></h3>
-      <ul>
-        <li><?php printf(_('Go to %s and download the latest Contao version.'), '<a href="http://sourceforge.net/projects/contao/files/">sourceforge.net</a>') ?></li>
-        <li><?php echo _('Extract the download archive and upload the files to your server using an (S)FTP client.') ?></li>
-        <li><?php echo _('Open the Contao install tool by adding "/contao" to the URL of your installation.') ?></li>
-      </ul>
-    <?php elseif (!isset($_POST['version'])): ?>
-      <h3><?php echo _('Target version') ?></h3>
-      <form method="post">
-        <div class="versions">
-          <select name="version">
-          <?php
-            foreach ($installer->versions() as $group=>$versions) {
-              echo '<optgroup label="' . $group . '">';
-              foreach ($versions as $version) {
-                echo '<option value="' . $version . '">Contao ' . $version . '</option>';
-			  }
-              echo '</optgroup>';
-            }
-          ?>
-          </select>
-        </div>
-        <p class="explain"><?php echo _('Attention: Deprecated versions might contain security vulnerabilities! Please install the latest stable version or the latest LTS version (long term support version).') ?></p>
-        <p class="mt"><input class="btn" type="submit" value="<?php echo _('Start the installation') ?>"></p>
-      </form>
-    <?php else: ?>
-      <h2><?php echo _('Installation complete') ?></h2>
-      <p class="confirm"><?php printf(_('Contao %s has been installed in %s.'), filter_var($_POST['version'], FILTER_SANITIZE_STRING), dirname(__DIR__)) ?></p>
-      <p class="mt"><a href="../contao/install.php" class="btn"><?php echo _('Open the Contao install tool') ?></a></p>
-    <?php endif; ?>
-  </div>
+  <?php if (!$installer->hasInstallation() && !$installer->requiresFtp()): ?>
+    <div class="row">
+      <?php if (!$installer->isAvailable()): ?>
+        <h3><?php echo _('Manual installation') ?></h3>
+        <ul>
+          <li><?php printf(_('Go to %s and download the latest Contao version.'), '<a href="http://sourceforge.net/projects/contao/files/">sourceforge.net</a>') ?></li>
+          <li><?php echo _('Extract the download archive and upload the files to your server using an (S)FTP client.') ?></li>
+          <li><?php echo _('Open the Contao install tool by adding "/contao" to the URL of your installation.') ?></li>
+        </ul>
+      <?php elseif (!isset($_POST['version'])): ?>
+        <h3><?php echo _('Target version') ?></h3>
+        <form method="post">
+          <div class="versions">
+            <select name="version">
+            <?php
+              foreach ($installer->getVersions() as $group=>$versions) {
+                echo '<optgroup label="' . $group . '">';
+                foreach ($versions as $version) {
+                  echo '<option value="' . $version . '">Contao ' . $version . '</option>';
+		  	    }
+                echo '</optgroup>';
+              }
+            ?>
+            </select>
+          </div>
+          <p class="explain"><?php echo _('Attention: Deprecated versions might contain security vulnerabilities! Please install the latest stable version or the latest LTS version (long term support version).') ?></p>
+          <p class="mt"><input class="btn" type="submit" value="<?php echo _('Start the installation') ?>"></p>
+        </form>
+      <?php else: ?>
+        <h2><?php echo _('Installation complete') ?></h2>
+        <p class="confirm"><?php printf(_('Contao %s has been installed in %s.'), filter_var($_POST['version'], FILTER_SANITIZE_STRING), dirname(__DIR__)) ?></p>
+        <p class="mt"><a href="../contao/install.php" class="btn"><?php echo _('Open the Contao install tool') ?></a></p>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
   <p class="back"><a href="."><?php echo _('Go back') ?></a></p>
 </div>
 <script src="assets/script.js"></script>
