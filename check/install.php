@@ -333,7 +333,7 @@ class Installer
 
 		if ($this->php === false) {
 			if ($this->download == 'wget') {
-				$this->exec("wget $url");
+				$this->exec("wget -O download $url");
 			} elseif ($this->download == 'curl') {
 				$this->exec("curl -s -L $url > download");
 			}

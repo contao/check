@@ -1,8 +1,11 @@
 Contao Check Changelog
 ======================
 
-Version 2.3 (2012-XX-XX)
+Version 2.3 (2012-09-16)
 ------------------------
+
+### Fixed
+Fixed the `wget` file download (see #21).
 
 ### Fixed
 Also move hidden files when installing Contao (see #22).
