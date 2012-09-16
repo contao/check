@@ -102,7 +102,7 @@ class SafeModeHack
 	 */
 	public function getFolderOwner()
 	{
-		return $this->folderOwner;
+		return $this->folderOwner['name'];
 	}
 
 
@@ -113,7 +113,7 @@ class SafeModeHack
 	 */
 	public function getTestFolderOwner()
 	{
-		return $this->testFolderOwner;
+		return $this->testFolderOwner['name'];
 	}
 
 
@@ -135,7 +135,7 @@ class SafeModeHack
 	 */
 	public function canCreateFolder()
 	{
-		$this->folderOwner = $this->getpwuid(@fileowner(__DIR__));
+		$this->folderOwner = posix_getpwuid(@fileowner(__DIR__));
 
 		// Try to create a folder
 		if (@mkdir('test') !== false) {
@@ -144,11 +144,11 @@ class SafeModeHack
 			// Check the folder permissions
 			clearstatcache();
 			$this->testFolderChmod = decoct(@fileperms('test') & 511);
-			$this->testFolderOwner = $this->getpwuid(@fileowner('test'));
+			$this->testFolderOwner = posix_getpwuid(@fileowner('test'));
 
 			// Check the folder owner
 			if (in_array($this->testFolderChmod, $options)) {
-				if ($this->folderOwner == $this->testFolderOwner) {
+				if ($this->folderOwner['name'] == $this->testFolderOwner['name']) {
 					@rmdir('test');
 					return true;
 				}
@@ -169,7 +169,7 @@ class SafeModeHack
 	 */
 	public function getFileOwner()
 	{
-		return $this->fileOwner;
+		return $this->fileOwner['name'];
 	}
 
 
@@ -180,7 +180,7 @@ class SafeModeHack
 	 */
 	public function getTestFileOwner()
 	{
-		return $this->testFileOwner;
+		return $this->testFileOwner['name'];
 	}
 
 
@@ -202,7 +202,7 @@ class SafeModeHack
 	 */
 	public function canCreateFile()
 	{
-		$this->fileOwner = $this->getpwuid(@fileowner(__FILE__));
+		$this->fileOwner = posix_getpwuid(@fileowner(__FILE__));
 
 		// Try to create a file
 		if (@file_put_contents('test.txt', '') !== false) {
@@ -211,11 +211,11 @@ class SafeModeHack
 			// Check the file permissions
 			clearstatcache();
 			$this->testFileChmod = decoct(@fileperms('test.txt') & 511);
-			$this->testFileOwner = $this->getpwuid(@fileowner('test.txt'));
+			$this->testFileOwner = posix_getpwuid(@fileowner('test.txt'));
 
 			// Check the file owner
 			if (in_array($this->testFileChmod, $options)) {
-				if ($this->fileOwner == $this->testFileOwner) {
+				if ($this->fileOwner['name'] == $this->testFileOwner['name']) {
 					@unlink('test.txt');
 					return true;
 				}
@@ -226,24 +226,6 @@ class SafeModeHack
 		$this->required = true;
 
 		return false;
-	}
-
-
-	/**
-	 * Return the user name
-	 * 
-	 * @param integer $int The user ID
-	 * 
-	 * @return string The user name
-	 */
-	protected function getpwuid($int)
-	{
-		if (!function_exists('posix_getpwuid')) {
-			return $int;
-		} else {
-			$array = posix_getpwuid($int);
-			return $array['name'];
-		}
 	}
 }
 

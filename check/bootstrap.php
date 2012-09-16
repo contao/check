@@ -30,7 +30,7 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '2.2');
+		define('CONTAO_CHECK_VERSION', '2.3');
 		define('IS_WINDOWS', (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'));
 
 		$this->setLocale($this->getLanguage());
@@ -164,8 +164,17 @@ class Bootstrap
 
 // Add the gettext function
 if (!extension_loaded('gettext')) {
-	function _($str) { return $str; }
+	function _($str) {
+		return $str;
+	}
 }
+
+// Add the posix_getpwuid function
+if (!function_exists('posix_getpwuid')) {
+	function posix_getpwuid($int) {
+		return array('name'=>$int);
+	}
+}	
 
 $bootstrap = new Bootstrap;
 $bootstrap->initialize();

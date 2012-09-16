@@ -1,6 +1,25 @@
 Contao Check Changelog
 ======================
 
+Version 2.3 (2012-09-16)
+------------------------
+
+### Fixed
+Fixed the `wget` file download (see #21).
+
+### Fixed
+Also move hidden files when installing Contao (see #22).
+
+### Fixed
+Better web installer requirements check (see #15 and #18).
+
+### Fixed
+Check the Contao 2 and 3 PHP requirements separately (see #16).
+
+### Fixed
+Correctly determin the ionCube Loader version (see #17).
+
+
 Version 2.2 (2012-09-04)
 ------------------------
 

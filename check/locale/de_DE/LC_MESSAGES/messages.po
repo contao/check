@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-04 15:21+0200\n"
-"PO-Revision-Date: 2012-09-04 15:21+0100\n"
+"POT-Creation-Date: 2012-09-10 17:22+0200\n"
+"PO-Revision-Date: 2012-09-10 17:23+0100\n"
 "Last-Translator: Leo Feyer <http://contao.org>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,44 +20,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: check/index.php:27
+#: check/index.php:84
 msgid "Overview"
 msgstr "Übersicht"
 
-#: check/index.php:31
-#, php-format
-msgid "You need at least PHP 5.3.2 to run Contao (you have version %s)."
-msgstr "Sie benötigen mindestens PHP 5.3.2 für Contao (Sie haben Version %s)."
+#: check/index.php:90
+msgid "You can install Contao 2.x"
+msgstr "Sie können Contao 2.x installieren"
 
-#: check/index.php:35
+#: check/index.php:92
+#, php-format
+msgid "You cannot install Contao 2.x (requires PHP %s+)"
+msgstr "Sie können Contao 2.x nicht installieren (benötigt PHP %s+)"
+
+#: check/index.php:95
+msgid "You can install Contao 3.x"
+msgstr "Sie können Contao 3.x installieren"
+
+#: check/index.php:97
+#, php-format
+msgid "You cannot install Contao 3.x (requires PHP %s+)"
+msgstr "Sie können Contao 3.x nicht installieren (benötigt PHP %s+)"
+
+#: check/index.php:102
 msgid "Requirements"
 msgstr "Voraussetzungen"
 
-#: check/index.php:37
+#: check/index.php:104
 msgid "Can I use the Extension Repository?"
 msgstr "Kann ich das Extension Repository nutzen?"
 
-#: check/index.php:38
+#: check/index.php:105
 msgid "Can I use the Live Update Service?"
 msgstr "Kann ich den Live Update-Service nutzen?"
 
-#: check/index.php:39
+#: check/index.php:106
 msgid "Do I need to use the Safe Mode Hack?"
 msgstr "Muss ich den Safe Mode Hack verwenden?"
 
-#: check/index.php:43 check/install.php:297 check/validate.php:238
+#: check/index.php:110 check/install.php:380 check/validate.php:238
 msgid "Installation"
 msgstr "Installation"
 
-#: check/index.php:45
+#: check/index.php:112
 msgid "Install the latest Contao version"
 msgstr "Die neueste Contao-Version installieren"
 
-#: check/index.php:46
+#: check/index.php:113
 msgid "Validate an existing Contao installation"
 msgstr "Eine bestehende Contao-Installation prüfen"
 
-#: check/index.php:48
+#: check/index.php:115
 #, php-format
 msgid ""
 "Contao Check %s | Contao Open Source CMS system requirements | More "
@@ -66,19 +79,32 @@ msgstr ""
 "Contao Check %s | Contao Open Source CMS Systemvoraussetzungen | Weitere "
 "Informationen unter %s"
 
-#: check/install.php:300
+#: check/install.php:383
 msgid "Web installer"
 msgstr "Web-Installer"
 
-#: check/install.php:302
+#: check/install.php:385
+#, php-format
+msgid "There is a Contao installation already. Are you looking for the %s?"
+msgstr "Contao ist bereits installiert. Suchen Sie das %s?"
+
+#: check/install.php:387
+msgid ""
+"The automatic installation is not possible on your server due to safe_mode "
+"or file permission restrictions."
+msgstr ""
+"Die automatische Installation ist auf Ihrem Server aufgrund fehlender "
+"Dateirechte oder des safe_mode nicht möglich."
+
+#: check/install.php:389
 msgid "The automatic installation is possible on your server."
 msgstr "Die automatische Installation ist auf Ihrem Server möglich."
 
-#: check/install.php:304
+#: check/install.php:391
 msgid "The automatic installation is not possible on your server."
 msgstr "Die automatische Installation ist auf Ihrem Server nicht möglich."
 
-#: check/install.php:305
+#: check/install.php:392
 msgid ""
 "Your PHP installation does not meet the requirements to use the command "
 "line, does not have enough permissions to create files and folders or does "
@@ -89,16 +115,16 @@ msgstr ""
 "Dateien und Ordner anzulegen, oder wurde ohne die benötigten PHP-"
 "Erweiterungen \"cURL\" und \"Zip\" kompiliert."
 
-#: check/install.php:310
+#: check/install.php:398
 msgid "Manual installation"
 msgstr "Manuelle Installation"
 
-#: check/install.php:312
+#: check/install.php:400
 #, php-format
 msgid "Go to %s and download the latest Contao version."
 msgstr "Gehen Sie zu %s und laden Sie die neueste Contao-Version herunter."
 
-#: check/install.php:313
+#: check/install.php:401
 msgid ""
 "Extract the download archive and upload the files to your server using an (S)"
 "FTP client."
@@ -106,7 +132,7 @@ msgstr ""
 "Entpacken Sie das Download-Archiv und übertragen Sie die Dateien mit einem "
 "(S)FTP-Programm auf Ihren Server."
 
-#: check/install.php:314
+#: check/install.php:402
 msgid ""
 "Open the Contao install tool by adding \"/contao\" to the URL of your "
 "installation."
@@ -114,11 +140,11 @@ msgstr ""
 "Öffnen Sie das Contao-Installtool, indem Sie \"/contao\" der URL Ihrer "
 "Installation anhängen."
 
-#: check/install.php:317
+#: check/install.php:405
 msgid "Target version"
 msgstr "Zielversion"
 
-#: check/install.php:332
+#: check/install.php:420
 msgid ""
 "Attention: Deprecated versions might contain security vulnerabilities! "
 "Please install the latest stable version or the latest LTS version (long "
@@ -128,25 +154,25 @@ msgstr ""
 "Installieren Sie daher die aktuelle Version oder die aktuelle LTS-Version "
 "(Long Term Support-Version)."
 
-#: check/install.php:333
+#: check/install.php:421
 msgid "Start the installation"
 msgstr "Installation starten"
 
-#: check/install.php:336
+#: check/install.php:424
 msgid "Installation complete"
 msgstr "Installation abgeschlossen"
 
-#: check/install.php:337
+#: check/install.php:425
 #, php-format
 msgid "Contao %s has been installed in %s."
 msgstr "Contao %s wurde im Ordner %s installiert."
 
-#: check/install.php:338
+#: check/install.php:426
 msgid "Open the Contao install tool"
 msgstr "Zum Contao-Installtool"
 
-#: check/install.php:341 check/live-update.php:229 check/repository.php:120
-#: check/safe-mode-hack.php:306 check/validate.php:277
+#: check/install.php:430 check/live-update.php:229 check/repository.php:120
+#: check/safe-mode-hack.php:288 check/validate.php:277
 msgid "Go back"
 msgstr "Zurück"
 
@@ -357,23 +383,23 @@ msgstr "Sie können das Extension Repository auf diesem Server verwenden."
 msgid "You cannot use the Extension Repository on this server."
 msgstr "Sie können das Extension Repository auf diesem Server nicht verwenden."
 
-#: check/safe-mode-hack.php:264
+#: check/safe-mode-hack.php:246
 msgid "Safe Mode Hack"
 msgstr "Safe Mode Hack"
 
-#: check/safe-mode-hack.php:267
+#: check/safe-mode-hack.php:249
 msgid "php.ini settings"
 msgstr "php.ini-Einstellungen"
 
-#: check/safe-mode-hack.php:269
+#: check/safe-mode-hack.php:251
 msgid "The PHP safe_mode is not enabled."
 msgstr "Der PHP safe_mode ist nicht aktiv."
 
-#: check/safe-mode-hack.php:271
+#: check/safe-mode-hack.php:253
 msgid "The PHP safe_mode is enabled."
 msgstr "Der PHP safe_mode ist aktiv."
 
-#: check/safe-mode-hack.php:272
+#: check/safe-mode-hack.php:254
 msgid ""
 "It is recommended to disable the safe_mode in your php.ini or server control "
 "panel, otherwise you will have to use the Contao Safe Mode Hack to create or "
@@ -385,20 +411,20 @@ msgstr ""
 "Dateioperationen verwenden müssen. Die Verwendung des Safe Mode Hack wirkt "
 "sich negativ auf die Performance Ihrer Webseite aus."
 
-#: check/safe-mode-hack.php:276
+#: check/safe-mode-hack.php:258
 msgid "Creating a test folder"
 msgstr "Erstelle einen Testordner"
 
-#: check/safe-mode-hack.php:278
+#: check/safe-mode-hack.php:260
 #, php-format
 msgid "The test folder could be created (owner: %s, chmod: %s)."
 msgstr "Der Testordner wurde erstellt (Besitzer: %s, Zugriffsrechte: %s)."
 
-#: check/safe-mode-hack.php:280
+#: check/safe-mode-hack.php:262
 msgid "The test folder could not be created."
 msgstr "Der Testordner konnte nicht erstellt werden."
 
-#: check/safe-mode-hack.php:281
+#: check/safe-mode-hack.php:263
 msgid ""
 "It seems that the PHP process does not have enough permissions to create "
 "folders on your server."
@@ -406,13 +432,13 @@ msgstr ""
 "Der PHP-Prozess hat scheinbar nicht genug Rechte, um Ordner auf Ihrem Server "
 "zu erstellen."
 
-#: check/safe-mode-hack.php:283
+#: check/safe-mode-hack.php:265
 msgid "The test folder does not have the correct owner or chmod settings."
 msgstr ""
 "Der Testordner hat nicht den richtigen Besitzer und die richtigen "
 "Zugriffsrechte."
 
-#: check/safe-mode-hack.php:284
+#: check/safe-mode-hack.php:266
 #, php-format
 msgid ""
 "The test folder is owned by %s (should be %s) and has the chmod settings %s "
@@ -421,24 +447,24 @@ msgstr ""
 "Der Testordner gehört %s (sollte %s gehören) und hat die Zugriffsrechte %s "
 "(sollte %s sein)."
 
-#: check/safe-mode-hack.php:284
+#: check/safe-mode-hack.php:266
 msgid "775, 755 or 750"
 msgstr "775, 755 oder 750"
 
-#: check/safe-mode-hack.php:288
+#: check/safe-mode-hack.php:270
 msgid "Creating a test file"
 msgstr "Erstelle eine Testdatei"
 
-#: check/safe-mode-hack.php:290
+#: check/safe-mode-hack.php:272
 #, php-format
 msgid "The test file could be created (owner: %s, chmod: %s)."
 msgstr "Die Testdatei wurde erstellt (Besitzer: %s, Zugriffsrechte: %s)."
 
-#: check/safe-mode-hack.php:292
+#: check/safe-mode-hack.php:274
 msgid "The test file could not be created."
 msgstr "Die Testdatei konnte nicht erstellt werden."
 
-#: check/safe-mode-hack.php:293
+#: check/safe-mode-hack.php:275
 msgid ""
 "It seems that the PHP process does not have enough permissions to create "
 "files on your server."
@@ -446,13 +472,13 @@ msgstr ""
 "Der PHP-Prozess hat scheinbar nicht genug Rechte, um Dateien auf Ihrem "
 "Server zu erstellen."
 
-#: check/safe-mode-hack.php:295
+#: check/safe-mode-hack.php:277
 msgid "The test file does not have the correct owner or chmod settings."
 msgstr ""
 "Die Testdate hat nicht den richtigen Besitzer und die richtigen "
 "Zugriffsrechte."
 
-#: check/safe-mode-hack.php:296
+#: check/safe-mode-hack.php:278
 #, php-format
 msgid ""
 "The test file is owned by %s (should be %s) and has the chmod settings %s "
@@ -461,15 +487,15 @@ msgstr ""
 "Die Testdatei gehört %s (sollte %s gehören) und hat die Zugriffsrechte %s "
 "(sollte %s sein)."
 
-#: check/safe-mode-hack.php:296
+#: check/safe-mode-hack.php:278
 msgid "664, 644, 660 or 640"
 msgstr "664, 644, 660 oder 640"
 
-#: check/safe-mode-hack.php:301
+#: check/safe-mode-hack.php:283
 msgid "You do not need the Safe Mode Hack on this server."
 msgstr "Sie müssen den Safe Mode Hack auf diesem Server nicht verwenden."
 
-#: check/safe-mode-hack.php:303
+#: check/safe-mode-hack.php:285
 msgid "You do need the Safe Mode Hack on this server."
 msgstr "Sie müssen den Safe Mode Hack auf diesem Server verwenden."
 
@@ -521,6 +547,10 @@ msgstr "Ihre Installation ist aktuell."
 #: check/validate.php:273
 msgid "Your installation is not up to date."
 msgstr "Ihre Installation ist nicht aktuell."
+
+#~ msgid "You need at least PHP 5.3.2 to run Contao (you have version %s)."
+#~ msgstr ""
+#~ "Sie benötigen mindestens PHP 5.3.2 für Contao (Sie haben Version %s)."
 
 #~ msgid ""
 #~ "If the automatic installation fails, the installer will give you an "
