@@ -50,6 +50,9 @@ while ($it->valid()) {
 	if (strncmp($it->getSubPathName(), '.git/', 5) === 0) {
 		$it->next(); continue;
 	}
+	if (strncmp($it->getSubPathName(), '.tx/', 3) === 0) {
+		$it->next(); continue;
+	}
 	if (strncmp($it->getSubPathName(), '.idea/', 6) === 0) {
 		$it->next(); continue;
 	}

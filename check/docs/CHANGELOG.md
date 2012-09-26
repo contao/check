@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 2.4 (2012-09-26)
+------------------------
+
+### New
+Added the Contao 2.11.6 file hashes.
+
+
 Version 2.3 (2012-09-16)
 ------------------------
 
