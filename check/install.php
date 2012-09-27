@@ -358,6 +358,18 @@ class Installer
 				$zip->close();
 				unlink('download');
 			}
+
+			$glob = glob('../contao-*');
+
+			// Remove the wrapper folder (see #23)
+			if (!empty($glob)) {
+				foreach (scandir($glob[0]) as $file) {
+					if ($file != '.' && $file != '..') {
+						rename($glob[0] . '/' . $file, '../' . $file);
+					}
+				}
+				rmdir($glob[0]);
+			}
 		}
 	}
 }
