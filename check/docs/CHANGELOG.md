@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 2.5 (2012-09-27)
+------------------------
+
+### Fixed
+Correctly remove the wrapper folder during installation (see #23).
+
+
 Version 2.4 (2012-09-26)
 ------------------------
 
