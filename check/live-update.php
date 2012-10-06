@@ -119,7 +119,7 @@ class LiveUpdate
 	 */
 	public function hasDetectUnicode()
 	{
-		$unicode = ini_get('detect_unicode');
+		$unicode = ini_get('zend.detect_unicode');
 
 		if ($unicode == '' || $unicode == 0 || $unicode == 'Off') {
 			return false;
