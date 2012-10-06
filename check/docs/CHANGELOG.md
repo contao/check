@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 2.6 (2012-10-06)
+------------------------
+
+### Fixed
+Use `zend.detect_unicode` instead of just `detect_unicode`.
+
+
 Version 2.5 (2012-09-27)
 ------------------------
 
