@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 2.7 (2012-10-15)
+------------------------
+
+### Fixed
+Added the OpenSSL check to the Live Update requirements (see #4892).
+
+
 Version 2.6 (2012-10-06)
 ------------------------
 
