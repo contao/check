@@ -74,6 +74,22 @@ class LiveUpdate
 
 
 	/**
+	 * Check whether the PHP OpenSSL extension is available
+	 * 
+	 * @return boolean True if the PHP OpenSSL extension is available
+	 */
+	public function hasSsl()
+	{
+		if (extension_loaded('openssl')) {
+			return true;
+		}
+
+		$this->available = false;
+		return false;
+	}
+
+
+	/**
 	 * Check whether the ionCube Loader is enabled
 	 * 
 	 * @return boolean True if the ionCube Loader is enabled
@@ -181,6 +197,15 @@ $update = new LiveUpdate();
     <?php else: ?>
       <p class="error"><?php echo _('The PHP Phar extension is not enabled.') ?></p>
       <p class="explain"><?php echo _('The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be explicitly disabled using the --disable-phar flag. Recompile PHP without the flag.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo _('PHP OpenSSL extension') ?></h3>
+    <?php if ($update->hasPhar()): ?>
+      <p class="confirm"><?php echo _('The PHP OpenSSL extension is enabled.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('The PHP OpenSSL extension is not enabled.') ?></p>
+      <p class="explain"><?php echo _('The PHP OpenSSL extension is required to set up a secure connection to the Live Update server. Enable it in your php.ini.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
