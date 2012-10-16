@@ -135,7 +135,13 @@ class LiveUpdate
 	 */
 	public function hasDetectUnicode()
 	{
-		$unicode = ini_get('zend.detect_unicode');
+		if (version_compare(phpversion(), '5.4', '<')) {
+			$name = 'detect_unicode';
+		} else {
+			$name ='zend.detect_unicode';
+		}
+
+		$unicode = ini_get($name);
 
 		if ($unicode == '' || $unicode == 0 || $unicode == 'Off') {
 			return false;

@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 2.8 (2012-10-16)
+------------------------
+
+### Fixed
+Correctly check for `detect_unicode` based on the PHP version (see #28).
+
+
 Version 2.7 (2012-10-15)
 ------------------------
 
