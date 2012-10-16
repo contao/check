@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 3.0 (2012-XX-XX)
+------------------------
+
+### New
+Added localization support via transifex.com.
+
+
 Version 2.7 (2012-10-15)
 ------------------------
 
