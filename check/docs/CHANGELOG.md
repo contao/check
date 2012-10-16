@@ -5,6 +5,9 @@ Version 2.8 (2012-10-16)
 ------------------------
 
 ### Fixed
+Also check `zend.multibyte` under PHP 5.4 (see #28).
+
+### Fixed
 Correctly check for `detect_unicode` based on the PHP version (see #28).
 
 
