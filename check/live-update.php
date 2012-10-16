@@ -135,8 +135,25 @@ class LiveUpdate
 	 */
 	public function hasDetectUnicode()
 	{
-		$unicode = ini_get('zend.detect_unicode');
+		$multibyte = ini_get('zend.multibyte');
 
+		// Zend multibyte has been disabled (see #28)
+		if ($multibyte !== false) {
+			if ($multibyte == '' || $multibyte == 0 || $multibyte == 'Off') {
+				return false;
+			}
+		}
+
+		// Determine the correct parameter name (see #28)
+		if (version_compare(phpversion(), '5.4', '<')) {
+			$name = 'detect_unicode';
+		} else {
+			$name ='zend.detect_unicode';
+		}
+
+		$unicode = ini_get($name);
+
+		// Detect_unicode has been disabled
 		if ($unicode == '' || $unicode == 0 || $unicode == 'Off') {
 			return false;
 		}
