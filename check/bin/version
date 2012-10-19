@@ -47,92 +47,92 @@ while ($it->valid()) {
 	if ($it->getFilename() == '.DS_Store') {
 		$it->next(); continue;
 	}
-	if (strncmp($it->getSubPathName(), '.git/', 5) === 0) {
+	if (strncmp($it->getSubPathname(), '.git/', 5) === 0) {
 		$it->next(); continue;
 	}
-	if (strncmp($it->getSubPathName(), '.tx/', 3) === 0) {
+	if (strncmp($it->getSubPathname(), '.tx/', 3) === 0) {
 		$it->next(); continue;
 	}
-	if (strncmp($it->getSubPathName(), '.idea/', 6) === 0) {
+	if (strncmp($it->getSubPathname(), '.idea/', 6) === 0) {
 		$it->next(); continue;
 	}
 
 	// Files in the root folder
-	if ($it->getSubPathName() == '.htaccess') {
+	if ($it->getSubPathname() == '.htaccess') {
 		$it->next(); continue;
 	}
-	if ($it->getSubPathName() == 'basic.css') {
+	if ($it->getSubPathname() == 'basic.css') {
 		$it->next(); continue;
 	}
-	if ($it->getSubPathName() == 'music_academy.css') {
+	if ($it->getSubPathname() == 'music_academy.css') {
 		$it->next(); continue;
 	}
-	if ($it->getSubPathName() == 'news.xml') {
+	if ($it->getSubPathname() == 'news.xml') {
 		$it->next(); continue;
 	}
-	if ($it->getSubPathName() == 'print.css') {
+	if ($it->getSubPathname() == 'print.css') {
 		$it->next(); continue;
 	}
 
 	// Not to be touched Contao files
-	if ($it->getSubPathName() == 'system/config/dcaconfig.php') {
+	if ($it->getSubPathname() == 'system/config/dcaconfig.php') {
 		$it->next(); continue;
 	}
-	if ($it->getSubPathName() == 'system/config/initconfig.php') {
+	if ($it->getSubPathname() == 'system/config/initconfig.php') {
 		$it->next(); continue;
 	}
-	if ($it->getSubPathName() == 'system/config/langconfig.php') {
+	if ($it->getSubPathname() == 'system/config/langconfig.php') {
 		$it->next(); continue;
 	}
-	if ($it->getSubPathName() == 'system/config/localconfig.php') {
+	if ($it->getSubPathname() == 'system/config/localconfig.php') {
 		$it->next(); continue;
 	}
 
 	// Compiled assets
-	if (strncmp($it->getSubPathName(), 'assets/css/', 11) === 0) {
-		if ($it->getSubPathName() != 'assets/css/index.html') {
+	if (strncmp($it->getSubPathname(), 'assets/css/', 11) === 0) {
+		if ($it->getSubPathname() != 'assets/css/index.html') {
 			$it->next(); continue;
 		}
 	}
-	if (strncmp($it->getSubPathName(), 'assets/images/', 14) === 0) {
-		if ($it->getSubPathName() != 'assets/images/index.html') {
+	if (strncmp($it->getSubPathname(), 'assets/images/', 14) === 0) {
+		if ($it->getSubPathname() != 'assets/images/index.html') {
 			$it->next(); continue;
 		}
 	}
-	if (strncmp($it->getSubPathName(), 'assets/js/', 10) === 0) {
-		if ($it->getSubPathName() != 'assets/js/index.html') {
+	if (strncmp($it->getSubPathname(), 'assets/js/', 10) === 0) {
+		if ($it->getSubPathname() != 'assets/js/index.html') {
 			$it->next(); continue;
 		}
 	}
 
 	// System files like cache files or log files
-	if (strncmp($it->getSubPathName(), 'system/cache/', 13) === 0) {
-		if ($it->getSubPathName() != 'system/cache/.htaccess') {
+	if (strncmp($it->getSubPathname(), 'system/cache/', 13) === 0) {
+		if ($it->getSubPathname() != 'system/cache/.htaccess') {
 			$it->next(); continue;
 		}
 	}
-	if (strncmp($it->getSubPathName(), 'system/logs/', 11) === 0) {
-		if ($it->getSubPathName() != 'system/logs/.htaccess') {
+	if (strncmp($it->getSubPathname(), 'system/logs/', 11) === 0) {
+		if ($it->getSubPathname() != 'system/logs/.htaccess') {
 			$it->next(); continue;
 		}
 	}
-	if (strncmp($it->getSubPathName(), 'system/html/', 11) === 0) {
-		if ($it->getSubPathName() != 'system/html/index.html') {
+	if (strncmp($it->getSubPathname(), 'system/html/', 11) === 0) {
+		if ($it->getSubPathname() != 'system/html/index.html') {
 			$it->next(); continue;
 		}
 	}
-	if (strncmp($it->getSubPathName(), 'system/scripts/', 15) === 0) {
-		if ($it->getSubPathName() != 'system/scripts/index.html') {
+	if (strncmp($it->getSubPathname(), 'system/scripts/', 15) === 0) {
+		if ($it->getSubPathname() != 'system/scripts/index.html') {
 			$it->next(); continue;
 		}
 	}
-	if (strncmp($it->getSubPathName(), 'system/tmp/', 10) === 0) {
-		if ($it->getSubPathName() != 'system/tmp/.htaccess') {
+	if (strncmp($it->getSubPathname(), 'system/tmp/', 10) === 0) {
+		if ($it->getSubPathname() != 'system/tmp/.htaccess') {
 			$it->next(); continue;
 		}
 	}
 
-	$content = file_get_contents($it->getPathName());
+	$content = file_get_contents($it->getPathname());
 
 	// Remove carriage returns
 	$buffer = str_replace("\r", '', $content);
@@ -144,12 +144,12 @@ while ($it->valid()) {
 
 	// Store the file name and hashes
 	if ($md5_file == $md5_code) {
-		$json[] = array($it->getSubPathName(), $md5_file);
+		$json[] = array($it->getSubPathname(), $md5_file);
 	} else {
-		$json[] = array($it->getSubPathName(), $md5_file, $md5_code);
+		$json[] = array($it->getSubPathname(), $md5_file, $md5_code);
 	}
 
-	echo '  Added ' . $it->getSubPathName() . "\n";
+	echo '  Added ' . $it->getSubPathname() . "\n";
 
 	$it->next();
 	unset($buffer);
