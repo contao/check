@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-16 10:57+0200\n"
-"PO-Revision-Date: 2012-10-18 19:38+0000\n"
+"PO-Revision-Date: 2012-10-24 06:57+0000\n"
 "Last-Translator: Kuzmich <https://www.transifex.com/accounts/profile/Kuzmich/>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/contao-check/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -49,15 +49,15 @@ msgstr "Требования"
 
 #: index.php:104
 msgid "Can I use the Extension Repository?"
-msgstr "Смогу ли я использовать расширения хранилища?"
+msgstr "Возможно ли использовать расширения хранилища?"
 
 #: index.php:105
 msgid "Can I use the Live Update Service?"
-msgstr "Смогу ли я использовать сервис онлайн обновления?"
+msgstr "Возможно ли использовать сервис онлайн обновления?"
 
 #: index.php:106
 msgid "Do I need to use the Safe Mode Hack?"
-msgstr "Нужно ли использовать Safe Mode Hack?"
+msgstr "Необходимо ли использовать Safe Mode Hack?"
 
 #: index.php:110 install.php:393 validate.php:238
 msgid "Installation"
@@ -99,14 +99,14 @@ msgstr "Автоматическая установка возможна на э
 
 #: install.php:404
 msgid "The automatic installation is not possible on your server."
-msgstr "Автоматическая установка невозможна на этом сервере."
+msgstr "Автоматическая установка на этом сервере невозможна."
 
 #: install.php:405
 msgid ""
 "Your PHP installation does not meet the requirements to use the command "
 "line, does not have enough permissions to create files and folders or does "
 "not have the required PHP extensions \"cURL\" and \"Zip\"."
-msgstr "Установленная PHP не отвечает требованиям использования командной строки, не имеет необходимые разрешения для создания файлов и каталогов или не имеет необходимые расширения \"cURL\" и  \"Zip\"."
+msgstr "Установленная PHP не отвечает требованиям использования командной строки, не имеет необходимых разрешений для создания файлов и каталогов или не имеет необходимые расширения \"cURL\" и  \"Zip\"."
 
 #: install.php:411
 msgid "Manual installation"
@@ -115,7 +115,7 @@ msgstr "Ручная установка"
 #: install.php:413
 #, php-format
 msgid "Go to %s and download the latest Contao version."
-msgstr "Перейдите к %s и загрузите последнюю версию Contao."
+msgstr "Перейдите на %s и загрузите последнюю версию Contao."
 
 #: install.php:414
 msgid ""
@@ -173,7 +173,7 @@ msgstr "PHP 5.3.2 и выше"
 #: live-update.php:187 live-update.php:189
 #, php-format
 msgid "You have PHP version %s."
-msgstr "Ваша PHP версии %s."
+msgstr "Установлена PHP версии %s."
 
 #: live-update.php:190
 #, php-format
@@ -255,7 +255,7 @@ msgstr "Расширение Suhosin не позволяет запускать 
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
 "<code>suhosin.executor.include.whitelist = phar</code>."
-msgstr "Вы должны добавить \"phar\" в список разрешенных потоков в php.ini: <code>suhosin.executor.include.whitelist = phar</code>."
+msgstr "Добавьте \"phar\" в список разрешенных потоков в php.ini: <code>suhosin.executor.include.whitelist = phar</code>."
 
 #: live-update.php:230
 msgid "Detect Unicode"
@@ -281,11 +281,11 @@ msgstr "Если PHP был скомпилирован с флагом --enable-
 
 #: live-update.php:241
 msgid "You are not using FastCGI and eAccelerator."
-msgstr "Вы не используете FastCGI и eAccelerator."
+msgstr "FastCGI и eAccelerator не используются."
 
 #: live-update.php:243
 msgid "You are using FastCGI and eAccelerator."
-msgstr "Вы используете FastCGI и eAccelerator."
+msgstr "Используются FastCGI и eAccelerator."
 
 #: live-update.php:244
 msgid ""
@@ -301,7 +301,7 @@ msgstr "Онлайн обновление можно использовать н
 
 #: live-update.php:251
 msgid "You cannot use the Live Update on this server."
-msgstr "Онлайн обновление невозможно использовать на этом сервере."
+msgstr "Онлайн обновление использовать на этом сервере невозможно."
 
 #: repository.php:93
 msgid "Extension Repository"
@@ -348,11 +348,11 @@ msgstr "Возможно, запрос заблокирован брандмау
 
 #: repository.php:115
 msgid "You can use the Extension Repository on this server."
-msgstr "Можно использовать хранилище расширений на этом сервере."
+msgstr "Хранилище расширений можно использовать на этом сервере."
 
 #: repository.php:117
 msgid "You cannot use the Extension Repository on this server."
-msgstr "Нельзя использовать хранилище расширений на этом сервере."
+msgstr "Хранилище расширений использовать на этом сервере невозможно."
 
 #: safe-mode-hack.php:246
 msgid "Safe Mode Hack"
@@ -482,7 +482,7 @@ msgid ""
 "There is no version file for your Contao installation. Are you using a "
 "stable Contao version and do you have the latest version of the Contao "
 "Check?"
-msgstr "Не существует версия файла установки Contao. Вы используете стабильную версию Contao и это последняя версия Contao Check?"
+msgstr "Отсутствуют данные о версии этой установки Contao. Убедитесь, что используется стабильная версия Contao и последняя версия Contao Check."
 
 #: validate.php:251
 msgid "Missing files"
@@ -494,8 +494,8 @@ msgstr "Поврежденные файлы"
 
 #: validate.php:271
 msgid "Your installation is up to date."
-msgstr "Ваша установка актуальна."
+msgstr "Существующая установка Contao актуальна."
 
 #: validate.php:273
 msgid "Your installation is not up to date."
-msgstr "Ваша установка устарела."
+msgstr "Существующая установка Contao устарела."

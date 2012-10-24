@@ -5,6 +5,9 @@ Version 3.0 (2012-XX-XX)
 ------------------------
 
 ### New
+Added the French, Italian, Russian, Swedish and Japanese translation.
+
+### New
 Added localization support via transifex.com.
 
 
