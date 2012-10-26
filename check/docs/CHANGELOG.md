@@ -1,6 +1,19 @@
 Contao Check Changelog
 ======================
 
+Version 3.0 (2012-10-26)
+------------------------
+
+### Fixed
+If a user accepts the `fr_FR` locale, also check for `fr` (see #29).
+
+### New
+Added the French, Italian, Russian, Swedish and Japanese translation.
+
+### New
+Added localization support via transifex.com.
+
+
 Version 2.8 (2012-10-16)
 ------------------------
 

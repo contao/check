@@ -30,7 +30,7 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '2.8');
+		define('CONTAO_CHECK_VERSION', '3.0');
 		define('IS_WINDOWS', (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'));
 
 		$this->setLocale($this->getLanguage());
@@ -122,18 +122,19 @@ class Bootstrap
 		// Remove all invalid locales
 		foreach ($accepted[1] as $v) {
 			$chunks = explode('-', $v);
-			$locale = $chunks[0];
 
-			if (isset($chunks[1])) {
-				$locale .= '_' . strtoupper($chunks[1]);
+			// Language plus dialect, e.g. en_US, fr_FR
+			if (isset($chunks[1]) && $this->isLocale(($locale = $chunks[0] . '_' . strtoupper($chunks[1])))) {
+				$return[] = $locale;
 			}
 
-			if ($this->isLocale($locale)) {
+			// Language only, e.g. en, fr (see #29)
+			if ($this->isLocale(($locale = $chunks[0]))) {
 				$return[] = $locale;
 			}
 		}
 
-		return $return;
+		return array_unique($return);
 	}
 
 

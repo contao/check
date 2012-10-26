@@ -1,0 +1,501 @@
+##
+# Contao Open Source CMS
+# 
+# Copyright (C) 2005-2012 Leo Feyer
+# 
+# @package Check
+# @link    http://contao.org
+# @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+##
+msgid ""
+msgstr ""
+"Project-Id-Version: Contao Check\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-16 10:57+0200\n"
+"PO-Revision-Date: 2012-10-24 06:57+0000\n"
+"Last-Translator: Kuzmich <https://www.transifex.com/accounts/profile/Kuzmich/>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/contao-check/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: index.php:84
+msgid "Overview"
+msgstr "Обзор"
+
+#: index.php:90
+msgid "You can install Contao 2.x"
+msgstr "Вы можете установить Contao 2.x"
+
+#: index.php:92
+#, php-format
+msgid "You cannot install Contao 2.x (requires PHP %s+)"
+msgstr "Вы не можете установить Contao 2.x (требуется PHP %s+)"
+
+#: index.php:95
+msgid "You can install Contao 3.x"
+msgstr "Вы можете установить Contao 3.x"
+
+#: index.php:97
+#, php-format
+msgid "You cannot install Contao 3.x (requires PHP %s+)"
+msgstr "Вы не можете установить Contao 3.x (требуется PHP %s+)"
+
+#: index.php:102
+msgid "Requirements"
+msgstr "Требования"
+
+#: index.php:104
+msgid "Can I use the Extension Repository?"
+msgstr "Возможно ли использовать расширения хранилища?"
+
+#: index.php:105
+msgid "Can I use the Live Update Service?"
+msgstr "Возможно ли использовать сервис онлайн обновления?"
+
+#: index.php:106
+msgid "Do I need to use the Safe Mode Hack?"
+msgstr "Необходимо ли использовать Safe Mode Hack?"
+
+#: index.php:110 install.php:393 validate.php:238
+msgid "Installation"
+msgstr "Установка"
+
+#: index.php:112
+msgid "Install the latest Contao version"
+msgstr "Установлена последняя версия Contao"
+
+#: index.php:113
+msgid "Validate an existing Contao installation"
+msgstr "Проверка существующей установки Contao"
+
+#: index.php:115
+#, php-format
+msgid ""
+"Contao Check %s | Contao Open Source CMS system requirements | More "
+"information at %s"
+msgstr "Contao Check %s | Cистемные требования Contao Open Source CMS | Больше информации на %s"
+
+#: install.php:396
+msgid "Web installer"
+msgstr "Веб-установщик"
+
+#: install.php:398
+#, php-format
+msgid "There is a Contao installation already. Are you looking for the %s?"
+msgstr "Установка Contao уже существует. Вы ищете %s?"
+
+#: install.php:400
+msgid ""
+"The automatic installation is not possible on your server due to safe_mode "
+"or file permission restrictions."
+msgstr "Автоматическая установка на этом сервере невозможна из-за ограничения safe_mode или файловых разрешений."
+
+#: install.php:402
+msgid "The automatic installation is possible on your server."
+msgstr "Автоматическая установка возможна на этом сервере."
+
+#: install.php:404
+msgid "The automatic installation is not possible on your server."
+msgstr "Автоматическая установка на этом сервере невозможна."
+
+#: install.php:405
+msgid ""
+"Your PHP installation does not meet the requirements to use the command "
+"line, does not have enough permissions to create files and folders or does "
+"not have the required PHP extensions \"cURL\" and \"Zip\"."
+msgstr "Установленная PHP не отвечает требованиям использования командной строки, не имеет необходимых разрешений для создания файлов и каталогов или не имеет необходимые расширения \"cURL\" и  \"Zip\"."
+
+#: install.php:411
+msgid "Manual installation"
+msgstr "Ручная установка"
+
+#: install.php:413
+#, php-format
+msgid "Go to %s and download the latest Contao version."
+msgstr "Перейдите на %s и загрузите последнюю версию Contao."
+
+#: install.php:414
+msgid ""
+"Extract the download archive and upload the files to your server using an "
+"(S)FTP client."
+msgstr "Распакуйте архив и загрузите файлы на сервер с использованием (S)FTP-клиента."
+
+#: install.php:415
+msgid ""
+"Open the Contao install tool by adding \"/contao\" to the URL of your "
+"installation."
+msgstr "Откройте мастер установки Contao путем добавления \"/contao\" в URL-адрес установки."
+
+#: install.php:418
+msgid "Target version"
+msgstr "Версия"
+
+#: install.php:433
+msgid ""
+"Attention: Deprecated versions might contain security vulnerabilities! "
+"Please install the latest stable version or the latest LTS version (long "
+"term support version)."
+msgstr "Внимание! Устаревшие версии могут содержать уязвимости безопасности! Установите последнюю стабильную версию или последнюю LTS версию (версию с длинным сроком поддержки)."
+
+#: install.php:434
+msgid "Start the installation"
+msgstr "Запустить установку"
+
+#: install.php:437
+msgid "Installation complete"
+msgstr "Установка завершена"
+
+#: install.php:438
+#, php-format
+msgid "Contao %s has been installed in %s."
+msgstr "Contao %s успешно установлена в %s."
+
+#: install.php:439
+msgid "Open the Contao install tool"
+msgstr "Открыть мастер установки Contao"
+
+#: install.php:443 live-update.php:254 repository.php:120
+#: safe-mode-hack.php:288 validate.php:277
+msgid "Go back"
+msgstr "Назад"
+
+#: live-update.php:182
+msgid "Live Update"
+msgstr "Онлайн обновление"
+
+#: live-update.php:185
+msgid "PHP 5.3.2 or greater"
+msgstr "PHP 5.3.2 и выше"
+
+#: live-update.php:187 live-update.php:189
+#, php-format
+msgid "You have PHP version %s."
+msgstr "Установлена PHP версии %s."
+
+#: live-update.php:190
+#, php-format
+msgid ""
+"Phar has been added to the PHP core in version 5.3, so you require at least "
+"PHP version 5.3.2 to use .phar files. If you have PHP 5.2, you might be able"
+" to use .phar files by installing the PECL phar extension (see %s)."
+msgstr "Phar был добавлен в PHP 5.3, поэтому вам необходимо использовать .phar файлы как минимум версии PHP 5.3.2. Если у вас PHP 5.2, вы можете использовать .phar файлы, установив phar расширение PECL (см. %s)."
+
+#: live-update.php:194
+msgid "PHP Phar extension"
+msgstr "Расширение PHP Phar"
+
+#: live-update.php:196
+msgid "The PHP Phar extension is enabled."
+msgstr "Расширение PHP Phar включено."
+
+#: live-update.php:198
+msgid "The PHP Phar extension is not enabled."
+msgstr "Расширение PHP Phar не включено."
+
+#: live-update.php:199
+msgid ""
+"The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be "
+"explicitly disabled using the --disable-phar flag. Recompile PHP without the"
+" flag."
+msgstr "Расширение PHP Phar является частью ядра PHP начиная с версии PHP 5.3 для явного отключения используйте флаг --disable-phar. Перекомпилируйте PHP без флага."
+
+#: live-update.php:203
+msgid "PHP OpenSSL extension"
+msgstr "Расширение PHP OpenSSL"
+
+#: live-update.php:205
+msgid "The PHP OpenSSL extension is enabled."
+msgstr "Расширение PHP OpenSSL включено."
+
+#: live-update.php:207
+msgid "The PHP OpenSSL extension is not enabled."
+msgstr "Расширение PHP OpenSSL не включено."
+
+#: live-update.php:208
+msgid ""
+"The PHP OpenSSL extension is required to set up a secure connection to the "
+"Live Update server. Enable it in your php.ini."
+msgstr "Расширение PHP OpenSSL необходимо для установки безопасного подключения к серверу онлайн обновлений. Включите его в php.ini."
+
+#: live-update.php:214
+msgid "The ionCube Loader is not enabled or at least at version 4.0.9."
+msgstr "ionCube Loader не включен или версия ниже чем 4.0.9."
+
+#: live-update.php:216
+msgid ""
+"An old version of the ionCube Loader prior to version 4.0.9 is installed."
+msgstr "Версия IonCube Loader ниже чем 4.0.9."
+
+#: live-update.php:217
+#, php-format
+msgid ""
+"Before version 4.0.9, the ionCube Loader was incompatible with Phar "
+"archives. Either upgrade to the latest version or disable the module. More "
+"information is available here: %s"
+msgstr "До версии 4.0.9, IonCube Loader был несовместим с Phar архивами. Или обновите его до последней версии или отключите модуль. Более подробная информация доступна здесь: %s"
+
+#: live-update.php:221
+msgid "Suhosin extension"
+msgstr "Расширение Suhosin"
+
+#: live-update.php:223
+msgid ""
+"The Suhosin extension is not installed or correctly configured for .phar "
+"files."
+msgstr "Расширение Suhosin не установлено или неправильно настроены .phar файлы."
+
+#: live-update.php:225
+msgid "The Suhosin extension does not allow to run .phar files."
+msgstr "Расширение Suhosin не позволяет запускать файлы .phar."
+
+#: live-update.php:226
+msgid ""
+"You have to add \"phar\" to the list of allowed streams in your php.ini: "
+"<code>suhosin.executor.include.whitelist = phar</code>."
+msgstr "Добавьте \"phar\" в список разрешенных потоков в php.ini: <code>suhosin.executor.include.whitelist = phar</code>."
+
+#: live-update.php:230
+msgid "Detect Unicode"
+msgstr "Обнаружение Юникода"
+
+#: live-update.php:232
+msgid ""
+"The --enable-zend-multibyte flag is not set or detect_unicode is disabled."
+msgstr "Флаг --enable-zend-multibyte не установлен или отключен detect_unicode."
+
+#: live-update.php:234
+msgid "The detect_unicode settings on your server are not correct."
+msgstr "Настройки detect_unicode сервера неправильны."
+
+#: live-update.php:235
+#, php-format
+msgid ""
+"If PHP is compiled with the --enable-zend-multibyte flag, you have to "
+"explicitly disable detect_unicode in your php.ini: <code>detect_unicode = "
+"Off</code>. This is a PHP bug which might be fixed in the future. More "
+"information is available here: %s"
+msgstr "Если PHP был скомпилирован с флагом --enable-zend-multibyte, вы должны явно отключить detect_unicode в php.ini: <code>detect_unicode = Off</code>. Это ошибка PHP, которая может быть исправлена в будущем. Более подробная информация доступна здесь: %s"
+
+#: live-update.php:241
+msgid "You are not using FastCGI and eAccelerator."
+msgstr "FastCGI и eAccelerator не используются."
+
+#: live-update.php:243
+msgid "You are using FastCGI and eAccelerator."
+msgstr "Используются FastCGI и eAccelerator."
+
+#: live-update.php:244
+msgid ""
+"It seems that FastCGI in combination with the eAccelerator extension is "
+"buggy when it comes to Phar archives. You can either disable the "
+"eAccelerator extension or use a different PHP cache instead (e.g. "
+"FastCGI+APC)."
+msgstr "Вероятно FastCGI, в сочетании с расширением eAccelerator, работает нестабильно когда дело доходит до Phar архивов. Можно отключить расширение eAccelerator или вместо этого использовать различные кэшы PHP (напр. FastCGI + APC)."
+
+#: live-update.php:249
+msgid "You can use the Live Update on this server."
+msgstr "Онлайн обновление можно использовать на этом сервере."
+
+#: live-update.php:251
+msgid "You cannot use the Live Update on this server."
+msgstr "Онлайн обновление использовать на этом сервере невозможно."
+
+#: repository.php:93
+msgid "Extension Repository"
+msgstr "Хранилище расширений"
+
+#: repository.php:96
+msgid "PHP SOAP extension"
+msgstr "Расширение PHP SOAP"
+
+#: repository.php:98
+msgid "The PHP SOAP extension is available."
+msgstr "Расширение PHP SOAP доступно."
+
+#: repository.php:100
+msgid "The PHP SOAP extension is not available."
+msgstr "Расширение PHP SOAP недоступно."
+
+#: repository.php:101
+#, php-format
+msgid ""
+"The PHP SOAP extension is required to communicate with the Extension "
+"Repository server. You can enable it by compiling PHP with the --enable-soap"
+" flag. Depending on your Contao version, you might also be able to use the "
+"%s extension."
+msgstr "Расширение PHP SOAP необходимо для связи с сервером расширения хранилища. Вы можете включить его путем компиляции PHP с флагом --enable-soap. В зависимости от версии Contao также можно использовать расширение %s."
+
+#: repository.php:105
+msgid "Connection test"
+msgstr "Проверка подключения"
+
+#: repository.php:107
+msgid "A connection to contao.org could be established."
+msgstr "Подключение к contao.org может быть установлено."
+
+#: repository.php:109
+msgid "A connection to contao.org could not be established."
+msgstr "Подключение к contao.org не может быть установлено."
+
+#: repository.php:110
+msgid ""
+"Maybe the request has been blocked by a firewall. Please contact your server"
+" administrator."
+msgstr "Возможно, запрос заблокирован брандмауэром. Обратитесь к администратору сервера."
+
+#: repository.php:115
+msgid "You can use the Extension Repository on this server."
+msgstr "Хранилище расширений можно использовать на этом сервере."
+
+#: repository.php:117
+msgid "You cannot use the Extension Repository on this server."
+msgstr "Хранилище расширений использовать на этом сервере невозможно."
+
+#: safe-mode-hack.php:246
+msgid "Safe Mode Hack"
+msgstr "Safe Mode Hack"
+
+#: safe-mode-hack.php:249
+msgid "php.ini settings"
+msgstr "Настройки php.ini"
+
+#: safe-mode-hack.php:251
+msgid "The PHP safe_mode is not enabled."
+msgstr "PHP safe_mode не включен."
+
+#: safe-mode-hack.php:253
+msgid "The PHP safe_mode is enabled."
+msgstr "PHP safe_mode включен."
+
+#: safe-mode-hack.php:254
+msgid ""
+"It is recommended to disable the safe_mode in your php.ini or server control"
+" panel, otherwise you will have to use the Contao Safe Mode Hack to create "
+"or manipulate files. Using the Safe Mode Hack will have a negative impact on"
+" the performance of your website."
+msgstr "Рекомендуется отключить safe_mode в php.ini или панели управления сервером, в противном случае вам придется использовать Safe Mode Hack в Contao для создания или управления файлами. Использование Safe Mode Hack будет иметь негативное влияние на производительность веб-сайта."
+
+#: safe-mode-hack.php:258
+msgid "Creating a test folder"
+msgstr "Создание тестового каталога"
+
+#: safe-mode-hack.php:260
+#, php-format
+msgid "The test folder could be created (owner: %s, chmod: %s)."
+msgstr "Тестовый каталог может быть создан (владелец: %s, chmod: %s)."
+
+#: safe-mode-hack.php:262
+msgid "The test folder could not be created."
+msgstr "Не удалось создать тестовый каталог."
+
+#: safe-mode-hack.php:263
+msgid ""
+"It seems that the PHP process does not have enough permissions to create "
+"folders on your server."
+msgstr "Вероятно, PHP процесс не имеет необходимые разрешения для создания каталогов на сервере."
+
+#: safe-mode-hack.php:265
+msgid "The test folder does not have the correct owner or chmod settings."
+msgstr "У тестового каталога нет корректного владельца или параметров chmod."
+
+#: safe-mode-hack.php:266
+#, php-format
+msgid ""
+"The test folder is owned by %s (should be %s) and has the chmod settings %s "
+"(should be %s)."
+msgstr "Тестовый каталог принадлежит %s, (а должен %s) и имеет параметры chmod %s, (а должен %s)."
+
+#: safe-mode-hack.php:266
+msgid "775, 755 or 750"
+msgstr "775, 755 или 750"
+
+#: safe-mode-hack.php:270
+msgid "Creating a test file"
+msgstr "Создание тестового файла"
+
+#: safe-mode-hack.php:272
+#, php-format
+msgid "The test file could be created (owner: %s, chmod: %s)."
+msgstr "Тестовый файл может быть создан (владелец: %s, chmod: %s)."
+
+#: safe-mode-hack.php:274
+msgid "The test file could not be created."
+msgstr "Не удалось создать тестовый файл."
+
+#: safe-mode-hack.php:275
+msgid ""
+"It seems that the PHP process does not have enough permissions to create "
+"files on your server."
+msgstr "Вероятно, PHP процесс не имеет необходимые разрешения для создания файлов на сервере."
+
+#: safe-mode-hack.php:277
+msgid "The test file does not have the correct owner or chmod settings."
+msgstr "У тестового файла нет корректного владельца или параметров chmod."
+
+#: safe-mode-hack.php:278
+#, php-format
+msgid ""
+"The test file is owned by %s (should be %s) and has the chmod settings %s "
+"(should be %s)."
+msgstr "Тестовый файл принадлежит %s, (а должен %s) и имеет параметры chmod %s, (а должен %s)."
+
+#: safe-mode-hack.php:278
+msgid "664, 644, 660 or 640"
+msgstr "664, 644, 660 или 640"
+
+#: safe-mode-hack.php:283
+msgid "You do not need the Safe Mode Hack on this server."
+msgstr "Safe Mode Hack не требуется на этом сервере."
+
+#: safe-mode-hack.php:285
+msgid "You do need the Safe Mode Hack on this server."
+msgstr "Safe Mode Hack требуется на этом сервере."
+
+#: validate.php:234
+msgid "Validate an installation"
+msgstr "Проверка установки"
+
+#: validate.php:239
+msgid "Could not find a Contao installation."
+msgstr "Не удалось найти установку Contao."
+
+#: validate.php:240
+msgid ""
+"To validate an existing installation, please upload the \"check\" folder to "
+"your installation directory."
+msgstr "Для проверки существующей установки, загрузите каталог \"check\" в корневой каталог установки Contao."
+
+#: validate.php:244
+msgid "Unknown version"
+msgstr "Неизвестная версия"
+
+#: validate.php:245
+#, php-format
+msgid "The installed version %s is not (yet) supported."
+msgstr "Установленная версия %s (пока) не поддерживается."
+
+#: validate.php:246
+msgid ""
+"There is no version file for your Contao installation. Are you using a "
+"stable Contao version and do you have the latest version of the Contao "
+"Check?"
+msgstr "Отсутствуют данные о версии этой установки Contao. Убедитесь, что используется стабильная версия Contao и последняя версия Contao Check."
+
+#: validate.php:251
+msgid "Missing files"
+msgstr "Недостающие файлы"
+
+#: validate.php:261
+msgid "Corrupt files"
+msgstr "Поврежденные файлы"
+
+#: validate.php:271
+msgid "Your installation is up to date."
+msgstr "Существующая установка Contao актуальна."
+
+#: validate.php:273
+msgid "Your installation is not up to date."
+msgstr "Существующая установка Contao устарела."

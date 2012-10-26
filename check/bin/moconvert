@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Create the .mo files
+for i in `ls check/locale`; do
+  cd "check/locale/$i/LC_MESSAGES"
+  msgfmt -c messages.po
+  cd "../../../../"
+done
