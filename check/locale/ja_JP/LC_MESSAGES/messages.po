@@ -12,13 +12,13 @@ msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-16 10:57+0200\n"
-"PO-Revision-Date: 2012-10-23 12:32+0000\n"
+"PO-Revision-Date: 2012-10-26 12:52+0000\n"
 "Last-Translator: <https://www.transifex.com/accounts/profile/taca>\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/contao-check/language/ja/)\n"
+"Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/contao-check/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
+"Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: index.php:84
@@ -45,7 +45,7 @@ msgstr "Contao 3.xをインストールできません(PHP %s以降が必要)。
 
 #: index.php:102
 msgid "Requirements"
-msgstr "必要要件"
+msgstr "要件"
 
 #: index.php:104
 msgid "Can I use the Extension Repository?"
@@ -76,7 +76,7 @@ msgstr "既にインストールしているContaoを検証"
 msgid ""
 "Contao Check %s | Contao Open Source CMS system requirements | More "
 "information at %s"
-msgstr "Contao検査 %s | ContaoオープンソースCMSのシステム要件 | より詳しい%sの情報"
+msgstr "Contaoチェック %s | ContaoオープンソースCMSのシステム要件 | より詳しい%sの情報"
 
 #: install.php:396
 msgid "Web installer"
@@ -85,7 +85,7 @@ msgstr "ウェブインストーラー"
 #: install.php:398
 #, php-format
 msgid "There is a Contao installation already. Are you looking for the %s?"
-msgstr "既にContaoをインストールしています。%sをお探してですか?"
+msgstr "既にContaoをインストールしてあります。%sをお探してですか?"
 
 #: install.php:400
 msgid ""
@@ -155,7 +155,7 @@ msgstr "Contao %sを%sにインストールしました。"
 
 #: install.php:439
 msgid "Open the Contao install tool"
-msgstr "Contaoのインストールツールにアクセス"
+msgstr "Contaoのインストールツールを実行"
 
 #: install.php:443 live-update.php:254 repository.php:120
 #: safe-mode-hack.php:288 validate.php:277
@@ -482,11 +482,11 @@ msgid ""
 "There is no version file for your Contao installation. Are you using a "
 "stable Contao version and do you have the latest version of the Contao "
 "Check?"
-msgstr "インストールしているContaoにバージョンのファイルがありません。安定版のContaoを使用して、最新のバージョンのContao検査を使用していますか?"
+msgstr "インストールしているContaoにバージョンのファイルがありません。安定版のContaoを使用して、最新のバージョンのContaoチェックを使用していますか?"
 
 #: validate.php:251
 msgid "Missing files"
-msgstr "見当たらないファイル"
+msgstr "欠けているファイル"
 
 #: validate.php:261
 msgid "Corrupt files"
