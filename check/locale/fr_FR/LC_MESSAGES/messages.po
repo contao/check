@@ -12,13 +12,13 @@ msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-16 10:57+0200\n"
-"PO-Revision-Date: 2012-10-18 10:05+0000\n"
+"PO-Revision-Date: 2012-10-29 07:38+0000\n"
 "Last-Translator: c3lp3e <https://www.transifex.com/accounts/profile/c3lp3e/>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/contao-check/language/fr/)\n"
+"Language-Team: French (France) (http://www.transifex.com/projects/p/contao-check/language/fr_FR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
+"Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: index.php:84
@@ -301,7 +301,7 @@ msgstr "Vous pouvez utiliser Live Update sur ce serveur."
 
 #: live-update.php:251
 msgid "You cannot use the Live Update on this server."
-msgstr "Vous ne pouvez utiliser Live Update sur ce serveur."
+msgstr "Vous ne pouvez pas utiliser Live Update sur ce serveur."
 
 #: repository.php:93
 msgid "Extension Repository"
@@ -360,7 +360,7 @@ msgstr "Safe Mode Hack"
 
 #: safe-mode-hack.php:249
 msgid "php.ini settings"
-msgstr "Paramêtres de php.ini"
+msgstr "Paramètres de php.ini"
 
 #: safe-mode-hack.php:251
 msgid "The PHP safe_mode is not enabled."
@@ -385,7 +385,7 @@ msgstr "Création d'un dossier de test"
 #: safe-mode-hack.php:260
 #, php-format
 msgid "The test folder could be created (owner: %s, chmod: %s)."
-msgstr "Le dossier de test a pas pu être créé (propriétaire : %s, chmod : %s)."
+msgstr "Le dossier de test a été créé (propriétaire : %s, chmod : %s)."
 
 #: safe-mode-hack.php:262
 msgid "The test folder could not be created."
@@ -419,7 +419,7 @@ msgstr "Création d'un fichier de test"
 #: safe-mode-hack.php:272
 #, php-format
 msgid "The test file could be created (owner: %s, chmod: %s)."
-msgstr "Le fichier de test a pas pu être créé (propriétaire : %s, chmod : %s)."
+msgstr "Le fichier de test a été créé (propriétaire : %s, chmod : %s)."
 
 #: safe-mode-hack.php:274
 msgid "The test file could not be created."
@@ -475,7 +475,7 @@ msgstr "Version inconnue"
 #: validate.php:245
 #, php-format
 msgid "The installed version %s is not (yet) supported."
-msgstr "La version installée %s n'est pas (encore) pris en charge."
+msgstr "La version installée %s n'est pas (encore) prise en charge."
 
 #: validate.php:246
 msgid ""
