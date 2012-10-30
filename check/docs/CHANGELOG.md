@@ -1,6 +1,19 @@
 Contao Check Changelog
 ======================
 
+Version 4.0 (2012-10-30)
+------------------------
+
+### Fixed
+Show the validated Contao version (see #31).
+
+### New
+Added the Contao 3.0.0 file hashes.
+
+### Fixed
+Also check the file size of the downloaded archive (see #32).
+
+
 Version 3.0 (2012-10-26)
 ------------------------
 
