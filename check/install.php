@@ -339,7 +339,7 @@ class Installer
 			}
 
 			// Extract
-			if (file_exists('download')) {
+			if (file_exists('download') && filesize('download') > 0) {
 				$this->exec($this->unzip . ' download');			
 				$this->exec('rm download');
 				$folder = $this->exec('ls -d contao-*');
@@ -351,7 +351,7 @@ class Installer
 			file_put_contents('download', $this->curl($url));
 
 			// Extract
-			if (file_exists('download')) {
+			if (file_exists('download') && filesize('download') > 0) {
 				$zip = new ZipArchive;
 				$zip->open('download');
 				$zip->extractTo(dirname(__DIR__));
