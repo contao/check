@@ -105,7 +105,7 @@ class Bootstrap
 
 
 	/**
-	 * Return the accepted languages as an array
+	 * Return the first eight accepted languages as an array
 	 * 
 	 * @return array The locale array
 	 * 
@@ -134,7 +134,7 @@ class Bootstrap
 			}
 		}
 
-		return array_unique($return);
+		return array_slice(array_unique($return), 0, 8);
 	}
 
 
