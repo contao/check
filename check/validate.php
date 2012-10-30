@@ -246,6 +246,10 @@ $validator->run();
       <p class="explain"><?php echo _('There is no version file for your Contao installation. Are you using a stable Contao version and do you have the latest version of the Contao Check?') ?></p>
     </div>
   <?php else: ?>
+    <div class="row">
+      <h3><?php echo _('Version') ?></h3>
+      <p><?php printf(_('Found a Contao %s installation.'), VERSION . '.' . BUILD) ?></p>
+    </div>
   <?php if ($validator->hasMissing()): ?>
     <div class="row">
       <h3><?php echo _('Missing files') ?></h3>
