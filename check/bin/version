@@ -90,17 +90,17 @@ while ($it->valid()) {
 
 	// Compiled assets
 	if (strncmp($it->getSubPathname(), 'assets/css/', 11) === 0) {
-		if ($it->getSubPathname() != 'assets/css/index.html') {
+		if ($it->getFilename() != 'index.html') {
 			$it->next(); continue;
 		}
 	}
 	if (strncmp($it->getSubPathname(), 'assets/images/', 14) === 0) {
-		if ($it->getSubPathname() != 'assets/images/index.html') {
+		if ($it->getFilename() != 'index.html') {
 			$it->next(); continue;
 		}
 	}
 	if (strncmp($it->getSubPathname(), 'assets/js/', 10) === 0) {
-		if ($it->getSubPathname() != 'assets/js/index.html') {
+		if ($it->getFilename() != 'index.html') {
 			$it->next(); continue;
 		}
 	}

@@ -30,7 +30,7 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '4.0');
+		define('CONTAO_CHECK_VERSION', '4.1');
 		define('IS_WINDOWS', (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'));
 
 		$this->setLocale($this->getLanguage());
@@ -105,7 +105,7 @@ class Bootstrap
 
 
 	/**
-	 * Return the accepted languages as an array
+	 * Return the first eight accepted languages as an array
 	 * 
 	 * @return array The locale array
 	 * 
@@ -134,7 +134,7 @@ class Bootstrap
 			}
 		}
 
-		return array_unique($return);
+		return array_slice(array_unique($return), 0, 8);
 	}
 
 
