@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 4.1 (2012-01-01)
+------------------------
+
+### Fixed
+Correctly check for the `assets/images/*` subfolders (see #4976).
+
+
 Version 4.0 (2012-10-30)
 ------------------------
 
