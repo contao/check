@@ -74,6 +74,11 @@ while ($it->valid()) {
 		$it->next(); continue;
 	}
 
+	// system/cron/cron.txt
+	if ($it->getSubPathname() == 'system/cron/cron.txt') {
+		$it->next(); continue;
+	}
+
 	// Not to be touched Contao files
 	if ($it->getSubPathname() == 'system/config/dcaconfig.php') {
 		$it->next(); continue;

@@ -110,7 +110,7 @@ class Installer
 			return false;
 		} else {
 			clearstatcache();
-			$self = posix_getpwuid(@fileowner(__DIR__));
+			$self = posix_getpwuid(@fileowner(dirname(__FILE__)));
 			$test = posix_getpwuid(@fileowner('test'));
 			@rmdir('test');
 
@@ -354,7 +354,7 @@ class Installer
 			if (file_exists('download') && filesize('download') > 0) {
 				$zip = new ZipArchive;
 				$zip->open('download');
-				$zip->extractTo(dirname(__DIR__));
+				$zip->extractTo(dirname(dirname(__FILE__)));
 				$zip->close();
 				unlink('download');
 			}
@@ -435,7 +435,7 @@ $installer->run();
         </form>
       <?php else: ?>
         <h2><?php echo _('Installation complete') ?></h2>
-        <p class="confirm"><?php printf(_('Contao %s has been installed in %s.'), filter_var($_POST['version'], FILTER_SANITIZE_STRING), dirname(__DIR__)) ?></p>
+        <p class="confirm"><?php printf(_('Contao %s has been installed in %s.'), filter_var($_POST['version'], FILTER_SANITIZE_STRING), dirname(dirname(__FILE__))) ?></p>
         <p class="mt"><a href="../contao/install.php" class="btn"><?php echo _('Open the Contao install tool') ?></a></p>
       <?php endif; ?>
     </div>

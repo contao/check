@@ -30,7 +30,7 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '4.1');
+		define('CONTAO_CHECK_VERSION', '4.2');
 		define('IS_WINDOWS', (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'));
 
 		$this->setLocale($this->getLanguage());
@@ -157,7 +157,7 @@ class Bootstrap
 
 		putenv("LC_ALL=$locale");
 		setlocale(LC_ALL, $locale);
-		bindtextdomain('messages', __DIR__ . '/locale');
+		bindtextdomain('messages', dirname(__FILE__) . '/locale');
 		textdomain('messages');
 		bind_textdomain_codeset('messages', 'UTF-8');
 	}
