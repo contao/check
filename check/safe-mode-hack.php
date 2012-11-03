@@ -135,7 +135,7 @@ class SafeModeHack
 	 */
 	public function canCreateFolder()
 	{
-		$this->folderOwner = posix_getpwuid(@fileowner(__DIR__));
+		$this->folderOwner = posix_getpwuid(@fileowner(dirname(__FILE__)));
 
 		// Try to create a folder
 		if (@mkdir('test') !== false) {

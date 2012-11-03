@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 4.2 (2012-01-03)
+------------------------
+
+### Fixed
+Replace `__DIR__` with `dirname(__FILE__)` for PHP 5.2 (see #34).
+
+
 Version 4.1 (2012-01-01)
 ------------------------
 

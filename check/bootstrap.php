@@ -157,7 +157,7 @@ class Bootstrap
 
 		putenv("LC_ALL=$locale");
 		setlocale(LC_ALL, $locale);
-		bindtextdomain('messages', __DIR__ . '/locale');
+		bindtextdomain('messages', dirname(__FILE__) . '/locale');
 		textdomain('messages');
 		bind_textdomain_codeset('messages', 'UTF-8');
 	}

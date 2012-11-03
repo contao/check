@@ -145,7 +145,7 @@ class Validator
 	 */
 	protected function findConstants()
 	{
-		define('TL_ROOT', dirname(__DIR__));
+		define('TL_ROOT', dirname(dirname(__FILE__)));
 
 		if (file_exists("../system/constants.php")) {
 			include "../system/constants.php";
