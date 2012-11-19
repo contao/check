@@ -62,7 +62,7 @@ class Repository
 	 */
 	public function canConnect()
 	{
-		$connection = fsockopen("contao.org", 80, $errno, $errstr, 10);
+		$connection = fsockopen('contao.org', 80, $errno, $errstr, 10);
 		$connected = ($connection !== false);
 		fclose($connection);
 

@@ -180,6 +180,24 @@ class LiveUpdate
 		$this->available = false;
 		return true;
 	}
+
+
+	/**
+	 * Check whether a connection can be established
+	 */
+	public function canConnect()
+	{
+		$connection = fsockopen('ssl://www.inetrobots.com', 443, $errno, $errstr, 10);
+		$connected = ($connection !== false);
+		fclose($connection);
+
+		if ($connected) {
+			return true;
+		}
+
+		$this->available = false;
+		return false;
+	}
 }
 
 $update = new LiveUpdate();
@@ -259,6 +277,15 @@ $update = new LiveUpdate();
     <?php else: ?>
       <p class="error"><?php echo _('You are using FastCGI and eAccelerator.') ?></p>
       <p class="explain"><?php echo _('It seems that FastCGI in combination with the eAccelerator extension is buggy when it comes to Phar archives. You can either disable the eAccelerator extension or use a different PHP cache instead (e.g. FastCGI+APC).') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo _('Connection test') ?></h3>
+    <?php if ($update->canConnect()): ?>
+      <p class="confirm"><?php echo _('A connection to www.inetrobots.com could be established.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('A connection to www.inetrobots.com could not be established.') ?></p>
+      <p class="explain"><?php echo _('Maybe the request has been blocked by a firewall. Please contact your server administrator.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">

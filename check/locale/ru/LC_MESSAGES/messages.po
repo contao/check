@@ -11,15 +11,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-16 10:57+0200\n"
-"PO-Revision-Date: 2012-10-30 19:26+0000\n"
 "Last-Translator: Kuzmich <https://www.transifex.com/accounts/profile/Kuzmich/>\n"
+"POT-Creation-Date: 2012-11-19 11:23+0100\n"
+"PO-Revision-Date: 2012-11-19 10:33+0000\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/contao-check/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"POT-Revision-Date: 2012-10-30 09:44+0200\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: check/index.php:84
@@ -158,25 +157,25 @@ msgstr "Contao %s успешно установлена в %s."
 msgid "Open the Contao install tool"
 msgstr "Открыть мастер установки Contao"
 
-#: check/install.php:443 check/live-update.php:271 check/repository.php:120
+#: check/install.php:443 check/live-update.php:298 check/repository.php:120
 #: check/safe-mode-hack.php:288 check/validate.php:281
 msgid "Go back"
 msgstr "Назад"
 
-#: check/live-update.php:199
+#: check/live-update.php:217
 msgid "Live Update"
 msgstr "Онлайн обновление"
 
-#: check/live-update.php:202
+#: check/live-update.php:220
 msgid "PHP 5.3.2 or greater"
 msgstr "PHP 5.3.2 и выше"
 
-#: check/live-update.php:204 check/live-update.php:206
+#: check/live-update.php:222 check/live-update.php:224
 #, php-format
 msgid "You have PHP version %s."
 msgstr "Установлена PHP версии %s."
 
-#: check/live-update.php:207
+#: check/live-update.php:225
 #, php-format
 msgid ""
 "Phar has been added to the PHP core in version 5.3, so you require at least "
@@ -184,53 +183,53 @@ msgid ""
 " to use .phar files by installing the PECL phar extension (see %s)."
 msgstr "Phar был добавлен в PHP 5.3, поэтому вам необходимо использовать .phar файлы как минимум версии PHP 5.3.2. Если у вас PHP 5.2, вы можете использовать .phar файлы, установив phar расширение PECL (см. %s)."
 
-#: check/live-update.php:211
+#: check/live-update.php:229
 msgid "PHP Phar extension"
 msgstr "Расширение PHP Phar"
 
-#: check/live-update.php:213
+#: check/live-update.php:231
 msgid "The PHP Phar extension is enabled."
 msgstr "Расширение PHP Phar включено."
 
-#: check/live-update.php:215
+#: check/live-update.php:233
 msgid "The PHP Phar extension is not enabled."
 msgstr "Расширение PHP Phar не включено."
 
-#: check/live-update.php:216
+#: check/live-update.php:234
 msgid ""
 "The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be "
 "explicitly disabled using the --disable-phar flag. Recompile PHP without the"
 " flag."
 msgstr "Расширение PHP Phar является частью ядра PHP начиная с версии PHP 5.3 для явного отключения используйте флаг --disable-phar. Перекомпилируйте PHP без флага."
 
-#: check/live-update.php:220
+#: check/live-update.php:238
 msgid "PHP OpenSSL extension"
 msgstr "Расширение PHP OpenSSL"
 
-#: check/live-update.php:222
+#: check/live-update.php:240
 msgid "The PHP OpenSSL extension is enabled."
 msgstr "Расширение PHP OpenSSL включено."
 
-#: check/live-update.php:224
+#: check/live-update.php:242
 msgid "The PHP OpenSSL extension is not enabled."
 msgstr "Расширение PHP OpenSSL не включено."
 
-#: check/live-update.php:225
+#: check/live-update.php:243
 msgid ""
 "The PHP OpenSSL extension is required to set up a secure connection to the "
 "Live Update server. Enable it in your php.ini."
 msgstr "Расширение PHP OpenSSL необходимо для установки безопасного подключения к серверу онлайн обновлений. Включите его в php.ini."
 
-#: check/live-update.php:231
+#: check/live-update.php:249
 msgid "The ionCube Loader is not enabled or at least at version 4.0.9."
 msgstr "ionCube Loader не включен или версия ниже чем 4.0.9."
 
-#: check/live-update.php:233
+#: check/live-update.php:251
 msgid ""
 "An old version of the ionCube Loader prior to version 4.0.9 is installed."
 msgstr "Версия IonCube Loader ниже чем 4.0.9."
 
-#: check/live-update.php:234
+#: check/live-update.php:252
 #, php-format
 msgid ""
 "Before version 4.0.9, the ionCube Loader was incompatible with Phar "
@@ -238,40 +237,40 @@ msgid ""
 "information is available here: %s"
 msgstr "До версии 4.0.9, IonCube Loader был несовместим с Phar архивами. Или обновите его до последней версии или отключите модуль. Более подробная информация доступна здесь: %s"
 
-#: check/live-update.php:238
+#: check/live-update.php:256
 msgid "Suhosin extension"
 msgstr "Расширение Suhosin"
 
-#: check/live-update.php:240
+#: check/live-update.php:258
 msgid ""
 "The Suhosin extension is not installed or correctly configured for .phar "
 "files."
 msgstr "Расширение Suhosin не установлено или неправильно настроены .phar файлы."
 
-#: check/live-update.php:242
+#: check/live-update.php:260
 msgid "The Suhosin extension does not allow to run .phar files."
 msgstr "Расширение Suhosin не позволяет запускать файлы .phar."
 
-#: check/live-update.php:243
+#: check/live-update.php:261
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
 "<code>suhosin.executor.include.whitelist = phar</code>."
 msgstr "Добавьте \"phar\" в список разрешенных потоков в php.ini: <code>suhosin.executor.include.whitelist = phar</code>."
 
-#: check/live-update.php:247
+#: check/live-update.php:265
 msgid "Detect Unicode"
 msgstr "Обнаружение Юникода"
 
-#: check/live-update.php:249
+#: check/live-update.php:267
 msgid ""
 "The --enable-zend-multibyte flag is not set or detect_unicode is disabled."
 msgstr "Флаг --enable-zend-multibyte не установлен или отключен detect_unicode."
 
-#: check/live-update.php:251
+#: check/live-update.php:269
 msgid "The detect_unicode settings on your server are not correct."
 msgstr "Настройки detect_unicode сервера неправильны."
 
-#: check/live-update.php:252
+#: check/live-update.php:270
 #, php-format
 msgid ""
 "If PHP is compiled with the --enable-zend-multibyte flag, you have to "
@@ -280,15 +279,15 @@ msgid ""
 "information is available here: %s"
 msgstr "Если PHP был скомпилирован с флагом --enable-zend-multibyte, вы должны явно отключить detect_unicode в php.ini: <code>detect_unicode = Off</code>. Это ошибка PHP, которая может быть исправлена в будущем. Более подробная информация доступна здесь: %s"
 
-#: check/live-update.php:258
+#: check/live-update.php:276
 msgid "You are not using FastCGI and eAccelerator."
 msgstr "FastCGI и eAccelerator не используются."
 
-#: check/live-update.php:260
+#: check/live-update.php:278
 msgid "You are using FastCGI and eAccelerator."
 msgstr "Используются FastCGI и eAccelerator."
 
-#: check/live-update.php:261
+#: check/live-update.php:279
 msgid ""
 "It seems that FastCGI in combination with the eAccelerator extension is "
 "buggy when it comes to Phar archives. You can either disable the "
@@ -296,11 +295,29 @@ msgid ""
 "FastCGI+APC)."
 msgstr "Вероятно FastCGI, в сочетании с расширением eAccelerator, работает нестабильно когда дело доходит до Phar архивов. Можно отключить расширение eAccelerator или вместо этого использовать различные кэшы PHP (напр. FastCGI + APC)."
 
-#: check/live-update.php:266
+#: check/live-update.php:283 check/repository.php:105
+msgid "Connection test"
+msgstr "Проверка подключения"
+
+#: check/live-update.php:285
+msgid "A connection to www.inetrobots.com could be established."
+msgstr ""
+
+#: check/live-update.php:287
+msgid "A connection to www.inetrobots.com could not be established."
+msgstr ""
+
+#: check/live-update.php:288 check/repository.php:110
+msgid ""
+"Maybe the request has been blocked by a firewall. Please contact your server"
+" administrator."
+msgstr "Возможно, запрос заблокирован брандмауэром. Обратитесь к администратору сервера."
+
+#: check/live-update.php:293
 msgid "You can use the Live Update on this server."
 msgstr "Онлайн обновление можно использовать на этом сервере."
 
-#: check/live-update.php:268
+#: check/live-update.php:295
 msgid "You cannot use the Live Update on this server."
 msgstr "Онлайн обновление использовать на этом сервере невозможно."
 
@@ -329,10 +346,6 @@ msgid ""
 "%s extension."
 msgstr "Расширение PHP SOAP необходимо для связи с сервером расширения хранилища. Вы можете включить его путем компиляции PHP с флагом --enable-soap. В зависимости от версии Contao также можно использовать расширение %s."
 
-#: check/repository.php:105
-msgid "Connection test"
-msgstr "Проверка подключения"
-
 #: check/repository.php:107
 msgid "A connection to contao.org could be established."
 msgstr "Подключение к contao.org может быть установлено."
@@ -340,12 +353,6 @@ msgstr "Подключение к contao.org может быть установ�
 #: check/repository.php:109
 msgid "A connection to contao.org could not be established."
 msgstr "Подключение к contao.org не может быть установлено."
-
-#: check/repository.php:110
-msgid ""
-"Maybe the request has been blocked by a firewall. Please contact your server"
-" administrator."
-msgstr "Возможно, запрос заблокирован брандмауэром. Обратитесь к администратору сервера."
 
 #: check/repository.php:115
 msgid "You can use the Extension Repository on this server."

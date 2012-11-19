@@ -11,10 +11,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-16 10:57+0200\n"
-"POT-Revision-Date: 2012-10-30 09:44+0200\n"
 "Last-Translator: Leo Feyer <http://contao.org>\n"
 "Language-Team: \n"
+"POT-Creation-Date: 2012-11-19 11:23+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -156,25 +157,25 @@ msgstr ""
 msgid "Open the Contao install tool"
 msgstr ""
 
-#: check/install.php:443 check/live-update.php:271 check/repository.php:120
+#: check/install.php:443 check/live-update.php:298 check/repository.php:120
 #: check/safe-mode-hack.php:288 check/validate.php:281
 msgid "Go back"
 msgstr ""
 
-#: check/live-update.php:199
+#: check/live-update.php:217
 msgid "Live Update"
 msgstr ""
 
-#: check/live-update.php:202
+#: check/live-update.php:220
 msgid "PHP 5.3.2 or greater"
 msgstr ""
 
-#: check/live-update.php:204 check/live-update.php:206
+#: check/live-update.php:222 check/live-update.php:224
 #, php-format
 msgid "You have PHP version %s."
 msgstr ""
 
-#: check/live-update.php:207
+#: check/live-update.php:225
 #, php-format
 msgid ""
 "Phar has been added to the PHP core in version 5.3, so you require at least "
@@ -182,53 +183,53 @@ msgid ""
 "to use .phar files by installing the PECL phar extension (see %s)."
 msgstr ""
 
-#: check/live-update.php:211
+#: check/live-update.php:229
 msgid "PHP Phar extension"
 msgstr ""
 
-#: check/live-update.php:213
+#: check/live-update.php:231
 msgid "The PHP Phar extension is enabled."
 msgstr ""
 
-#: check/live-update.php:215
+#: check/live-update.php:233
 msgid "The PHP Phar extension is not enabled."
 msgstr ""
 
-#: check/live-update.php:216
+#: check/live-update.php:234
 msgid ""
 "The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be "
 "explicitly disabled using the --disable-phar flag. Recompile PHP without the "
 "flag."
 msgstr ""
 
-#: check/live-update.php:220
+#: check/live-update.php:238
 msgid "PHP OpenSSL extension"
 msgstr ""
 
-#: check/live-update.php:222
+#: check/live-update.php:240
 msgid "The PHP OpenSSL extension is enabled."
 msgstr ""
 
-#: check/live-update.php:224
+#: check/live-update.php:242
 msgid "The PHP OpenSSL extension is not enabled."
 msgstr ""
 
-#: check/live-update.php:225
+#: check/live-update.php:243
 msgid ""
 "The PHP OpenSSL extension is required to set up a secure connection to the "
 "Live Update server. Enable it in your php.ini."
 msgstr ""
 
-#: check/live-update.php:231
+#: check/live-update.php:249
 msgid "The ionCube Loader is not enabled or at least at version 4.0.9."
 msgstr ""
 
-#: check/live-update.php:233
+#: check/live-update.php:251
 msgid ""
 "An old version of the ionCube Loader prior to version 4.0.9 is installed."
 msgstr ""
 
-#: check/live-update.php:234
+#: check/live-update.php:252
 #, php-format
 msgid ""
 "Before version 4.0.9, the ionCube Loader was incompatible with Phar "
@@ -236,40 +237,40 @@ msgid ""
 "information is available here: %s"
 msgstr ""
 
-#: check/live-update.php:238
+#: check/live-update.php:256
 msgid "Suhosin extension"
 msgstr ""
 
-#: check/live-update.php:240
+#: check/live-update.php:258
 msgid ""
 "The Suhosin extension is not installed or correctly configured for .phar "
 "files."
 msgstr ""
 
-#: check/live-update.php:242
+#: check/live-update.php:260
 msgid "The Suhosin extension does not allow to run .phar files."
 msgstr ""
 
-#: check/live-update.php:243
+#: check/live-update.php:261
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
 "<code>suhosin.executor.include.whitelist = phar</code>."
 msgstr ""
 
-#: check/live-update.php:247
+#: check/live-update.php:265
 msgid "Detect Unicode"
 msgstr ""
 
-#: check/live-update.php:249
+#: check/live-update.php:267
 msgid ""
 "The --enable-zend-multibyte flag is not set or detect_unicode is disabled."
 msgstr ""
 
-#: check/live-update.php:251
+#: check/live-update.php:269
 msgid "The detect_unicode settings on your server are not correct."
 msgstr ""
 
-#: check/live-update.php:252
+#: check/live-update.php:270
 #, php-format
 msgid ""
 "If PHP is compiled with the --enable-zend-multibyte flag, you have to "
@@ -278,15 +279,15 @@ msgid ""
 "information is available here: %s"
 msgstr ""
 
-#: check/live-update.php:258
+#: check/live-update.php:276
 msgid "You are not using FastCGI and eAccelerator."
 msgstr ""
 
-#: check/live-update.php:260
+#: check/live-update.php:278
 msgid "You are using FastCGI and eAccelerator."
 msgstr ""
 
-#: check/live-update.php:261
+#: check/live-update.php:279
 msgid ""
 "It seems that FastCGI in combination with the eAccelerator extension is "
 "buggy when it comes to Phar archives. You can either disable the "
@@ -294,11 +295,29 @@ msgid ""
 "+APC)."
 msgstr ""
 
-#: check/live-update.php:266
+#: check/live-update.php:283 check/repository.php:105
+msgid "Connection test"
+msgstr ""
+
+#: check/live-update.php:285
+msgid "A connection to www.inetrobots.com could be established."
+msgstr ""
+
+#: check/live-update.php:287
+msgid "A connection to www.inetrobots.com could not be established."
+msgstr ""
+
+#: check/live-update.php:288 check/repository.php:110
+msgid ""
+"Maybe the request has been blocked by a firewall. Please contact your server "
+"administrator."
+msgstr ""
+
+#: check/live-update.php:293
 msgid "You can use the Live Update on this server."
 msgstr ""
 
-#: check/live-update.php:268
+#: check/live-update.php:295
 msgid "You cannot use the Live Update on this server."
 msgstr ""
 
@@ -327,22 +346,12 @@ msgid ""
 "extension."
 msgstr ""
 
-#: check/repository.php:105
-msgid "Connection test"
-msgstr ""
-
 #: check/repository.php:107
 msgid "A connection to contao.org could be established."
 msgstr ""
 
 #: check/repository.php:109
 msgid "A connection to contao.org could not be established."
-msgstr ""
-
-#: check/repository.php:110
-msgid ""
-"Maybe the request has been blocked by a firewall. Please contact your server "
-"administrator."
 msgstr ""
 
 #: check/repository.php:115

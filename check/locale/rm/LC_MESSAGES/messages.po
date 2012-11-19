@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-16 10:57+0200\n"
-"PO-Revision-Date: 2012-10-26 08:49+0000\n"
 "Last-Translator: Gion-Andri Cantieni <https://www.transifex.com/accounts/profile/gioni/>\n"
+"POT-Creation-Date: 2012-11-19 11:23+0100\n"
+"PO-Revision-Date: 2012-11-19 10:33+0000\n"
 "Language-Team: Romansh (http://www.transifex.com/projects/p/contao-check/language/rm/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -157,25 +157,25 @@ msgstr "Contao %s è vegnì installà en %s."
 msgid "Open the Contao install tool"
 msgstr "Avrir l'utensil d'installaziun da Contao"
 
-#: check/install.php:443 check/live-update.php:271 check/repository.php:120
+#: check/install.php:443 check/live-update.php:298 check/repository.php:120
 #: check/safe-mode-hack.php:288 check/validate.php:281
 msgid "Go back"
 msgstr "Turnar"
 
-#: check/live-update.php:199
+#: check/live-update.php:217
 msgid "Live Update"
 msgstr "Actualisaziun directa (Live Update)"
 
-#: check/live-update.php:202
+#: check/live-update.php:220
 msgid "PHP 5.3.2 or greater"
 msgstr "PHP 5.3.2 u pli grond"
 
-#: check/live-update.php:204 check/live-update.php:206
+#: check/live-update.php:222 check/live-update.php:224
 #, php-format
 msgid "You have PHP version %s."
 msgstr "Ti has la versiun %s da PHP."
 
-#: check/live-update.php:207
+#: check/live-update.php:225
 #, php-format
 msgid ""
 "Phar has been added to the PHP core in version 5.3, so you require at least "
@@ -183,53 +183,53 @@ msgid ""
 " to use .phar files by installing the PECL phar extension (see %s)."
 msgstr "Phar è vegnì agiuntà al core da PHP en la versiun 5.3, ti basegnas pia almain PHP versiun 5.3.2 per utilisar datotecas da .phar. Sche ti has PHP 5.2, ti pudessas esser aberls dad utilisar datotecas .phar cun installar l'extensiun PCEL da phar (guarda %s)."
 
-#: check/live-update.php:211
+#: check/live-update.php:229
 msgid "PHP Phar extension"
 msgstr "Extensiun Phar da PHP"
 
-#: check/live-update.php:213
+#: check/live-update.php:231
 msgid "The PHP Phar extension is enabled."
 msgstr "L'extensiun Phar da PHP è activada."
 
-#: check/live-update.php:215
+#: check/live-update.php:233
 msgid "The PHP Phar extension is not enabled."
 msgstr "L'extensiun Phar da PHP n'è betg activada."
 
-#: check/live-update.php:216
+#: check/live-update.php:234
 msgid ""
 "The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be "
 "explicitly disabled using the --disable-phar flag. Recompile PHP without the"
 " flag."
 msgstr "L'extensiun Phar da PHP fa part dal core da PHP davent da PHP 5.3 e sto vegnir deactivà explicitamain cun utilisar il flag --disable-phar. Recompliescha PHP senza quest flag."
 
-#: check/live-update.php:220
+#: check/live-update.php:238
 msgid "PHP OpenSSL extension"
 msgstr "Extensiun OpenSSL da PHP"
 
-#: check/live-update.php:222
+#: check/live-update.php:240
 msgid "The PHP OpenSSL extension is enabled."
 msgstr "L'extensiun OpenSSL da PHP è activada."
 
-#: check/live-update.php:224
+#: check/live-update.php:242
 msgid "The PHP OpenSSL extension is not enabled."
 msgstr "L'extensiun OpenSSL da PHP n'è betg activada."
 
-#: check/live-update.php:225
+#: check/live-update.php:243
 msgid ""
 "The PHP OpenSSL extension is required to set up a secure connection to the "
 "Live Update server. Enable it in your php.ini."
 msgstr "L'extensiun OpenSSL da PHP è necessaria per stabilir ina connexiun segira cun il server per l'actualisaziun directa. Activescha quai en tia php.ini."
 
-#: check/live-update.php:231
+#: check/live-update.php:249
 msgid "The ionCube Loader is not enabled or at least at version 4.0.9."
 msgstr "Il ionCube Loader n'è betg activà u almain a versiun 4.0.9."
 
-#: check/live-update.php:233
+#: check/live-update.php:251
 msgid ""
 "An old version of the ionCube Loader prior to version 4.0.9 is installed."
 msgstr "Ina versiun dal ionCube Loader pli veglia che la versiun 4.0.9 è installada."
 
-#: check/live-update.php:234
+#: check/live-update.php:252
 #, php-format
 msgid ""
 "Before version 4.0.9, the ionCube Loader was incompatible with Phar "
@@ -237,40 +237,40 @@ msgid ""
 "information is available here: %s"
 msgstr "Avant la versiun 4.0.9 era il ionCube Loader incumpatibel cun archivs da Phar. Actualisescha u a la pli nova versiun e deactivescha il modul. Dapli infurmaziuns chattas ti qua: %s"
 
-#: check/live-update.php:238
+#: check/live-update.php:256
 msgid "Suhosin extension"
 msgstr "Extensiun Suhosin"
 
-#: check/live-update.php:240
+#: check/live-update.php:258
 msgid ""
 "The Suhosin extension is not installed or correctly configured for .phar "
 "files."
 msgstr "L'extensiun Suhosin n'è betg installada u configurada correctamain per datotecas .phar."
 
-#: check/live-update.php:242
+#: check/live-update.php:260
 msgid "The Suhosin extension does not allow to run .phar files."
 msgstr "L'extensiun Suhosin na lubescha betg l'exequziun da datotecas .phar."
 
-#: check/live-update.php:243
+#: check/live-update.php:261
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
 "<code>suhosin.executor.include.whitelist = phar</code>."
 msgstr "Ti stos agiuntar \"phar\" a la glista da streams lubids en tia php.ini:\n<code>suhosin.executor.include.whitelist = phar</code>."
 
-#: check/live-update.php:247
+#: check/live-update.php:265
 msgid "Detect Unicode"
 msgstr "Detectar Unicode"
 
-#: check/live-update.php:249
+#: check/live-update.php:267
 msgid ""
 "The --enable-zend-multibyte flag is not set or detect_unicode is disabled."
 msgstr "Il flag --enable-zend-multibyte n'è betg definì u detect_unicode è deactivà."
 
-#: check/live-update.php:251
+#: check/live-update.php:269
 msgid "The detect_unicode settings on your server are not correct."
 msgstr "La configuraziun da detect_unicode da tes server n'è betg correcta."
 
-#: check/live-update.php:252
+#: check/live-update.php:270
 #, php-format
 msgid ""
 "If PHP is compiled with the --enable-zend-multibyte flag, you have to "
@@ -279,15 +279,15 @@ msgid ""
 "information is available here: %s"
 msgstr "Sche PHP è compilà cun il flag --enable-zend-multibyte stos ti explicitamain deactivar detect_unicode en tia php.ini: <code>detect_unicode = Off</code>. Quai è in sbagl da PHP che pudess vegnir schlià en futur. Ulteriuras infurmaziuns chattas qua: %s"
 
-#: check/live-update.php:258
+#: check/live-update.php:276
 msgid "You are not using FastCGI and eAccelerator."
 msgstr "Ti n'utiliseschas betg FastCGI ed eAccelerator."
 
-#: check/live-update.php:260
+#: check/live-update.php:278
 msgid "You are using FastCGI and eAccelerator."
 msgstr "Ti utiliseschas FastCGI ed eAccelerator."
 
-#: check/live-update.php:261
+#: check/live-update.php:279
 msgid ""
 "It seems that FastCGI in combination with the eAccelerator extension is "
 "buggy when it comes to Phar archives. You can either disable the "
@@ -295,11 +295,29 @@ msgid ""
 "FastCGI+APC)."
 msgstr "I para che la cumbinaziun da las extensiuns FastCGI ed eAccelerator po chaschunar sbagls en connex cun archivs da phar. Ti pos u deactivar l'extensiun eAccelerator u utilisar in auter cache da PHP (p. ex. FastCGI+APC)."
 
-#: check/live-update.php:266
+#: check/live-update.php:283 check/repository.php:105
+msgid "Connection test"
+msgstr "Test da la connexiun"
+
+#: check/live-update.php:285
+msgid "A connection to www.inetrobots.com could be established."
+msgstr ""
+
+#: check/live-update.php:287
+msgid "A connection to www.inetrobots.com could not be established."
+msgstr ""
+
+#: check/live-update.php:288 check/repository.php:110
+msgid ""
+"Maybe the request has been blocked by a firewall. Please contact your server"
+" administrator."
+msgstr "Eventualmain è la dumonda vegnida bloccada d'ina firewall. Contactescha tes administratur dal server."
+
+#: check/live-update.php:293
 msgid "You can use the Live Update on this server."
 msgstr "Ti pos utilisar l'actualisaziun directa (Live Update) sin quest server."
 
-#: check/live-update.php:268
+#: check/live-update.php:295
 msgid "You cannot use the Live Update on this server."
 msgstr "Ti na pos betg utilisar l'actualisaziun directa (Live Update) sin quest server."
 
@@ -328,10 +346,6 @@ msgid ""
 "%s extension."
 msgstr "L'extensiun SOAP da PHP è necessari per communitgar cun il server dal repository d'extensiuns. Ti pos l'activar entras compilar PHP cun il flag --enable-soap. Dependent da tia versiun da Contao pos ti era esser abel dad utilisar l'extensiun %s."
 
-#: check/repository.php:105
-msgid "Connection test"
-msgstr "Test da la connexiun"
-
 #: check/repository.php:107
 msgid "A connection to contao.org could be established."
 msgstr "Ina connexiun a contao.org è vegnida stabilida."
@@ -339,12 +353,6 @@ msgstr "Ina connexiun a contao.org è vegnida stabilida."
 #: check/repository.php:109
 msgid "A connection to contao.org could not be established."
 msgstr "I na pudeva betg vegnir stabilì ina connexiun a contao.org."
-
-#: check/repository.php:110
-msgid ""
-"Maybe the request has been blocked by a firewall. Please contact your server"
-" administrator."
-msgstr "Eventualmain è la dumonda vegnida bloccada d'ina firewall. Contactescha tes administratur dal server."
 
 #: check/repository.php:115
 msgid "You can use the Extension Repository on this server."

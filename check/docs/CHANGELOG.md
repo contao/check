@@ -1,7 +1,14 @@
 Contao Check Changelog
 ======================
 
-Version 4.2 (2012-01-03)
+Version 5.0 (2012-11-19)
+------------------------
+
+### New
+Added a connection check to the Live Update check (see #37).
+
+
+Version 4.2 (2012-11-03)
 ------------------------
 
 ### Fixed
@@ -11,7 +18,7 @@ Ignore the `system/cron/cron.txt` file (see #36).
 Replace `__DIR__` with `dirname(__FILE__)` for PHP 5.2 (see #34).
 
 
-Version 4.1 (2012-01-01)
+Version 4.1 (2012-11-01)
 ------------------------
 
 ### Fixed
