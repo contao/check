@@ -5,6 +5,9 @@ Version 5.0 (2012-11-19)
 ------------------------
 
 ### New
+Refactored the application so the overview can show the test results (see #30).
+
+### New
 Added a connection check to the Live Update check (see #37).
 
 
