@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Contao Check <?php echo CONTAO_CHECK_VERSION ?></title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="wrapper">
+  <h1>Contao Check</h1>
+  <div class="row">
+    <h2><?php echo _('Installation') ?></h2>
+  </div>
+  <div class="row">
+    <h3><?php echo _('Web installer') ?></h3>
+    <?php if ($this->hasInstallation()): ?>
+      <p class="error"><?php printf(_('There is a Contao installation already. Are you looking for the %s?'), '<a href="http://luid.inetrobots.com" target="_blank">Live Update</a>') ?></p>
+    <?php elseif ($this->requiresFtp()): ?>
+      <p class="error"><?php echo _('The automatic installation is not possible on your server due to safe_mode or file permission restrictions.') ?></p>
+    <?php elseif ($this->isAvailable()): ?>
+      <p class="confirm"><?php echo _('The automatic installation is possible on your server.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('The automatic installation is not possible on your server.') ?></p>
+      <p class="explain"><?php echo _('Your PHP installation does not meet the requirements to use the command line, does not have enough permissions to create files and folders or does not have the required PHP extensions "cURL" and "Zip".') ?></p>
+    <?php endif; ?>
+  </div>
+  <?php if (!$this->hasInstallation() && !$this->requiresFtp()): ?>
+    <div class="row">
+      <?php if (!$this->isAvailable()): ?>
+        <h3><?php echo _('Manual installation') ?></h3>
+        <ul>
+          <li><?php printf(_('Go to %s and download the latest Contao version.'), '<a href="http://sourceforge.net/projects/contao/files/">sourceforge.net</a>') ?></li>
+          <li><?php echo _('Extract the download archive and upload the files to your server using an (S)FTP client.') ?></li>
+          <li><?php echo _('Open the Contao install tool by adding "/contao" to the URL of your installation.') ?></li>
+        </ul>
+      <?php elseif (!isset($_POST['version'])): ?>
+        <h3><?php echo _('Target version') ?></h3>
+        <form method="post">
+          <div class="versions">
+            <select name="version" class="select">
+            <?php
+              foreach ($this->getVersions() as $group=>$versions) {
+                echo '<optgroup label="' . $group . '">';
+                foreach ($versions as $version) {
+                  echo '<option value="' . $version . '">Contao ' . $version . '</option>';
+		  	    }
+                echo '</optgroup>';
+              }
+            ?>
+            </select>
+          </div>
+          <p class="explain"><?php echo _('Attention: Deprecated versions might contain security vulnerabilities! Please install the latest stable version or the latest LTS version (long term support version).') ?></p>
+          <p class="mt"><input class="btn" type="submit" value="<?php echo _('Start the installation') ?>"></p>
+        </form>
+      <?php else: ?>
+        <h3><?php echo _('Installation complete') ?></h3>
+        <p class="confirm"><?php printf(_('Contao %s has been installed in %s.'), filter_var($_POST['version'], FILTER_SANITIZE_STRING), dirname(dirname(__FILE__))) ?></p>
+        <p class="mt"><a href="../contao/install.php" class="btn"><?php echo _('Open the Contao install tool') ?></a></p>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
+  <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
+</div>
+<script src="assets/script.js"></script>
+</body>
+</html>

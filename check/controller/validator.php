@@ -10,8 +10,6 @@
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
-require 'bootstrap.php';
-
 
 /**
  * Validate and existing Contao installation
@@ -58,6 +56,8 @@ class Validator
 		} else {
 			$this->validate();
 		}
+
+		include 'views/validator.phtml';
 	}
 
 
@@ -215,70 +215,3 @@ class Validator
 		}
 	}
 }
-
-$validator = new Validator;
-$validator->run();
-
-?>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Contao Check <?php echo CONTAO_CHECK_VERSION ?></title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-<div id="wrapper">
-  <h1>Contao Check</h1>
-  <div class="row">
-    <h2><?php echo _('Validate an installation') ?></h2>
-  </div>
-  <?php if (!$validator->hasConstants()): ?>
-    <div class="row">
-      <h3><?php echo _('Installation') ?></h3>
-      <p class="error"><?php echo _('Could not find a Contao installation.') ?></p>
-      <p class="explain"><?php echo _('To validate an existing installation, please upload the "check" folder to your installation directory.') ?></p>
-    </div>
-  <?php elseif (!$validator->isSupportedVersion()): ?>
-    <div class="row">
-      <h3><?php echo _('Unknown version') ?></h3>
-      <p class="error"><?php printf(_('The installed version %s is not (yet) supported.'), VERSION . '.' . BUILD) ?></p>
-      <p class="explain"><?php echo _('There is no version file for your Contao installation. Are you using a stable Contao version and do you have the latest version of the Contao Check?') ?></p>
-    </div>
-  <?php else: ?>
-    <div class="row">
-      <h3><?php echo _('Version') ?></h3>
-      <p><?php printf(_('Found a Contao %s installation.'), VERSION . '.' . BUILD) ?></p>
-    </div>
-  <?php if ($validator->hasMissing()): ?>
-    <div class="row">
-      <h3><?php echo _('Missing files') ?></h3>
-      <ul class="validate">
-        <?php foreach ($validator->getMissing() as $file): ?>
-          <li><?php echo $file ?></li>
-        <?php endforeach; ?>
-      </ul>
-    </div>
-  <?php endif; ?>
-  <?php if ($validator->hasCorrupt()): ?>
-    <div class="row">
-      <h3><?php echo _('Corrupt files') ?></h3>
-      <ul class="validate">
-        <?php foreach ($validator->getCorrupt() as $file): ?>
-          <li><?php echo $file ?></li>
-        <?php endforeach; ?>
-      </ul>
-    </div>
-  <?php endif; ?>
-  <div class="row">
-    <?php if ($validator->isValid()): ?>
-	  <p class="confirm large"><?php echo _('Your installation is up to date.') ?></p>
-	<?php else: ?>
-	  <p class="error large"><?php echo _('Your installation is not up to date.') ?></p>
-	<?php endif; ?>
-  </div>
-  <?php endif; ?>
-  <p class="back"><a href="."><?php echo _('Go back') ?></a></p>
-</div>
-</body>
-</html>

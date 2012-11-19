@@ -10,8 +10,6 @@
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
-require 'bootstrap.php';
-
 
 /**
  * Check the Safe Mode Hack requirements
@@ -64,6 +62,15 @@ class SafeModeHack
 	 * @var boolean
 	 */
 	protected $required = false;
+
+
+	/**
+	 * Execute the command
+	 */
+	public function run()
+	{
+		include 'views/safe-mode-hack.phtml';
+	}
 
 
 	/**
@@ -228,64 +235,3 @@ class SafeModeHack
 		return false;
 	}
 }
-
-$smh = new SafeModeHack;
-
-?>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Contao Check <?php echo CONTAO_CHECK_VERSION ?></title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-<div id="wrapper">
-  <h1>Contao Check</h1>
-  <div class="row">
-    <h2><?php echo _('Safe Mode Hack') ?></2>
-  </div>
-  <div class="row">
-    <h3><?php echo _('php.ini settings') ?></h3>
-    <?php if (!$smh->isEnabled()): ?>
-      <p class="confirm"><?php echo _('The PHP safe_mode is not enabled.') ?></p>
-    <?php else: ?>
-      <p class="error"><?php echo _('The PHP safe_mode is enabled.') ?></p>
-      <p class="explain"><?php echo _('It is recommended to disable the safe_mode in your php.ini or server control panel, otherwise you will have to use the Contao Safe Mode Hack to create or manipulate files. Using the Safe Mode Hack will have a negative impact on the performance of your website.') ?></p>
-    <?php endif; ?>
-  </div>
-  <div class="row">
-    <h3><?php echo _('Creating a test folder') ?></h3>
-    <?php if ($smh->canCreateFolder()): ?>
-      <p class="confirm"><?php printf(_('The test folder could be created (owner: %s, chmod: %s).'), $smh->getFolderOwner(), $smh->getTestFolderChmod()) ?></p>
-    <?php elseif ($smh->getTestFolderChmod() === null): ?>
-      <p class="error"><?php echo _('The test folder could not be created.') ?></p>
-      <p class="explain"><?php echo _('It seems that the PHP process does not have enough permissions to create folders on your server.') ?></p>
-    <?php else: ?>
-      <p class="error"><?php echo _('The test folder does not have the correct owner or chmod settings.') ?></p>
-      <p class="explain"><?php printf(_('The test folder is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $smh->getTestFolderOwner(), $smh->getFolderOwner(), $smh->getTestFolderChmod(), (IS_WINDOWS ? '777' : _('775, 755 or 750'))) ?></p>
-    <?php endif; ?>
-  </div>
-  <div class="row">
-    <h3><?php echo _('Creating a test file') ?></h3>
-    <?php if ($smh->canCreateFile()): ?>
-      <p class="confirm"><?php printf(_('The test file could be created (owner: %s, chmod: %s).'), $smh->getFileOwner(), $smh->getTestFileChmod()) ?></p>
-    <?php elseif ($smh->getTestFileChmod() === null): ?>
-      <p class="error"><?php echo _('The test file could not be created.') ?></p>
-      <p class="explain"><?php echo _('It seems that the PHP process does not have enough permissions to create files on your server.') ?></p>
-    <?php else: ?>
-      <p class="error"><?php echo _('The test file does not have the correct owner or chmod settings.') ?></p>
-      <p class="explain"><?php printf(_('The test file is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $smh->getTestFileOwner(), $smh->getFileOwner(), $smh->getTestFileChmod(), (IS_WINDOWS ? '666' : _('664, 644, 660 or 640'))) ?></p>
-    <?php endif; ?>
-  </div>
-  <div class="row">
-    <?php if (!$smh->isRequired()): ?>
-	  <p class="confirm large"><?php echo _('You do not need the Safe Mode Hack on this server.') ?></p>
-	<?php else: ?>
-	  <p class="error large"><?php echo _('You do need the Safe Mode Hack on this server.') ?></p>
-	<?php endif; ?>
-  </div>
-  <p class="back"><a href="."><?php echo _('Go back') ?></a></p>
-</div>
-</body>
-</html>
