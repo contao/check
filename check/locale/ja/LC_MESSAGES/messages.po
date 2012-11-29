@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: <https://www.transifex.com/accounts/profile/taca>\n"
 "POT-Creation-Date: 2012-11-19 13:25+0100\n"
-"PO-Revision-Date: 2012-11-19 12:27+0000\n"
+"PO-Revision-Date: 2012-11-20 03:57+0000\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/contao-check/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,33 +49,33 @@ msgstr "要件"
 
 #: check/views/index.phtml:33
 msgid "You can use the Extension Repository."
-msgstr ""
+msgstr "機能拡張リポジトリを使用できます。"
 
 #: check/views/index.phtml:33 check/views/index.phtml:35
 #: check/views/index.phtml:38 check/views/index.phtml:40
 #: check/views/index.phtml:43 check/views/index.phtml:45
 msgid "More information …"
-msgstr ""
+msgstr "さらに詳しい情報 ..."
 
 #: check/views/index.phtml:35
 msgid "You cannot use the Extension Repository."
-msgstr ""
+msgstr "機能拡張リポジトリを使用できません。"
 
 #: check/views/index.phtml:38
 msgid "You can use the Live Update."
-msgstr ""
+msgstr "ライブアップデートを使用できます。"
 
 #: check/views/index.phtml:40
 msgid "You cannot use the Live Update."
-msgstr ""
+msgstr "ライブアップデートを使用できません。"
 
 #: check/views/index.phtml:43
 msgid "You do not need the Safe Mode Hack."
-msgstr ""
+msgstr "セーフモード対処は必要ありません。"
 
 #: check/views/index.phtml:45
 msgid "You do need the Safe Mode Hack."
-msgstr ""
+msgstr "セーフモード対処が*必要*です。"
 
 #: check/views/index.phtml:50 check/views/installer.phtml:12
 #: check/views/validator.phtml:16
@@ -95,7 +95,7 @@ msgstr "既にインストールしているContaoを検証"
 msgid ""
 "Contao Check %s | Contao Open Source CMS system requirements | More "
 "information at %s"
-msgstr "Contaoチェック %s | ContaoオープンソースCMSのシステム要件 | より詳しい%sの情報"
+msgstr "Contaoチェック %s | ContaoオープンソースCMSのシステム要件 | さらに詳しい%sの情報"
 
 #: check/views/installer.phtml:15
 msgid "Web installer"
@@ -110,15 +110,15 @@ msgstr "既にContaoをインストールしてあります。%sをお探して�
 msgid ""
 "The automatic installation is not possible on your server due to safe_mode "
 "or file permission restrictions."
-msgstr "セーフモード対処またはファイルの権限の制限のため、自動的なインストールをできません。"
+msgstr "セーフモード対処またはファイルの権限の制限のため、自動的なインストールは不可能です。"
 
 #: check/views/installer.phtml:21
 msgid "The automatic installation is possible on your server."
-msgstr "このサーバーでは自動的なインストールをできます。"
+msgstr "このサーバーでは自動的なインストールが可能です。"
 
 #: check/views/installer.phtml:23
 msgid "The automatic installation is not possible on your server."
-msgstr "このサーバーでは自動的なインストールはできません。"
+msgstr "このサーバーでは自動的なインストールは不可能です。"
 
 #: check/views/installer.phtml:24
 msgid ""
@@ -321,11 +321,11 @@ msgstr "接続テスト"
 
 #: check/views/live-update.phtml:80
 msgid "A connection to www.inetrobots.com could be established."
-msgstr ""
+msgstr "www.inetrobots.comに接続できました。"
 
 #: check/views/live-update.phtml:82
 msgid "A connection to www.inetrobots.com could not be established."
-msgstr ""
+msgstr "www.inetrobots.comに接続できません。"
 
 #: check/views/live-update.phtml:83 check/views/repository.phtml:29
 msgid ""
