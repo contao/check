@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: ciaobello <https://www.transifex.com/accounts/profile/ciaobello/>\n"
 "POT-Creation-Date: 2012-11-19 13:25+0100\n"
-"PO-Revision-Date: 2012-11-19 12:27+0000\n"
+"PO-Revision-Date: 2012-11-20 11:28+0000\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/contao-check/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,33 +49,33 @@ msgstr "Exigências"
 
 #: check/views/index.phtml:33
 msgid "You can use the Extension Repository."
-msgstr ""
+msgstr "Você pode usar o Repositório de Extensão."
 
 #: check/views/index.phtml:33 check/views/index.phtml:35
 #: check/views/index.phtml:38 check/views/index.phtml:40
 #: check/views/index.phtml:43 check/views/index.phtml:45
 msgid "More information …"
-msgstr ""
+msgstr "Mais informações ..."
 
 #: check/views/index.phtml:35
 msgid "You cannot use the Extension Repository."
-msgstr ""
+msgstr "Você não pode usar o Repositório de Extensão."
 
 #: check/views/index.phtml:38
 msgid "You can use the Live Update."
-msgstr ""
+msgstr "Você pode usar o Live Update."
 
 #: check/views/index.phtml:40
 msgid "You cannot use the Live Update."
-msgstr ""
+msgstr "Você não pode usar o Live Update."
 
 #: check/views/index.phtml:43
 msgid "You do not need the Safe Mode Hack."
-msgstr ""
+msgstr "Você não precisa o \"Save Mode Hack\"."
 
 #: check/views/index.phtml:45
 msgid "You do need the Safe Mode Hack."
-msgstr ""
+msgstr "Você precisa o \"Save Mode Hack\"."
 
 #: check/views/index.phtml:50 check/views/installer.phtml:12
 #: check/views/validator.phtml:16
@@ -321,11 +321,11 @@ msgstr "Teste de conexão"
 
 #: check/views/live-update.phtml:80
 msgid "A connection to www.inetrobots.com could be established."
-msgstr ""
+msgstr "Uma conexão para www.inetrobots.com pôde ser estabelecida."
 
 #: check/views/live-update.phtml:82
 msgid "A connection to www.inetrobots.com could not be established."
-msgstr ""
+msgstr "Uma conexão para www.inetrobots.com não pôde ser estabelecida."
 
 #: check/views/live-update.phtml:83 check/views/repository.phtml:29
 msgid ""

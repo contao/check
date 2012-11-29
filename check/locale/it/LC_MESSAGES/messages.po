@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: PaoloB <https://www.transifex.com/accounts/profile/xchs/>\n"
 "POT-Creation-Date: 2012-11-19 13:25+0100\n"
-"PO-Revision-Date: 2012-11-19 12:27+0000\n"
+"PO-Revision-Date: 2012-11-19 13:37+0000\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/contao-check/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,33 +49,33 @@ msgstr "Requisiti"
 
 #: check/views/index.phtml:33
 msgid "You can use the Extension Repository."
-msgstr ""
+msgstr "È possibile utilizzare il catalogo estensioni."
 
 #: check/views/index.phtml:33 check/views/index.phtml:35
 #: check/views/index.phtml:38 check/views/index.phtml:40
 #: check/views/index.phtml:43 check/views/index.phtml:45
 msgid "More information …"
-msgstr ""
+msgstr "Ulteriori informazioni …"
 
 #: check/views/index.phtml:35
 msgid "You cannot use the Extension Repository."
-msgstr ""
+msgstr "Non è possibile utilizzare il catalogo estensioni."
 
 #: check/views/index.phtml:38
 msgid "You can use the Live Update."
-msgstr ""
+msgstr "È possibile utilizzare il Live Update."
 
 #: check/views/index.phtml:40
 msgid "You cannot use the Live Update."
-msgstr ""
+msgstr "Non è possibile utilizzare il Live Update."
 
 #: check/views/index.phtml:43
 msgid "You do not need the Safe Mode Hack."
-msgstr ""
+msgstr "Non è necessario il Safe Mode Hack."
 
 #: check/views/index.phtml:45
 msgid "You do need the Safe Mode Hack."
-msgstr ""
+msgstr "Bisogna usare il Safe Mode Hack."
 
 #: check/views/index.phtml:50 check/views/installer.phtml:12
 #: check/views/validator.phtml:16
@@ -321,11 +321,11 @@ msgstr "Test della connessione"
 
 #: check/views/live-update.phtml:80
 msgid "A connection to www.inetrobots.com could be established."
-msgstr ""
+msgstr "È stato possibile stabilire una connessione con www.inetrobots.com."
 
 #: check/views/live-update.phtml:82
 msgid "A connection to www.inetrobots.com could not be established."
-msgstr ""
+msgstr "Non è stato possibile stabilire una connessione con www.inetrobots.org."
 
 #: check/views/live-update.phtml:83 check/views/repository.phtml:29
 msgid ""
