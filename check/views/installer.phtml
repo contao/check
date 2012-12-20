@@ -54,7 +54,7 @@
         </form>
       <?php else: ?>
         <h3><?php echo _('Installation complete') ?></h3>
-        <p class="confirm"><?php printf(_('Contao %s has been installed in %s.'), filter_var($_POST['version'], FILTER_SANITIZE_STRING), dirname(dirname(__FILE__))) ?></p>
+        <p class="confirm"><?php printf(_('Contao %s has been installed in %s.'), filter_var($_POST['version'], FILTER_SANITIZE_STRING), dirname(dirname(dirname(__FILE__)))) ?></p>
         <p class="mt"><a href="../contao/install.php" class="btn"><?php echo _('Open the Contao install tool') ?></a></p>
       <?php endif; ?>
     </div>

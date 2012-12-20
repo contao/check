@@ -145,12 +145,10 @@ class Validator
 	 */
 	protected function findConstants()
 	{
-		define('TL_ROOT', dirname(dirname(__FILE__)));
-
-		if (file_exists("../system/constants.php")) {
-			include "../system/constants.php";
-		} elseif (file_exists("../system/config/constants.php")) {
-			include "../system/config/constants.php";
+		if (file_exists(TL_ROOT . '/system/constants.php')) {
+			include TL_ROOT . '/system/constants.php';
+		} elseif (file_exists(TL_ROOT . '/system/config/constants.php')) {
+			include TL_ROOT . '/system/config/constants.php';
 		} else {
 			$this->constants = false;
 			return false;
@@ -196,11 +194,11 @@ class Validator
 				$md5_code = $md5_file;
 			}
 
-			if (!file_exists('../' . $path)) {
+			if (!file_exists(TL_ROOT . '/' . $path)) {
 				$this->valid = false;
 				$this->errors['missing'][] = $path;
 			} else {
-				$buffer = str_replace("\r", '', file_get_contents('../' . $path));
+				$buffer = str_replace("\r", '', file_get_contents(TL_ROOT . '/' . $path));
 
 				// Check the MD5 hash with and without comments
 				if (strncmp(md5($buffer), $md5_file, 10) !== 0) {
