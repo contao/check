@@ -269,9 +269,9 @@ class Installer
 	public function hasInstallation()
 	{
 		if ($this->existing === null) {
-			if (file_exists("../system/constants.php")) {
+			if (file_exists(TL_ROOT . '/system/constants.php')) {
 				$this->existing = true;
-			} elseif (file_exists("../system/config/constants.php")) {
+			} elseif (file_exists(TL_ROOT . '/system/config/constants.php')) {
 				$this->existing = true;
 			} else {
 				$this->existing = false;
@@ -341,8 +341,8 @@ class Installer
 				$this->exec($this->unzip . ' download');			
 				$this->exec('rm download');
 				$folder = $this->exec('ls -d contao-*');
-				$this->exec("mv $folder/* ../");
-				$this->exec("mv $folder/.[a-z]* ../"); // see #22
+				$this->exec("mv $folder/* " . TL_ROOT . '/');
+				$this->exec("mv $folder/.[a-z]* " . TL_ROOT . '/'); // see #22
 				$this->exec("rm -rf $folder");
 			}
 		} else {
@@ -352,18 +352,18 @@ class Installer
 			if (file_exists('download') && filesize('download') > 0) {
 				$zip = new ZipArchive;
 				$zip->open('download');
-				$zip->extractTo(dirname(dirname(__FILE__)));
+				$zip->extractTo(TL_ROOT);
 				$zip->close();
 				unlink('download');
 			}
 
-			$glob = glob('../contao-*');
+			$glob = glob(TL_ROOT . '/contao-*');
 
 			// Remove the wrapper folder (see #23)
 			if (!empty($glob)) {
 				foreach (scandir($glob[0]) as $file) {
 					if ($file != '.' && $file != '..') {
-						rename($glob[0] . '/' . $file, '../' . $file);
+						rename($glob[0] . '/' . $file, TL_ROOT . '/' . $file);
 					}
 				}
 				rmdir($glob[0]);

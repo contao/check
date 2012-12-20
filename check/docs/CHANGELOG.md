@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 5.2 (2012-12-20)
+------------------------
+
+### Fixed
+Correctly move the Contao files to their destination in the installer (see #39).
+
+
 Version 5.1 (2012-11-29)
 ------------------------
 
