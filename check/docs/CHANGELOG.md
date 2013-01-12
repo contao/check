@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 5.4 (2013-01-12)
+------------------------
+
+# Changed
+Removed the "md5 without comments" check.
+
+
 Version 5.3 (2013-01-08)
 ------------------------
 

@@ -188,11 +188,7 @@ class Validator
 		$hashes = json_decode(file_get_contents($file));
 
 		foreach ($hashes as $info) {
-			list($path, $md5_file, $md5_code) = $info;
-
-			if (!$md5_code) {
-				$md5_code = $md5_file;
-			}
+			list($path, $md5_file) = $info;
 
 			if (!file_exists(TL_ROOT . '/' . $path)) {
 				$this->valid = false;
@@ -200,12 +196,10 @@ class Validator
 			} else {
 				$buffer = str_replace("\r", '', file_get_contents(TL_ROOT . '/' . $path));
 
-				// Check the MD5 hash with and without comments
+				// Check the MD5 hash
 				if (strncmp(md5($buffer), $md5_file, 10) !== 0) {
-					if (strncmp(md5(preg_replace('@/\*.*\*/@Us', '', $buffer)), $md5_code, 10) !== 0) {
-						$this->valid = false;
-						$this->errors['corrupt'][] = $path;
-					}
+					$this->valid = false;
+					$this->errors['corrupt'][] = $path;
 				}
 
 				$buffer = null;

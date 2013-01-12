@@ -137,22 +137,9 @@ while ($it->valid()) {
 		}
 	}
 
-	$content = file_get_contents($it->getPathname());
-
-	// Remove carriage returns
-	$buffer = str_replace("\r", '', $content);
-	$md5_file = substr(md5($buffer), 0, 10);
-
-	// Remove comments
-	$buffer = preg_replace('@/\*.*\*/@Us', '', $buffer);
-	$md5_code = substr(md5($buffer), 0, 10);
-
 	// Store the file name and hashes
-	if ($md5_file == $md5_code) {
-		$json[] = array($it->getSubPathname(), $md5_file);
-	} else {
-		$json[] = array($it->getSubPathname(), $md5_file, $md5_code);
-	}
+	$buffer = str_replace("\r", '', file_get_contents($it->getPathname()));
+	$json[] = array($it->getSubPathname(), substr(md5($buffer), 0, 10));
 
 	echo '  Added ' . $it->getSubPathname() . "\n";
 
