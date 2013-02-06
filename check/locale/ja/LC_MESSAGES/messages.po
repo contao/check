@@ -1,8 +1,8 @@
 ##
 # Contao Open Source CMS
-# 
+#
 # Copyright (C) 2005-2012 Leo Feyer
-# 
+#
 # @package Check
 # @link    http://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <https://www.transifex.com/accounts/profile/taca>\n"
 "POT-Creation-Date: 2012-11-19 13:25+0100\n"
 "PO-Revision-Date: 2012-11-20 03:57+0000\n"
+"Last-Translator: taca <https://www.transifex.com/accounts/profile/taca/>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/contao-check/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
