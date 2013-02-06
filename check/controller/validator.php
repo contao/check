@@ -2,9 +2,9 @@
 
 /**
  * Contao Open Source CMS
- * 
+ *
  * Copyright (C) 2005-2012 Leo Feyer
- * 
+ *
  * @package Check
  * @link    http://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -13,7 +13,7 @@
 
 /**
  * Validate and existing Contao installation
- * 
+ *
  * @package   Check
  * @author    Leo Feyer <https://github.com/leofeyer>
  * @copyright Leo Feyer 2012
@@ -63,7 +63,7 @@ class Validator
 
 	/**
 	 * Check whether the constants.php file has been found
-	 * 
+	 *
 	 * @return boolean True if the constants.php file has been found
 	 */
 	public function hasConstants()
@@ -74,7 +74,7 @@ class Validator
 
 	/**
 	 * Check whether the Contao version is supported
-	 * 
+	 *
 	 * @return boolean True if the Contao version is supported
 	 */
 	public function isSupportedVersion()
@@ -85,7 +85,7 @@ class Validator
 
 	/**
 	 * Check whether there are missing files
-	 * 
+	 *
 	 * @return boolean True if there are missing files
 	 */
 	public function hasMissing()
@@ -96,7 +96,7 @@ class Validator
 
 	/**
 	 * Return the missing files as array
-	 * 
+	 *
 	 * @return array The missing files array
 	 */
 	public function getMissing()
@@ -107,7 +107,7 @@ class Validator
 
 	/**
 	 * Check whether there are corrupt files
-	 * 
+	 *
 	 * @return boolean True if there are corrupt files
 	 */
 	public function hasCorrupt()
@@ -118,7 +118,7 @@ class Validator
 
 	/**
 	 * Return the corrupt files as array
-	 * 
+	 *
 	 * @return array The corrupt files array
 	 */
 	public function getCorrupt()
@@ -129,7 +129,7 @@ class Validator
 
 	/**
 	 * Check whether the installation is vaild
-	 * 
+	 *
 	 * @return boolean True if the installation is valid
 	 */
 	public function isValid()
@@ -140,7 +140,7 @@ class Validator
 
 	/**
 	 * Find the constants.php file
-	 * 
+	 *
 	 * @return boolean True if the constants.php file was found
 	 */
 	protected function findConstants()
@@ -160,7 +160,7 @@ class Validator
 
 	/**
 	 * Check whether the Contao version is supported
-	 * 
+	 *
 	 * @return boolean True if the Contao version is supported
 	 */
 	protected function checkVersion()

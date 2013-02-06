@@ -2,9 +2,9 @@
 
 /**
  * Contao Open Source CMS
- * 
+ *
  * Copyright (C) 2005-2012 Leo Feyer
- * 
+ *
  * @package Check
  * @link    http://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -13,7 +13,7 @@
 
 /**
  * Check the Safe Mode Hack requirements
- * 
+ *
  * @package   Check
  * @author    Leo Feyer <https://github.com/leofeyer>
  * @copyright Leo Feyer 2012
@@ -75,7 +75,7 @@ class SafeModeHack
 
 	/**
 	 * Return whether the Safe Mode Hack is required
-	 * 
+	 *
 	 * @return boolean True if the Safe Mode Hack is required
 	 */
 	public function isRequired()
@@ -86,7 +86,7 @@ class SafeModeHack
 
 	/**
 	 * Check whether the PHP safe_mode is enabled
-	 * 
+	 *
 	 * @return boolean True if the PHP safe_mode is enabled
 	 */
 	public function isEnabled()
@@ -104,7 +104,7 @@ class SafeModeHack
 
 	/**
 	 * Return the owner of the "check" folder
-	 * 
+	 *
 	 * @return string The owner name
 	 */
 	public function getFolderOwner()
@@ -115,7 +115,7 @@ class SafeModeHack
 
 	/**
 	 * Return the owner of the "test" folder
-	 * 
+	 *
 	 * @return string The owner name
 	 */
 	public function getTestFolderOwner()
@@ -126,7 +126,7 @@ class SafeModeHack
 
 	/**
 	 * Return the permissions of the "test" folder
-	 * 
+	 *
 	 * @return integer The CHMOD settings
 	 */
 	public function getTestFolderChmod()
@@ -137,7 +137,7 @@ class SafeModeHack
 
 	/**
 	 * Check whether PHP is allowed to create folders
-	 * 
+	 *
 	 * @return boolean True if PHP is allowed create folders
 	 */
 	public function canCreateFolder()
@@ -171,7 +171,7 @@ class SafeModeHack
 
 	/**
 	 * Return the owner of the "check/safe-mode-hack.php" file
-	 * 
+	 *
 	 * @return string The owner name
 	 */
 	public function getFileOwner()
@@ -182,7 +182,7 @@ class SafeModeHack
 
 	/**
 	 * Return the owner of the "test.txt" file
-	 * 
+	 *
 	 * @return string The owner name
 	 */
 	public function getTestFileOwner()
@@ -193,7 +193,7 @@ class SafeModeHack
 
 	/**
 	 * Return the permissions of the "test.txt" file
-	 * 
+	 *
 	 * @return integer The CHMOD settings
 	 */
 	public function getTestFileChmod()
@@ -204,7 +204,7 @@ class SafeModeHack
 
 	/**
 	 * Check whether PHP is allowed to create files
-	 * 
+	 *
 	 * @return boolean True if PHP is allowed create files
 	 */
 	public function canCreateFile()

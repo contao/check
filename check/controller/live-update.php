@@ -2,9 +2,9 @@
 
 /**
  * Contao Open Source CMS
- * 
+ *
  * Copyright (C) 2005-2012 Leo Feyer
- * 
+ *
  * @package Check
  * @link    http://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -13,7 +13,7 @@
 
 /**
  * Check the Live Update requirements
- * 
+ *
  * @package   Check
  * @author    Leo Feyer <https://github.com/leofeyer>
  * @copyright Leo Feyer 2012
@@ -39,7 +39,7 @@ class LiveUpdate
 
 	/**
 	 * Return the availability of the Live Update
-	 * 
+	 *
 	 * @return boolean True if the Live Update can be used
 	 */
 	public function isAvailable()
@@ -50,7 +50,7 @@ class LiveUpdate
 
 	/**
 	 * Check whether the PHP version is at least 5.3.2
-	 * 
+	 *
 	 * @return boolean True if the PHP version is at least 5.3.2
 	 */
 	public function hasPhp532()
@@ -66,7 +66,7 @@ class LiveUpdate
 
 	/**
 	 * Check whether the PHP Phar extension is available
-	 * 
+	 *
 	 * @return boolean True if the PHP Phar extension is available
 	 */
 	public function hasPhar()
@@ -82,7 +82,7 @@ class LiveUpdate
 
 	/**
 	 * Check whether the PHP OpenSSL extension is available
-	 * 
+	 *
 	 * @return boolean True if the PHP OpenSSL extension is available
 	 */
 	public function hasSsl()
@@ -98,7 +98,7 @@ class LiveUpdate
 
 	/**
 	 * Check whether the ionCube Loader is enabled
-	 * 
+	 *
 	 * @return boolean True if the ionCube Loader is enabled
 	 */
 	public function hasIonCube()
@@ -119,7 +119,7 @@ class LiveUpdate
 
 	/**
 	 * Check whether the PHP Suhosin extension is enabled
-	 * 
+	 *
 	 * @return boolean True if the PHP Suhosin extension is enabled
 	 */
 	public function hasSuhosin()
@@ -137,7 +137,7 @@ class LiveUpdate
 
 	/**
 	 * Check whether detect_unicode is enabled
-	 * 
+	 *
 	 * @return boolean True if detect_unicode is enabled
 	 */
 	public function hasDetectUnicode()
@@ -172,7 +172,7 @@ class LiveUpdate
 
 	/**
 	 * Check whether PHP is run as FastCGI with the eAccelerator
-	 * 
+	 *
 	 * @return boolean True if PHP is run as FastCGI with the eAccelerator
 	 */
 	public function isFastCgiEaccelerator()
