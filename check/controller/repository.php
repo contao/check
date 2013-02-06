@@ -2,9 +2,9 @@
 
 /**
  * Contao Open Source CMS
- * 
+ *
  * Copyright (C) 2005-2012 Leo Feyer
- * 
+ *
  * @package Check
  * @link    http://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -13,7 +13,7 @@
 
 /**
  * Check the Extension Repository requirements
- * 
+ *
  * @package   Check
  * @author    Leo Feyer <https://github.com/leofeyer>
  * @copyright Leo Feyer 2012
@@ -39,7 +39,7 @@ class Repository
 
 	/**
 	 * Return the availability of the Extension Repository
-	 * 
+	 *
 	 * @return boolean True if the Extension Repository can be used
 	 */
 	public function isAvailable()
@@ -50,7 +50,7 @@ class Repository
 
 	/**
 	 * Check whether the PHP SOAP extension is available
-	 * 
+	 *
 	 * @return boolean True if the PHP SOAP extension is available
 	 */
 	public function hasSoap()

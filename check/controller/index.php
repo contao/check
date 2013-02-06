@@ -2,9 +2,9 @@
 
 /**
  * Contao Open Source CMS
- * 
+ *
  * Copyright (C) 2005-2012 Leo Feyer
- * 
+ *
  * @package Check
  * @link    http://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -13,7 +13,7 @@
 
 /**
  * Check the PHP version requirements
- * 
+ *
  * @package   Check
  * @author    Leo Feyer <https://github.com/leofeyer>
  * @copyright Leo Feyer 2012
@@ -32,7 +32,7 @@ class Index
 
 	/**
 	 * Return the minimum PHP version required for Contao 2
-	 * 
+	 *
 	 * @return string The PHP version string
 	 */
 	public function getContao2Version()
@@ -43,7 +43,7 @@ class Index
 
 	/**
 	 * Return the minimum PHP version required for Contao 3
-	 * 
+	 *
 	 * @return string The PHP version string
 	 */
 	public function getContao3Version()
@@ -54,7 +54,7 @@ class Index
 
 	/**
 	 * Return true if Contao 2 can be installed
-	 * 
+	 *
 	 * @return boolean True if Contao 2 can be installed
 	 */
 	public function supportsContao2()
@@ -65,7 +65,7 @@ class Index
 
 	/**
 	 * Return true if Contao 3 can be installed
-	 * 
+	 *
 	 * @return boolean True if Contao 3 can be installed
 	 */
 	public function supportsContao3()
@@ -76,7 +76,7 @@ class Index
 
 	/**
 	 * Return true if the Extension Repository can be used
-	 * 
+	 *
 	 * @return boolean True if the Extension Repository can be used
 	 */
 	protected function canUseRepository()
@@ -98,7 +98,7 @@ class Index
 
 	/**
 	 * Return true if the Live Update can be used
-	 * 
+	 *
 	 * @return boolean True if the Live Update can be used
 	 */
 	protected function canUseLiveUpdate()
@@ -144,7 +144,7 @@ class Index
 
 	/**
 	 * Return true if the Safe Mode Hack is not required
-	 * 
+	 *
 	 * @return boolean True if the Safe Mode Hack is not required
 	 */
 	protected function requiresSafeModeHack()

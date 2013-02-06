@@ -3,9 +3,9 @@
 
 /**
  * Contao Open Source CMS
- * 
+ *
  * Copyright (C) 2005-2012 Leo Feyer
- * 
+ *
  * @package Check
  * @link    http://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -28,6 +28,13 @@ if (file_exists($argv[1] . '/system/constants.php')) {
 	include $argv[1] . '/system/constants.php';
 } elseif (file_exists($argv[1] . '/system/config/constants.php')) {
 	include $argv[1] . '/system/config/constants.php';
+}
+
+// Get the git ignores
+$ignore = explode("\n", str_replace('Would remove ', '', trim(shell_exec("cd {$argv[1]} && LANG=en_US git clean -dfnx"))));
+
+if (!is_array($ignore) || empty($ignore)) {
+	die("The git ignore list is empty, which is rather unlikely\n");
 }
 
 $json = array();
@@ -57,102 +64,14 @@ while ($it->valid()) {
 		$it->next(); continue;
 	}
 
-	// Files in the root folder
-	if ($it->getSubPathname() == '.htaccess') {
+	// Ignores
+	if (in_array($it->getSubPathname(), $ignore)) {
 		$it->next(); continue;
 	}
-	if ($it->getSubPathname() == 'basic.css') {
-		$it->next(); continue;
-	}
-	if ($it->getSubPathname() == 'music_academy.css') {
-		$it->next(); continue;
-	}
-	if ($it->getSubPathname() == 'news.xml') {
-		$it->next(); continue;
-	}
-	if ($it->getSubPathname() == 'print.css') {
-		$it->next(); continue;
-	}
-
-	// system/cron/cron.txt
-	if ($it->getSubPathname() == 'system/cron/cron.txt') {
-		$it->next(); continue;
-	}
-
-	// Not to be touched Contao files
-	if ($it->getSubPathname() == 'system/config/dcaconfig.php') {
-		$it->next(); continue;
-	}
-	if ($it->getSubPathname() == 'system/config/initconfig.php') {
-		$it->next(); continue;
-	}
-	if ($it->getSubPathname() == 'system/config/langconfig.php') {
-		$it->next(); continue;
-	}
-	if ($it->getSubPathname() == 'system/config/localconfig.php') {
-		$it->next(); continue;
-	}
-
-	// Compiled assets
-	if (strncmp($it->getSubPathname(), 'assets/css/', 11) === 0) {
-		if ($it->getFilename() != 'index.html') {
-			$it->next(); continue;
-		}
-	}
-	if (strncmp($it->getSubPathname(), 'assets/images/', 14) === 0) {
-		if ($it->getFilename() != 'index.html') {
-			$it->next(); continue;
-		}
-	}
-	if (strncmp($it->getSubPathname(), 'assets/js/', 10) === 0) {
-		if ($it->getFilename() != 'index.html') {
-			$it->next(); continue;
-		}
-	}
-
-	// System files like cache files or log files
-	if (strncmp($it->getSubPathname(), 'system/cache/', 13) === 0) {
-		if ($it->getSubPathname() != 'system/cache/.htaccess') {
-			$it->next(); continue;
-		}
-	}
-	if (strncmp($it->getSubPathname(), 'system/logs/', 11) === 0) {
-		if ($it->getSubPathname() != 'system/logs/.htaccess') {
-			$it->next(); continue;
-		}
-	}
-	if (strncmp($it->getSubPathname(), 'system/html/', 11) === 0) {
-		if ($it->getSubPathname() != 'system/html/index.html') {
-			$it->next(); continue;
-		}
-	}
-	if (strncmp($it->getSubPathname(), 'system/scripts/', 15) === 0) {
-		if ($it->getSubPathname() != 'system/scripts/index.html') {
-			$it->next(); continue;
-		}
-	}
-	if (strncmp($it->getSubPathname(), 'system/tmp/', 10) === 0) {
-		if ($it->getSubPathname() != 'system/tmp/.htaccess') {
-			$it->next(); continue;
-		}
-	}
-
-	$content = file_get_contents($it->getPathname());
-
-	// Remove carriage returns
-	$buffer = str_replace("\r", '', $content);
-	$md5_file = substr(md5($buffer), 0, 10);
-
-	// Remove comments
-	$buffer = preg_replace('@/\*.*\*/@Us', '', $buffer);
-	$md5_code = substr(md5($buffer), 0, 10);
 
 	// Store the file name and hashes
-	if ($md5_file == $md5_code) {
-		$json[] = array($it->getSubPathname(), $md5_file);
-	} else {
-		$json[] = array($it->getSubPathname(), $md5_file, $md5_code);
-	}
+	$buffer = str_replace("\r", '', file_get_contents($it->getPathname()));
+	$json[] = array($it->getSubPathname(), substr(md5($buffer), 0, 10));
 
 	echo '  Added ' . $it->getSubPathname() . "\n";
 
@@ -160,5 +79,6 @@ while ($it->valid()) {
 	unset($buffer);
 }
 
+// Store the JSON file
 file_put_contents('check/versions/' . VERSION . '.' . BUILD . '.json', json_encode($json));
 echo 'Added check/versions/' . VERSION . '.' . BUILD . '.json' . "\n";

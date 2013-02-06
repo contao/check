@@ -2,9 +2,9 @@
 
 /**
  * Contao Open Source CMS
- * 
+ *
  * Copyright (C) 2005-2012 Leo Feyer
- * 
+ *
  * @package Check
  * @link    http://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -13,7 +13,7 @@
 
 /**
  * Download a Contao .zip archive and extract it
- * 
+ *
  * @package   Check
  * @author    Leo Feyer <https://github.com/leofeyer>
  * @copyright Leo Feyer 2012
@@ -91,7 +91,7 @@ class Installer
 
 	/**
 	 * Make sure there is no existing installation
-	 * 
+	 *
 	 * @return boolean True if there is no existing installation
 	 */
 	protected function canInstall()
@@ -137,7 +137,7 @@ class Installer
 
 	/**
 	 * Check whether the shell can be used to install Contao
-	 * 
+	 *
 	 * @return boolean True if the shell can be used to install Contao
 	 */
 	protected function canUseShell()
@@ -182,7 +182,7 @@ class Installer
 
 	/**
 	 * Check whether PHP can be used to install Contao
-	 * 
+	 *
 	 * @return boolean True if PHP can be used to install Contao
 	 */
 	protected function canUsePhp()
@@ -206,9 +206,9 @@ class Installer
 
 	/**
 	 * Execute a shell command and trim the result
-	 * 
+	 *
 	 * @param string $command The shell command
-	 * 
+	 *
 	 * @return string The trimmed output string
 	 */
 	protected function exec($command)
@@ -220,9 +220,9 @@ class Installer
 
 	/**
 	 * Retrieve information using cURL
-	 * 
+	 *
 	 * @param string $url The URL
-	 * 
+	 *
 	 * @return string The output string
 	 */
 	protected function curl($url)
@@ -241,7 +241,7 @@ class Installer
 
 	/**
 	 * Check whether the automatic installation is possible
-	 * 
+	 *
 	 * @return boolean True if the automatic installation is possible
 	 */
 	public function isAvailable()
@@ -252,7 +252,7 @@ class Installer
 
 	/**
 	 * Check whether FTP is required to install Contao
-	 * 
+	 *
 	 * @return boolean True if FTP is required to install Contao
 	 */
 	public function requiresFtp()
@@ -263,7 +263,7 @@ class Installer
 
 	/**
 	 * Check whether there is an existing installation already
-	 * 
+	 *
 	 * @return boolean True if there is an existing installation
 	 */
 	public function hasInstallation()
@@ -284,7 +284,7 @@ class Installer
 
 	/**
 	 * Return the available version numbers
-	 * 
+	 *
 	 * @return array The versions array
 	 */
 	public function getVersions()
@@ -310,7 +310,7 @@ class Installer
 
 	/**
 	 * Start the installation
-	 * 
+	 *
 	 * @throws Exception In case the version number is invalid
 	 */
 	protected function install()
@@ -338,7 +338,7 @@ class Installer
 
 			// Extract
 			if (file_exists('download') && filesize('download') > 0) {
-				$this->exec($this->unzip . ' download');			
+				$this->exec($this->unzip . ' download');
 				$this->exec('rm download');
 				$folder = $this->exec('ls -d contao-*');
 				$this->exec("mv $folder/* " . TL_ROOT . '/');

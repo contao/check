@@ -2,9 +2,9 @@
 
 /**
  * Contao Open Source CMS
- * 
+ *
  * Copyright (C) 2005-2012 Leo Feyer
- * 
+ *
  * @package Check
  * @link    http://contao.org
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -13,7 +13,7 @@
 
 /**
  * Initialize the Contao Check
- * 
+ *
  * @package   Check
  * @author    Leo Feyer <https://github.com/leofeyer>
  * @copyright Leo Feyer 2012
@@ -30,7 +30,7 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '5.3');
+		define('CONTAO_CHECK_VERSION', '5.5');
 		define('IS_WINDOWS', (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'));
 		define('TL_ROOT', dirname(dirname(dirname(__FILE__))));
 
@@ -40,8 +40,8 @@ class Bootstrap
 
 	/**
 	 * Determine the user language and return the locale
-	 * 
-	 * @return string The locale 
+	 *
+	 * @return string The locale
 	 */
 	public function getLanguage()
 	{
@@ -94,9 +94,9 @@ class Bootstrap
 
 	/**
 	 * Validate a locale
-	 * 
+	 *
 	 * @param string $locale The locale string (e.g. "en" or "en_US")
-	 * 
+	 *
 	 * @return boolean True if the locale is valid
 	 */
 	protected function isLocale($locale)
@@ -107,9 +107,9 @@ class Bootstrap
 
 	/**
 	 * Return the first eight accepted languages as an array
-	 * 
+	 *
 	 * @return array The locale array
-	 * 
+	 *
 	 * @author Leo Unglaub <https://github.com/LeoUnglaub>
 	 */
 	protected function getAcceptedLanguages()
@@ -141,9 +141,9 @@ class Bootstrap
 
 	/**
 	 * Set a locale and initialize the PHP gettext extension
-	 * 
+	 *
 	 * @param string $locale The locale
-	 * 
+	 *
 	 * @throws Exception In case the locale is not valid
 	 */
 	public function setLocale($locale)
@@ -176,7 +176,7 @@ if (!function_exists('posix_getpwuid')) {
 	function posix_getpwuid($int) {
 		return array('name'=>$int);
 	}
-}	
+}
 
 $bootstrap = new Bootstrap;
 $bootstrap->initialize();
