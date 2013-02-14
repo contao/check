@@ -1,24 +1,31 @@
 Contao Check Changelog
 ======================
 
+Version 6.0 (2013-02-14)
+------------------------
+
+### New
+Added the Contao 3.0.4 file hashes.
+
+
 Version 5.5 (2013-02-06)
 ------------------------
 
-# New
+### New
 Added the Contao 2.11.9 file hashes.
 
 
 Version 5.4 (2013-01-12)
 ------------------------
 
-# Changed
+### Changed
 Removed the "md5 without comments" check.
 
 
 Version 5.3 (2013-01-08)
 ------------------------
 
-# New
+### New
 Added the Contao 2.11.8, 3.0.2 and 3.0.3 file hashes.
 
 
