@@ -187,8 +187,10 @@ class Validator
 		$file = 'versions/' . VERSION . '.' . BUILD . '.json';
 		$hashes = json_decode(file_get_contents($file));
 
-		foreach ($hashes as $info) {
-			list($path, $md5_file) = $info;
+		foreach ($hashes as $path=>$md5_file) {
+			if ($md5_file == '') {
+				continue;
+			}
 
 			if (!file_exists(TL_ROOT . '/' . $path)) {
 				$this->valid = false;
