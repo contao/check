@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 6.5 (2013-05-20)
+------------------------
+
+### Updated
+Updated all language files and copyright notices.
+
+
 Version 6.4 (2013-04-04)
 ------------------------
 
