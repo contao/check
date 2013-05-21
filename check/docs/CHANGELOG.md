@@ -1,8 +1,11 @@
 Contao Check Changelog
 ======================
 
-Version 6.5 (2013-05-20)
+Version 6.5 (2013-05-21)
 ------------------------
+
+### New
+Added the Contao 3.1.0 file hashes.
 
 ### Updated
 Updated all language files and copyright notices.
