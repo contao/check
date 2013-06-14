@@ -1,6 +1,13 @@
 Contao Check Changelog
 ======================
 
+Version 6.6 (2013-06-14)
+------------------------
+
+### Improved
+Make the install and validate links buttons (see #46).
+
+
 Version 6.5 (2013-05-21)
 ------------------------
 

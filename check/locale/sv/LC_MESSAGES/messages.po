@@ -1,7 +1,7 @@
 # Contao Open Source CMS
-# 
+#
 # Copyright (C) 2005-2013 Leo Feyer
-# 
+#
 # @package Check
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-19 13:25+0100\n"
-"PO-Revision-Date: 2013-03-07 13:01+0000\n"
+"POT-Creation-Date: 2013-06-14 11:45+0200\n"
+"PO-Revision-Date: 2013-06-14 09:47+0000\n"
 "Last-Translator: SuperMatz <https://www.transifex.com/accounts/profile/SuperMatz/>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/contao-check/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -78,25 +78,17 @@ msgstr "Du behöver inte använda Safe Mode-hack."
 msgid "You do need the Safe Mode Hack."
 msgstr "Du behöver använda Safe Mode-hack."
 
-#: check/views/index.phtml:50 check/views/installer.phtml:12
-#: check/views/validator.phtml:16
+#: check/views/index.phtml:50
+msgid "Install Contao"
+msgstr ""
+
+#: check/views/index.phtml:50
+msgid "Validate an existing installation"
+msgstr ""
+
+#: check/views/installer.phtml:12 check/views/validator.phtml:16
 msgid "Installation"
 msgstr "Installation"
-
-#: check/views/index.phtml:52
-msgid "Install the latest Contao version"
-msgstr "Installera den senaste versionen av Contao"
-
-#: check/views/index.phtml:53
-msgid "Validate an existing Contao installation"
-msgstr "Validera en existerande installation av Contao"
-
-#: check/views/index.phtml:55
-#, php-format
-msgid ""
-"Contao Check %s | Contao Open Source CMS system requirements | More "
-"information at %s"
-msgstr "Contao Check %s | Contao Open Source CMS systemkrav | Mer information på %s"
 
 #: check/views/installer.phtml:15
 msgid "Web installer"

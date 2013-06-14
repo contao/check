@@ -1,4 +1,3 @@
-##
 # Contao Open Source CMS
 #
 # Copyright (C) 2005-2013 Leo Feyer
@@ -6,15 +5,14 @@
 # @package Check
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
-##
 msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Leo Feyer <https://contao.org>\n"
+"POT-Creation-Date: 2013-06-14 11:45+0200\n"
+"PO-Revision-Date: 2013-06-14 11:45+0200\n"
+"Last-Translator: Leo Feyer <https://github.com/leofeyer>\n"
 "Language-Team: \n"
-"POT-Creation-Date: 2012-11-19 13:25+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,24 +74,16 @@ msgstr ""
 msgid "You do need the Safe Mode Hack."
 msgstr ""
 
-#: check/views/index.phtml:50 check/views/installer.phtml:12
-#: check/views/validator.phtml:16
+#: check/views/index.phtml:50
+msgid "Install Contao"
+msgstr ""
+
+#: check/views/index.phtml:50
+msgid "Validate an existing installation"
+msgstr ""
+
+#: check/views/installer.phtml:12 check/views/validator.phtml:16
 msgid "Installation"
-msgstr ""
-
-#: check/views/index.phtml:52
-msgid "Install the latest Contao version"
-msgstr ""
-
-#: check/views/index.phtml:53
-msgid "Validate an existing Contao installation"
-msgstr ""
-
-#: check/views/index.phtml:55
-#, php-format
-msgid ""
-"Contao Check %s | Contao Open Source CMS system requirements | More "
-"information at %s"
 msgstr ""
 
 #: check/views/installer.phtml:15
@@ -137,8 +127,8 @@ msgstr ""
 
 #: check/views/installer.phtml:33
 msgid ""
-"Extract the download archive and upload the files to your server using an (S)"
-"FTP client."
+"Extract the download archive and upload the files to your server using an "
+"(S)FTP client."
 msgstr ""
 
 #: check/views/installer.phtml:34
