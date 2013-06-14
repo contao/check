@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="wrapper">
-  <h1>Contao Check</h1>
+  <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
   <div class="row">
     <h2><?php echo _('Overview') ?></h2>
   </div>
@@ -47,12 +47,7 @@
     </ul>
   </div>
   <div class="row">
-    <h3><?php echo _('Installation') ?></h3>
-    <ul>
-      <li><a href="./?c=installer"><?php echo _('Install the latest Contao version') ?></a></li>
-      <li><a href="./?c=validator"><?php echo _('Validate an existing Contao installation') ?></a></li>
-    </ul>
-    <p class="explain mt"><?php printf(_('Contao Check %s | Contao Open Source CMS system requirements | More information at %s'), CONTAO_CHECK_VERSION, '<a href="https://contao.org">contao.org</a>') ?></p>
+    <p class="mt"><a href="./?c=installer" class="button orange"><?php echo _('Install Contao') ?></a> <a href="./?c=validator" class="button"><?php echo _('Validate an existing installation') ?></a></p>
   </div>
 </div>
 </body>

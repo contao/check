@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="wrapper">
-  <h1>Contao Check</h1>
+  <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
   <div class="row">
     <h2><?php echo _('Installation') ?></h2>
   </div>
@@ -50,12 +50,12 @@
             </select>
           </div>
           <p class="explain"><?php echo _('Attention: Deprecated versions might contain security vulnerabilities! Please install the latest stable version or the latest LTS version (long term support version).') ?></p>
-          <p class="mt"><input class="btn" type="submit" value="<?php echo _('Start the installation') ?>"></p>
+          <p class="mt"><input class="button orange" type="submit" value="<?php echo _('Start the installation') ?>"></p>
         </form>
       <?php else: ?>
         <h3><?php echo _('Installation complete') ?></h3>
         <p class="confirm"><?php printf(_('Contao %s has been installed in %s.'), filter_var($_POST['version'], FILTER_SANITIZE_STRING), dirname(dirname(dirname(__FILE__)))) ?></p>
-        <p class="mt"><a href="../contao/install.php" class="btn"><?php echo _('Open the Contao install tool') ?></a></p>
+        <p class="mt"><a href="../contao/install.php" class="button orange"><?php echo _('Open the Contao install tool') ?></a></p>
       <?php endif; ?>
     </div>
   <?php endif; ?>
