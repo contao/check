@@ -1,19 +1,18 @@
 # Contao Open Source CMS
-#
+# 
 # Copyright (C) 2005-2013 Leo Feyer
-#
+# 
 # @package Check
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
 # Translators:
-# Leo Feyer <https://www.transifex.com/accounts/profile/leofeyer/>, 2012
-# Leo Feyer <https://www.transifex.com/accounts/profile/leofeyer/>, 2013
+# Leo Feyer <https://www.transifex.com/accounts/profile/leofeyer/>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-14 11:45+0200\n"
-"PO-Revision-Date: 2013-06-14 09:50+0000\n"
+"PO-Revision-Date: 2013-08-28 07:25+0000\n"
 "Last-Translator: Leo Feyer <https://www.transifex.com/accounts/profile/leofeyer/>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/contao-check/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -430,8 +429,8 @@ msgid ""
 msgstr "Der Testordner gehört %s (sollte %s gehören) und hat die Zugriffsrechte %s (sollte %s sein)."
 
 #: check/views/safe-mode-hack.phtml:32
-msgid "775, 755 or 750"
-msgstr "775, 755 oder 750"
+msgid "775, 755, 770 or 750"
+msgstr "775, 755, 770 oder 750"
 
 #: check/views/safe-mode-hack.phtml:36
 msgid "Creating a test file"

@@ -426,7 +426,7 @@ msgid ""
 msgstr ""
 
 #: check/views/safe-mode-hack.phtml:32
-msgid "775, 755 or 750"
+msgid "775, 755, 770 or 750"
 msgstr ""
 
 #: check/views/safe-mode-hack.phtml:36

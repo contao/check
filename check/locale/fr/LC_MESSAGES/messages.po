@@ -1,20 +1,22 @@
 # Contao Open Source CMS
-#
+# 
 # Copyright (C) 2005-2013 Leo Feyer
-#
+# 
 # @package Check
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
 # Translators:
 # c3lp3e <https://www.transifex.com/accounts/profile/c3lp3e/>, 2012
 # lio <https://www.transifex.com/accounts/profile/lio/>, 2012
+# evantro <https://www.transifex.com/accounts/profile/evantro/>, 2013
+# tosca30 <https://www.transifex.com/accounts/profile/tosca30/>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-14 11:45+0200\n"
-"PO-Revision-Date: 2013-06-14 09:50+0000\n"
-"Last-Translator: lio <https://www.transifex.com/accounts/profile/lio/>\n"
+"PO-Revision-Date: 2013-08-28 07:26+0000\n"
+"Last-Translator: tosca30 <https://www.transifex.com/accounts/profile/tosca30/>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/contao-check/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,7 +82,7 @@ msgstr "Vous avez besoin du Safe Mode Hack."
 
 #: check/views/index.phtml:50
 msgid "Install Contao"
-msgstr ""
+msgstr "Installer Contao"
 
 #: check/views/index.phtml:50
 msgid "Validate an existing installation"
@@ -92,7 +94,7 @@ msgstr "Installation"
 
 #: check/views/installer.phtml:15
 msgid "Web installer"
-msgstr "Installeur Web"
+msgstr "Instalateur Web"
 
 #: check/views/installer.phtml:17
 #, php-format
@@ -158,7 +160,7 @@ msgstr "Démarrer l'installation"
 
 #: check/views/installer.phtml:56
 msgid "Installation complete"
-msgstr "Installation complète"
+msgstr "Installation terminée"
 
 #: check/views/installer.phtml:57
 #, php-format
@@ -430,8 +432,8 @@ msgid ""
 msgstr "Le propriétaire du dossier de test est %s (devrait être %s) et possède les paramètres chmod %s (devrait être %s)."
 
 #: check/views/safe-mode-hack.phtml:32
-msgid "775, 755 or 750"
-msgstr "775, 755 ou 750"
+msgid "775, 755, 770 or 750"
+msgstr "775, 755, 770 ou 750"
 
 #: check/views/safe-mode-hack.phtml:36
 msgid "Creating a test file"

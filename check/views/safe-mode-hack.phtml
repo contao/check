@@ -29,7 +29,7 @@
       <p class="explain"><?php echo _('It seems that the PHP process does not have enough permissions to create folders on your server.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('The test folder does not have the correct owner or chmod settings.') ?></p>
-      <p class="explain"><?php printf(_('The test folder is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $this->getTestFolderOwner(), $this->getFolderOwner(), $this->getTestFolderChmod(), (IS_WINDOWS ? '777' : _('775, 755 or 750'))) ?></p>
+      <p class="explain"><?php printf(_('The test folder is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $this->getTestFolderOwner(), $this->getFolderOwner(), $this->getTestFolderChmod(), (IS_WINDOWS ? '777' : _('775, 755, 770 or 750'))) ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
