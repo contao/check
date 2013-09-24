@@ -142,11 +142,11 @@ class Installer
 	 */
 	protected function canUseShell()
 	{
-		// Check for shell_exec() or exec()
-		if (function_exists('shell_exec')) {
-			$this->shell = 'shell_exec';
-		} elseif (function_exists('exec')) {
+		// Check for exec() or shell_exec()
+		if (function_exists('exec')) {
 			$this->shell = 'exec';
+		} elseif (function_exists('shell_exec')) {
+			$this->shell = 'shell_exec';
 		}
 
 		// Return if we cannot access the shell
