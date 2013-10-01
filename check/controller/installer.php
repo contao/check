@@ -155,9 +155,9 @@ class Installer
 		}
 
 		// Check for wget or curl
-		if ($this->exec('type -p wget') != '') {
+		if ($this->exec('command -v wget') != '') {
 			$this->download = 'wget';
-		} elseif ($this->exec('type -p curl') != '') {
+		} elseif ($this->exec('command -v curl') != '') {
 			$this->download = 'curl';
 		}
 
@@ -167,7 +167,7 @@ class Installer
 		}
 
 		// Check for unzip
-		if ($this->exec('type -p unzip') != '') {
+		if ($this->exec('command -v unzip') != '') {
 			$this->unzip = 'unzip';
 		}
 
