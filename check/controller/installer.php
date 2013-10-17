@@ -176,6 +176,12 @@ class Installer
 			return false;
 		}
 
+		// Check for mv and rm in case the shell is limited (see #23)
+		if ($this->exec('command -v mv') == '' || $this->exec('command -v rm') == '') {
+			$this->shell = '';
+			return false;
+		}
+
 		return true;
 	}
 
