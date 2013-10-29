@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-14 11:45+0200\n"
-"PO-Revision-Date: 2013-08-28 07:24+0000\n"
+"PO-Revision-Date: 2013-10-29 10:36+0000\n"
 "Last-Translator: taca <https://www.transifex.com/accounts/profile/taca/>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/contao-check/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -142,7 +142,7 @@ msgstr "インストールするURLに\"/contao\"を追加して、Contaoのイ�
 
 #: check/views/installer.phtml:37
 msgid "Target version"
-msgstr "アップデート先のバージョン"
+msgstr "対象とするバージョン"
 
 #: check/views/installer.phtml:52
 msgid ""
@@ -170,7 +170,7 @@ msgstr "Contaoのインストールツールを実行"
 
 #: check/views/installer.phtml:62 check/views/live-update.phtml:93
 #: check/views/repository.phtml:39 check/views/safe-mode-hack.phtml:54
-#: check/views/validator.phtml:59
+#: check/views/validator.phtml:69
 msgid "Go back"
 msgstr "戻る"
 
@@ -430,7 +430,7 @@ msgstr "テストフォルダーの所有者は%s(本来は%s)で、アクセス
 
 #: check/views/safe-mode-hack.phtml:32
 msgid "775, 755, 770 or 750"
-msgstr ""
+msgstr "775、755、770、750"
 
 #: check/views/safe-mode-hack.phtml:36
 msgid "Creating a test file"
@@ -522,9 +522,13 @@ msgid "Corrupt files"
 msgstr "破損したファイル"
 
 #: check/views/validator.phtml:53
+msgid "Missing optional files"
+msgstr ""
+
+#: check/views/validator.phtml:63
 msgid "Your installation is up to date."
 msgstr "インストールしているContaoは最新の状態です。"
 
-#: check/views/validator.phtml:55
+#: check/views/validator.phtml:65
 msgid "Your installation is not up to date."
 msgstr "インストールしているContaoは最新の状態ではありません。"

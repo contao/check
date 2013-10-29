@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-14 11:45+0200\n"
-"PO-Revision-Date: 2013-08-28 07:26+0000\n"
+"PO-Revision-Date: 2013-10-29 10:36+0000\n"
 "Last-Translator: PaoloB <https://www.transifex.com/accounts/profile/PaoloB/>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/contao-check/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -171,7 +171,7 @@ msgstr "Avvia lo strumento di installazione Contao"
 
 #: check/views/installer.phtml:62 check/views/live-update.phtml:93
 #: check/views/repository.phtml:39 check/views/safe-mode-hack.phtml:54
-#: check/views/validator.phtml:59
+#: check/views/validator.phtml:69
 msgid "Go back"
 msgstr "Torna indietro"
 
@@ -523,9 +523,13 @@ msgid "Corrupt files"
 msgstr "File corrotti"
 
 #: check/views/validator.phtml:53
+msgid "Missing optional files"
+msgstr ""
+
+#: check/views/validator.phtml:63
 msgid "Your installation is up to date."
 msgstr "L'installazione è aggiornata."
 
-#: check/views/validator.phtml:55
+#: check/views/validator.phtml:65
 msgid "Your installation is not up to date."
 msgstr "L'installazione non è non è aggiornata."

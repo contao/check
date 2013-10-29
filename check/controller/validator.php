@@ -128,6 +128,28 @@ class Validator
 
 
 	/**
+	 * Check whether there are demo website files
+	 *
+	 * @return boolean True if there are demo website files
+	 */
+	public function hasMusicAcademy()
+	{
+		return !empty($this->errors['academy']);
+	}
+
+
+	/**
+	 * Return the demo website files as array
+	 *
+	 * @return array The demo website files array
+	 */
+	public function getMusicAcademy()
+	{
+		return $this->errors['academy'];
+	}
+
+
+	/**
 	 * Check whether the installation is vaild
 	 *
 	 * @return boolean True if the installation is valid
@@ -181,7 +203,11 @@ class Validator
 	 */
 	protected function validate()
 	{
-		$this->errors = array('missing'=>array(), 'corrupt'=>array());
+		$this->errors = array(
+			'missing' => array(),
+			'corrupt' => array(),
+			'academy' => array()
+		);
 
 		// Load the file hashes
 		$file = 'versions/' . VERSION . '.' . BUILD . '.json';
@@ -193,8 +219,12 @@ class Validator
 			}
 
 			if (!file_exists(TL_ROOT . '/' . $path)) {
-				$this->valid = false;
-				$this->errors['missing'][] = $path;
+				if ($this->isMusicAcademy($path)) {
+					$this->errors['academy'][] = $path;
+				} else {
+					$this->valid = false;
+					$this->errors['missing'][] = $path;
+				}
 			} else {
 				$buffer = str_replace("\r", '', file_get_contents(TL_ROOT . '/' . $path));
 
@@ -207,5 +237,26 @@ class Validator
 				$buffer = null;
 			}
 		}
+	}
+
+
+	/**
+	 * Check if a file is part of the demo website
+	 *
+	 * @param string $path The file path
+	 *
+	 * @return boolean True if the file is part of the demo website
+	 */
+	protected function isMusicAcademy($path)
+	{
+		if ($path == 'files/tinymce.css') {
+			return true;
+		}
+
+		if (strncmp($path, 'files/tiny_templates/', 11) === 0 || strncmp($path, 'files/music_academy/', 20) === 0) {
+			return true;
+		}
+
+		return false;
 	}
 }

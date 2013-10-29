@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-14 11:45+0200\n"
-"PO-Revision-Date: 2013-06-14 11:45+0200\n"
+"PO-Revision-Date: 2013-10-29 11:28+0100\n"
 "Last-Translator: Leo Feyer <https://github.com/leofeyer>\n"
-"Language-Team: \n"
+"Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -167,7 +167,7 @@ msgstr ""
 
 #: check/views/installer.phtml:62 check/views/live-update.phtml:93
 #: check/views/repository.phtml:39 check/views/safe-mode-hack.phtml:54
-#: check/views/validator.phtml:59
+#: check/views/validator.phtml:69
 msgid "Go back"
 msgstr ""
 
@@ -518,9 +518,13 @@ msgid "Corrupt files"
 msgstr ""
 
 #: check/views/validator.phtml:53
+msgid "Missing optional files"
+msgstr ""
+
+#: check/views/validator.phtml:63
 msgid "Your installation is up to date."
 msgstr ""
 
-#: check/views/validator.phtml:55
+#: check/views/validator.phtml:65
 msgid "Your installation is not up to date."
 msgstr ""

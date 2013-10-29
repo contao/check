@@ -2,9 +2,14 @@
 
 # Create the .mo files
 for i in `ls check/locale`; do
-  if [ "$i" != "en" ]; then
+  if [[ $i != "en" ]]; then
     cd "check/locale/$i/LC_MESSAGES"
-    msgfmt -c messages.po
-    cd "../../../../"
+    if [[ ! -e messages.po ]]; then
+      cd ../../../../
+      rm -r "check/locale/$i"
+    else
+      msgfmt -c messages.po
+      cd ../../../../
+    fi
   fi
 done

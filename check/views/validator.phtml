@@ -48,6 +48,16 @@
       </ul>
     </div>
   <?php endif; ?>
+  <?php if ($this->hasMusicAcademy()): ?>
+    <div class="row">
+      <h3><?php echo _('Missing optional files') ?></h3>
+      <ul class="validate">
+        <?php foreach ($this->getMusicAcademy() as $file): ?>
+          <li><?php echo $file ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  <?php endif; ?>
   <div class="row">
     <?php if ($this->isValid()): ?>
 	  <p class="confirm large"><?php echo _('Your installation is up to date.') ?></p>
