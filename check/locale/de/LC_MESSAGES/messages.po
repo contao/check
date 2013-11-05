@@ -1,7 +1,7 @@
 # Contao Open Source CMS
-# 
+#
 # Copyright (C) 2005-2013 Leo Feyer
-# 
+#
 # @package Check
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-14 11:45+0200\n"
-"PO-Revision-Date: 2013-10-29 10:36+0000\n"
+"PO-Revision-Date: 2013-11-05 11:50+0000\n"
 "Last-Translator: Leo Feyer <https://www.transifex.com/accounts/profile/leofeyer/>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/contao-check/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -266,8 +266,8 @@ msgstr "Die Suhosin-Erweiterung verhindert die Ausführung von .phar-Dateien."
 #: check/views/live-update.phtml:56
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
-"<code>suhosin.executor.include.whitelist = phar</code>."
-msgstr "Sie müssen \"phar\" in Ihrer php.ini zur Liste der erlaubten Streams hinzufügen: <code>suhosin.executor.include.whitelist = phar</code>."
+"<code>suhosin.executor.include.whitelist = phar</code>"
+msgstr "Sie müssen \"phar\" in Ihrer php.ini zur Liste der erlaubten Streams hinzufügen: <code>suhosin.executor.include.whitelist = phar</code>"
 
 #: check/views/live-update.phtml:60
 msgid "Detect Unicode"

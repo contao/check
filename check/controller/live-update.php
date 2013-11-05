@@ -126,7 +126,12 @@ class LiveUpdate
 	{
 		$suhosin = ini_get('suhosin.executor.include.whitelist');
 
-		if ($suhosin === false || stripos($suhosin, 'phar') !== false) {
+		if ($suhosin === false) {
+			return false;
+		}
+
+		// The previous check returned false positives for e.g. "phar."
+		if (in_array('phar', array_map('trim', explode(',', $suhosin)))) {
 			return false;
 		}
 
