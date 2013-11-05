@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-14 11:45+0200\n"
+"POT-Creation-Date: 2013-11-05 12:47+0100\n"
 "PO-Revision-Date: 2013-10-29 11:28+0100\n"
 "Last-Translator: Leo Feyer <https://github.com/leofeyer>\n"
 "Language-Team: English\n"
@@ -263,7 +263,7 @@ msgstr ""
 #: check/views/live-update.phtml:56
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
-"<code>suhosin.executor.include.whitelist = phar</code>."
+"<code>suhosin.executor.include.whitelist = phar</code>"
 msgstr ""
 
 #: check/views/live-update.phtml:60
