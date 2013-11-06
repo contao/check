@@ -128,24 +128,24 @@ class Validator
 
 
 	/**
-	 * Check whether there are demo website files
+	 * Check whether there are optional files
 	 *
-	 * @return boolean True if there are demo website files
+	 * @return boolean True if there are optional files
 	 */
-	public function hasMusicAcademy()
+	public function hasOptional()
 	{
-		return !empty($this->errors['academy']);
+		return !empty($this->errors['optional']);
 	}
 
 
 	/**
-	 * Return the demo website files as array
+	 * Return the optional files as array
 	 *
-	 * @return array The demo website files array
+	 * @return array The optional files array
 	 */
-	public function getMusicAcademy()
+	public function getOptional()
 	{
-		return $this->errors['academy'];
+		return $this->errors['optional'];
 	}
 
 
@@ -206,7 +206,7 @@ class Validator
 		$this->errors = array(
 			'missing' => array(),
 			'corrupt' => array(),
-			'academy' => array()
+			'optional' => array()
 		);
 
 		// Load the file hashes
@@ -219,8 +219,8 @@ class Validator
 			}
 
 			if (!file_exists(TL_ROOT . '/' . $path)) {
-				if ($this->isMusicAcademy($path)) {
-					$this->errors['academy'][] = $path;
+				if ($this->isOptional($path)) {
+					$this->errors['optional'][] = $path;
 				} else {
 					$this->valid = false;
 					$this->errors['missing'][] = $path;
@@ -241,15 +241,15 @@ class Validator
 
 
 	/**
-	 * Check if a file is part of the demo website
+	 * Check if a file is optional
 	 *
 	 * @param string $path The file path
 	 *
-	 * @return boolean True if the file is part of the demo website
+	 * @return boolean True if the file is optional
 	 */
-	protected function isMusicAcademy($path)
+	protected function isOptional($path)
 	{
-		if ($path == 'files/tinymce.css') {
+		if ($path == 'files/tinymce.css' || $path == 'templates/music_academy.sql') {
 			return true;
 		}
 

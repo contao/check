@@ -48,11 +48,11 @@
       </ul>
     </div>
   <?php endif; ?>
-  <?php if ($this->hasMusicAcademy()): ?>
+  <?php if ($this->hasOptional()): ?>
     <div class="row">
       <h3><?php echo _('Missing optional files') ?></h3>
       <ul class="validate">
-        <?php foreach ($this->getMusicAcademy() as $file): ?>
+        <?php foreach ($this->getOptional() as $file): ?>
           <li><?php echo $file ?></li>
         <?php endforeach; ?>
       </ul>
