@@ -130,8 +130,10 @@ class LiveUpdate
 			return false;
 		}
 
+		$allowed = array_map('trim', explode(',', $suhosin));
+
 		// The previous check returned false positives for e.g. "phar."
-		if (in_array('phar', array_map('trim', explode(',', $suhosin)))) {
+		if (in_array('phar', $allowed) || in_array('phar://', $allowed)) {
 			return false;
 		}
 
