@@ -9,11 +9,11 @@
 # janx <https://www.transifex.com/accounts/profile/janx/>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Contao Check\n"
+"Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-14 11:45+0200\n"
-"PO-Revision-Date: 2013-10-29 10:36+0000\n"
 "Last-Translator: janx <https://www.transifex.com/accounts/profile/janx/>\n"
+"PO-Revision-Date: 2013-11-20 10:50+0000\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/contao-check/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -266,8 +266,8 @@ msgstr "Suhosin -laajennos ei salli ajaa .phar -tiedotoja."
 #: check/views/live-update.phtml:56
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
-"<code>suhosin.executor.include.whitelist = phar</code>."
-msgstr "Lisää \"phar\" sallittujen listaan php.ini-tiedostossa: <code>suhosin.executor.include.whitelist = phar</code>. "
+"<code>suhosin.executor.include.whitelist = phar</code>"
+msgstr ""
 
 #: check/views/live-update.phtml:60
 msgid "Detect Unicode"

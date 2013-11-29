@@ -9,11 +9,11 @@
 # taca <https://www.transifex.com/accounts/profile/taca/>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Contao Check\n"
+"Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-14 11:45+0200\n"
-"PO-Revision-Date: 2013-10-29 10:36+0000\n"
 "Last-Translator: taca <https://www.transifex.com/accounts/profile/taca/>\n"
+"PO-Revision-Date: 2013-11-20 10:50+0000\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/contao-check/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -266,8 +266,8 @@ msgstr "Suhosin拡張が.pharファイルの実行を許可していません。
 #: check/views/live-update.phtml:56
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
-"<code>suhosin.executor.include.whitelist = phar</code>."
-msgstr "\"phar\"を許可するストリームのリストにphp,iniに追加しなければなりません: <code>suhosin.executor.include.whitelist = phar</code>"
+"<code>suhosin.executor.include.whitelist = phar</code>"
+msgstr "php.iniで許可するストリームのリストに\"phar\"を加えなければなりません: <code>suhosin.executor.include.whitelist = phar</code>"
 
 #: check/views/live-update.phtml:60
 msgid "Detect Unicode"
@@ -523,7 +523,7 @@ msgstr "破損したファイル"
 
 #: check/views/validator.phtml:53
 msgid "Missing optional files"
-msgstr ""
+msgstr "見当たらないオプションのファイル"
 
 #: check/views/validator.phtml:63
 msgid "Your installation is up to date."
