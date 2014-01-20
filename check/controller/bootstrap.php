@@ -30,7 +30,7 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '7.9');
+		define('CONTAO_CHECK_VERSION', '7.10');
 		define('IS_WINDOWS', (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'));
 		define('TL_ROOT', dirname(dirname(dirname(__FILE__))));
 
