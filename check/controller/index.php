@@ -22,10 +22,19 @@ class Index
 {
 
 	/**
+	 * Safe Mode Hack
+	 * @var boolean
+	 */
+	protected $safeModeHack;
+
+
+	/**
 	 * Execute the command
 	 */
 	public function run()
 	{
+		$this->safeModeHack = $this->checkSafeModeHack();
+
 		include 'views/index.phtml';
 	}
 
@@ -75,24 +84,13 @@ class Index
 
 
 	/**
-	 * Return true if the Extension Repository can be used
+	 * Return true if the Safe Mode Hack is required
 	 *
-	 * @return boolean True if the Extension Repository can be used
+	 * @return boolean True if the Safe Mode Hack is required
 	 */
-	protected function canUseRepository()
+	public function requiresSafeModeHack()
 	{
-		include 'repository.php';
-		$repository = new Repository;
-
-		if (!$repository->hasSoap()) {
-			return false;
-		}
-
-		if (!$repository->canConnect()) {
-			return false;
-		}
-
-		return true;
+		return $this->safeModeHack;
 	}
 
 
@@ -101,7 +99,7 @@ class Index
 	 *
 	 * @return boolean True if the Live Update can be used
 	 */
-	protected function canUseLiveUpdate()
+	public function canUseLiveUpdate()
 	{
 		include 'live-update.php';
 		$update = new LiveUpdate;
@@ -143,27 +141,91 @@ class Index
 
 
 	/**
-	 * Return true if the Safe Mode Hack is not required
+	 * Return true if the Extension Repository can be used
 	 *
-	 * @return boolean True if the Safe Mode Hack is not required
+	 * @return boolean True if the Extension Repository can be used
 	 */
-	protected function requiresSafeModeHack()
+	public function canUseComposer()
+	{
+		include 'composer.php';
+		$composer = new Composer;
+
+		if (!$composer->hasPhp532()) {
+			return false;
+		}
+
+		if (!$composer->hasMemoryLimit()) {
+			return false;
+		}
+
+		if (!$composer->hasCurl()) {
+			return false;
+		}
+
+		if (!$composer->hasApc()) {
+			return false;
+		}
+
+		if (!$composer->hasSuhosin()) {
+			return false;
+		}
+
+		if (!$composer->hasAllowUrlFopen()) {
+			return false;
+		}
+
+		if ($this->safeModeHack) {
+			return false;
+		}
+
+		return true;
+	}
+
+
+	/**
+	 * Return true if the Extension Repository can be used
+	 *
+	 * @return boolean True if the Extension Repository can be used
+	 */
+	public function canUseRepository()
+	{
+		include 'repository.php';
+		$repository = new Repository;
+
+		if (!$repository->hasSoap()) {
+			return false;
+		}
+
+		if (!$repository->canConnect()) {
+			return false;
+		}
+
+		return true;
+	}
+
+
+	/**
+	 * Return true if the Safe Mode Hack is required
+	 *
+	 * @return boolean True if the Safe Mode Hack is required
+	 */
+	protected function checkSafeModeHack()
 	{
 		include 'safe-mode-hack.php';
 		$smh = new SafeModeHack;
 
 		if ($smh->isEnabled()) {
-			return false;
+			return true;
 		}
 
 		if (!$smh->canCreateFolder()) {
-			return false;
+			return true;
 		}
 
 		if (!$smh->canCreateFile()) {
-			return false;
+			return true;
 		}
 
-		return true;
+		return false;
 	}
 }
