@@ -162,11 +162,11 @@ class Index
 			return false;
 		}
 
-		if (!$composer->hasApc()) {
+		if ($composer->hasApc()) {
 			return false;
 		}
 
-		if (!$composer->hasSuhosin()) {
+		if ($composer->hasSuhosin()) {
 			return false;
 		}
 
