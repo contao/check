@@ -65,24 +65,6 @@ class Composer
 
 
 	/**
-	 * Check whether there are at least 512 MB of memory available
-	 *
-	 * @return boolean True if the PHP version is at least 5.3.2
-	 */
-	public function hasMemoryLimit()
-	{
-		$limit = trim(ini_get('memory_limit'));
-
-		if ($this->iniToBytes($limit) >= 536870912) {
-			return true;
-		}
-
-		$this->available = false;
-		return false;
-	}
-
-
-	/**
 	 * Check whether the PHP cURL extension is available
 	 *
 	 * @return boolean True if the PHP cURL extension is available
@@ -208,50 +190,5 @@ class Composer
 		}
 
 		return false;
-	}
-
-
-	/**
-	 * Return the available PHP memory limit
-	 *
-	 * @return integer|string The PHP memory limit
-	 */
-	public function getMemoryLimit()
-	{
-		return trim(ini_get('memory_limit'));
-	}
-
-
-	/**
-	 * Convert a php.ini shorthand byte notation
-	 *
-	 * @param string|integer $val The shorthand string or an integer
-	 *
-	 * @return integer The bytes representation of the value
-	 */
-	protected function iniToBytes($val)
-	{
-		if (is_numeric($val)) {
-			return $val;
-		}
-
-		$value = intval($val);
-		$unit  = strtolower(substr($val, -1));
-
-		switch ($unit) {
-			case 'g':
-				$value *= 1<<30;
-				break;
-
-			case 'm':
-				$value *= 1<<20;
-				break;
-
-			case 'k':
-				$value *= 1<<10;
-				break;
-		}
-
-		return $value;
 	}
 }

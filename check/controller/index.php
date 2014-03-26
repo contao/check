@@ -154,10 +154,6 @@ class Index
 			return false;
 		}
 
-		if (!$composer->hasMemoryLimit()) {
-			return false;
-		}
-
 		if (!$composer->hasCurl()) {
 			return false;
 		}

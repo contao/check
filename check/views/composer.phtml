@@ -21,15 +21,6 @@
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP memory limit') ?></h3>
-    <?php if ($this->hasMemoryLimit()): ?>
-      <p class="confirm"><?php printf(_('You have %s of PHP memory limit.'), $this->getMemoryLimit()) ?></p>
-    <?php else: ?>
-      <p class="error"><?php printf(_('You have %s of PHP memory limit.'), $this->getMemoryLimit()) ?></p>
-      <p class="explain"><?php echo _('Composer requires at least 512M of PHP memory limit.') ?></p>
-    <?php endif; ?>
-  </div>
-  <div class="row">
     <h3><?php echo _('PHP cURL extension') ?></h3>
     <?php if ($this->hasCurl()): ?>
       <p class="confirm"><?php echo _('The PHP cURL extension is available.') ?></p>
