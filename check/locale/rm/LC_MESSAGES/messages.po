@@ -1,7 +1,7 @@
 # Contao Open Source CMS
-# 
-# Copyright (C) 2005-2013 Leo Feyer
-# 
+#
+# Copyright (C) 2005-2014 Leo Feyer
+#
 # @package Check
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
@@ -11,15 +11,175 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-14 11:45+0200\n"
+"POT-Creation-Date: 2013-11-05 12:47+0100\n"
 "Last-Translator: Gion-Andri Cantieni <https://www.transifex.com/accounts/profile/gion-andri/>\n"
-"PO-Revision-Date: 2013-11-20 10:50+0000\n"
+"PO-Revision-Date: 2014-03-26 09:28+0000\n"
 "Language-Team: Romansh (http://www.transifex.com/projects/p/contao-check/language/rm/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: rm\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: check/views/composer.phtml:12
+msgid "Composer package manager"
+msgstr ""
+
+#: check/views/composer.phtml:15 check/views/live-update.phtml:15
+msgid "PHP 5.3.2 or greater"
+msgstr "PHP 5.3.2 u pli grond"
+
+#: check/views/composer.phtml:17 check/views/composer.phtml:19
+#: check/views/live-update.phtml:17 check/views/live-update.phtml:19
+#, php-format
+msgid "You have PHP version %s."
+msgstr "Ti has la versiun %s da PHP."
+
+#: check/views/composer.phtml:20
+msgid "Composer requires at least PHP version 5.3.2."
+msgstr ""
+
+#: check/views/composer.phtml:24
+msgid "PHP cURL extension"
+msgstr ""
+
+#: check/views/composer.phtml:26
+msgid "The PHP cURL extension is available."
+msgstr ""
+
+#: check/views/composer.phtml:28
+msgid "The PHP cURL extension is not available."
+msgstr ""
+
+#: check/views/composer.phtml:29
+msgid ""
+"The PHP cURL extension is required to communicate with the package server. "
+"You can enable it by compiling PHP with the --enable-curl flag."
+msgstr ""
+
+#: check/views/composer.phtml:33
+msgid "PHP APC extension"
+msgstr ""
+
+#: check/views/composer.phtml:35
+msgid "The PHP APC extension is not installed."
+msgstr ""
+
+#: check/views/composer.phtml:37
+msgid "The PHP APC extension is installed."
+msgstr ""
+
+#: check/views/composer.phtml:38
+msgid ""
+"Using the PHP APC extension with Composer can lead to unexpected \"cannot "
+"redeclare class\" errors."
+msgstr ""
+
+#: check/views/composer.phtml:42 check/views/live-update.phtml:51
+msgid "Suhosin extension"
+msgstr "Extensiun Suhosin"
+
+#: check/views/composer.phtml:44 check/views/live-update.phtml:53
+msgid ""
+"The Suhosin extension is not installed or correctly configured for .phar "
+"files."
+msgstr "L'extensiun Suhosin n'è betg installada u configurada correctamain per datotecas .phar."
+
+#: check/views/composer.phtml:46 check/views/live-update.phtml:55
+msgid "The Suhosin extension does not allow to run .phar files."
+msgstr "L'extensiun Suhosin na lubescha betg l'exequziun da datotecas .phar."
+
+#: check/views/composer.phtml:47 check/views/live-update.phtml:56
+msgid ""
+"You have to add \"phar\" to the list of allowed streams in your php.ini: "
+"<code>suhosin.executor.include.whitelist = phar</code>"
+msgstr "Ti stos agiuntar \"phar\" a la glista dals streams lubids en tia php.ini: <code>suhosin.executor.include.whitelist = phar</code>"
+
+#: check/views/composer.phtml:51
+msgid "allow_url_fopen"
+msgstr ""
+
+#: check/views/composer.phtml:53
+msgid "The PHP flag \"allow_url_fopen\" is set."
+msgstr ""
+
+#: check/views/composer.phtml:55
+msgid "The PHP flag \"allow_url_fopen\" is not set."
+msgstr ""
+
+#: check/views/composer.phtml:56
+msgid ""
+"To download the installation files, Composer requires the "
+"\"allow_url_fopen\" flag to be set in the php.ini."
+msgstr ""
+
+#: check/views/composer.phtml:60 check/views/safe-mode-hack.phtml:12
+msgid "Safe Mode Hack"
+msgstr "Safe-mode-hack"
+
+#: check/views/composer.phtml:62 check/views/index.phtml:33
+msgid "You do not need the Safe Mode Hack."
+msgstr "Ti na dovras betg il safe-mode-hack."
+
+#: check/views/composer.phtml:64 check/views/index.phtml:35
+msgid "You do need the Safe Mode Hack."
+msgstr "Ti dovras il safe-mode-hack."
+
+#: check/views/composer.phtml:65
+msgid ""
+"The Safe Mode Hack is a Contao-specific function to work around incorrectly "
+"configured servers. It is not supported by Composer."
+msgstr ""
+
+#: check/views/composer.phtml:69
+msgid "shell_exec (optional)"
+msgstr ""
+
+#: check/views/composer.phtml:71
+msgid "The PHP function \"shell_exec\" is available."
+msgstr ""
+
+#: check/views/composer.phtml:73
+msgid "The PHP function \"shell_exec\" is not available."
+msgstr ""
+
+#: check/views/composer.phtml:74
+msgid ""
+"The \"shell_exec\" function is optionally required to run the Composer "
+"process in the background."
+msgstr ""
+
+#: check/views/composer.phtml:78
+msgid "proc_open (optional)"
+msgstr ""
+
+#: check/views/composer.phtml:80
+msgid "The PHP function \"proc_open\" is available."
+msgstr ""
+
+#: check/views/composer.phtml:82
+msgid "The PHP function \"proc_open\" is not available."
+msgstr ""
+
+#: check/views/composer.phtml:83
+msgid ""
+"The \"proc_open\" function is optionally required to run the package manager"
+" in dev mode."
+msgstr ""
+
+#: check/views/composer.phtml:88
+msgid "You can use the Composer package manager on this server."
+msgstr ""
+
+#: check/views/composer.phtml:90
+msgid "You cannot use the Composer package manager on this server."
+msgstr ""
+
+#: check/views/composer.phtml:93 check/views/installer.phtml:62
+#: check/views/live-update.phtml:93 check/views/repository.phtml:39
+#: check/views/safe-mode-hack.phtml:54 check/views/validator.phtml:69
+msgid "Go back"
+msgstr "Turnar"
 
 #: check/views/index.phtml:12
 msgid "Overview"
@@ -47,19 +207,12 @@ msgstr "Ti na pos betg installar Contao 3.x (basegna PHP %s+)"
 msgid "Requirements"
 msgstr "Pretensiuns"
 
-#: check/views/index.phtml:33
-msgid "You can use the Extension Repository."
-msgstr "Ti pos utilisar il repository d'extensiuns"
-
 #: check/views/index.phtml:33 check/views/index.phtml:35
 #: check/views/index.phtml:38 check/views/index.phtml:40
 #: check/views/index.phtml:43 check/views/index.phtml:45
+#: check/views/index.phtml:48 check/views/index.phtml:50
 msgid "More information …"
 msgstr "Ulteriuras infurmaziuns…"
-
-#: check/views/index.phtml:35
-msgid "You cannot use the Extension Repository."
-msgstr "Ti na pos betg utilisar il repository d'extensiuns."
 
 #: check/views/index.phtml:38
 msgid "You can use the Live Update."
@@ -70,18 +223,26 @@ msgid "You cannot use the Live Update."
 msgstr "Ti na pos betg utilisar l'actualisaziun directa."
 
 #: check/views/index.phtml:43
-msgid "You do not need the Safe Mode Hack."
-msgstr "Ti na dovras betg il safe-mode-hack."
+msgid "You can use the Extension Repository."
+msgstr "Ti pos utilisar il repository d'extensiuns"
 
 #: check/views/index.phtml:45
-msgid "You do need the Safe Mode Hack."
-msgstr "Ti dovras il safe-mode-hack."
+msgid "You cannot use the Extension Repository."
+msgstr "Ti na pos betg utilisar il repository d'extensiuns."
+
+#: check/views/index.phtml:48
+msgid "You can use the Composer package manager."
+msgstr ""
 
 #: check/views/index.phtml:50
+msgid "You cannot use the Composer package manager."
+msgstr ""
+
+#: check/views/index.phtml:55
 msgid "Install Contao"
 msgstr "Installar Contao"
 
-#: check/views/index.phtml:50
+#: check/views/index.phtml:55
 msgid "Validate an existing installation"
 msgstr "Validar ina installaziun existenta"
 
@@ -168,24 +329,9 @@ msgstr "Contao %s è vegnì installà en %s."
 msgid "Open the Contao install tool"
 msgstr "Avrir l'utensil d'installaziun da Contao"
 
-#: check/views/installer.phtml:62 check/views/live-update.phtml:93
-#: check/views/repository.phtml:39 check/views/safe-mode-hack.phtml:54
-#: check/views/validator.phtml:69
-msgid "Go back"
-msgstr "Turnar"
-
 #: check/views/live-update.phtml:12
 msgid "Live Update"
 msgstr "Actualisaziun directa (Live Update)"
-
-#: check/views/live-update.phtml:15
-msgid "PHP 5.3.2 or greater"
-msgstr "PHP 5.3.2 u pli grond"
-
-#: check/views/live-update.phtml:17 check/views/live-update.phtml:19
-#, php-format
-msgid "You have PHP version %s."
-msgstr "Ti has la versiun %s da PHP."
 
 #: check/views/live-update.phtml:20
 #, php-format
@@ -248,26 +394,6 @@ msgid ""
 "archives. Either upgrade to the latest version or disable the module. More "
 "information is available here: %s"
 msgstr "Avant la versiun 4.0.9 era il ionCube Loader incumpatibel cun archivs da Phar. Actualisescha u a la pli nova versiun e deactivescha il modul. Dapli infurmaziuns chattas ti qua: %s"
-
-#: check/views/live-update.phtml:51
-msgid "Suhosin extension"
-msgstr "Extensiun Suhosin"
-
-#: check/views/live-update.phtml:53
-msgid ""
-"The Suhosin extension is not installed or correctly configured for .phar "
-"files."
-msgstr "L'extensiun Suhosin n'è betg installada u configurada correctamain per datotecas .phar."
-
-#: check/views/live-update.phtml:55
-msgid "The Suhosin extension does not allow to run .phar files."
-msgstr "L'extensiun Suhosin na lubescha betg l'exequziun da datotecas .phar."
-
-#: check/views/live-update.phtml:56
-msgid ""
-"You have to add \"phar\" to the list of allowed streams in your php.ini: "
-"<code>suhosin.executor.include.whitelist = phar</code>"
-msgstr "Ti stos agiuntar \"phar\" a la glista dals streams lubids en tia php.ini: <code>suhosin.executor.include.whitelist = phar</code>"
 
 #: check/views/live-update.phtml:60
 msgid "Detect Unicode"
@@ -373,10 +499,6 @@ msgstr "Ti pos utilisar il repository d'extensiuns sin quest server."
 #: check/views/repository.phtml:36
 msgid "You cannot use the Extension Repository on this server."
 msgstr "Ti na pos betg utilisar il repository d'extensiuns sin quest server."
-
-#: check/views/safe-mode-hack.phtml:12
-msgid "Safe Mode Hack"
-msgstr "Safe-mode-hack"
 
 #: check/views/safe-mode-hack.phtml:15
 msgid "php.ini settings"
