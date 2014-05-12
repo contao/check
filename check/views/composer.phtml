@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Contao Check <?php echo CONTAO_CHECK_VERSION ?></title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="wrapper">
+  <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
+  <div class="row">
+    <h2><?php echo _('Composer package manager') ?></h2>
+  </div>
+  <div class="row">
+    <h3><?php echo _('PHP 5.3.2 or greater') ?></h3>
+    <?php if ($this->hasPhp532()): ?>
+      <p class="confirm"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
+    <?php else: ?>
+      <p class="error"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
+      <p class="explain"><?php echo _('Composer requires at least PHP version 5.3.2.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo _('PHP cURL extension') ?></h3>
+    <?php if ($this->hasCurl()): ?>
+      <p class="confirm"><?php echo _('The PHP cURL extension is available.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('The PHP cURL extension is not available.') ?></p>
+      <p class="explain"><?php echo _('The PHP cURL extension is required to communicate with the package server. You can enable it by compiling PHP with the --enable-curl flag.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo _('PHP APC extension') ?></h3>
+    <?php if (!$this->hasApc()): ?>
+      <p class="confirm"><?php echo _('The PHP APC extension is not installed.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('The PHP APC extension is installed.') ?></p>
+      <p class="explain"><?php echo _('Using the PHP APC extension with Composer can lead to unexpected "cannot redeclare class" errors.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo _('Suhosin extension') ?></h3>
+    <?php if (!$this->hasSuhosin()): ?>
+      <p class="confirm"><?php echo _('The Suhosin extension is not installed or correctly configured for .phar files.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('The Suhosin extension does not allow to run .phar files.') ?></p>
+      <p class="explain"><?php echo _('You have to add "phar" to the list of allowed streams in your php.ini: <code>suhosin.executor.include.whitelist = phar</code>') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo _('allow_url_fopen') ?></h3>
+    <?php if ($this->hasAllowUrlFopen()): ?>
+      <p class="confirm"><?php echo _('The PHP flag "allow_url_fopen" is set.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('The PHP flag "allow_url_fopen" is not set.') ?></p>
+      <p class="explain"><?php echo _('To download the installation files, Composer requires the "allow_url_fopen" flag to be set in the php.ini.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo _('Safe Mode Hack') ?></h3>
+    <?php if (!$this->requiresSafeModeHack()): ?>
+      <p class="confirm"><?php echo _('You do not need the Safe Mode Hack.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('You do need the Safe Mode Hack.') ?></p>
+      <p class="explain"><?php echo _('The Safe Mode Hack is a Contao-specific function to work around incorrectly configured servers. It is not supported by Composer.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo _('shell_exec (optional)') ?></h3>
+    <?php if ($this->hasShellExec()): ?>
+      <p class="confirm"><?php echo _('The PHP function "shell_exec" is available.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('The PHP function "shell_exec" is not available.') ?></p>
+      <p class="explain"><?php echo _('The "shell_exec" function is optionally required to run the Composer process in the background.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo _('proc_open (optional)') ?></h3>
+    <?php if ($this->hasProcOpen()): ?>
+      <p class="confirm"><?php echo _('The PHP function "proc_open" is available.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('The PHP function "proc_open" is not available.') ?></p>
+      <p class="explain"><?php echo _('The "proc_open" function is optionally required to run the package manager in dev mode.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <?php if ($this->isAvailable()): ?>
+	  <p class="confirm large"><?php echo _('You can use the Composer package manager on this server.') ?></p>
+	<?php else: ?>
+	  <p class="error large"><?php echo _('You cannot use the Composer package manager on this server.') ?></p>
+	<?php endif; ?>
+  </div>
+  <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
+</div>
+</body>
+</html>

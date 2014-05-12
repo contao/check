@@ -3,7 +3,7 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (C) 2005-2013 Leo Feyer
+ * Copyright (C) 2005-2014 Leo Feyer
  *
  * @package Check
  * @link    https://contao.org
@@ -16,7 +16,7 @@
  *
  * @package   Check
  * @author    Leo Feyer <https://github.com/leofeyer>
- * @copyright Leo Feyer 2013
+ * @copyright Leo Feyer 2013-2014
  */
 class Bootstrap
 {
@@ -30,7 +30,7 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '7.15');
+		define('CONTAO_CHECK_VERSION', '8.0');
 		define('IS_WINDOWS', (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'));
 		define('TL_ROOT', dirname(dirname(dirname(__FILE__))));
 
