@@ -6,7 +6,7 @@
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
 # Translators:
-# Peter Hamers <https://www.transifex.com/accounts/profile/pchammer/>, 2013
+# Peter Hamers <https://www.transifex.com/accounts/profile/pchammer/>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Check\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: check/views/composer.phtml:12
 msgid "Composer package manager"
-msgstr ""
+msgstr "Composer pakket manager"
 
 #: check/views/composer.phtml:15 check/views/live-update.phtml:15
 msgid "PHP 5.3.2 or greater"
@@ -37,43 +37,43 @@ msgstr "U beschikt over PHP versie %s."
 
 #: check/views/composer.phtml:20
 msgid "Composer requires at least PHP version 5.3.2."
-msgstr ""
+msgstr "Composer vereist minstens PHP versie 5.3.2."
 
 #: check/views/composer.phtml:24
 msgid "PHP cURL extension"
-msgstr ""
+msgstr "PHP cURL extensie"
 
 #: check/views/composer.phtml:26
 msgid "The PHP cURL extension is available."
-msgstr ""
+msgstr "De PHP cURL extensie is beschikbaar."
 
 #: check/views/composer.phtml:28
 msgid "The PHP cURL extension is not available."
-msgstr ""
+msgstr "De PHP cURL extensie is niet beschikbaar."
 
 #: check/views/composer.phtml:29
 msgid ""
 "The PHP cURL extension is required to communicate with the package server. "
 "You can enable it by compiling PHP with the --enable-curl flag."
-msgstr ""
+msgstr "De PHP cURL extensie is nodig om de communicatie met de pakket server tot stand te brengen. U kunt dit activeren door het compileren van PHP met de --enable-curl flag."
 
 #: check/views/composer.phtml:33
 msgid "PHP APC extension"
-msgstr ""
+msgstr "PHP APC extensie"
 
 #: check/views/composer.phtml:35
 msgid "The PHP APC extension is not installed."
-msgstr ""
+msgstr "De PHP APC extensie is niet geïnstalleerd."
 
 #: check/views/composer.phtml:37
 msgid "The PHP APC extension is installed."
-msgstr ""
+msgstr "De PHP APC extensie is geïnstalleerd."
 
 #: check/views/composer.phtml:38
 msgid ""
 "Using the PHP APC extension with Composer can lead to unexpected \"cannot "
 "redeclare class\" errors."
-msgstr ""
+msgstr "Gebruik van de PHP APC extensie met Composer kan leiden tot onverwachte \"cannot redeclare class\" fouten."
 
 #: check/views/composer.phtml:42 check/views/live-update.phtml:51
 msgid "Suhosin extension"
@@ -93,25 +93,25 @@ msgstr "De Suhosin extensie staat niet toe om .phar files uit te voeren."
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
 "<code>suhosin.executor.include.whitelist = phar</code>"
-msgstr ""
+msgstr "U dient \"phar\" toe te voegen aan de lijst van toegestane streams in uw php.ini: <code>suhosin.executor.include.whitelist = phar</code>"
 
 #: check/views/composer.phtml:51
 msgid "allow_url_fopen"
-msgstr ""
+msgstr "allow_url_fopen"
 
 #: check/views/composer.phtml:53
 msgid "The PHP flag \"allow_url_fopen\" is set."
-msgstr ""
+msgstr "De PHP flag \"allow_url_fopen\" is ingesteld."
 
 #: check/views/composer.phtml:55
 msgid "The PHP flag \"allow_url_fopen\" is not set."
-msgstr ""
+msgstr "De PHP flag \"allow_url_fopen\" is niet ingesteld."
 
 #: check/views/composer.phtml:56
 msgid ""
 "To download the installation files, Composer requires the "
 "\"allow_url_fopen\" flag to be set in the php.ini."
-msgstr ""
+msgstr "Om de installatiebestanden te downloaden, vereist Composer dat de \"allow_url_fopen\" flag is ingesteld in php.ini."
 
 #: check/views/composer.phtml:60 check/views/safe-mode-hack.phtml:12
 msgid "Safe Mode Hack"
@@ -129,51 +129,51 @@ msgstr "U dient Safe Mode Hack te gebruiken."
 msgid ""
 "The Safe Mode Hack is a Contao-specific function to work around incorrectly "
 "configured servers. It is not supported by Composer."
-msgstr ""
+msgstr "De Safe Mode Hack is een specifieke functie van Contao om een workaround te bieden bij verkeerd geconfigureerde servers. Dit wordt niet ondersteund door Composer."
 
 #: check/views/composer.phtml:69
 msgid "shell_exec (optional)"
-msgstr ""
+msgstr "shell_exec (optioneel)"
 
 #: check/views/composer.phtml:71
 msgid "The PHP function \"shell_exec\" is available."
-msgstr ""
+msgstr "De PHP functie \"shell_exec\" is beschikbaar."
 
 #: check/views/composer.phtml:73
 msgid "The PHP function \"shell_exec\" is not available."
-msgstr ""
+msgstr "De PHP functie \"shell_exec\" is niet beschikbaar. "
 
 #: check/views/composer.phtml:74
 msgid ""
 "The \"shell_exec\" function is optionally required to run the Composer "
 "process in the background."
-msgstr ""
+msgstr "De \"shell_exec\" functie is eventueel nodig om het Composer proces op de achtergrond uit te voeren."
 
 #: check/views/composer.phtml:78
 msgid "proc_open (optional)"
-msgstr ""
+msgstr "proc_open (optioneel)"
 
 #: check/views/composer.phtml:80
 msgid "The PHP function \"proc_open\" is available."
-msgstr ""
+msgstr "De PHP functie \"proc_open\" is beschikbaar."
 
 #: check/views/composer.phtml:82
 msgid "The PHP function \"proc_open\" is not available."
-msgstr ""
+msgstr "De PHP functie \"proc_open\" is niet beschikbaar."
 
 #: check/views/composer.phtml:83
 msgid ""
 "The \"proc_open\" function is optionally required to run the package manager"
 " in dev mode."
-msgstr ""
+msgstr "De \"proc_open\" functie is eventueel nodig om de pakket manager in developer mode te draaien."
 
 #: check/views/composer.phtml:88
 msgid "You can use the Composer package manager on this server."
-msgstr ""
+msgstr "U kunt gebruik maken van Composer pakketbeheer op deze server. "
 
 #: check/views/composer.phtml:90
 msgid "You cannot use the Composer package manager on this server."
-msgstr ""
+msgstr "U kunt geen gebruik maken van Composer pakketbeheer op deze server. "
 
 #: check/views/composer.phtml:93 check/views/installer.phtml:62
 #: check/views/live-update.phtml:93 check/views/repository.phtml:39
@@ -232,11 +232,11 @@ msgstr "U kunt geen gebruik maken van de Extensie Repository."
 
 #: check/views/index.phtml:48
 msgid "You can use the Composer package manager."
-msgstr ""
+msgstr "U kunt gebruik maken van Composer pakketbeheer."
 
 #: check/views/index.phtml:50
 msgid "You cannot use the Composer package manager."
-msgstr ""
+msgstr "U kunt geen gebruik maken van Composer pakketbeheer."
 
 #: check/views/index.phtml:55
 msgid "Install Contao"
@@ -645,7 +645,7 @@ msgstr "Beschadigde bestanden"
 
 #: check/views/validator.phtml:53
 msgid "Missing optional files"
-msgstr ""
+msgstr "Ontbrekende optionele bestanden"
 
 #: check/views/validator.phtml:63
 msgid "Your installation is up to date."

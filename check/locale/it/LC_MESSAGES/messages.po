@@ -24,7 +24,7 @@ msgstr ""
 
 #: check/views/composer.phtml:12
 msgid "Composer package manager"
-msgstr ""
+msgstr "Composer package manager"
 
 #: check/views/composer.phtml:15 check/views/live-update.phtml:15
 msgid "PHP 5.3.2 or greater"
@@ -38,11 +38,11 @@ msgstr "Hai la version PHP %s."
 
 #: check/views/composer.phtml:20
 msgid "Composer requires at least PHP version 5.3.2."
-msgstr ""
+msgstr "Composer richiede PHP versione 5.3.2 o superiore."
 
 #: check/views/composer.phtml:24
 msgid "PHP cURL extension"
-msgstr ""
+msgstr "Estensione PHP cURL"
 
 #: check/views/composer.phtml:26
 msgid "The PHP cURL extension is available."
@@ -56,25 +56,25 @@ msgstr "L'estensione PHP cURL non è disponibile."
 msgid ""
 "The PHP cURL extension is required to communicate with the package server. "
 "You can enable it by compiling PHP with the --enable-curl flag."
-msgstr ""
+msgstr "L'estensione PHP cURL è richiesta per comunicare con il package server. E' possibile abilitare questa estensione compilando il PHP con l'opzione --enable-curl, oppure rivolgiti al tuo fornitore del servizio."
 
 #: check/views/composer.phtml:33
 msgid "PHP APC extension"
-msgstr ""
+msgstr "Estensione PHP APC"
 
 #: check/views/composer.phtml:35
 msgid "The PHP APC extension is not installed."
-msgstr ""
+msgstr "Estensione PHP APC non è abilitata."
 
 #: check/views/composer.phtml:37
 msgid "The PHP APC extension is installed."
-msgstr ""
+msgstr "Estensione PHP APC è abilitata."
 
 #: check/views/composer.phtml:38
 msgid ""
 "Using the PHP APC extension with Composer can lead to unexpected \"cannot "
 "redeclare class\" errors."
-msgstr ""
+msgstr "Utilizzando l'estensione PHO APC, il Composer  potrebbe segnalare errori non previsti di \"cannot redeclare class\"."
 
 #: check/views/composer.phtml:42 check/views/live-update.phtml:51
 msgid "Suhosin extension"
@@ -98,21 +98,21 @@ msgstr "È necessario aggiungere \"phar\" alla lista dei stream consentiti nel t
 
 #: check/views/composer.phtml:51
 msgid "allow_url_fopen"
-msgstr ""
+msgstr "allow_url_fopen"
 
 #: check/views/composer.phtml:53
 msgid "The PHP flag \"allow_url_fopen\" is set."
-msgstr ""
+msgstr "L'opzione PHP \"allow_url_fopen\" è abilitata."
 
 #: check/views/composer.phtml:55
 msgid "The PHP flag \"allow_url_fopen\" is not set."
-msgstr ""
+msgstr "L'opzione PHP \"allow_url_fopen\" non è abilitata."
 
 #: check/views/composer.phtml:56
 msgid ""
 "To download the installation files, Composer requires the "
 "\"allow_url_fopen\" flag to be set in the php.ini."
-msgstr ""
+msgstr "Per scaricare i file di installazione, Composer richiede l'opzione \"allow_url_fopen\" attiva. Questa opzione deve essere impostata nel php.ini."
 
 #: check/views/composer.phtml:60 check/views/safe-mode-hack.phtml:12
 msgid "Safe Mode Hack"
@@ -130,51 +130,51 @@ msgstr "Bisogna usare il Safe Mode Hack."
 msgid ""
 "The Safe Mode Hack is a Contao-specific function to work around incorrectly "
 "configured servers. It is not supported by Composer."
-msgstr ""
+msgstr "La modalità  Safe Mode Hack è una funzione Contao specifica per aggirare i server configurati in modo non corretto. Questa modalità non è supportata da Composer."
 
 #: check/views/composer.phtml:69
 msgid "shell_exec (optional)"
-msgstr ""
+msgstr "shell_exec (optionale)"
 
 #: check/views/composer.phtml:71
 msgid "The PHP function \"shell_exec\" is available."
-msgstr ""
+msgstr "La funzione PHP  \"shell_exec\" è disponibile."
 
 #: check/views/composer.phtml:73
 msgid "The PHP function \"shell_exec\" is not available."
-msgstr ""
+msgstr "La funzione PHP  \"shell_exec\" non è disponibile."
 
 #: check/views/composer.phtml:74
 msgid ""
 "The \"shell_exec\" function is optionally required to run the Composer "
 "process in the background."
-msgstr ""
+msgstr "La funzione \"shell_exec\" è opzionale per eseguire il processo Composer in background."
 
 #: check/views/composer.phtml:78
 msgid "proc_open (optional)"
-msgstr ""
+msgstr "proc_open (opzionale)"
 
 #: check/views/composer.phtml:80
 msgid "The PHP function \"proc_open\" is available."
-msgstr ""
+msgstr "La funzione PHP  \"proc_open\" è disponibile."
 
 #: check/views/composer.phtml:82
 msgid "The PHP function \"proc_open\" is not available."
-msgstr ""
+msgstr "La funzione PHP  \"proc_open\" non è disponibile."
 
 #: check/views/composer.phtml:83
 msgid ""
 "The \"proc_open\" function is optionally required to run the package manager"
 " in dev mode."
-msgstr ""
+msgstr "La funzione \"proc_open\" è opzionale per eseguire il package manager  in modalità sviluppatore."
 
 #: check/views/composer.phtml:88
 msgid "You can use the Composer package manager on this server."
-msgstr ""
+msgstr "È possibile utilizzare il Composer package manager su questo server."
 
 #: check/views/composer.phtml:90
 msgid "You cannot use the Composer package manager on this server."
-msgstr ""
+msgstr "Non è possibile utilizzare il Composer package manager su questo server."
 
 #: check/views/composer.phtml:93 check/views/installer.phtml:62
 #: check/views/live-update.phtml:93 check/views/repository.phtml:39
@@ -233,11 +233,11 @@ msgstr "Non è possibile utilizzare il catalogo estensioni."
 
 #: check/views/index.phtml:48
 msgid "You can use the Composer package manager."
-msgstr ""
+msgstr "È possibile utilizzare il Composer package manager."
 
 #: check/views/index.phtml:50
 msgid "You cannot use the Composer package manager."
-msgstr ""
+msgstr "Non è possibile utilizzare il Composer package manager."
 
 #: check/views/index.phtml:55
 msgid "Install Contao"

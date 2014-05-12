@@ -6,7 +6,7 @@
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
 # Translators:
-# taca <https://www.transifex.com/accounts/profile/taca/>, 2013
+# taca <https://www.transifex.com/accounts/profile/taca/>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Check\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: check/views/composer.phtml:12
 msgid "Composer package manager"
-msgstr ""
+msgstr "Composerパッケージマネージャー"
 
 #: check/views/composer.phtml:15 check/views/live-update.phtml:15
 msgid "PHP 5.3.2 or greater"
@@ -37,43 +37,43 @@ msgstr "インストールしてあるPHPはバージョン%sです。"
 
 #: check/views/composer.phtml:20
 msgid "Composer requires at least PHP version 5.3.2."
-msgstr ""
+msgstr "Composerには少なくともPHPバージョン5.3.2が必要です。"
 
 #: check/views/composer.phtml:24
 msgid "PHP cURL extension"
-msgstr ""
+msgstr "PHPのcURL拡張"
 
 #: check/views/composer.phtml:26
 msgid "The PHP cURL extension is available."
-msgstr ""
+msgstr "PHP cURL拡張を利用できます。"
 
 #: check/views/composer.phtml:28
 msgid "The PHP cURL extension is not available."
-msgstr ""
+msgstr "PHP cURL拡張を利用できません。"
 
 #: check/views/composer.phtml:29
 msgid ""
 "The PHP cURL extension is required to communicate with the package server. "
 "You can enable it by compiling PHP with the --enable-curl flag."
-msgstr ""
+msgstr "PHP cURL拡張がパッケージサーバーと通信するために必要です。--enable-curlフラッグでPHPをコンパイルすると有効にできます。"
 
 #: check/views/composer.phtml:33
 msgid "PHP APC extension"
-msgstr ""
+msgstr "PHPのAPC拡張"
 
 #: check/views/composer.phtml:35
 msgid "The PHP APC extension is not installed."
-msgstr ""
+msgstr "PHP APC拡張をインストールしてありません。"
 
 #: check/views/composer.phtml:37
 msgid "The PHP APC extension is installed."
-msgstr ""
+msgstr "PHP APC拡張をインストールしてあります。"
 
 #: check/views/composer.phtml:38
 msgid ""
 "Using the PHP APC extension with Composer can lead to unexpected \"cannot "
 "redeclare class\" errors."
-msgstr ""
+msgstr "Composerと一緒にPHP APC拡張を使用すると予期しない\"cannot redeclare class\"というエラーを起こすことがあります。"
 
 #: check/views/composer.phtml:42 check/views/live-update.phtml:51
 msgid "Suhosin extension"
@@ -97,21 +97,21 @@ msgstr "php.iniで許可するストリームのリストに\"phar\"を加えな
 
 #: check/views/composer.phtml:51
 msgid "allow_url_fopen"
-msgstr ""
+msgstr "allow_url_fopen"
 
 #: check/views/composer.phtml:53
 msgid "The PHP flag \"allow_url_fopen\" is set."
-msgstr ""
+msgstr "PHPの設定オプションの\"allow_url_fopen\"が設定してあります。"
 
 #: check/views/composer.phtml:55
 msgid "The PHP flag \"allow_url_fopen\" is not set."
-msgstr ""
+msgstr "PHPの設定オプションの\"allow_url_fopen\"は設定してありません。"
 
 #: check/views/composer.phtml:56
 msgid ""
 "To download the installation files, Composer requires the "
 "\"allow_url_fopen\" flag to be set in the php.ini."
-msgstr ""
+msgstr "Composerがインストールするファイルをダウンロードするためには、設定オプションの\"allow_url_fopen\"をphp.iniで設定されている必要があります。"
 
 #: check/views/composer.phtml:60 check/views/safe-mode-hack.phtml:12
 msgid "Safe Mode Hack"
@@ -129,51 +129,51 @@ msgstr "セーフモード対処が*必要*です。"
 msgid ""
 "The Safe Mode Hack is a Contao-specific function to work around incorrectly "
 "configured servers. It is not supported by Composer."
-msgstr ""
+msgstr "セーフモード対処は、間違って構成されているサーバーに対応するContao特有の機能です。Composerではサポートしていません。"
 
 #: check/views/composer.phtml:69
 msgid "shell_exec (optional)"
-msgstr ""
+msgstr "shell_exec (任意)"
 
 #: check/views/composer.phtml:71
 msgid "The PHP function \"shell_exec\" is available."
-msgstr ""
+msgstr "PHPの\"shell_exec\"関数を利用できます。"
 
 #: check/views/composer.phtml:73
 msgid "The PHP function \"shell_exec\" is not available."
-msgstr ""
+msgstr "PHPの\"shell_exec\"関数を利用できません。"
 
 #: check/views/composer.phtml:74
 msgid ""
 "The \"shell_exec\" function is optionally required to run the Composer "
 "process in the background."
-msgstr ""
+msgstr "\"shell_exec\"関数は必須ではありませんが、Composerのプロセスをバックグラウンドで実行するために必要です。"
 
 #: check/views/composer.phtml:78
 msgid "proc_open (optional)"
-msgstr ""
+msgstr "proc_open (任意)"
 
 #: check/views/composer.phtml:80
 msgid "The PHP function \"proc_open\" is available."
-msgstr ""
+msgstr "PHPの\"proc_open\"関数を利用できます。"
 
 #: check/views/composer.phtml:82
 msgid "The PHP function \"proc_open\" is not available."
-msgstr ""
+msgstr "PHPの\"proc_open\"関数を利用できません。"
 
 #: check/views/composer.phtml:83
 msgid ""
 "The \"proc_open\" function is optionally required to run the package manager"
 " in dev mode."
-msgstr ""
+msgstr "\"proc_open\"関数は必須ではありませんが、パッケージマネージャーを開発モードで実行するために必要です。"
 
 #: check/views/composer.phtml:88
 msgid "You can use the Composer package manager on this server."
-msgstr ""
+msgstr "このサーバーでComposerパッケージマネージャーを使用できます。"
 
 #: check/views/composer.phtml:90
 msgid "You cannot use the Composer package manager on this server."
-msgstr ""
+msgstr "このサーバーではComposerパッケージマネージャーを使用できません。"
 
 #: check/views/composer.phtml:93 check/views/installer.phtml:62
 #: check/views/live-update.phtml:93 check/views/repository.phtml:39
@@ -232,11 +232,11 @@ msgstr "機能拡張リポジトリを使用できません。"
 
 #: check/views/index.phtml:48
 msgid "You can use the Composer package manager."
-msgstr ""
+msgstr "Composerパッケージマネージャーを使用できます。"
 
 #: check/views/index.phtml:50
 msgid "You cannot use the Composer package manager."
-msgstr ""
+msgstr "Composerパッケージマネージャーを使用できません。"
 
 #: check/views/index.phtml:55
 msgid "Install Contao"

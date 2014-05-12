@@ -6,7 +6,7 @@
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
 # Translators:
-# Kuzmich <https://www.transifex.com/accounts/profile/Kuzmich/>, 2012-2013
+# Kuzmich <https://www.transifex.com/accounts/profile/Kuzmich/>, 2012-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Check\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: check/views/composer.phtml:12
 msgid "Composer package manager"
-msgstr ""
+msgstr "Менеджер пакетов Composer"
 
 #: check/views/composer.phtml:15 check/views/live-update.phtml:15
 msgid "PHP 5.3.2 or greater"
@@ -37,43 +37,43 @@ msgstr "Установлена PHP версии %s."
 
 #: check/views/composer.phtml:20
 msgid "Composer requires at least PHP version 5.3.2."
-msgstr ""
+msgstr "Менеджеру пакетов Composer необходима версия PHP не ниже 5.3.2."
 
 #: check/views/composer.phtml:24
 msgid "PHP cURL extension"
-msgstr ""
+msgstr "Расширение PHP cURL"
 
 #: check/views/composer.phtml:26
 msgid "The PHP cURL extension is available."
-msgstr ""
+msgstr "Расширение PHP cURL доступно."
 
 #: check/views/composer.phtml:28
 msgid "The PHP cURL extension is not available."
-msgstr ""
+msgstr "Расширение PHP cURL не доступно."
 
 #: check/views/composer.phtml:29
 msgid ""
 "The PHP cURL extension is required to communicate with the package server. "
 "You can enable it by compiling PHP with the --enable-curl flag."
-msgstr ""
+msgstr "Расширение PHP cURL необходимо для связи с сервером хранилища расширений. Вы можете включить его путем компиляции PHP с флагом --enable-curl."
 
 #: check/views/composer.phtml:33
 msgid "PHP APC extension"
-msgstr ""
+msgstr "Расширение PHP APC"
 
 #: check/views/composer.phtml:35
 msgid "The PHP APC extension is not installed."
-msgstr ""
+msgstr "Расширение PHP APC не установлено."
 
 #: check/views/composer.phtml:37
 msgid "The PHP APC extension is installed."
-msgstr ""
+msgstr "Расширение PHP APC установлено."
 
 #: check/views/composer.phtml:38
 msgid ""
 "Using the PHP APC extension with Composer can lead to unexpected \"cannot "
 "redeclare class\" errors."
-msgstr ""
+msgstr "Использование расширения PHP APC с менеджером пакетов Composer может привести к неожиданным ошибкам \"не удается переопределить класс\" (cannot redeclare class)."
 
 #: check/views/composer.phtml:42 check/views/live-update.phtml:51
 msgid "Suhosin extension"
@@ -97,21 +97,21 @@ msgstr "Вы должны добавить \"phar\" в список разреш
 
 #: check/views/composer.phtml:51
 msgid "allow_url_fopen"
-msgstr ""
+msgstr "allow_url_fopen"
 
 #: check/views/composer.phtml:53
 msgid "The PHP flag \"allow_url_fopen\" is set."
-msgstr ""
+msgstr "PHP флаг \"allow_url_fopen\" установлен."
 
 #: check/views/composer.phtml:55
 msgid "The PHP flag \"allow_url_fopen\" is not set."
-msgstr ""
+msgstr "PHP флаг \"allow_url_fopen\" не установлен."
 
 #: check/views/composer.phtml:56
 msgid ""
 "To download the installation files, Composer requires the "
 "\"allow_url_fopen\" flag to be set in the php.ini."
-msgstr ""
+msgstr "Чтобы загрузить файлы установки менеджера пакетов Composer необходимо активировать флаг \"allow_url_fopen\" в php.ini."
 
 #: check/views/composer.phtml:60 check/views/safe-mode-hack.phtml:12
 msgid "Safe Mode Hack"
@@ -129,51 +129,51 @@ msgstr "Вам требуется Safe Mode Hack."
 msgid ""
 "The Safe Mode Hack is a Contao-specific function to work around incorrectly "
 "configured servers. It is not supported by Composer."
-msgstr ""
+msgstr "Safe Mode Hack это специальная функция используемая Contao, чтобы работать в обход неправильно настроенных серверов."
 
 #: check/views/composer.phtml:69
 msgid "shell_exec (optional)"
-msgstr ""
+msgstr "shell_exec (дополнительно)"
 
 #: check/views/composer.phtml:71
 msgid "The PHP function \"shell_exec\" is available."
-msgstr ""
+msgstr "PHP функция \"shell_exec\" доступна."
 
 #: check/views/composer.phtml:73
 msgid "The PHP function \"shell_exec\" is not available."
-msgstr ""
+msgstr "PHP функция \"shell_exec\" не доступна."
 
 #: check/views/composer.phtml:74
 msgid ""
 "The \"shell_exec\" function is optionally required to run the Composer "
 "process in the background."
-msgstr ""
+msgstr "Функция \"shell_exec\" необходима, но необязательна, для запуска процесса менеджера пакетов Composer в фоновом режиме."
 
 #: check/views/composer.phtml:78
 msgid "proc_open (optional)"
-msgstr ""
+msgstr "proc_open (дополнительно)"
 
 #: check/views/composer.phtml:80
 msgid "The PHP function \"proc_open\" is available."
-msgstr ""
+msgstr "PHP функция \"proc_open\" доступна."
 
 #: check/views/composer.phtml:82
 msgid "The PHP function \"proc_open\" is not available."
-msgstr ""
+msgstr "PHP функция \"proc_open\" не доступна."
 
 #: check/views/composer.phtml:83
 msgid ""
 "The \"proc_open\" function is optionally required to run the package manager"
 " in dev mode."
-msgstr ""
+msgstr "Функция \"proc_open\" необходима, но необязательна, для запуска менеджера пакетов Composer в режиме разработчика."
 
 #: check/views/composer.phtml:88
 msgid "You can use the Composer package manager on this server."
-msgstr ""
+msgstr "Вы можете использовать менеджер пакетов Composer на этом сервере."
 
 #: check/views/composer.phtml:90
 msgid "You cannot use the Composer package manager on this server."
-msgstr ""
+msgstr "Вы не можете использовать менеджер пакетов Composer на этом сервере."
 
 #: check/views/composer.phtml:93 check/views/installer.phtml:62
 #: check/views/live-update.phtml:93 check/views/repository.phtml:39
@@ -232,11 +232,11 @@ msgstr "Вы не можете использовать хранилище ра�
 
 #: check/views/index.phtml:48
 msgid "You can use the Composer package manager."
-msgstr ""
+msgstr "Вы можете использовать менеджер пакетов Composer."
 
 #: check/views/index.phtml:50
 msgid "You cannot use the Composer package manager."
-msgstr ""
+msgstr "Вы не можете использовать менеджер пакетов Composer."
 
 #: check/views/index.phtml:55
 msgid "Install Contao"
@@ -482,7 +482,7 @@ msgid ""
 "Repository server. You can enable it by compiling PHP with the --enable-soap"
 " flag. Depending on your Contao version, you might also be able to use the "
 "%s extension."
-msgstr "Расширение PHP SOAP необходимо для связи с сервером расширения хранилища. Вы можете включить его путем компиляции PHP с флагом --enable-soap. В зависимости от версии Contao также можно использовать расширение %s."
+msgstr "Расширение PHP SOAP необходимо для связи с сервером хранилища расширений. Вы можете включить его путем компиляции PHP с флагом --enable-soap. В зависимости от версии Contao также можно использовать расширение %s."
 
 #: check/views/repository.phtml:26
 msgid "A connection to contao.org could be established."
