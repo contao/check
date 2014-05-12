@@ -231,7 +231,12 @@ class Validator
 				// Check the MD5 hash
 				if (strncmp(md5($buffer), $md5_file, 10) !== 0) {
 					$this->valid = false;
-					$this->errors['corrupt'][] = $path;
+
+					if ($this->isOptional($path)) {
+						$this->errors['optional'][] = $path;
+					} else {
+						$this->errors['corrupt'][] = $path;
+					}
 				}
 
 				$buffer = null;
