@@ -333,6 +333,7 @@ class Installer
 		}
 
 		$url = "http://download.contao.org/$version/zip";
+		$prefix = version_compare($version, '3.3.0', '>=') ? 'contao' : 'core';
 
 		if ($this->php === false) {
 			if ($this->download == 'wget') {
@@ -345,9 +346,9 @@ class Installer
 			if (file_exists('download') && filesize('download') > 0) {
 				$this->exec($this->unzip . ' download');
 				$this->exec('rm download');
-				$this->exec("mv core-$version/* " . TL_ROOT . '/');
-				$this->exec("mv core-$version/.[a-z]* " . TL_ROOT . '/'); // see #22
-				$this->exec("rm -rf core-$version");
+				$this->exec("mv $prefix-$version/* " . TL_ROOT . '/');
+				$this->exec("mv $prefix-$version/.[a-z]* " . TL_ROOT . '/'); // see #22
+				$this->exec("rm -rf $prefix-$version");
 			}
 		} else {
 			file_put_contents('download', $this->curl($url));
@@ -362,13 +363,13 @@ class Installer
 			}
 
 			// Remove the wrapper folder (see #23)
-			foreach (scandir(TL_ROOT . "/core-$version")  as $file) {
+			foreach (scandir(TL_ROOT . "/$prefix-$version")  as $file) {
 				if ($file != '.' && $file != '..') {
-					rename(TL_ROOT . "/core-$version/$file", TL_ROOT . "/$file");
+					rename(TL_ROOT . "/$prefix-$version/$file", TL_ROOT . "/$file");
 				}
 			}
 
-			rmdir(TL_ROOT . "/core-$version");
+			rmdir(TL_ROOT . "/$prefix-$version");
 		}
 	}
 }
