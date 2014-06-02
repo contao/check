@@ -78,7 +78,7 @@ class Installer
 		if (!$this->hasInstallation()) {
 			if (!$this->canInstall()) {
 				$this->ftp = true;
-			} elseif (!$this->canUseShell() && !$this->canUsePhp()) {
+			} elseif (!$this->canUsePhp() && !$this->canUseShell()) {
 				$this->available = false;
 			} else {
 				$this->install();
@@ -335,7 +335,28 @@ class Installer
 		$url = "http://download.contao.org/$version/zip";
 		$prefix = version_compare($version, '3.3.0', '>=') ? 'contao' : 'core';
 
-		if ($this->php === false) {
+		if ($this->php) {
+			file_put_contents('download', $this->curl($url));
+
+			// Extract
+			if (file_exists('download') && filesize('download') > 0) {
+				$zip = new ZipArchive;
+				$zip->open('download');
+				$zip->extractTo(TL_ROOT);
+				$zip->close();
+
+				unlink('download');
+
+				// Remove the wrapper folder (see #23)
+				foreach (scandir(TL_ROOT . "/$prefix-$version")  as $file) {
+					if ($file != '.' && $file != '..') {
+						rename(TL_ROOT . "/$prefix-$version/$file", TL_ROOT . "/$file");
+					}
+				}
+
+				rmdir(TL_ROOT . "/$prefix-$version");
+			}
+		} else {
 			if ($this->download == 'wget') {
 				$this->exec("wget -O download $url");
 			} elseif ($this->download == 'curl') {
@@ -346,30 +367,12 @@ class Installer
 			if (file_exists('download') && filesize('download') > 0) {
 				$this->exec($this->unzip . ' download');
 				$this->exec('rm download');
+
+				// Remove the wrapper folder (see #23)
 				$this->exec("mv $prefix-$version/* " . TL_ROOT . '/');
 				$this->exec("mv $prefix-$version/.[a-z]* " . TL_ROOT . '/'); // see #22
 				$this->exec("rm -rf $prefix-$version");
 			}
-		} else {
-			file_put_contents('download', $this->curl($url));
-
-			// Extract
-			if (file_exists('download') && filesize('download') > 0) {
-				$zip = new ZipArchive;
-				$zip->open('download');
-				$zip->extractTo(TL_ROOT);
-				$zip->close();
-				unlink('download');
-			}
-
-			// Remove the wrapper folder (see #23)
-			foreach (scandir(TL_ROOT . "/$prefix-$version")  as $file) {
-				if ($file != '.' && $file != '..') {
-					rename(TL_ROOT . "/$prefix-$version/$file", TL_ROOT . "/$file");
-				}
-			}
-
-			rmdir(TL_ROOT . "/$prefix-$version");
 		}
 	}
 }
