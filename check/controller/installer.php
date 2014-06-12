@@ -193,6 +193,11 @@ class Installer
 	 */
 	protected function canUsePhp()
 	{
+		// cURL does not follow redirects if open_basedir is set
+		if (ini_get('open_basedir') != '') {
+			return false;
+		}
+
 		// Check whether cURL and Zip are available
 		if (!extension_loaded('curl') || !extension_loaded('zip')) {
 			return false;
