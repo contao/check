@@ -5,11 +5,12 @@ for i in `ls check/locale`; do
   if [[ $i != "en" ]]; then
     cd "check/locale/$i/LC_MESSAGES"
     if [[ ! -e messages.po ]]; then
-      cd ../../../../
+      cd -
       rm -r "check/locale/$i"
     else
+      sed -i "" "s/ <.*@.*\..*>//" ./messages.po
       msgfmt -c messages.po
-      cd ../../../../
+      cd -
     fi
   fi
 done

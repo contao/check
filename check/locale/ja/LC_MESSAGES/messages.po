@@ -1,19 +1,19 @@
 # Contao Open Source CMS
-#
+# 
 # Copyright (C) 2005-2014 Leo Feyer
-#
+# 
 # @package Check
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
 # Translators:
-# taca <https://www.transifex.com/accounts/profile/taca/>, 2013-2014
+# Takahiro Kambe, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"Last-Translator: taca <https://www.transifex.com/accounts/profile/taca/>\n"
-"PO-Revision-Date: 2014-03-26 09:28+0000\n"
+"PO-Revision-Date: 2014-06-22 09:52+0000\n"
+"Last-Translator: Takahiro Kambe\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/contao-check/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -506,11 +506,11 @@ msgstr "php.iniの設定"
 
 #: check/views/safe-mode-hack.phtml:17
 msgid "The PHP safe_mode is not enabled."
-msgstr "PHPのsafe_modeは有効です。"
+msgstr "PHPのsafe_modeは有効ではありません。"
 
 #: check/views/safe-mode-hack.phtml:19
 msgid "The PHP safe_mode is enabled."
-msgstr "PHPのsafe_modeは有効ではありません。"
+msgstr "PHPのsafe_modeは有効です。"
 
 #: check/views/safe-mode-hack.phtml:20
 msgid ""
