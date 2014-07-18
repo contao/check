@@ -21,6 +21,15 @@
     <?php endif; ?>
   </div>
   <div class="row">
+    <h3><?php echo _('PHP OpenSSL extension') ?></h3>
+    <?php if ($this->hasSsl()): ?>
+      <p class="confirm"><?php echo _('The PHP OpenSSL extension is enabled.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo _('The PHP OpenSSL extension is not enabled.') ?></p>
+      <p class="explain"><?php echo _('The PHP OpenSSL extension is required to set up a secure connection to the Live Update server. Enable it in your php.ini.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
     <h3><?php echo _('Connection test') ?></h3>
     <?php if ($this->canConnect()): ?>
       <p class="confirm"><?php echo _('A connection to contao.org could be established.') ?></p>

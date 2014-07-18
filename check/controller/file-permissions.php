@@ -12,13 +12,13 @@
 
 
 /**
- * Check the Safe Mode Hack requirements
+ * Check if the PHP process is allowed to create files
  *
  * @package   Check
  * @author    Leo Feyer <https://github.com/leofeyer>
  * @copyright Leo Feyer 2013-2014
  */
-class SafeModeHack
+class FilePermissions
 {
 
 	/**
@@ -58,10 +58,10 @@ class SafeModeHack
 	protected $testFileChmod;
 
 	/**
-	 * Required
+	 * Failure
 	 * @var boolean
 	 */
-	protected $required = false;
+	protected $failure = false;
 
 
 	/**
@@ -69,18 +69,18 @@ class SafeModeHack
 	 */
 	public function run()
 	{
-		include 'views/safe-mode-hack.phtml';
+		include 'views/file-permissions.phtml';
 	}
 
 
 	/**
-	 * Return whether the Safe Mode Hack is required
+	 * Return true if the PHP process could not create the file
 	 *
-	 * @return boolean True if the Safe Mode Hack is required
+	 * @return boolean True if the PHP process could not create the file
 	 */
-	public function isRequired()
+	public function failed()
 	{
-		return $this->required;
+		return $this->failure;
 	}
 
 
@@ -89,7 +89,7 @@ class SafeModeHack
 	 *
 	 * @return boolean True if the PHP safe_mode is enabled
 	 */
-	public function isEnabled()
+	public function hasSafeMode()
 	{
 		$safe_mode = ini_get('safe_mode');
 
@@ -97,7 +97,7 @@ class SafeModeHack
 			return false;
 		}
 
-		$this->required = true;
+		$this->failure = true;
 		return true;
 	}
 
@@ -163,7 +163,7 @@ class SafeModeHack
 		}
 
 		@rmdir('test');
-		$this->required = true;
+		$this->failure = true;
 
 		return false;
 	}
@@ -230,7 +230,7 @@ class SafeModeHack
 		}
 
 		@unlink('test.txt');
-		$this->required = true;
+		$this->failure = true;
 
 		return false;
 	}

@@ -31,7 +31,7 @@
   </div>
   <div class="row">
     <h3><?php echo _('PHP OpenSSL extension') ?></h3>
-    <?php if ($this->hasPhar()): ?>
+    <?php if ($this->hasSsl()): ?>
       <p class="confirm"><?php echo _('The PHP OpenSSL extension is enabled.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('The PHP OpenSSL extension is not enabled.') ?></p>

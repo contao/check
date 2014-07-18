@@ -9,15 +9,15 @@
 <div id="wrapper">
   <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
   <div class="row">
-    <h2><?php echo _('Safe Mode Hack') ?></2>
+    <h2><?php echo _('File permissions') ?></2>
   </div>
   <div class="row">
     <h3><?php echo _('php.ini settings') ?></h3>
-    <?php if (!$this->isEnabled()): ?>
+    <?php if (!$this->hasSafeMode()): ?>
       <p class="confirm"><?php echo _('The PHP safe_mode is not enabled.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('The PHP safe_mode is enabled.') ?></p>
-      <p class="explain"><?php echo _('It is recommended to disable the safe_mode in your php.ini or server control panel, otherwise you will have to use the Contao Safe Mode Hack to create or manipulate files. Using the Safe Mode Hack will have a negative impact on the performance of your website.') ?></p>
+      <p class="explain"><?php echo _('It is recommended to disable the safe_mode in your php.ini or server control panel, otherwise the PHP process it not allowed to create or manipulate files and Contao cannot work properly.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
@@ -45,10 +45,10 @@
     <?php endif; ?>
   </div>
   <div class="row">
-    <?php if (!$this->isRequired()): ?>
-	  <p class="confirm large"><?php echo _('You do not need the Safe Mode Hack on this server.') ?></p>
+    <?php if (!$this->failed()): ?>
+	  <p class="confirm large"><?php echo _('The PHP process is allowed to create files on this server.') ?></p>
 	<?php else: ?>
-	  <p class="error large"><?php echo _('You do need the Safe Mode Hack on this server.') ?></p>
+	  <p class="error large"><?php echo _('The PHP process is not allowed to create files on this server.') ?></p>
 	<?php endif; ?>
   </div>
   <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>

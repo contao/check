@@ -22,10 +22,10 @@ class Index
 {
 
 	/**
-	 * Safe Mode Hack
+	 * File permissions
 	 * @var boolean
 	 */
-	protected $safeModeHack;
+	protected $filePermissions;
 
 
 	/**
@@ -33,7 +33,7 @@ class Index
 	 */
 	public function run()
 	{
-		$this->safeModeHack = $this->checkSafeModeHack();
+		$this->filePermissions = $this->checkFilePermissions();
 
 		include 'views/index.phtml';
 	}
@@ -62,6 +62,17 @@ class Index
 
 
 	/**
+	 * Return the minimum PHP version required for Contao 4
+	 *
+	 * @return string The PHP version string
+	 */
+	public function getContao4Version()
+	{
+		return '5.4.0';
+	}
+
+
+	/**
 	 * Return true if Contao 2 can be installed
 	 *
 	 * @return boolean True if Contao 2 can be installed
@@ -84,13 +95,24 @@ class Index
 
 
 	/**
-	 * Return true if the Safe Mode Hack is required
+	 * Return true if Contao 4 can be installed
 	 *
-	 * @return boolean True if the Safe Mode Hack is required
+	 * @return boolean True if Contao 4 can be installed
 	 */
-	public function requiresSafeModeHack()
+	public function supportsContao4()
 	{
-		return $this->safeModeHack;
+		return version_compare(phpversion(), $this->getContao4Version(), '>=');
+	}
+
+
+	/**
+	 * Return true if the PHP process is allowed to create files
+	 *
+	 * @return boolean True if the PHP process is allowed to create files
+	 */
+	public function canCreateFiles()
+	{
+		return $this->filePermissions;
 	}
 
 
@@ -170,7 +192,7 @@ class Index
 			return false;
 		}
 
-		if ($this->safeModeHack) {
+		if ($this->filePermissions) {
 			return false;
 		}
 
@@ -201,24 +223,24 @@ class Index
 
 
 	/**
-	 * Return true if the Safe Mode Hack is required
+	 * Return true if the PHP process is allowed to create files
 	 *
-	 * @return boolean True if the Safe Mode Hack is required
+	 * @return boolean True if the PHP process is allowed to create files
 	 */
-	protected function checkSafeModeHack()
+	protected function checkFilePermissions()
 	{
-		include 'safe-mode-hack.php';
-		$smh = new SafeModeHack;
+		include 'file-permissions.php';
+		$permissions = new FilePermissions;
 
-		if ($smh->isEnabled()) {
+		if ($permissions->hasSafeMode()) {
 			return true;
 		}
 
-		if (!$smh->canCreateFolder()) {
+		if (!$permissions->canCreateFolder()) {
 			return true;
 		}
 
-		if (!$smh->canCreateFile()) {
+		if (!$permissions->canCreateFile()) {
 			return true;
 		}
 

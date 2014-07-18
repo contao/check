@@ -65,6 +65,22 @@ class Composer
 
 
 	/**
+	 * Check whether the PHP Phar extension is available
+	 *
+	 * @return boolean True if the PHP Phar extension is available
+	 */
+	public function hasPhar()
+	{
+		if (extension_loaded('Phar')) {
+			return true;
+		}
+
+		$this->available = false;
+		return false;
+	}
+
+
+	/**
 	 * Check whether the PHP cURL extension is available
 	 *
 	 * @return boolean True if the PHP cURL extension is available
@@ -138,24 +154,24 @@ class Composer
 
 
 	/**
-	 * Return true if the Safe Mode Hack is required
+	 * Return true if the PHP process is allowed to create files
 	 *
-	 * @return boolean True if the Safe Mode Hack is required
+	 * @return boolean True if the PHP process is allowed to create files
 	 */
-	public function requiresSafeModeHack()
+	public function canCreateFiles()
 	{
-		include 'safe-mode-hack.php';
-		$smh = new SafeModeHack;
+		include 'file-permissions.php';
+		$permissions = new FilePermissions;
 
-		if ($smh->isEnabled()) {
+		if ($permissions->hasSafeMode()) {
 			return true;
 		}
 
-		if (!$smh->canCreateFolder()) {
+		if (!$permissions->canCreateFolder()) {
 			return true;
 		}
 
-		if (!$smh->canCreateFile()) {
+		if (!$permissions->canCreateFile()) {
 			return true;
 		}
 

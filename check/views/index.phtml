@@ -24,30 +24,40 @@
       <?php else: ?>
         <li class="error"><?php printf(_('You cannot install Contao 3.x (requires PHP %s+)'), $this->getContao3Version()) ?></li>
       <?php endif; ?>
+      <?php if ($this->supportsContao4()): ?>
+        <li class="confirm"><?php echo _('You can install Contao 4.x') ?></li>
+      <?php else: ?>
+        <li class="error"><?php printf(_('You cannot install Contao 4.x (requires PHP %s+)'), $this->getContao4Version()) ?></li>
+      <?php endif; ?>
     </ul>
   </div>
   <div class="row">
-    <h3><?php echo _('Requirements') ?></h3>
+    <h3><?php echo _('File permissions') ?></h3>
     <ul>
-      <?php if (!$this->requiresSafeModeHack()): ?>
-        <li class="confirm"><?php echo _('You do not need the Safe Mode Hack.') ?> <a href="./?c=safe-mode-hack"><?php echo _('More information …') ?></a></li>
+      <?php if (!$this->canCreateFiles()): ?>
+        <li class="confirm"><?php echo _('The PHP process is allowed to create files.') ?> <a href="./?c=file-permissions"><?php echo _('More information …') ?></a></li>
       <?php else: ?>
-        <li class="error"><?php echo _('You do need the Safe Mode Hack.') ?> <a href="./?c=safe-mode-hack"><?php echo _('More information …') ?></a></li>
+        <li class="error"><?php echo _('The PHP process is not allowed to create files.') ?> <a href="./?c=file-permissions"><?php echo _('More information …') ?></a></li>
       <?php endif; ?>
+    </ul>
+  </div>
+  <div class="row">
+    <h3><?php echo _('Additional services') ?></h3>
+    <ul>
       <?php if ($this->canUseLiveUpdate()): ?>
         <li class="confirm"><?php echo _('You can use the Live Update.') ?> <a href="./?c=live-update"><?php echo _('More information …') ?></a></li>
       <?php else: ?>
         <li class="error"><?php echo _('You cannot use the Live Update.') ?> <a href="./?c=live-update"><?php echo _('More information …') ?></a></li>
       <?php endif; ?>
-      <?php if ($this->canUseRepository()): ?>
-        <li class="confirm"><?php echo _('You can use the Extension Repository.') ?> <a href="./?c=repository"><?php echo _('More information …') ?></a></li>
-      <?php else: ?>
-        <li class="error"><?php echo _('You cannot use the Extension Repository.') ?> <a href="./?c=repository"><?php echo _('More information …') ?></a></li>
-      <?php endif; ?>
       <?php if ($this->canUseComposer()): ?>
         <li class="confirm"><?php echo _('You can use the Composer package manager.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
       <?php else: ?>
         <li class="error"><?php echo _('You cannot use the Composer package manager.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
+      <?php endif; ?>
+      <?php if ($this->canUseRepository()): ?>
+        <li class="confirm"><?php echo _('You can use the Extension Repository.') ?> <a href="./?c=repository"><?php echo _('More information …') ?></a></li>
+      <?php else: ?>
+        <li class="error"><?php echo _('You cannot use the Extension Repository.') ?> <a href="./?c=repository"><?php echo _('More information …') ?></a></li>
       <?php endif; ?>
     </ul>
   </div>

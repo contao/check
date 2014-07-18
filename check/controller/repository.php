@@ -65,11 +65,27 @@ class Repository
 
 
 	/**
+	 * Check whether the PHP OpenSSL extension is available
+	 *
+	 * @return boolean True if the PHP OpenSSL extension is available
+	 */
+	public function hasSsl()
+	{
+		if (extension_loaded('openssl')) {
+			return true;
+		}
+
+		$this->available = false;
+		return false;
+	}
+
+
+	/**
 	 * Check whether a connection can be established
 	 */
 	public function canConnect()
 	{
-		$connection = fsockopen('contao.org', 80, $errno, $errstr, 10);
+		$connection = fsockopen('ssl://contao.org', 443, $errno, $errstr, 10);
 		$connected = ($connection !== false);
 		fclose($connection);
 
