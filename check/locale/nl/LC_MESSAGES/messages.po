@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2014-07-18 09:41+0000\n"
+"PO-Revision-Date: 2014-07-21 14:32+0000\n"
 "Last-Translator: P.Hamers\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/contao-check/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -136,21 +136,21 @@ msgstr "Om de installatiebestanden te downloaden, vereist Composer dat de \"allo
 #: check/views/composer.phtml:69 check/views/file-permissions.phtml:12
 #: check/views/index.phtml:35
 msgid "File permissions"
-msgstr ""
+msgstr "Bestand permissies"
 
 #: check/views/composer.phtml:71 check/views/index.phtml:38
 msgid "The PHP process is allowed to create files."
-msgstr ""
+msgstr "Het is het PHP-proces toegestaan om bestanden aan te maken."
 
 #: check/views/composer.phtml:73 check/views/index.phtml:40
 msgid "The PHP process is not allowed to create files."
-msgstr ""
+msgstr "Het is het PHP-proces niet toegestaan om bestanden aan te maken."
 
 #: check/views/composer.phtml:74
 msgid ""
 "The PHP process is not allowed to create or manipulate files. Please adjust "
 "your server configuration accordingly."
-msgstr ""
+msgstr "Het is het PHP-proces niet toegestaan ​​om bestanden aan te maken of te bewerken. Gelieve uw server configuratie aan te passen."
 
 #: check/views/composer.phtml:78
 msgid "shell_exec (optional)"
@@ -219,7 +219,7 @@ msgid ""
 "It is recommended to disable the safe_mode in your php.ini or server control"
 " panel, otherwise the PHP process it not allowed to create or manipulate "
 "files and Contao cannot work properly."
-msgstr ""
+msgstr "Het wordt aanbevolen om de safe_mode in uw php.ini of server bedieningspaneel uit te schakelen, daar anders het PHP-proces niet toegestaan wordt om bestanden aan te maken of te bewerken en Contao zal niet naar behoren werken."
 
 #: check/views/file-permissions.phtml:24
 msgid "Creating a test folder"
@@ -291,11 +291,11 @@ msgstr "664, 644, 660 of 640"
 
 #: check/views/file-permissions.phtml:49
 msgid "The PHP process is allowed to create files on this server."
-msgstr ""
+msgstr "Het is het PHP-proces toegestaan om bestanden aan te maken op deze server."
 
 #: check/views/file-permissions.phtml:51
 msgid "The PHP process is not allowed to create files on this server."
-msgstr ""
+msgstr "Het is het PHP-proces niet toegestaan om bestanden aan te maken op deze server."
 
 #: check/views/index.phtml:12
 msgid "Overview"
@@ -321,12 +321,12 @@ msgstr "U kunt Contao 3.x  niet installeren (vereist PHP %s+)"
 
 #: check/views/index.phtml:28
 msgid "You can install Contao 4.x"
-msgstr ""
+msgstr "U kunt Contao 4.x installeren"
 
 #: check/views/index.phtml:30
 #, php-format
 msgid "You cannot install Contao 4.x (requires PHP %s+)"
-msgstr ""
+msgstr "U kunt Contao 4.x  niet installeren (vereist PHP %s+)"
 
 #: check/views/index.phtml:38 check/views/index.phtml:40
 #: check/views/index.phtml:48 check/views/index.phtml:50
@@ -337,7 +337,7 @@ msgstr "Meer informatie ..."
 
 #: check/views/index.phtml:45
 msgid "Additional services"
-msgstr ""
+msgstr "Aanvullende diensten"
 
 #: check/views/index.phtml:48
 msgid "You can use the Live Update."

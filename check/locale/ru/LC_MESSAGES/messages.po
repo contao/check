@@ -6,7 +6,8 @@
 # @link    https://contao.org
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
 # Translators:
-# Dmitri Kuznetsov, 2013-2014
+# Dmitri Kuznetsov, 2014
+# Dmitri Kuznetsov, 2013
 # Dmitri Kuznetsov, 2012
 # Leo Feyer, 2013
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2014-07-18 09:41+0000\n"
+"PO-Revision-Date: 2014-07-27 18:45+0000\n"
 "Last-Translator: Dmitri Kuznetsov\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/contao-check/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -137,21 +138,21 @@ msgstr "Чтобы загрузить файлы установки менедж
 #: check/views/composer.phtml:69 check/views/file-permissions.phtml:12
 #: check/views/index.phtml:35
 msgid "File permissions"
-msgstr ""
+msgstr "Разрешения файла"
 
 #: check/views/composer.phtml:71 check/views/index.phtml:38
 msgid "The PHP process is allowed to create files."
-msgstr ""
+msgstr "PHP процесс может создавать файлы."
 
 #: check/views/composer.phtml:73 check/views/index.phtml:40
 msgid "The PHP process is not allowed to create files."
-msgstr ""
+msgstr "PHP процесс не может создавать файлы."
 
 #: check/views/composer.phtml:74
 msgid ""
 "The PHP process is not allowed to create or manipulate files. Please adjust "
 "your server configuration accordingly."
-msgstr ""
+msgstr "Процессу PHP не разрешено создание или управление файлами. Настройте конфигурацию сервера соответствующим образом."
 
 #: check/views/composer.phtml:78
 msgid "shell_exec (optional)"
@@ -220,7 +221,7 @@ msgid ""
 "It is recommended to disable the safe_mode in your php.ini or server control"
 " panel, otherwise the PHP process it not allowed to create or manipulate "
 "files and Contao cannot work properly."
-msgstr ""
+msgstr "Рекомендуется отключить safe_mode в php.ini или в панели управления сервером, в противном случае, т.к. процессу PHP не разрешено создание или управление файлами, Contao не сможет работать как положено."
 
 #: check/views/file-permissions.phtml:24
 msgid "Creating a test folder"
@@ -292,11 +293,11 @@ msgstr "664, 644, 660 или 640"
 
 #: check/views/file-permissions.phtml:49
 msgid "The PHP process is allowed to create files on this server."
-msgstr ""
+msgstr "PHP процесс может создавать файлы на этом сервере."
 
 #: check/views/file-permissions.phtml:51
 msgid "The PHP process is not allowed to create files on this server."
-msgstr ""
+msgstr "PHP процесс не может создавать файлы на этом сервере."
 
 #: check/views/index.phtml:12
 msgid "Overview"
@@ -322,12 +323,12 @@ msgstr "Вы не можете установить Contao 3.x (требуетс
 
 #: check/views/index.phtml:28
 msgid "You can install Contao 4.x"
-msgstr ""
+msgstr "Вы можете установить Contao 4.x"
 
 #: check/views/index.phtml:30
 #, php-format
 msgid "You cannot install Contao 4.x (requires PHP %s+)"
-msgstr ""
+msgstr "Вы не можете установить Contao 4.x (требуется PHP %s+)"
 
 #: check/views/index.phtml:38 check/views/index.phtml:40
 #: check/views/index.phtml:48 check/views/index.phtml:50
@@ -338,7 +339,7 @@ msgstr "Подробнее..."
 
 #: check/views/index.phtml:45
 msgid "Additional services"
-msgstr ""
+msgstr "Дополнительные сервисы"
 
 #: check/views/index.phtml:48
 msgid "You can use the Live Update."
