@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2014-07-18 09:46+0000\n"
+"PO-Revision-Date: 2014-11-17 16:22+0000\n"
 "Last-Translator: Leo Feyer\n"
 "Language-Team: German (http://www.transifex.com/projects/p/contao-check/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -26,9 +26,9 @@ msgstr ""
 msgid "Composer package manager"
 msgstr "Composer-Paketverwaltung"
 
-#: check/views/composer.phtml:15 check/views/live-update.phtml:15
-msgid "PHP 5.3.2 or greater"
-msgstr "PHP 5.3.2 oder größer"
+#: check/views/composer.phtml:15
+msgid "PHP 5.3.4 or greater"
+msgstr "PHP 5.3.4 oder größer"
 
 #: check/views/composer.phtml:17 check/views/composer.phtml:19
 #: check/views/live-update.phtml:17 check/views/live-update.phtml:19
@@ -37,8 +37,8 @@ msgid "You have PHP version %s."
 msgstr "Sie haben die PHP-Version %s."
 
 #: check/views/composer.phtml:20
-msgid "Composer requires at least PHP version 5.3.2."
-msgstr "Composer benötigt mindestens PHP 5.3.2."
+msgid "Composer requires at least PHP version 5.3.4."
+msgstr "Composer benötigt mindestens PHP 5.3.4."
 
 #: check/views/composer.phtml:24 check/views/live-update.phtml:24
 msgid "PHP Phar extension"
@@ -457,6 +457,10 @@ msgstr "Zum Contao-Installtool"
 #: check/views/live-update.phtml:12
 msgid "Live Update"
 msgstr "Live Update"
+
+#: check/views/live-update.phtml:15
+msgid "PHP 5.3.2 or greater"
+msgstr "PHP 5.3.2 oder größer"
 
 #: check/views/live-update.phtml:20
 #, php-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2014-07-18 11:39+0200\n"
+"PO-Revision-Date: 2014-11-17 17:20+0100\n"
 "Last-Translator: Leo Feyer\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -22,8 +22,8 @@ msgstr ""
 msgid "Composer package manager"
 msgstr ""
 
-#: check/views/composer.phtml:15 check/views/live-update.phtml:15
-msgid "PHP 5.3.2 or greater"
+#: check/views/composer.phtml:15
+msgid "PHP 5.3.4 or greater"
 msgstr ""
 
 #: check/views/composer.phtml:17 check/views/composer.phtml:19
@@ -33,7 +33,7 @@ msgid "You have PHP version %s."
 msgstr ""
 
 #: check/views/composer.phtml:20
-msgid "Composer requires at least PHP version 5.3.2."
+msgid "Composer requires at least PHP version 5.3.4."
 msgstr ""
 
 #: check/views/composer.phtml:24 check/views/live-update.phtml:24
@@ -452,6 +452,10 @@ msgstr ""
 
 #: check/views/live-update.phtml:12
 msgid "Live Update"
+msgstr ""
+
+#: check/views/live-update.phtml:15
+msgid "PHP 5.3.2 or greater"
 msgstr ""
 
 #: check/views/live-update.phtml:20

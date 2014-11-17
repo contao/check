@@ -7,7 +7,7 @@
 # @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
 # Translators:
 # Dmitri Kuznetsov, 2014
-# Dmitri Kuznetsov, 2013
+# Dmitri Kuznetsov, 2013-2014
 # Dmitri Kuznetsov, 2012
 # Leo Feyer, 2013
 msgid ""
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2014-07-27 18:45+0000\n"
+"PO-Revision-Date: 2014-11-17 16:21+0000\n"
 "Last-Translator: Dmitri Kuznetsov\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/contao-check/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -28,9 +28,9 @@ msgstr ""
 msgid "Composer package manager"
 msgstr "Менеджер пакетов Composer"
 
-#: check/views/composer.phtml:15 check/views/live-update.phtml:15
-msgid "PHP 5.3.2 or greater"
-msgstr "PHP 5.3.2 и выше"
+#: check/views/composer.phtml:15
+msgid "PHP 5.3.4 or greater"
+msgstr ""
 
 #: check/views/composer.phtml:17 check/views/composer.phtml:19
 #: check/views/live-update.phtml:17 check/views/live-update.phtml:19
@@ -39,8 +39,8 @@ msgid "You have PHP version %s."
 msgstr "Установлена PHP версии %s."
 
 #: check/views/composer.phtml:20
-msgid "Composer requires at least PHP version 5.3.2."
-msgstr "Менеджеру пакетов Composer необходима версия PHP не ниже 5.3.2."
+msgid "Composer requires at least PHP version 5.3.4."
+msgstr ""
 
 #: check/views/composer.phtml:24 check/views/live-update.phtml:24
 msgid "PHP Phar extension"
@@ -459,6 +459,10 @@ msgstr "Открыть мастер установки Contao"
 #: check/views/live-update.phtml:12
 msgid "Live Update"
 msgstr "Онлайн обновление"
+
+#: check/views/live-update.phtml:15
+msgid "PHP 5.3.2 or greater"
+msgstr "PHP 5.3.2 и выше"
 
 #: check/views/live-update.phtml:20
 #, php-format
