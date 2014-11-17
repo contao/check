@@ -103,7 +103,7 @@ class Composer
 	 */
 	public function hasApc()
 	{
-		if (!extension_loaded('apcu')) {
+		if (!extension_loaded('apc') || extension_loaded('apcu')) {
 			return false;
 		}
 
