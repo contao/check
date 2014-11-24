@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2014-11-17 16:21+0000\n"
+"PO-Revision-Date: 2014-11-17 16:34+0000\n"
 "Last-Translator: Paolo Brunelli\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/contao-check/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Composer package manager"
 
 #: check/views/composer.phtml:15
 msgid "PHP 5.3.4 or greater"
-msgstr ""
+msgstr "PHP 5.3.4 o superiore"
 
 #: check/views/composer.phtml:17 check/views/composer.phtml:19
 #: check/views/live-update.phtml:17 check/views/live-update.phtml:19
@@ -40,7 +40,7 @@ msgstr "Hai la version PHP %s."
 
 #: check/views/composer.phtml:20
 msgid "Composer requires at least PHP version 5.3.4."
-msgstr ""
+msgstr "Composer richiede PHP 5.3.4 o superiore"
 
 #: check/views/composer.phtml:24 check/views/live-update.phtml:24
 msgid "PHP Phar extension"
