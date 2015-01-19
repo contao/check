@@ -12,12 +12,12 @@
     <h2><?php echo _('Composer package manager') ?></h2>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP 5.3.4 or greater') ?></h3>
-    <?php if ($this->hasPhp532()): ?>
+    <h3><?php echo _('PHP %s or greater') ?></h3>
+    <?php if ($this->hasPhp()): ?>
       <p class="confirm"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
     <?php else: ?>
       <p class="error"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
-      <p class="explain"><?php echo _('Composer requires at least PHP version 5.3.4.') ?></p>
+      <p class="explain"><?php printf(_('Composer requires at least PHP version %s.'), static::PHP_VERSION) ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
@@ -67,7 +67,7 @@
   </div>
   <div class="row">
     <h3><?php echo _('File permissions') ?></h3>
-    <?php if (!$this->canCreateFiles()): ?>
+    <?php if ($this->canCreateFiles()): ?>
       <p class="confirm"><?php echo _('The PHP process is allowed to create files.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('The PHP process is not allowed to create files.') ?></p>
@@ -94,10 +94,10 @@
   </div>
   <div class="row">
     <?php if ($this->isAvailable()): ?>
-	  <p class="confirm large"><?php echo _('You can use the Composer package manager on this server.') ?></p>
-	<?php else: ?>
-	  <p class="error large"><?php echo _('You cannot use the Composer package manager on this server.') ?></p>
-	<?php endif; ?>
+      <p class="confirm large"><?php echo _('You can use the Composer package manager on this server.') ?></p>
+    <?php else: ?>
+      <p class="error large"><?php echo _('You cannot use the Composer package manager on this server.') ?></p>
+    <?php endif; ?>
   </div>
   <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
 </div>

@@ -12,12 +12,12 @@
     <h2><?php echo _('Live Update') ?></h2>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP 5.3.2 or greater') ?></h3>
-    <?php if ($this->hasPhp532()): ?>
+    <h3><?php printf(_('PHP %s or greater'), static::PHP_VERSION) ?></h3>
+    <?php if ($this->hasPhp()): ?>
       <p class="confirm"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
     <?php else: ?>
       <p class="error"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
-      <p class="explain"><?php printf(_('Phar has been added to the PHP core in version 5.3, so you require at least PHP version 5.3.2 to use .phar files. If you have PHP 5.2, you might be able to use .phar files by installing the PECL phar extension (see %s).'), '<a href="http://pecl.php.net/package/phar">http://pecl.php.net/package/phar</a>') ?></p>
+      <p class="explain"><?php printf(_('Phar has been added to the PHP core in version 5.3, so you require at least PHP version %s to use .phar files. If you have PHP 5.2, you might be able to use .phar files by installing the PECL phar extension (see %s).'), static::PHP_VERSION, '<a href="http://pecl.php.net/package/phar">http://pecl.php.net/package/phar</a>') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
@@ -77,18 +77,18 @@
   <div class="row">
     <h3><?php echo _('Connection test') ?></h3>
     <?php if ($this->canConnect()): ?>
-      <p class="confirm"><?php echo _('A connection to www.inetrobots.com could be established.') ?></p>
+      <p class="confirm"><?php echo _('A connection to update.contao.org could be established.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('A connection to www.inetrobots.com could not be established.') ?></p>
+      <p class="error"><?php echo _('A connection to update.contao.org could not be established.') ?></p>
       <p class="explain"><?php echo _('Maybe the request has been blocked by a firewall. Please contact your server administrator.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
     <?php if ($this->isAvailable()): ?>
-	  <p class="confirm large"><?php echo _('You can use the Live Update on this server.') ?></p>
-	<?php else: ?>
-	  <p class="error large"><?php echo _('You cannot use the Live Update on this server.') ?></p>
-	<?php endif; ?>
+      <p class="confirm large"><?php echo _('You can use the Live Update on this server.') ?></p>
+    <?php else: ?>
+      <p class="error large"><?php echo _('You cannot use the Live Update on this server.') ?></p>
+    <?php endif; ?>
   </div>
   <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
 </div>

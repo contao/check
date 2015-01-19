@@ -10,6 +10,11 @@
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
+require_once 'composer.php';
+require_once 'file-permissions.php';
+require_once 'live-update.php';
+require_once 'repository.php';
+
 
 /**
  * Check the PHP version requirements
@@ -20,6 +25,10 @@
  */
 class Index
 {
+	const CONTAO2_VERSION = '5.2.0';
+	const CONTAO3_VERSION = '5.3.7';
+	const CONTAO4_VERSION = '5.4.0';
+
 
 	/**
 	 * File permissions
@@ -40,46 +49,13 @@ class Index
 
 
 	/**
-	 * Return the minimum PHP version required for Contao 2
-	 *
-	 * @return string The PHP version string
-	 */
-	public function getContao2Version()
-	{
-		return '5.2.0';
-	}
-
-
-	/**
-	 * Return the minimum PHP version required for Contao 3
-	 *
-	 * @return string The PHP version string
-	 */
-	public function getContao3Version()
-	{
-		return '5.3.2';
-	}
-
-
-	/**
-	 * Return the minimum PHP version required for Contao 4
-	 *
-	 * @return string The PHP version string
-	 */
-	public function getContao4Version()
-	{
-		return '5.4.0';
-	}
-
-
-	/**
 	 * Return true if Contao 2 can be installed
 	 *
 	 * @return boolean True if Contao 2 can be installed
 	 */
 	public function supportsContao2()
 	{
-		return version_compare(phpversion(), $this->getContao2Version(), '>=');
+		return version_compare(phpversion(), static::CONTAO2_VERSION, '>=');
 	}
 
 
@@ -90,7 +66,7 @@ class Index
 	 */
 	public function supportsContao3()
 	{
-		return version_compare(phpversion(), $this->getContao3Version(), '>=');
+		return version_compare(phpversion(), static::CONTAO3_VERSION, '>=');
 	}
 
 
@@ -101,7 +77,7 @@ class Index
 	 */
 	public function supportsContao4()
 	{
-		return version_compare(phpversion(), $this->getContao4Version(), '>=');
+		return version_compare(phpversion(), static::CONTAO4_VERSION, '>=');
 	}
 
 
@@ -123,10 +99,9 @@ class Index
 	 */
 	public function canUseLiveUpdate()
 	{
-		include 'live-update.php';
 		$update = new LiveUpdate;
 
-		if (!$update->hasPhp532()) {
+		if (!$update->hasPhp()) {
 			return false;
 		}
 
@@ -169,10 +144,9 @@ class Index
 	 */
 	public function canUseComposer()
 	{
-		include 'composer.php';
 		$composer = new Composer;
 
-		if (!$composer->hasPhp532()) {
+		if (!$composer->hasPhp()) {
 			return false;
 		}
 
@@ -207,7 +181,6 @@ class Index
 	 */
 	public function canUseRepository()
 	{
-		include 'repository.php';
 		$repository = new Repository;
 
 		if (!$repository->hasSoap()) {
@@ -229,7 +202,6 @@ class Index
 	 */
 	protected function checkFilePermissions()
 	{
-		include 'file-permissions.php';
 		$permissions = new FilePermissions;
 
 		if ($permissions->hasSafeMode()) {

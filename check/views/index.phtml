@@ -17,17 +17,17 @@
       <?php if ($this->supportsContao2()): ?>
         <li class="confirm"><?php echo _('You can install Contao 2.x') ?></li>
       <?php else: ?>
-        <li class="error"><?php printf(_('You cannot install Contao 2.x (requires PHP %s+)'), $this->getContao2Version()) ?></li>
+        <li class="error"><?php printf(_('You cannot install Contao 2.x (requires PHP %s+)'), static::CONTAO2_VERSION) ?></li>
       <?php endif; ?>
       <?php if ($this->supportsContao3()): ?>
         <li class="confirm"><?php echo _('You can install Contao 3.x') ?></li>
       <?php else: ?>
-        <li class="error"><?php printf(_('You cannot install Contao 3.x (requires PHP %s+)'), $this->getContao3Version()) ?></li>
+        <li class="error"><?php printf(_('You cannot install Contao 3.x (requires PHP %s+)'), static::CONTAO3_VERSION) ?></li>
       <?php endif; ?>
       <?php if ($this->supportsContao4()): ?>
         <li class="confirm"><?php echo _('You can install Contao 4.x') ?></li>
       <?php else: ?>
-        <li class="error"><?php printf(_('You cannot install Contao 4.x (requires PHP %s+)'), $this->getContao4Version()) ?></li>
+        <li class="error"><?php printf(_('You cannot install Contao 4.x (requires PHP %s+)'), static::CONTAO4_VERSION) ?></li>
       <?php endif; ?>
     </ul>
   </div>

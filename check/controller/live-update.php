@@ -20,6 +20,8 @@
  */
 class LiveUpdate
 {
+	const PHP_VERSION = '5.3.2';
+
 
 	/**
 	 * Availability
@@ -49,13 +51,13 @@ class LiveUpdate
 
 
 	/**
-	 * Check whether the PHP version is at least 5.3.2
+	 * Check whether the PHP version meets the requirements
 	 *
-	 * @return boolean True if the PHP version is at least 5.3.2
+	 * @return boolean True if the PHP version meets the requirements
 	 */
-	public function hasPhp532()
+	public function hasPhp()
 	{
-		if (version_compare(phpversion(), '5.3.2', '>=')) {
+		if (version_compare(phpversion(), static::PHP_VERSION, '>=')) {
 			return true;
 		}
 
@@ -201,7 +203,7 @@ class LiveUpdate
 	 */
 	public function canConnect()
 	{
-		$connection = fsockopen('ssl://www.inetrobots.com', 443, $errno, $errstr, 10);
+		$connection = fsockopen('ssl://update.contao.org', 443, $errno, $errstr, 10);
 		$connected = ($connection !== false);
 		fclose($connection);
 

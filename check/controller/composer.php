@@ -10,6 +10,8 @@
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
+require_once 'file-permissions.php';
+
 
 /**
  * Check the Composer package manager requirements
@@ -20,12 +22,22 @@
  */
 class Composer
 {
+	const PHP_VERSION = '5.3.4';
+
+	/**
+	 * File permissions
+	 * @var boolean
+	 */
+	protected $filePermissions;
+
 
 	/**
 	 * Execute the command
 	 */
 	public function run()
 	{
+		$this->filePermissions = $this->checkFilePermissions();
+
 		include 'views/composer.phtml';
 	}
 
@@ -49,13 +61,13 @@ class Composer
 
 
 	/**
-	 * Check whether the PHP version is at least 5.3.4
+	 * Check whether the PHP version meets the requirements
 	 *
-	 * @return boolean True if the PHP version is at least 5.3.4
+	 * @return boolean True if the PHP version meets the requirements
 	 */
-	public function hasPhp532()
+	public function hasPhp()
 	{
-		if (version_compare(phpversion(), '5.3.4', '>=')) {
+		if (version_compare(phpversion(), static::PHP_VERSION, '>=')) {
 			return true;
 		}
 
@@ -160,21 +172,11 @@ class Composer
 	 */
 	public function canCreateFiles()
 	{
-		include 'file-permissions.php';
-		$permissions = new FilePermissions;
-
-		if ($permissions->hasSafeMode()) {
+		if (!$this->filePermissions) {
 			return true;
 		}
 
-		if (!$permissions->canCreateFolder()) {
-			return true;
-		}
-
-		if (!$permissions->canCreateFile()) {
-			return true;
-		}
-
+		$this->available = false;
 		return false;
 	}
 
@@ -202,6 +204,31 @@ class Composer
 	public function hasProcOpen()
 	{
 		if (function_exists('proc_open')) {
+			return true;
+		}
+
+		return false;
+	}
+
+
+	/**
+	 * Return true if the PHP process is allowed to create files
+	 *
+	 * @return boolean True if the PHP process is allowed to create files
+	 */
+	protected function checkFilePermissions()
+	{
+		$permissions = new FilePermissions;
+
+		if ($permissions->hasSafeMode()) {
+			return true;
+		}
+
+		if (!$permissions->canCreateFolder()) {
+			return true;
+		}
+
+		if (!$permissions->canCreateFile()) {
 			return true;
 		}
 
