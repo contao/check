@@ -2,9 +2,7 @@
 # 
 # Copyright (C) 2005-2014 Leo Feyer
 # 
-# @package Check
-# @link    https://contao.org
-# @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+# @license LGPL-3.0+
 # Translators:
 # Dmitri Kuznetsov, 2014
 # Dmitri Kuznetsov, 2013-2014
@@ -15,8 +13,8 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2014-11-18 06:46+0000\n"
 "Last-Translator: Dmitri Kuznetsov\n"
+"PO-Revision-Date: 2015-01-19 11:45+0000\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/contao-check/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,9 +26,10 @@ msgstr ""
 msgid "Composer package manager"
 msgstr "Менеджер пакетов Composer"
 
-#: check/views/composer.phtml:15
-msgid "PHP 5.3.4 or greater"
-msgstr "PHP 5.3.4 и выше"
+#: check/views/composer.phtml:15 check/views/live-update.phtml:15
+#, php-format
+msgid "PHP %s or greater"
+msgstr ""
 
 #: check/views/composer.phtml:17 check/views/composer.phtml:19
 #: check/views/live-update.phtml:17 check/views/live-update.phtml:19
@@ -39,8 +38,9 @@ msgid "You have PHP version %s."
 msgstr "Установлена PHP версии %s."
 
 #: check/views/composer.phtml:20
-msgid "Composer requires at least PHP version 5.3.4."
-msgstr "Менеджеру пакетов Composer необходима версия PHP не ниже 5.3.4."
+#, php-format
+msgid "Composer requires at least PHP version %s."
+msgstr ""
 
 #: check/views/composer.phtml:24 check/views/live-update.phtml:24
 msgid "PHP Phar extension"
@@ -460,17 +460,13 @@ msgstr "Открыть мастер установки Contao"
 msgid "Live Update"
 msgstr "Онлайн обновление"
 
-#: check/views/live-update.phtml:15
-msgid "PHP 5.3.2 or greater"
-msgstr "PHP 5.3.2 и выше"
-
 #: check/views/live-update.phtml:20
 #, php-format
 msgid ""
 "Phar has been added to the PHP core in version 5.3, so you require at least "
-"PHP version 5.3.2 to use .phar files. If you have PHP 5.2, you might be able"
-" to use .phar files by installing the PECL phar extension (see %s)."
-msgstr "Phar был добавлен в PHP 5.3, поэтому вам необходимо использовать .phar файлы как минимум версии PHP 5.3.2. Если у вас PHP 5.2, вы можете использовать .phar файлы, установив phar расширение PECL (см. %s)."
+"PHP version %s to use .phar files. If you have PHP 5.2, you might be able to"
+" use .phar files by installing the PECL phar extension (see %s)."
+msgstr ""
 
 #: check/views/live-update.phtml:33 check/views/repository.phtml:24
 msgid "PHP OpenSSL extension"
@@ -550,12 +546,12 @@ msgid "Connection test"
 msgstr "Проверка подключения"
 
 #: check/views/live-update.phtml:80
-msgid "A connection to www.inetrobots.com could be established."
-msgstr "Соединение с www.inetrobots.com возможно."
+msgid "A connection to update.contao.org could be established."
+msgstr ""
 
 #: check/views/live-update.phtml:82
-msgid "A connection to www.inetrobots.com could not be established."
-msgstr "Соединение с www.inetrobots.com невозможно."
+msgid "A connection to update.contao.org could not be established."
+msgstr ""
 
 #: check/views/live-update.phtml:83 check/views/repository.phtml:38
 msgid ""
