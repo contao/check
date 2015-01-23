@@ -5,14 +5,14 @@
 # @license LGPL-3.0+
 # Translators:
 # Leo Feyer, 2013
-# P.Hamers, 2013-2014
+# P.Hamers, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
+"PO-Revision-Date: 2015-01-20 15:31+0000\n"
 "Last-Translator: P.Hamers\n"
-"PO-Revision-Date: 2015-01-19 11:45+0000\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/contao-check/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr "Composer pakket manager"
 #: check/views/composer.phtml:15 check/views/live-update.phtml:15
 #, php-format
 msgid "PHP %s or greater"
-msgstr ""
+msgstr "PHP %s of hoger"
 
 #: check/views/composer.phtml:17 check/views/composer.phtml:19
 #: check/views/live-update.phtml:17 check/views/live-update.phtml:19
@@ -38,7 +38,7 @@ msgstr "U beschikt over PHP versie %s."
 #: check/views/composer.phtml:20
 #, php-format
 msgid "Composer requires at least PHP version %s."
-msgstr ""
+msgstr "Composer vereist minstens PHP versie %s."
 
 #: check/views/composer.phtml:24 check/views/live-update.phtml:24
 msgid "PHP Phar extension"
@@ -464,7 +464,7 @@ msgid ""
 "Phar has been added to the PHP core in version 5.3, so you require at least "
 "PHP version %s to use .phar files. If you have PHP 5.2, you might be able to"
 " use .phar files by installing the PECL phar extension (see %s)."
-msgstr ""
+msgstr "Phar is toegevoegd aan de kern van PHP in versie 5.3, dus u heeft tenminste PHP versie %s nodig om .phar bestanden te kunnen gebruiken. Als u PHP 5.2, heeft kunt u wellicht .phar bestanden gebruiken door de PECL phar extensie te installeren (zie %s)."
 
 #: check/views/live-update.phtml:33 check/views/repository.phtml:24
 msgid "PHP OpenSSL extension"
@@ -545,11 +545,11 @@ msgstr "Testen verbinding"
 
 #: check/views/live-update.phtml:80
 msgid "A connection to update.contao.org could be established."
-msgstr ""
+msgstr "Om te kunnen updaten is er een verbinding met contao.org tot stand gebracht."
 
 #: check/views/live-update.phtml:82
 msgid "A connection to update.contao.org could not be established."
-msgstr ""
+msgstr "Er kon geen verbinding met contao.org tot stand worden gebracht om te kunnen updaten."
 
 #: check/views/live-update.phtml:83 check/views/repository.phtml:38
 msgid ""
