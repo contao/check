@@ -3,20 +3,16 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (C) 2005-2014 Leo Feyer
+ * Copyright (c) 2005-2015 Leo Feyer
  *
- * @package Check
- * @link    https://contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @license LGPL-3.0+
  */
 
 
 /**
  * Validate and existing Contao installation
  *
- * @package   Check
- * @author    Leo Feyer <https://github.com/leofeyer>
- * @copyright Leo Feyer 2013-2014
+ * @author Leo Feyer <https://github.com/leofeyer>
  */
 class Validator
 {

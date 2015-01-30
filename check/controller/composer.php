@@ -3,11 +3,9 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (C) 2005-2014 Leo Feyer
+ * Copyright (c) 2005-2015 Leo Feyer
  *
- * @package Check
- * @link    https://contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @license LGPL-3.0+
  */
 
 require_once 'file-permissions.php';
@@ -16,9 +14,7 @@ require_once 'file-permissions.php';
 /**
  * Check the Composer package manager requirements
  *
- * @package   Check
- * @author    Leo Feyer <https://github.com/leofeyer>
- * @copyright Leo Feyer 2014
+ * @author Leo Feyer <https://github.com/leofeyer>
  */
 class Composer
 {
