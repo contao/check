@@ -74,6 +74,8 @@ class Installer
 		if (!$this->hasInstallation()) {
 			if (!$this->canInstall()) {
 				$this->ftp = true;
+			} elseif (!$this->canConnect()) {
+				$this->available = false;
 			} elseif (!$this->canUsePhp() && !$this->canUseShell()) {
 				$this->available = false;
 			} else {
@@ -128,6 +130,23 @@ class Installer
 		}
 
 		return true;
+	}
+
+
+	/**
+	 * Check whether a connection can be established
+	 */
+	public function canConnect()
+	{
+		$connection = fsockopen('download.contao.org', 80, $errno, $errstr, 10);
+		$connected = ($connection !== false);
+		fclose($connection);
+
+		if ($connected) {
+			return true;
+		}
+
+		return false;
 	}
 
 

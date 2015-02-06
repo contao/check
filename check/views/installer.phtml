@@ -21,7 +21,7 @@
       <p class="confirm"><?php echo _('The automatic installation is possible on your server.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo _('The automatic installation is not possible on your server.') ?></p>
-      <p class="explain"><?php echo _('Your PHP installation does not meet the requirements to use the command line, does not have enough permissions to create files and folders or does not have the required PHP extensions "cURL" and "Zip".') ?></p>
+      <p class="explain"><?php echo _('Your PHP installation either cannot connect to download.contao.org or is missing the PHP extension cURL or Zip.') ?></p>
     <?php endif; ?>
   </div>
   <?php if (!$this->hasInstallation() && !$this->requiresFtp()): ?>

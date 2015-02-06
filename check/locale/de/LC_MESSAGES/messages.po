@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-01-19 11:50+0000\n"
+"PO-Revision-Date: 2015-02-06 19:36+0000\n"
 "Last-Translator: Leo Feyer\n"
 "Language-Team: German (http://www.transifex.com/projects/p/contao-check/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -400,10 +400,9 @@ msgstr "Die automatische Installation ist auf Ihrem Server nicht möglich."
 
 #: check/views/installer.phtml:24
 msgid ""
-"Your PHP installation does not meet the requirements to use the command "
-"line, does not have enough permissions to create files and folders or does "
-"not have the required PHP extensions \"cURL\" and \"Zip\"."
-msgstr "Ihre PHP-Installation erfüllt entweder nicht die Voraussetzungen, um auf die Kommandozeile zuzugreifen, verfügt nicht über die notwendigen Rechte, um Dateien und Ordner anzulegen, oder wurde ohne die benötigten PHP-Erweiterungen \"cURL\" und \"Zip\" kompiliert."
+"Your PHP installation either cannot connect to download.contao.org or is "
+"missing the PHP extension cURL or Zip."
+msgstr "Ihre PHP-Installation kann entweder keine Verbindung zu download.contao.org aufbauen oder es fehlt die PHP-Extension cURL oder Zip."
 
 #: check/views/installer.phtml:30
 msgid "Manual installation"

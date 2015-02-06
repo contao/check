@@ -396,9 +396,8 @@ msgstr ""
 
 #: check/views/installer.phtml:24
 msgid ""
-"Your PHP installation does not meet the requirements to use the command "
-"line, does not have enough permissions to create files and folders or does "
-"not have the required PHP extensions \"cURL\" and \"Zip\"."
+"Your PHP installation either cannot connect to download.contao.org or is "
+"missing the PHP extension cURL or Zip."
 msgstr ""
 
 #: check/views/installer.phtml:30
