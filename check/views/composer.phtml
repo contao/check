@@ -12,7 +12,7 @@
     <h2><?php echo _('Composer package manager') ?></h2>
   </div>
   <div class="row">
-    <h3><?php echo printf(_('PHP %s or greater'), static::PHP_VERSION) ?></h3>
+    <h3><?php printf(_('PHP %s or greater'), static::PHP_VERSION) ?></h3>
     <?php if ($this->hasPhp()): ?>
       <p class="confirm"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
     <?php else: ?>
