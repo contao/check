@@ -337,7 +337,7 @@ class Installer
 	/**
 	 * Start the installation
 	 *
-	 * @throws Exception In case the version number is invalid
+	 * @throws RuntimeException In case the version number is invalid
 	 */
 	protected function install()
 	{
@@ -348,8 +348,8 @@ class Installer
 		$version = filter_var($_POST['version'], FILTER_SANITIZE_STRING);
 
 		// Validate the version number
-		if (!file_exists('versions/' . $version . '.json')) {
-			throw new Exception("Invalid version number $version");
+		if (!preg_match('/^[23](\.[0-9]{1,2}){2}$/', $version) || !file_exists("versions/$version.json")) {
+			throw new RuntimeException("Invalid version number $version");
 		}
 
 		$url = "http://download.contao.org/$version/zip";

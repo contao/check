@@ -26,7 +26,7 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '9.11');
+		define('CONTAO_CHECK_VERSION', '9.12');
 		define('IS_WINDOWS', (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'));
 		define('TL_ROOT', dirname(dirname(dirname(__FILE__))));
 
@@ -140,12 +140,12 @@ class Bootstrap
 	 *
 	 * @param string $locale The locale
 	 *
-	 * @throws Exception In case the locale is not valid
+	 * @throws InvalidArgumentException In case the locale is not valid
 	 */
 	public function setLocale($locale)
 	{
 		if (!$this->isLocale($locale)) {
-			throw new Exception("Unknown locale $locale");
+			throw new InvalidArgumentException("Unknown locale $locale");
 		}
 
 		if (!extension_loaded('gettext')) {
