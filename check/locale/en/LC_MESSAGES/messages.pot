@@ -3,12 +3,13 @@
 # Copyright (c) 2005-2015 Leo Feyer
 #
 # @license LGPL-3.0+
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-01-19 12:42+0100\n"
+"PO-Revision-Date: 2015-03-18 09:44+0100\n"
 "Last-Translator: Leo Feyer\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -193,7 +194,7 @@ msgid "You cannot use the Composer package manager on this server."
 msgstr ""
 
 #: check/views/composer.phtml:102 check/views/file-permissions.phtml:54
-#: check/views/installer.phtml:62 check/views/live-update.phtml:93
+#: check/views/installer.phtml:67 check/views/live-update.phtml:93
 #: check/views/repository.phtml:48 check/views/validator.phtml:69
 msgid "Go back"
 msgstr ""
@@ -417,8 +418,8 @@ msgstr ""
 
 #: check/views/installer.phtml:34
 msgid ""
-"Open the Contao install tool by adding \"/contao\" to the URL of your "
-"installation."
+"Open the Contao install tool by adding \"/contao/install.php\" to the URL of "
+"your installation."
 msgstr ""
 
 #: check/views/installer.phtml:37
@@ -436,16 +437,20 @@ msgstr ""
 msgid "Start the installation"
 msgstr ""
 
-#: check/views/installer.phtml:56
+#: check/views/installer.phtml:57
+msgid "Installation failed"
+msgstr ""
+
+#: check/views/installer.phtml:60
 msgid "Installation complete"
 msgstr ""
 
-#: check/views/installer.phtml:57
+#: check/views/installer.phtml:61
 #, php-format
 msgid "Contao %s has been installed in %s."
 msgstr ""
 
-#: check/views/installer.phtml:58
+#: check/views/installer.phtml:62
 msgid "Open the Contao install tool"
 msgstr ""
 

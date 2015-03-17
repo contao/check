@@ -22,7 +22,7 @@ class Repository
 	 */
 	public function run()
 	{
-		include 'views/repository.phtml';
+		include __DIR__ . '/../views/repository.phtml';
 	}
 
 
@@ -56,6 +56,7 @@ class Repository
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 
@@ -72,6 +73,7 @@ class Repository
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 
@@ -90,6 +92,7 @@ class Repository
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 }

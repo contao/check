@@ -65,7 +65,7 @@ class FilePermissions
 	 */
 	public function run()
 	{
-		include 'views/file-permissions.phtml';
+		include __DIR__ . '/../views/file-permissions.phtml';
 	}
 
 
@@ -94,6 +94,7 @@ class FilePermissions
 		}
 
 		$this->failure = true;
+
 		return true;
 	}
 
@@ -153,6 +154,7 @@ class FilePermissions
 			if (in_array($this->testFolderChmod, $options)) {
 				if ($this->folderOwner['name'] == $this->testFolderOwner['name']) {
 					@rmdir('test');
+
 					return true;
 				}
 			}
@@ -220,6 +222,7 @@ class FilePermissions
 			if (in_array($this->testFileChmod, $options)) {
 				if ($this->fileOwner['name'] == $this->testFileOwner['name']) {
 					@unlink('test.txt');
+
 					return true;
 				}
 			}

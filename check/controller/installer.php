@@ -18,36 +18,6 @@ class Installer
 {
 
 	/**
-	 * Shell function
-	 * @var string
-	 */
-	protected $shell;
-
-	/**
-	 * Shell download command
-	 * @var string
-	 */
-	protected $download;
-
-	/**
-	 * Shell unzip command
-	 * @var string
-	 */
-	protected $unzip;
-
-	/**
-	 * Target version
-	 * @var string
-	 */
-	protected $version;
-
-	/**
-	 * PHP requirements met
-	 * @var boolean
-	 */
-	protected $php = false;
-
-	/**
 	 * Installer availability
 	 * @var boolean
 	 */
@@ -65,6 +35,12 @@ class Installer
 	 */
 	protected $existing = null;
 
+	/**
+	 * Error message
+	 * @var string
+	 */
+	protected $message = '';
+
 
 	/**
 	 * Execute the command
@@ -74,16 +50,14 @@ class Installer
 		if (!$this->hasInstallation()) {
 			if (!$this->canInstall()) {
 				$this->ftp = true;
-			} elseif (!$this->canConnect()) {
-				$this->available = false;
-			} elseif (!$this->canUsePhp() && !$this->canUseShell()) {
+			} elseif (!$this->canConnect() || !$this->canUsePhp()) {
 				$this->available = false;
 			} else {
 				$this->install();
 			}
 		}
 
-		include 'views/installer.phtml';
+		include __DIR__ . '/../views/installer.phtml';
 	}
 
 
@@ -151,68 +125,12 @@ class Installer
 
 
 	/**
-	 * Check whether the shell can be used to install Contao
-	 *
-	 * @return boolean True if the shell can be used to install Contao
-	 */
-	protected function canUseShell()
-	{
-		// Check for exec() or shell_exec()
-		if (function_exists('exec')) {
-			$this->shell = 'exec';
-		} elseif (function_exists('shell_exec')) {
-			$this->shell = 'shell_exec';
-		}
-
-		// Return if we cannot access the shell
-		if ($this->shell == '') {
-			return false;
-		}
-
-		// Check for wget or curl
-		if ($this->exec('command -v wget') != '') {
-			$this->download = 'wget';
-		} elseif ($this->exec('command -v curl') != '') {
-			$this->download = 'curl';
-		}
-
-		// Return if we cannot download on the shell
-		if ($this->download == '') {
-			return false;
-		}
-
-		// Check for unzip
-		if ($this->exec('command -v unzip') != '') {
-			$this->unzip = 'unzip';
-		}
-
-		// Return if we cannot unzip on the shell
-		if ($this->unzip == '') {
-			return false;
-		}
-
-		// Check for mv and rm in case the shell is limited (see #23)
-		if ($this->exec('command -v mv') == '' || $this->exec('command -v rm') == '') {
-			$this->shell = '';
-			return false;
-		}
-
-		return true;
-	}
-
-
-	/**
 	 * Check whether PHP can be used to install Contao
 	 *
 	 * @return boolean True if PHP can be used to install Contao
 	 */
 	protected function canUsePhp()
 	{
-		// cURL does not follow redirects if open_basedir is set
-		if (ini_get('open_basedir') != '') {
-			return false;
-		}
-
 		// Check whether cURL and Zip are available
 		if (!extension_loaded('curl') || !extension_loaded('zip')) {
 			return false;
@@ -223,24 +141,9 @@ class Installer
 			return false;
 		}
 
-		$this->php = true;
 		@unlink('download');
 
 		return true;
-	}
-
-
-	/**
-	 * Execute a shell command and trim the result
-	 *
-	 * @param string $command The shell command
-	 *
-	 * @return string The trimmed output string
-	 */
-	protected function exec($command)
-	{
-		$function = $this->shell;
-		return trim($function($command));
 	}
 
 
@@ -250,15 +153,93 @@ class Installer
 	 * @param string $url The URL
 	 *
 	 * @return string The output string
+     *
+     * @throws RuntimeException If the download fails
 	 */
 	protected function curl($url)
 	{
 		$ch = curl_init();
+
 		curl_setopt($ch, CURLOPT_HEADER, false);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_URL, $url);
-		$return = curl_exec($ch);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+		curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (X11; Linux i586; rv:31.0) Gecko/20100101 Firefox/31.0');
+
+		if (($met = ini_get('max_execution_time')) > 0) {
+			curl_setopt($ch, CURLOPT_TIMEOUT, round($met * 0.9));
+		}
+
+		// cURL will follow redirects if open_basedir is not set
+		if (ini_get('open_basedir') == '') {
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+			curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+			$return = curl_exec($ch);
+
+			if (curl_errno($ch)) {
+				$error = curl_error($ch);
+				curl_close($ch);
+
+				throw new RuntimeException($error);
+			}
+
+			curl_close($ch);
+
+			return $return;
+		}
+
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+
+		$new = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+		$rch = curl_copy_handle($ch);
+
+		curl_setopt($rch, CURLOPT_HEADER, true);
+		curl_setopt($rch, CURLOPT_NOBODY, true);
+		curl_setopt($rch, CURLOPT_FORBID_REUSE, false);
+		curl_setopt($rch, CURLOPT_RETURNTRANSFER, true);
+
+		$max = 10;
+
+		do {
+			curl_setopt($rch, CURLOPT_URL, $new);
+			$header = curl_exec($rch);
+
+			if (curl_errno($rch)) {
+				$error = curl_error($rch);
+				curl_close($rch);
+
+				throw new RuntimeException($error);
+			}
+
+			$code = curl_getinfo($rch, CURLINFO_HTTP_CODE);
+
+			if ($code == 301 || $code == 302) {
+				$matches = [];
+				preg_match('/Location:(.*?)\n/', $header, $matches);
+				$new = trim(array_pop($matches));
+			} else {
+				$code = 0;
+			}
+		} while ($code && --$max);
+
+		curl_close($rch);
+
+		if ($max > 0) {
+			curl_setopt($ch, CURLOPT_URL, $new);
+			$return = curl_exec($ch);
+
+			if (curl_errno($ch)) {
+				$error = curl_error($ch);
+				curl_close($ch);
+
+				throw new RuntimeException($error);
+			}
+		} else {
+			curl_close($ch);
+
+			throw new RuntimeException('Too many redirects');
+		}
+
 		curl_close($ch);
 
 		return $return;
@@ -295,9 +276,9 @@ class Installer
 	public function hasInstallation()
 	{
 		if ($this->existing === null) {
-			if (file_exists(TL_ROOT . '/system/constants.php')) {
+			if (file_exists(__DIR__ . '/../../system/constants.php')) {
 				$this->existing = true;
-			} elseif (file_exists(TL_ROOT . '/system/config/constants.php')) {
+			} elseif (file_exists(__DIR__ . '/../../system/config/constants.php')) {
 				$this->existing = true;
 			} else {
 				$this->existing = false;
@@ -315,7 +296,7 @@ class Installer
 	 */
 	public function getVersions()
 	{
-		$versions = array();
+		$versions = [];
 
 		$files = scandir('versions');
 		natsort($files);
@@ -355,44 +336,31 @@ class Installer
 		$url = "http://download.contao.org/$version/zip";
 		$prefix = version_compare($version, '3.3.0', '>=') ? 'contao' : 'core';
 
-		if ($this->php) {
+		try {
 			file_put_contents('download', $this->curl($url));
 
 			// Extract
 			if (file_exists('download') && filesize('download') > 0) {
 				$zip = new ZipArchive;
 				$zip->open('download');
-				$zip->extractTo(TL_ROOT);
+				$zip->extractTo(__DIR__ . '/../../');
 				$zip->close();
 
 				unlink('download');
 
 				// Remove the wrapper folder (see #23)
-				foreach (scandir(TL_ROOT . "/$prefix-$version")  as $file) {
+				foreach (scandir(__DIR__ . "/../../$prefix-$version") as $file) {
 					if ($file != '.' && $file != '..') {
-						rename(TL_ROOT . "/$prefix-$version/$file", TL_ROOT . "/$file");
+						rename(__DIR__ . "/../../$prefix-$version/$file", __DIR__ . "/../../$file");
 					}
 				}
 
-				rmdir(TL_ROOT . "/$prefix-$version");
+				rmdir(__DIR__ . "/../../$prefix-$version");
+			} else {
+				$this->message = 'The installation archive could not be downloaded.';
 			}
-		} else {
-			if ($this->download == 'wget') {
-				$this->exec("wget -O download $url");
-			} elseif ($this->download == 'curl') {
-				$this->exec("curl -s -L $url > download");
-			}
-
-			// Extract
-			if (file_exists('download') && filesize('download') > 0) {
-				$this->exec($this->unzip . ' download');
-				$this->exec('rm download');
-
-				// Remove the wrapper folder (see #23)
-				$this->exec("mv $prefix-$version/* " . TL_ROOT . '/');
-				$this->exec("mv $prefix-$version/.[a-z]* " . TL_ROOT . '/'); // see #22
-				$this->exec("rm -rf $prefix-$version");
-			}
+		} catch (RuntimeException $e) {
+			$this->message = $e->getMessage();
 		}
 	}
 }

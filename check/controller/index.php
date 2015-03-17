@@ -40,7 +40,7 @@ class Index
 	{
 		$this->filePermissions = $this->checkFilePermissions();
 
-		include 'views/index.phtml';
+		include __DIR__ . '/../views/index.phtml';
 	}
 
 

@@ -31,7 +31,7 @@ class LiveUpdate
 	 */
 	public function run()
 	{
-		include 'views/live-update.phtml';
+		include __DIR__ . '/../views/live-update.phtml';
 	}
 
 
@@ -58,6 +58,7 @@ class LiveUpdate
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 
@@ -74,6 +75,7 @@ class LiveUpdate
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 
@@ -90,6 +92,7 @@ class LiveUpdate
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 
@@ -106,11 +109,12 @@ class LiveUpdate
 		}
 
 		// The issues have been fixed in version 4.0.9
-		if (ioncube_loader_iversion() >= 40009) {
+		if (function_exists('ioncube_loader_iversion') && ioncube_loader_iversion() >= 40009) {
 			return false;
 		}
 
 		$this->available = false;
+
 		return true;
 	}
 
@@ -136,6 +140,7 @@ class LiveUpdate
 		}
 
 		$this->available = false;
+
 		return true;
 	}
 
@@ -171,6 +176,7 @@ class LiveUpdate
 		}
 
 		$this->available = false;
+
 		return true;
 	}
 
@@ -190,6 +196,7 @@ class LiveUpdate
 		}
 
 		$this->available = false;
+
 		return true;
 	}
 
@@ -208,6 +215,7 @@ class LiveUpdate
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 }

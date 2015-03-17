@@ -53,7 +53,7 @@ class Validator
 			$this->validate();
 		}
 
-		include 'views/validator.phtml';
+		include __DIR__ . '/../views/validator.phtml';
 	}
 
 
@@ -163,12 +163,13 @@ class Validator
 	 */
 	protected function findConstants()
 	{
-		if (file_exists(TL_ROOT . '/system/constants.php')) {
-			include TL_ROOT . '/system/constants.php';
-		} elseif (file_exists(TL_ROOT . '/system/config/constants.php')) {
-			include TL_ROOT . '/system/config/constants.php';
+		if (file_exists(__DIR__ . '/../../system/constants.php')) {
+			include __DIR__ . '/../../system/constants.php';
+		} elseif (file_exists(__DIR__ . '/../../system/config/constants.php')) {
+			include __DIR__ . '/../../system/config/constants.php';
 		} else {
 			$this->constants = false;
+
 			return false;
 		}
 
@@ -187,6 +188,7 @@ class Validator
 
 		if (!file_exists($file)) {
 			$this->version = false;
+
 			return false;
 		}
 
@@ -214,7 +216,7 @@ class Validator
 				continue;
 			}
 
-			if (!file_exists(TL_ROOT . '/' . $path)) {
+			if (!file_exists(__DIR__ . "/../../$path")) {
 				if ($this->isOptional($path)) {
 					$this->errors['optional'][] = $path;
 				} else {
@@ -222,7 +224,7 @@ class Validator
 					$this->errors['missing'][] = $path;
 				}
 			} else {
-				$buffer = str_replace("\r", '', file_get_contents(TL_ROOT . '/' . $path));
+				$buffer = str_replace("\r", '', file_get_contents(__DIR__ . "/../../$path"));
 
 				// Check the MD5 hash
 				if (strncmp(md5($buffer), $md5_file, 10) !== 0) {

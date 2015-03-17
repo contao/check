@@ -27,7 +27,7 @@ class Router
 	public static function dispatch()
 	{
 		// Default command
-		$file  = 'controller/index.php';
+		$file = 'controller/index.php';
 		$class = 'Index';
 
 		$command = filter_var($_GET['c'], FILTER_SANITIZE_STRING);
@@ -44,7 +44,8 @@ class Router
 		}
 
 		include $file;
-		$controller = new $class;
+
+		$controller = new $class();
 		$controller->run();
 	}
 

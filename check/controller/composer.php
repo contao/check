@@ -34,7 +34,7 @@ class Composer
 	{
 		$this->filePermissions = $this->checkFilePermissions();
 
-		include 'views/composer.phtml';
+		include __DIR__ . '/../views/composer.phtml';
 	}
 
 
@@ -68,6 +68,7 @@ class Composer
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 
@@ -84,6 +85,7 @@ class Composer
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 
@@ -100,6 +102,7 @@ class Composer
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 
@@ -116,6 +119,7 @@ class Composer
 		}
 
 		$this->available = false;
+
 		return true;
 	}
 
@@ -141,6 +145,7 @@ class Composer
 		}
 
 		$this->available = false;
+
 		return true;
 	}
 
@@ -157,6 +162,7 @@ class Composer
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 
@@ -173,6 +179,7 @@ class Composer
 		}
 
 		$this->available = false;
+
 		return false;
 	}
 
