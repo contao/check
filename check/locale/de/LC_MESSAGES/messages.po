@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-02-06 19:36+0000\n"
+"PO-Revision-Date: 2015-03-18 08:48+0000\n"
 "Last-Translator: Leo Feyer\n"
 "Language-Team: German (http://www.transifex.com/projects/p/contao-check/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -197,7 +197,7 @@ msgid "You cannot use the Composer package manager on this server."
 msgstr "Sie können die Composer-Paketverwaltung auf diesem Server nicht verwenden."
 
 #: check/views/composer.phtml:102 check/views/file-permissions.phtml:54
-#: check/views/installer.phtml:62 check/views/live-update.phtml:93
+#: check/views/installer.phtml:67 check/views/live-update.phtml:93
 #: check/views/repository.phtml:48 check/views/validator.phtml:69
 msgid "Go back"
 msgstr "Zurück"
@@ -421,9 +421,9 @@ msgstr "Entpacken Sie das Download-Archiv und übertragen Sie die Dateien mit ei
 
 #: check/views/installer.phtml:34
 msgid ""
-"Open the Contao install tool by adding \"/contao\" to the URL of your "
-"installation."
-msgstr "Öffnen Sie das Contao-Installtool, indem Sie \"/contao\" der URL Ihrer Installation anhängen."
+"Open the Contao install tool by adding \"/contao/install.php\" to the URL of"
+" your installation."
+msgstr "Öffnen Sie das Contao-Installtool, indem Sie \"/contao/install.php\" der URL Ihrer Installation anhängen."
 
 #: check/views/installer.phtml:37
 msgid "Target version"
@@ -440,16 +440,20 @@ msgstr "Achtung: Veraltete Versionen können Sicherheitslücken enthalten! Insta
 msgid "Start the installation"
 msgstr "Installation starten"
 
-#: check/views/installer.phtml:56
+#: check/views/installer.phtml:57
+msgid "Installation failed"
+msgstr "Installation fehlgeschlagen"
+
+#: check/views/installer.phtml:60
 msgid "Installation complete"
 msgstr "Installation abgeschlossen"
 
-#: check/views/installer.phtml:57
+#: check/views/installer.phtml:61
 #, php-format
 msgid "Contao %s has been installed in %s."
 msgstr "Contao %s wurde im Ordner %s installiert."
 
-#: check/views/installer.phtml:58
+#: check/views/installer.phtml:62
 msgid "Open the Contao install tool"
 msgstr "Zum Contao-Installtool"
 

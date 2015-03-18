@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-01-19 13:30+0000\n"
+"PO-Revision-Date: 2015-03-18 08:47+0000\n"
 "Last-Translator: Paolo Brunelli\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/contao-check/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -199,7 +199,7 @@ msgid "You cannot use the Composer package manager on this server."
 msgstr "Non è possibile utilizzare il Composer package manager su questo server."
 
 #: check/views/composer.phtml:102 check/views/file-permissions.phtml:54
-#: check/views/installer.phtml:62 check/views/live-update.phtml:93
+#: check/views/installer.phtml:67 check/views/live-update.phtml:93
 #: check/views/repository.phtml:48 check/views/validator.phtml:69
 msgid "Go back"
 msgstr "Torna indietro"
@@ -402,10 +402,9 @@ msgstr "L'installazione automatica non è possibile sul tuo server."
 
 #: check/views/installer.phtml:24
 msgid ""
-"Your PHP installation does not meet the requirements to use the command "
-"line, does not have enough permissions to create files and folders or does "
-"not have the required PHP extensions \"cURL\" and \"Zip\"."
-msgstr "La tua installazione di PHP non soddisfa i requisiti per utilizzare la riga di comando, non dispone di autorizzazioni sufficienti per la creazione di file e cartelle o delle estensioni PHP necessarie \"cURL\" e \"Zip\"."
+"Your PHP installation either cannot connect to download.contao.org or is "
+"missing the PHP extension cURL or Zip."
+msgstr "L'installazione di PHP non può collegarsi a download.contao.org oppure mancano le estensioni cURL o Zip di PHP."
 
 #: check/views/installer.phtml:30
 msgid "Manual installation"
@@ -424,9 +423,9 @@ msgstr "Estrai l'archivio appena scaricato e carica i file sul tuo server utiliz
 
 #: check/views/installer.phtml:34
 msgid ""
-"Open the Contao install tool by adding \"/contao\" to the URL of your "
-"installation."
-msgstr "Apri lo strumento di installazione Contao aggiungendo \"/contao\" all'URL della tua installazione."
+"Open the Contao install tool by adding \"/contao/install.php\" to the URL of"
+" your installation."
+msgstr ""
 
 #: check/views/installer.phtml:37
 msgid "Target version"
@@ -443,16 +442,20 @@ msgstr "Attenzione: le versioni obsolete potrebbero contenere vulnerabilità di 
 msgid "Start the installation"
 msgstr "Avvia l'installazione"
 
-#: check/views/installer.phtml:56
+#: check/views/installer.phtml:57
+msgid "Installation failed"
+msgstr ""
+
+#: check/views/installer.phtml:60
 msgid "Installation complete"
 msgstr "Installazione completa"
 
-#: check/views/installer.phtml:57
+#: check/views/installer.phtml:61
 #, php-format
 msgid "Contao %s has been installed in %s."
 msgstr "Contao %s è stato installato in %s."
 
-#: check/views/installer.phtml:58
+#: check/views/installer.phtml:62
 msgid "Open the Contao install tool"
 msgstr "Avvia lo strumento di installazione Contao"
 

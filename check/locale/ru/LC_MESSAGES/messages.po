@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-01-19 14:21+0000\n"
+"PO-Revision-Date: 2015-03-18 08:47+0000\n"
 "Last-Translator: Dmitri Kuznetsov\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/contao-check/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -199,7 +199,7 @@ msgid "You cannot use the Composer package manager on this server."
 msgstr "Вы не можете использовать менеджер пакетов Composer на этом сервере."
 
 #: check/views/composer.phtml:102 check/views/file-permissions.phtml:54
-#: check/views/installer.phtml:62 check/views/live-update.phtml:93
+#: check/views/installer.phtml:67 check/views/live-update.phtml:93
 #: check/views/repository.phtml:48 check/views/validator.phtml:69
 msgid "Go back"
 msgstr "Назад"
@@ -371,7 +371,7 @@ msgstr "Установка Contao"
 
 #: check/views/index.phtml:65
 msgid "Validate an existing installation"
-msgstr "Проверка существующей установки"
+msgstr "Проверка существующей инсталляции"
 
 #: check/views/installer.phtml:12 check/views/validator.phtml:16
 msgid "Installation"
@@ -384,7 +384,7 @@ msgstr "Веб-установщик"
 #: check/views/installer.phtml:17
 #, php-format
 msgid "There is a Contao installation already. Are you looking for the %s?"
-msgstr "Установка Contao уже существует. Вы ищете %s?"
+msgstr "Инсталляция Contao уже существует. Вы ищете %s?"
 
 #: check/views/installer.phtml:19
 msgid ""
@@ -402,10 +402,9 @@ msgstr "Автоматическая установка на этом серве
 
 #: check/views/installer.phtml:24
 msgid ""
-"Your PHP installation does not meet the requirements to use the command "
-"line, does not have enough permissions to create files and folders or does "
-"not have the required PHP extensions \"cURL\" and \"Zip\"."
-msgstr "Установленная PHP не отвечает требованиям использования командной строки, не имеет необходимых разрешений для создания файлов и каталогов или не имеет необходимые расширения \"cURL\" и  \"Zip\"."
+"Your PHP installation either cannot connect to download.contao.org or is "
+"missing the PHP extension cURL or Zip."
+msgstr "PHP-установка не может подключиться к download.contao.org или отсутствует PHP-расширение cURL и/или Zip."
 
 #: check/views/installer.phtml:30
 msgid "Manual installation"
@@ -424,9 +423,9 @@ msgstr "Распакуйте архив и загрузите файлы на с
 
 #: check/views/installer.phtml:34
 msgid ""
-"Open the Contao install tool by adding \"/contao\" to the URL of your "
-"installation."
-msgstr "Откройте мастер установки Contao путем добавления \"/contao\" в URL-адрес установки."
+"Open the Contao install tool by adding \"/contao/install.php\" to the URL of"
+" your installation."
+msgstr ""
 
 #: check/views/installer.phtml:37
 msgid "Target version"
@@ -443,16 +442,20 @@ msgstr "Внимание! Устаревшие версии могут соде�
 msgid "Start the installation"
 msgstr "Запустить установку"
 
-#: check/views/installer.phtml:56
+#: check/views/installer.phtml:57
+msgid "Installation failed"
+msgstr ""
+
+#: check/views/installer.phtml:60
 msgid "Installation complete"
 msgstr "Установка завершена"
 
-#: check/views/installer.phtml:57
+#: check/views/installer.phtml:61
 #, php-format
 msgid "Contao %s has been installed in %s."
 msgstr "Contao %s успешно установлена в %s."
 
-#: check/views/installer.phtml:58
+#: check/views/installer.phtml:62
 msgid "Open the Contao install tool"
 msgstr "Открыть мастер установки Contao"
 
@@ -610,17 +613,17 @@ msgstr "Хранилище расширений использовать на э
 
 #: check/views/validator.phtml:12
 msgid "Validate an installation"
-msgstr "Проверка установки"
+msgstr "Проверка инсталляции"
 
 #: check/views/validator.phtml:17
 msgid "Could not find a Contao installation."
-msgstr "Не удалось найти установку Contao."
+msgstr "Не удалось найти инсталляцию Contao."
 
 #: check/views/validator.phtml:18
 msgid ""
 "To validate an existing installation, please upload the \"check\" folder to "
 "your installation directory."
-msgstr "Для проверки существующей установки, загрузите каталог \"check\" в корневой каталог установки Contao."
+msgstr "Для проверки существующей инсталляции, загрузите каталог \"check\" в корневой каталог Contao."
 
 #: check/views/validator.phtml:22
 msgid "Unknown version"
@@ -636,7 +639,7 @@ msgid ""
 "There is no version file for your Contao installation. Are you using a "
 "stable Contao version and do you have the latest version of the Contao "
 "Check?"
-msgstr "Отсутствуют данные о версии этой установки Contao. Убедитесь, что используется стабильная версия Contao и последняя версия Contao Check."
+msgstr "Отсутствуют данные о версии этой инсталляции Contao. Убедитесь, что используется стабильная версия Contao и последняя версия Contao Check."
 
 #: check/views/validator.phtml:28
 msgid "Version"
@@ -645,7 +648,7 @@ msgstr "Версия"
 #: check/views/validator.phtml:29
 #, php-format
 msgid "Found a Contao %s installation."
-msgstr "Найдена установка Contao %s."
+msgstr "Найдена инсталляция Contao версии %s."
 
 #: check/views/validator.phtml:33
 msgid "Missing files"
@@ -661,8 +664,8 @@ msgstr "Отсутствуют дополнительные файлы"
 
 #: check/views/validator.phtml:63
 msgid "Your installation is up to date."
-msgstr "Существующая установка Contao актуальна."
+msgstr "Существующая инсталляция Contao актуальна."
 
 #: check/views/validator.phtml:65
 msgid "Your installation is not up to date."
-msgstr "Существующая установка Contao устарела."
+msgstr "Существующая инсталляция Contao устарела."
