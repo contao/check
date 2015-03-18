@@ -197,7 +197,7 @@ msgid "You cannot use the Composer package manager on this server."
 msgstr "U kunt geen gebruik maken van Composer pakketbeheer op deze server. "
 
 #: check/views/composer.phtml:102 check/views/file-permissions.phtml:54
-#: check/views/installer.phtml:67 check/views/live-update.phtml:93
+#: check/views/installer.phtml:62 check/views/live-update.phtml:93
 #: check/views/repository.phtml:48 check/views/validator.phtml:69
 msgid "Go back"
 msgstr "Ga terug"
@@ -429,31 +429,24 @@ msgstr ""
 msgid "Target version"
 msgstr "Doel versie"
 
-#: check/views/installer.phtml:52
-msgid ""
-"Attention: Deprecated versions might contain security vulnerabilities! "
-"Please install the latest stable version or the latest LTS version (long "
-"term support version)."
-msgstr "Opgelet: Verouderde versies kunnen beveiligingslekken bevatten! Installeer daarom altijd de laatste stabiele versie of de nieuwste LTS versie (long term support versie)."
-
-#: check/views/installer.phtml:53
+#: check/views/installer.phtml:48
 msgid "Start the installation"
 msgstr "Begin met de installatie"
 
-#: check/views/installer.phtml:57
+#: check/views/installer.phtml:52
 msgid "Installation failed"
 msgstr ""
 
-#: check/views/installer.phtml:60
+#: check/views/installer.phtml:55
 msgid "Installation complete"
 msgstr "Installatie compleet"
 
-#: check/views/installer.phtml:61
+#: check/views/installer.phtml:56
 #, php-format
 msgid "Contao %s has been installed in %s."
 msgstr "Contao %s is geïnstalleerd in %s."
 
-#: check/views/installer.phtml:62
+#: check/views/installer.phtml:57
 msgid "Open the Contao install tool"
 msgstr "Open het Contao installatie tool"
 

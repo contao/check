@@ -197,7 +197,7 @@ msgid "You cannot use the Composer package manager on this server."
 msgstr "Você não pode usar o Composer, o gerenciador de pacotes em este servidor."
 
 #: check/views/composer.phtml:102 check/views/file-permissions.phtml:54
-#: check/views/installer.phtml:67 check/views/live-update.phtml:93
+#: check/views/installer.phtml:62 check/views/live-update.phtml:93
 #: check/views/repository.phtml:48 check/views/validator.phtml:69
 msgid "Go back"
 msgstr "Voltar"
@@ -429,31 +429,24 @@ msgstr ""
 msgid "Target version"
 msgstr "Versão de destino"
 
-#: check/views/installer.phtml:52
-msgid ""
-"Attention: Deprecated versions might contain security vulnerabilities! "
-"Please install the latest stable version or the latest LTS version (long "
-"term support version)."
-msgstr "Atenção: Versões antigas pode conter vulnerabilidades de segurança! Por favor, instale a última versão estável ou a última versão LTS (versão de suporte de longo prazo)."
-
-#: check/views/installer.phtml:53
+#: check/views/installer.phtml:48
 msgid "Start the installation"
 msgstr "Iniciar a instalação"
 
-#: check/views/installer.phtml:57
+#: check/views/installer.phtml:52
 msgid "Installation failed"
 msgstr ""
 
-#: check/views/installer.phtml:60
+#: check/views/installer.phtml:55
 msgid "Installation complete"
 msgstr "Instalação completa"
 
-#: check/views/installer.phtml:61
+#: check/views/installer.phtml:56
 #, php-format
 msgid "Contao %s has been installed in %s."
 msgstr "Contao %s foi instalado em %s."
 
-#: check/views/installer.phtml:62
+#: check/views/installer.phtml:57
 msgid "Open the Contao install tool"
 msgstr "Abrir a ferramenta de instalação do Contao"
 

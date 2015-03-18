@@ -297,18 +297,16 @@ class Installer
 	public function getVersions()
 	{
 		$versions = [];
+		$stable = CURRENT_VERSION;
 
-		$files = scandir('versions');
-		natsort($files);
-		$files = array_reverse($files);
+		if (file_exists(__DIR__ . "/../versions/$stable.json")) {
+			$versions[$stable] = $stable;
+		}
 
-		// Get the version numbers
-		foreach ($files as $file) {
-			list($maj, $min, $bfx, $ext) = explode('.', $file);
+		$lts = CURRENT_LTS_VERSION;
 
-			if ($ext == 'json') {
-				$versions["$maj.$min"][] = "$maj.$min.$bfx";
-			}
+		if (file_exists(__DIR__ . "/../versions/$lts.json")) {
+			$versions[$lts] = "$lts (LTS)";
 		}
 
 		return $versions;
