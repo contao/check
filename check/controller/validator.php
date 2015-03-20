@@ -163,6 +163,8 @@ class Validator
 	 */
 	protected function findConstants()
 	{
+		define('TL_ROOT', 'Required for Contao 2.11');
+
 		if (file_exists(__DIR__ . '/../../system/constants.php')) {
 			include __DIR__ . '/../../system/constants.php';
 		} elseif (file_exists(__DIR__ . '/../../system/config/constants.php')) {
