@@ -214,7 +214,7 @@ class Installer
 			$code = curl_getinfo($rch, CURLINFO_HTTP_CODE);
 
 			if ($code == 301 || $code == 302) {
-				$matches = [];
+				$matches = array();
 				preg_match('/Location:(.*?)\n/', $header, $matches);
 				$new = trim(array_pop($matches));
 			} else {
@@ -296,7 +296,7 @@ class Installer
 	 */
 	public function getVersions()
 	{
-		$versions = [];
+		$versions = array();
 		$stable = CURRENT_VERSION;
 
 		if (file_exists(__DIR__ . "/../versions/$stable.json")) {
