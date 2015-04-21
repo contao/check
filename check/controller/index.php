@@ -22,7 +22,7 @@ require_once 'repository.php';
 class Index
 {
 	const CONTAO2_VERSION = '5.2.0';
-	const CONTAO3_VERSION = '5.3.7';
+	const CONTAO3_VERSION = '5.4.0';
 	const CONTAO4_VERSION = '5.4.0';
 
 
