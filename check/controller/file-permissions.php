@@ -143,7 +143,7 @@ class FilePermissions
 
 		// Try to create a folder
 		if (@mkdir('test') !== false) {
-			$options = IS_WINDOWS ? array(777) : array(775, 755, 770, 750);
+			$options = IS_WINDOWS ? array(777) : array(775, 755, 770, 750, 705);
 
 			// Check the folder permissions
 			clearstatcache();
@@ -211,7 +211,7 @@ class FilePermissions
 
 		// Try to create a file
 		if (@file_put_contents('test.txt', '') !== false) {
-			$options = IS_WINDOWS ? array(666) : array(664, 644, 660, 640);
+			$options = IS_WINDOWS ? array(666) : array(664, 644, 660, 640, 604);
 
 			// Check the file permissions
 			clearstatcache();

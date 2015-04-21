@@ -254,8 +254,8 @@ msgid ""
 msgstr "La cartella di prova è di proprietà di %s (dovrebbe essere %s) e ha i diritti di accesso %s (dovrebbe essere %s)."
 
 #: check/views/file-permissions.phtml:32
-msgid "775, 755, 770 or 750"
-msgstr "775, 755, 770 oppure 750"
+msgid "775, 755, 770, 750 or 705"
+msgstr "775, 755, 770, 750 oppure 705"
 
 #: check/views/file-permissions.phtml:36
 msgid "Creating a test file"

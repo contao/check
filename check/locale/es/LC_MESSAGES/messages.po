@@ -252,8 +252,8 @@ msgid ""
 msgstr "La carpeta de prueba es propiedad de %s (debería ser %s) y tiene los ajustes chmod %s (deberían ser %s)."
 
 #: check/views/file-permissions.phtml:32
-msgid "775, 755, 770 or 750"
-msgstr "775, 755, 770 ó 750"
+msgid "775, 755, 770, 750 or 705"
+msgstr "775, 755, 770, 750 ó 705"
 
 #: check/views/file-permissions.phtml:36
 msgid "Creating a test file"

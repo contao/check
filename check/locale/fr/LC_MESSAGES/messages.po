@@ -257,8 +257,8 @@ msgid ""
 msgstr "Le propriétaire du dossier de test est %s (devrait être %s) et possède les paramètres chmod %s (devrait être %s)."
 
 #: check/views/file-permissions.phtml:32
-msgid "775, 755, 770 or 750"
-msgstr "775, 755, 770 ou 750"
+msgid "775, 755, 770, 750 or 705"
+msgstr "775, 755, 770, 750 ou 705"
 
 #: check/views/file-permissions.phtml:36
 msgid "Creating a test file"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Contao Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-03-18 09:44+0100\n"
+"PO-Revision-Date: 2015-04-21 09:25+0100\n"
 "Last-Translator: Leo Feyer\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -249,7 +249,7 @@ msgid ""
 msgstr ""
 
 #: check/views/file-permissions.phtml:32
-msgid "775, 755, 770 or 750"
+msgid "775, 755, 770, 750 or 705"
 msgstr ""
 
 #: check/views/file-permissions.phtml:36
@@ -283,7 +283,7 @@ msgid ""
 msgstr ""
 
 #: check/views/file-permissions.phtml:44
-msgid "664, 644, 660 or 640"
+msgid "664, 644, 660, 640 or 604"
 msgstr ""
 
 #: check/views/file-permissions.phtml:49

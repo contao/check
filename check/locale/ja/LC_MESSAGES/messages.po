@@ -251,8 +251,8 @@ msgid ""
 msgstr "テストフォルダーの所有者は%s(本来は%s)で、アクセス権限は%s(本来は%s)です。"
 
 #: check/views/file-permissions.phtml:32
-msgid "775, 755, 770 or 750"
-msgstr "775、755、770、750"
+msgid "775, 755, 770, 750 or 705"
+msgstr "775、755、770、750、705"
 
 #: check/views/file-permissions.phtml:36
 msgid "Creating a test file"

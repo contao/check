@@ -254,8 +254,8 @@ msgid ""
 msgstr "Тестовый каталог принадлежит %s, (а должен %s) и имеет параметры chmod %s, (а должен %s)."
 
 #: check/views/file-permissions.phtml:32
-msgid "775, 755, 770 or 750"
-msgstr "775, 755, 770 или 750"
+msgid "775, 755, 770, 750 or 705"
+msgstr "775, 755, 770, 750 или 705"
 
 #: check/views/file-permissions.phtml:36
 msgid "Creating a test file"

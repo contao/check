@@ -252,8 +252,8 @@ msgid ""
 msgstr "De testmap is van %s (moet zijn %s) en heeft de chmod instellingen %s (moet zijn %s)."
 
 #: check/views/file-permissions.phtml:32
-msgid "775, 755, 770 or 750"
-msgstr "775, 755, 770 of 750"
+msgid "775, 755, 770, 750 or 705"
+msgstr "775, 755, 770, 750 of 705"
 
 #: check/views/file-permissions.phtml:36
 msgid "Creating a test file"

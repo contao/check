@@ -252,8 +252,8 @@ msgid ""
 msgstr "A pasta \"test\" pertence em %s (deveria ser %s) e tem a configuração chmod %s (deveria ser %s)."
 
 #: check/views/file-permissions.phtml:32
-msgid "775, 755, 770 or 750"
-msgstr "775, 755, 770 ou 750"
+msgid "775, 755, 770, 750 or 705"
+msgstr "775, 755, 770, 750 ou 705"
 
 #: check/views/file-permissions.phtml:36
 msgid "Creating a test file"
