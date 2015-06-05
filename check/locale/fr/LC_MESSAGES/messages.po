@@ -1,14 +1,14 @@
 # Contao Open Source CMS
-# 
+#
 # Copyright (c) 2005-2015 Leo Feyer
-# 
+#
 # @license LGPL-3.0+
 # Translators:
 # Cyril Ponce, 2012
 # Cyril Ponce, 2013,2015
 # cpo, 2015
 # Eric Vantroeyen, 2013
-# Lionel Maccaud, 2014
+# Lionel Maccaud, 2014-2015
 # tosca30, 2013
 # Lionel Maccaud, 2012
 msgid ""
@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-03-18 08:47+0000\n"
+"PO-Revision-Date: 2015-05-15 10:12+0000\n"
 "Last-Translator: Cyril Ponce\n"
 "Language-Team: French (http://www.transifex.com/projects/p/contao-check/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -291,8 +291,8 @@ msgid ""
 msgstr "Le propriétaire du fichier de test est %s (devrait être %s) et possède les paramètres chmod %s (devrait être %s)."
 
 #: check/views/file-permissions.phtml:44
-msgid "664, 644, 660 or 640"
-msgstr "664, 644, 660 ou 640"
+msgid "664, 644, 660, 640 or 604"
+msgstr "664, 644, 660, 640 ou 604"
 
 #: check/views/file-permissions.phtml:49
 msgid "The PHP process is allowed to create files on this server."
@@ -428,7 +428,7 @@ msgstr "Extraire l'archive de téléchargement et télécharger les fichiers sur
 msgid ""
 "Open the Contao install tool by adding \"/contao/install.php\" to the URL of"
 " your installation."
-msgstr ""
+msgstr "Ouvrir l'outil d'installation de Contao en ajoutant \"/contao/install.php\" à l'URL de votre installation."
 
 #: check/views/installer.phtml:37
 msgid "Target version"
@@ -440,7 +440,7 @@ msgstr "Démarrer l'installation"
 
 #: check/views/installer.phtml:52
 msgid "Installation failed"
-msgstr ""
+msgstr "L'installation a échoué"
 
 #: check/views/installer.phtml:55
 msgid "Installation complete"

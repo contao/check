@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-03-18 08:47+0000\n"
+"PO-Revision-Date: 2015-05-15 10:12+0000\n"
 "Last-Translator: Paolo Brunelli\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/contao-check/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -288,8 +288,8 @@ msgid ""
 msgstr "Il file di prova è di proprietà di %s (dovrebbe essere %s) e ha i diritti di accesso %s (dovrebbe essere %s)."
 
 #: check/views/file-permissions.phtml:44
-msgid "664, 644, 660 or 640"
-msgstr "664, 644, 660 o 640"
+msgid "664, 644, 660, 640 or 604"
+msgstr "664, 644, 660, 640 oppure 604"
 
 #: check/views/file-permissions.phtml:49
 msgid "The PHP process is allowed to create files on this server."

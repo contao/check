@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-03-18 08:47+0000\n"
+"PO-Revision-Date: 2015-05-15 10:12+0000\n"
 "Last-Translator: AlexMartinez\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/contao-check/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -286,8 +286,8 @@ msgid ""
 msgstr "El fichero de prueba es propiedad de %s (debería ser %s) y tiene los ajustes chmod %s (deberían ser %s)."
 
 #: check/views/file-permissions.phtml:44
-msgid "664, 644, 660 or 640"
-msgstr "664, 644, 660 ó 640"
+msgid "664, 644, 660, 640 or 604"
+msgstr "664, 644, 660, 640 ó 604"
 
 #: check/views/file-permissions.phtml:49
 msgid "The PHP process is allowed to create files on this server."
@@ -423,7 +423,7 @@ msgstr "Extraiga el fichero descargado y suba los archivos a su servidor usando 
 msgid ""
 "Open the Contao install tool by adding \"/contao/install.php\" to the URL of"
 " your installation."
-msgstr ""
+msgstr "Abrir el instalador de Contao añadiendo \"/contao/install.php\" a la URL de su instalación."
 
 #: check/views/installer.phtml:37
 msgid "Target version"
@@ -435,7 +435,7 @@ msgstr "Comenzar la instalación"
 
 #: check/views/installer.phtml:52
 msgid "Installation failed"
-msgstr ""
+msgstr "Fallo de instalación"
 
 #: check/views/installer.phtml:55
 msgid "Installation complete"

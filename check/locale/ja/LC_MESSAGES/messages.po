@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-03-18 08:47+0000\n"
+"PO-Revision-Date: 2015-05-15 10:12+0000\n"
 "Last-Translator: Takahiro Kambe\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/contao-check/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -285,8 +285,8 @@ msgid ""
 msgstr "テストファイルの所有者は%s(本来は%s)で、アクセス権限は%s(本来は%s)です。"
 
 #: check/views/file-permissions.phtml:44
-msgid "664, 644, 660 or 640"
-msgstr "664、644、660、640といった値"
+msgid "664, 644, 660, 640 or 604"
+msgstr "664、644、660、640、604"
 
 #: check/views/file-permissions.phtml:49
 msgid "The PHP process is allowed to create files on this server."
@@ -422,7 +422,7 @@ msgstr "Contaoのアーカイブのファイルをダウンロードして展開
 msgid ""
 "Open the Contao install tool by adding \"/contao/install.php\" to the URL of"
 " your installation."
-msgstr ""
+msgstr "インストールするURLに\"/contao/install.php\"を追加して、Contaoのインストールツールにアクセスしてください。"
 
 #: check/views/installer.phtml:37
 msgid "Target version"
@@ -434,7 +434,7 @@ msgstr "インストールを開始"
 
 #: check/views/installer.phtml:52
 msgid "Installation failed"
-msgstr ""
+msgstr "インストールできませんでした"
 
 #: check/views/installer.phtml:55
 msgid "Installation complete"

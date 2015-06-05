@@ -1,7 +1,7 @@
 # Contao Open Source CMS
-# 
+#
 # Copyright (c) 2005-2015 Leo Feyer
-# 
+#
 # @license LGPL-3.0+
 # Translators:
 # L. Sportelli, 2012
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-03-18 08:47+0000\n"
+"PO-Revision-Date: 2015-05-15 10:12+0000\n"
 "Last-Translator: L. Sportelli\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/contao-check/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -253,7 +253,7 @@ msgstr "A pasta \"test\" pertence em %s (deveria ser %s) e tem a configuração 
 
 #: check/views/file-permissions.phtml:32
 msgid "775, 755, 770, 750 or 705"
-msgstr "775, 755, 770, 750 ou 705"
+msgstr ""
 
 #: check/views/file-permissions.phtml:36
 msgid "Creating a test file"
@@ -286,8 +286,8 @@ msgid ""
 msgstr "O arquivo de teste pertence em %s (deveria ser %s) e tem a configuração chmod %s (deveria ser %s)."
 
 #: check/views/file-permissions.phtml:44
-msgid "664, 644, 660 or 640"
-msgstr "664, 644, 660 ou 640"
+msgid "664, 644, 660, 640 or 604"
+msgstr ""
 
 #: check/views/file-permissions.phtml:49
 msgid "The PHP process is allowed to create files on this server."
