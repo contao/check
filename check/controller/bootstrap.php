@@ -26,9 +26,9 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '10.16');
-		define('CURRENT_VERSION', '3.5.12');
-		define('CURRENT_LTS_VERSION', '3.5.12');
+		define('CONTAO_CHECK_VERSION', '10.17');
+		define('CURRENT_VERSION', '3.5.13');
+		define('CURRENT_LTS_VERSION', '3.5.13');
 		define('IS_WINDOWS', (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'));
 
 		$this->setLocale($this->getLanguage());
