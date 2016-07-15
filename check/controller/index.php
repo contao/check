@@ -23,7 +23,7 @@ class Index
 {
 	const CONTAO2_VERSION = '5.2.0';
 	const CONTAO3_VERSION = '5.4.0';
-	const CONTAO4_VERSION = '5.4.0';
+	const CONTAO4_VERSION = '5.5.0';
 
 
 	/**
