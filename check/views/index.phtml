@@ -34,10 +34,14 @@
   <div class="row">
     <h3><?php echo _('File permissions') ?></h3>
     <ul>
-      <?php if (!$this->canCreateFiles()): ?>
-        <li class="confirm"><?php echo _('The PHP process is allowed to create files.') ?> <a href="./?c=file-permissions"><?php echo _('More information …') ?></a></li>
+      <?php if ($this->canGetUserInfo()): ?>
+        <?php if (!$this->canCreateFiles()): ?>
+          <li class="confirm"><?php echo _('The PHP process is allowed to create files.') ?> <a href="./?c=file-permissions"><?php echo _('More information …') ?></a></li>
+        <?php else: ?>
+          <li class="error"><?php echo _('The PHP process is not allowed to create files.') ?> <a href="./?c=file-permissions"><?php echo _('More information …') ?></a></li>
+        <?php endif; ?>
       <?php else: ?>
-        <li class="error"><?php echo _('The PHP process is not allowed to create files.') ?> <a href="./?c=file-permissions"><?php echo _('More information …') ?></a></li>
+        <li class="error"><?php echo _('The file permissions cannot be checked.') ?> <a href="./?c=file-permissions"><?php echo _('More information …') ?></a></li>
       <?php endif; ?>
     </ul>
   </div>
@@ -49,10 +53,14 @@
       <?php else: ?>
         <li class="error"><?php echo _('You cannot use the Live Update.') ?> <a href="./?c=live-update"><?php echo _('More information …') ?></a></li>
       <?php endif; ?>
-      <?php if ($this->canUseComposer()): ?>
-        <li class="confirm"><?php echo _('You can use the Composer package manager.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
+      <?php if ($this->canGetUserInfo()): ?>
+        <?php if ($this->canUseComposer()): ?>
+          <li class="confirm"><?php echo _('You can use the Composer package manager.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
+        <?php else: ?>
+          <li class="error"><?php echo _('You cannot use the Composer package manager.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
+        <?php endif; ?>
       <?php else: ?>
-        <li class="error"><?php echo _('You cannot use the Composer package manager.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
+        <li class="error"><?php echo _('The composer client requirements cannot be checked.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
       <?php endif; ?>
       <?php if ($this->canUseRepository()): ?>
         <li class="confirm"><?php echo _('You can use the Extension Repository.') ?> <a href="./?c=repository"><?php echo _('More information …') ?></a></li>

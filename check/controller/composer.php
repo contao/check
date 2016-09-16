@@ -227,6 +227,10 @@ class Composer
 			return true;
 		}
 
+		if (!$permissions->canGetUserInfo()) {
+			return true;
+		}
+
 		if (!$permissions->canCreateFolder()) {
 			return true;
 		}
@@ -236,5 +240,16 @@ class Composer
 		}
 
 		return false;
+	}
+
+
+	/**
+	 * Check whether the posix_getpwuid function is disabled
+	 *
+	 * @return boolean True if the posix_getpwuid function is not disabled
+	 */
+	protected function canGetUserInfo()
+	{
+		return !in_array('posix_getpwuid', explode(',', ini_get('disable_functions')));
 	}
 }

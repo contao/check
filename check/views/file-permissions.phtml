@@ -20,37 +20,47 @@
       <p class="explain"><?php echo _('It is recommended to disable the safe_mode in your php.ini or server control panel, otherwise the PHP process it not allowed to create or manipulate files and Contao cannot work properly.') ?></p>
     <?php endif; ?>
   </div>
-  <div class="row">
-    <h3><?php echo _('Creating a test folder') ?></h3>
-    <?php if ($this->canCreateFolder()): ?>
-      <p class="confirm"><?php printf(_('The test folder could be created (owner: %s, chmod: %s).'), $this->getFolderOwner(), $this->getTestFolderChmod()) ?></p>
-    <?php elseif ($this->getTestFolderChmod() === null): ?>
-      <p class="error"><?php echo _('The test folder could not be created.') ?></p>
-      <p class="explain"><?php echo _('It seems that the PHP process does not have enough permissions to create folders on your server.') ?></p>
-    <?php else: ?>
-      <p class="error"><?php echo _('The test folder does not have the correct owner or chmod settings.') ?></p>
-      <p class="explain"><?php printf(_('The test folder is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $this->getTestFolderOwner(), $this->getFolderOwner(), $this->getTestFolderChmod(), (defined('PHP_WINDOWS_VERSION_BUILD') ? '777' : _('775, 755, 770, 750 or 705'))) ?></p>
-    <?php endif; ?>
-  </div>
-  <div class="row">
-    <h3><?php echo _('Creating a test file') ?></h3>
-    <?php if ($this->canCreateFile()): ?>
-      <p class="confirm"><?php printf(_('The test file could be created (owner: %s, chmod: %s).'), $this->getFileOwner(), $this->getTestFileChmod()) ?></p>
-    <?php elseif ($this->getTestFileChmod() === null): ?>
-      <p class="error"><?php echo _('The test file could not be created.') ?></p>
-      <p class="explain"><?php echo _('It seems that the PHP process does not have enough permissions to create files on your server.') ?></p>
-    <?php else: ?>
-      <p class="error"><?php echo _('The test file does not have the correct owner or chmod settings.') ?></p>
-      <p class="explain"><?php printf(_('The test file is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $this->getTestFileOwner(), $this->getFileOwner(), $this->getTestFileChmod(), (defined('PHP_WINDOWS_VERSION_BUILD') ? '666' : _('664, 644, 660, 640 or 604'))) ?></p>
-    <?php endif; ?>
-  </div>
-  <div class="row">
-    <?php if (!$this->failed()): ?>
-      <p class="confirm large"><?php echo _('The PHP process is allowed to create files on this server.') ?></p>
-    <?php else: ?>
-      <p class="error large"><?php echo _('The PHP process is not allowed to create files on this server.') ?></p>
-    <?php endif; ?>
-  </div>
+  <?php if (!$this->canGetUserInfo()): ?>
+    <div class="row">
+      <h3><?php echo _('Cannot get user info') ?></h3>
+      <p class="error"><?php echo _('The <code>posix_getpwuid</code> function is disabled.') ?></p>
+      <p class="explain"><?php echo _('File and folder ownership cannot be tested because the function is disabled in the PHP setting <code>disable_functions</code>. Please contact your server administrator.') ?></p>
+    </div>
+  <?php else: ?>
+    <div class="row">
+      <h3><?php echo _('Creating a test folder') ?></h3>
+      <?php if ($this->canCreateFolder()): ?>
+        <p class="confirm"><?php printf(_('The test folder could be created (owner: %s, chmod: %s).'), $this->getFolderOwner(), $this->getTestFolderChmod()) ?></p>
+      <?php elseif ($this->getTestFolderChmod() === null): ?>
+        <p class="error"><?php echo _('The test folder could not be created.') ?></p>
+        <p class="explain"><?php echo _('It seems that the PHP process does not have enough permissions to create folders on your server.') ?></p>
+      <?php else: ?>
+        <p class="error"><?php echo _('The test folder does not have the correct owner or chmod settings.') ?></p>
+        <p class="explain"><?php printf(_('The test folder is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $this->getTestFolderOwner(), $this->getFolderOwner(), $this->getTestFolderChmod(), (defined('PHP_WINDOWS_VERSION_BUILD') ? '777' : _('775, 755, 770, 750 or 705'))) ?></p>
+      <?php endif; ?>
+    </div>
+    <div class="row">
+      <h3><?php echo _('Creating a test file') ?></h3>
+      <?php if ($this->canCreateFile()): ?>
+        <p class="confirm"><?php printf(_('The test file could be created (owner: %s, chmod: %s).'), $this->getFileOwner(), $this->getTestFileChmod()) ?></p>
+      <?php elseif ($this->getTestFileChmod() === null): ?>
+        <p class="error"><?php echo _('The test file could not be created.') ?></p>
+        <p class="explain"><?php echo _('It seems that the PHP process does not have enough permissions to create files on your server.') ?></p>
+      <?php else: ?>
+        <p class="error"><?php echo _('The test file does not have the correct owner or chmod settings.') ?></p>
+        <p class="explain"><?php printf(_('The test file is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $this->getTestFileOwner(), $this->getFileOwner(), $this->getTestFileChmod(), (defined('PHP_WINDOWS_VERSION_BUILD') ? '666' : _('664, 644, 660, 640 or 604'))) ?></p>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
+  <?php if ($this->canGetUserInfo()): ?>
+    <div class="row">
+      <?php if (!$this->failed()): ?>
+        <p class="confirm large"><?php echo _('The PHP process is allowed to create files on this server.') ?></p>
+      <?php else: ?>
+        <p class="error large"><?php echo _('The PHP process is not allowed to create files on this server.') ?></p>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
   <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
 </div>
 </body>

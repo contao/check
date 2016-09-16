@@ -168,7 +168,7 @@ if (!extension_loaded('gettext')) {
 }
 
 // Add the posix_getpwuid function
-if (!function_exists('posix_getpwuid')) {
+if (!function_exists('posix_getpwuid') && !in_array('posix_getpwuid', explode(',', ini_get('disable_functions')))) {
 	function posix_getpwuid($int) {
 		return array('name'=>$int);
 	}
