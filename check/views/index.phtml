@@ -59,6 +59,8 @@
         <?php else: ?>
           <li class="error"><?php echo _('You cannot use the Composer package manager.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
         <?php endif; ?>
+      <?php else: ?>
+        <li class="error"><?php echo _('The composer client requirements cannot be checked.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
       <?php endif; ?>
       <?php if ($this->canUseRepository()): ?>
         <li class="confirm"><?php echo _('You can use the Extension Repository.') ?> <a href="./?c=repository"><?php echo _('More information …') ?></a></li>
