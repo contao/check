@@ -1,119 +1,118 @@
-# Contao Open Source CMS
+# Contao check
 #
 # Copyright (c) 2005-2015 Leo Feyer
 #
 # @license LGPL-3.0+
 # Translators:
-# L. Sportelli, 2012
-# L. Sportelli, 2013-2015
+# Darjan Zlobec, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: Check\n"
+"Project-Id-Version: check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-05-15 10:12+0000\n"
-"Last-Translator: L. Sportelli\n"
-"Language-Team: Portuguese (http://www.transifex.com/projects/p/contao-check/language/pt/)\n"
+"PO-Revision-Date: 2016-09-16 15:47+0000\n"
+"Last-Translator: Darjan Zlobec\n"
+"Language-Team: Slovenian (http://www.transifex.com/contao/contao-check/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #: check/views/composer.phtml:12
 msgid "Composer package manager"
-msgstr "Composer gerenciador de pacotes"
+msgstr "Composer paketni upravitelj"
 
 #: check/views/composer.phtml:15 check/views/live-update.phtml:15
 #, php-format
 msgid "PHP %s or greater"
-msgstr "PHP %s ou maior"
+msgstr "PHP %s ali novejši"
 
 #: check/views/composer.phtml:17 check/views/composer.phtml:19
 #: check/views/live-update.phtml:17 check/views/live-update.phtml:19
 #, php-format
 msgid "You have PHP version %s."
-msgstr "Você tem PHP versão %s."
+msgstr "Nameščena PHP verzija %s."
 
 #: check/views/composer.phtml:20
 #, php-format
 msgid "Composer requires at least PHP version %s."
-msgstr "Composer precisa no minimo PHP versão %s."
+msgstr "Composer zahteva najmanj PHP verzijo %s."
 
 #: check/views/composer.phtml:24 check/views/live-update.phtml:24
 msgid "PHP Phar extension"
-msgstr "Extensão PHP Phar"
+msgstr "PHP Phar razširitev"
 
 #: check/views/composer.phtml:26 check/views/live-update.phtml:26
 msgid "The PHP Phar extension is enabled."
-msgstr "A extensão PHP Phar está ativado."
+msgstr "PHP Phar razširitev je nameščena."
 
 #: check/views/composer.phtml:28 check/views/live-update.phtml:28
 msgid "The PHP Phar extension is not enabled."
-msgstr "A extensão PHP Phar não está habilitado."
+msgstr "PHP Phar razširitev ni nameščena."
 
 #: check/views/composer.phtml:29 check/views/live-update.phtml:29
 msgid ""
 "The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be "
 "explicitly disabled using the --disable-phar flag. Recompile PHP without the"
 " flag."
-msgstr "A extensão PHP Phar faz parte do núcleo do PHP desde o PHP 5.3 e tem de ser explicitamente desativado usando a opção --disable-phar. Recompilar o PHP sem opção."
+msgstr "PHP Phar razširitev je sestavni del PHP jedra od verzije PHP 5.3 in mora biti izrecno onemogočena z uporabo --disable-phar zastavico. Ponovno prevedite PHP brez zastavice."
 
 #: check/views/composer.phtml:33
 msgid "PHP cURL extension"
-msgstr "PHP extensão cURL"
+msgstr "PHP cURL razširitev"
 
 #: check/views/composer.phtml:35
 msgid "The PHP cURL extension is available."
-msgstr "PHP extensão cURL está disponível."
+msgstr "PHP cURL razširitev je nameščena."
 
 #: check/views/composer.phtml:37
 msgid "The PHP cURL extension is not available."
-msgstr "PHP extensão cURL não está disponível."
+msgstr "PHP cURL razširitev ni nameščena."
 
 #: check/views/composer.phtml:38
 msgid ""
 "The PHP cURL extension is required to communicate with the package server. "
 "You can enable it by compiling PHP with the --enable-curl flag."
-msgstr "PHP extensão cURL é necesário para comunicar com o Servidor do pacote. Você pode habilitá-lo através da compilação de PHP com a opção --enable-curl."
+msgstr "PHP cURL razširitev je potrebna za komunikacijo s paketnim strežnikom. Omogočite jo s ponovnim prevodom PHP z --enable-curl zastavico."
 
 #: check/views/composer.phtml:42
 msgid "PHP APC extension"
-msgstr "PHP extensão APC"
+msgstr "PHP APC razširitev"
 
 #: check/views/composer.phtml:44
 msgid "The PHP APC extension is not installed."
-msgstr "PHP extensão APC não e instalada."
+msgstr "PHP APC razširitev ni nameščena."
 
 #: check/views/composer.phtml:46
 msgid "The PHP APC extension is installed."
-msgstr "PHP extensão APC e instalada."
+msgstr "PHP APC razširitev je nameščena."
 
 #: check/views/composer.phtml:47
 msgid ""
 "Using the PHP APC extension with Composer can lead to unexpected \"cannot "
 "redeclare class\" errors."
-msgstr "Usando a PHP extensão APC com Composer pode levar a erros inesperados como \"cannot redeclare class\"."
+msgstr "Uporaba PHP APC razširitve s Composerjem lahko privede do nepričakovane \"cannot redeclare class\" napake."
 
 #: check/views/composer.phtml:51 check/views/live-update.phtml:51
 msgid "Suhosin extension"
-msgstr "Extensão Suhosin"
+msgstr "Suhosin razširitev"
 
 #: check/views/composer.phtml:53 check/views/live-update.phtml:53
 msgid ""
 "The Suhosin extension is not installed or correctly configured for .phar "
 "files."
-msgstr "A extensão Suhosin não está instalado ou configurado corretamente para arquivos .phar."
+msgstr "Suhosin razširitev ni nameščena ali pravilno nastavljena za .phar datoteke."
 
 #: check/views/composer.phtml:55 check/views/live-update.phtml:55
 msgid "The Suhosin extension does not allow to run .phar files."
-msgstr "A extensão Suhosin não permite executar arquivos .phar."
+msgstr "Suhosin razširitev ne dovoli zagnati .phar datotek."
 
 #: check/views/composer.phtml:56 check/views/live-update.phtml:56
 msgid ""
 "You have to add \"phar\" to the list of allowed streams in your php.ini: "
 "<code>suhosin.executor.include.whitelist = phar</code>"
-msgstr "Você tem que adicionar \"phar\" para a lista de \"allowed streams\" em seu php.ini: <code> suhosin.executor.include.whitelist = phar</code>"
+msgstr "Potrebno je dodati \"phar\" na seznam dovoljenih pretokov v php.ini: <code>suhosin.executor.include.whitelist = phar</code>"
 
 #: check/views/composer.phtml:60
 msgid "allow_url_fopen"
@@ -121,338 +120,357 @@ msgstr "allow_url_fopen"
 
 #: check/views/composer.phtml:62
 msgid "The PHP flag \"allow_url_fopen\" is set."
-msgstr "PHP opção \"allow_url_fopen\" é ativado."
+msgstr "PHP zastavica \"allow_url_fopen\" je nastavljena."
 
 #: check/views/composer.phtml:64
 msgid "The PHP flag \"allow_url_fopen\" is not set."
-msgstr "PHP opção \"allow_url_fopen\" não é ativado."
+msgstr "PHP zastavica \"allow_url_fopen\" ni nastavljena."
 
 #: check/views/composer.phtml:65
 msgid ""
 "To download the installation files, Composer requires the "
 "\"allow_url_fopen\" flag to be set in the php.ini."
-msgstr "Para fazer o download dos arquivos de instalação, o Composer requer a opção \"allow_url_fopen\", adicionado no php.ini."
+msgstr "Za prenos namestitvenih datotek Composer potrebuje \"allow_url_fopen\" zastavico nastavljeno v php.ini"
 
 #: check/views/composer.phtml:69 check/views/file-permissions.phtml:12
-#: check/views/index.phtml:35
+#: check/views/file-permissions.phtml:25 check/views/index.phtml:35
 msgid "File permissions"
-msgstr "Permissões de arquivos"
+msgstr "Dovoljenja datoteke"
 
-#: check/views/composer.phtml:71 check/views/index.phtml:38
+#: check/views/composer.phtml:71 check/views/file-permissions.phtml:26
+msgid "The \"posix_getpwuid\" function is not available."
+msgstr ""
+
+#: check/views/composer.phtml:72 check/views/file-permissions.phtml:27
+msgid ""
+"File permissions cannot be tested, because the <code>posix_getpwuid</code> "
+"function has been disabled. Please contact your server administrator."
+msgstr ""
+
+#: check/views/composer.phtml:75 check/views/index.phtml:41
 msgid "The PHP process is allowed to create files."
-msgstr "O processo de PHP tem permissão para criar arquivos."
+msgstr "PHP procesu je dovoljeno ustvarjanje datotek."
 
-#: check/views/composer.phtml:73 check/views/index.phtml:40
+#: check/views/composer.phtml:77 check/views/index.phtml:43
 msgid "The PHP process is not allowed to create files."
-msgstr "O processo de PHP não tem permissão para criar arquivos."
+msgstr "PHP procesu ni dovoljeno ustvarjanje datotek."
 
-#: check/views/composer.phtml:74
+#: check/views/composer.phtml:78
 msgid ""
 "The PHP process is not allowed to create or manipulate files. Please adjust "
 "your server configuration accordingly."
-msgstr "O processo de PHP não tem permissão para criar ou manipular arquivos. Por favor ajuste a configuração do servidor adequadamente."
-
-#: check/views/composer.phtml:78
-msgid "shell_exec (optional)"
-msgstr "shell_exec (opcional)"
-
-#: check/views/composer.phtml:80
-msgid "The PHP function \"shell_exec\" is available."
-msgstr "PHP função \"shell_exec\" está disponível."
-
-#: check/views/composer.phtml:82
-msgid "The PHP function \"shell_exec\" is not available."
-msgstr "PHP função \"shell_exec\" não está disponível."
+msgstr "PHP procesu ni dovoljeno ustvarjati ali upravljati z datotekami. Prosimo prilagodite ustrezno nastavitev na strežniku."
 
 #: check/views/composer.phtml:83
+msgid "shell_exec (optional)"
+msgstr "shell_exec (poljubno)"
+
+#: check/views/composer.phtml:85
+msgid "The PHP function \"shell_exec\" is available."
+msgstr "PHP funkcija \"shell_exec\" je na voljo."
+
+#: check/views/composer.phtml:87
+msgid "The PHP function \"shell_exec\" is not available."
+msgstr "PHP funkcija \"shell_exec\" ni na voljo."
+
+#: check/views/composer.phtml:88
 msgid ""
 "The \"shell_exec\" function is optionally required to run the Composer "
 "process in the background."
-msgstr "A função \"shell_exec\" é necessário para executar o processo de Composer no fundo."
-
-#: check/views/composer.phtml:87
-msgid "proc_open (optional)"
-msgstr "proc_open (opcional)"
-
-#: check/views/composer.phtml:89
-msgid "The PHP function \"proc_open\" is available."
-msgstr "PHP função \"proc_open\" está disponível."
-
-#: check/views/composer.phtml:91
-msgid "The PHP function \"proc_open\" is not available."
-msgstr "PHP função \"proc_open\" não está disponível."
+msgstr "PHP funkcija \"shell_exec\" je pogojno potrebna za zagon Composerja v ozadju."
 
 #: check/views/composer.phtml:92
+msgid "proc_open (optional)"
+msgstr "proc_open (poljubno)"
+
+#: check/views/composer.phtml:94
+msgid "The PHP function \"proc_open\" is available."
+msgstr "PHP funkcija \"proc_open\" je na voljo."
+
+#: check/views/composer.phtml:96
+msgid "The PHP function \"proc_open\" is not available."
+msgstr "PHP funkcija \"proc_open\" ni na voljo."
+
+#: check/views/composer.phtml:97
 msgid ""
 "The \"proc_open\" function is optionally required to run the package manager"
 " in dev mode."
-msgstr "A função \"proc_open\" é opcional e necessário para executar o gerenciador de pacotes no modo dev."
+msgstr "PHP funkcija \"proc_open\" je po izbiri potrebna za zagon upravljalnika paketov v načinu \"dev mode\"."
 
-#: check/views/composer.phtml:97
+#: check/views/composer.phtml:102
 msgid "You can use the Composer package manager on this server."
-msgstr "Você pode usar o Composer, o gerenciador de pacotes em este servidor."
+msgstr "Upravljalnik paketov Composer se lahko uporablja na tem strežniku."
 
-#: check/views/composer.phtml:99
+#: check/views/composer.phtml:104
 msgid "You cannot use the Composer package manager on this server."
-msgstr "Você não pode usar o Composer, o gerenciador de pacotes em este servidor."
+msgstr "Upravljalnik paketov Composer ni mogoče uporabljati na tem strežniku."
 
-#: check/views/composer.phtml:102 check/views/file-permissions.phtml:54
+#: check/views/composer.phtml:107 check/views/file-permissions.phtml:64
 #: check/views/installer.phtml:62 check/views/live-update.phtml:93
 #: check/views/repository.phtml:48 check/views/validator.phtml:69
 msgid "Go back"
-msgstr "Voltar"
+msgstr "Nazaj"
 
 #: check/views/file-permissions.phtml:15
 msgid "php.ini settings"
-msgstr "configurações php.ini"
+msgstr "php.ini nastavitve"
 
 #: check/views/file-permissions.phtml:17
 msgid "The PHP safe_mode is not enabled."
-msgstr "PHP safe_mode não está habilitado."
+msgstr "PHP safe_mode ni omogočen."
 
 #: check/views/file-permissions.phtml:19
 msgid "The PHP safe_mode is enabled."
-msgstr "PHP safe_mode está habilitado."
+msgstr "PHP safe_mode je omogočen."
 
 #: check/views/file-permissions.phtml:20
 msgid ""
 "It is recommended to disable the safe_mode in your php.ini or server control"
 " panel, otherwise the PHP process it not allowed to create or manipulate "
 "files and Contao cannot work properly."
-msgstr "É recomendável desabilitar o safe_mode no seu php.ini ou painel de controle do servidor. Caso contrário, o processo de PHP não tem permissão para criar ou manipular arquivos e Contao não pode funcionar corretamente."
+msgstr "Priporočeno je izklopiti safe_mode v php.ini datoteki ali na strežniški nadzorni plošči, drugače PHP procesu ni dovoljeno ustvariti ali manipulirati z datotekami in Contao ne more delovati pravilno."
 
-#: check/views/file-permissions.phtml:24
+#: check/views/file-permissions.phtml:31
 msgid "Creating a test folder"
-msgstr "Criar uma pasta \"test\""
+msgstr "Ustvari nov testni direktorij"
 
-#: check/views/file-permissions.phtml:26
+#: check/views/file-permissions.phtml:33
 #, php-format
 msgid "The test folder could be created (owner: %s, chmod: %s)."
-msgstr "A pasta \"test\" poderia ser criado (proprietário: %s, chmod: %s)."
+msgstr "Testni direktorij je lahko ustvarjen (lastnik: %s, chmod: %s)."
 
-#: check/views/file-permissions.phtml:28
+#: check/views/file-permissions.phtml:35
 msgid "The test folder could not be created."
-msgstr "A pasta \"test\" não pôde ser criado."
+msgstr "Testnega direktorija ni bilo mogoče ustvariti."
 
-#: check/views/file-permissions.phtml:29
+#: check/views/file-permissions.phtml:36
 msgid ""
 "It seems that the PHP process does not have enough permissions to create "
 "folders on your server."
-msgstr "Parece que o processo de PHP não tem permissões suficientes para criar pastas em seu servidor."
+msgstr "Kaže, da PHP proces nima zadosti pravic, da bi ustvaril direktorij na vašem strežniku."
 
-#: check/views/file-permissions.phtml:31
+#: check/views/file-permissions.phtml:38
 msgid "The test folder does not have the correct owner or chmod settings."
-msgstr "A pasta \"test\" não pertence em proprietário correto ou configurações chmod."
+msgstr "Testni direktorij nima pravilnega lastnika ali chmod nastavitev."
 
-#: check/views/file-permissions.phtml:32
+#: check/views/file-permissions.phtml:39
 #, php-format
 msgid ""
 "The test folder is owned by %s (should be %s) and has the chmod settings %s "
 "(should be %s)."
-msgstr "A pasta \"test\" pertence em %s (deveria ser %s) e tem a configuração chmod %s (deveria ser %s)."
+msgstr "Testni direktorij je v lasti %s (moral bi biti v lasti %s) in ima chmod nastavitve %s (morale bi biti %s)."
 
-#: check/views/file-permissions.phtml:32
+#: check/views/file-permissions.phtml:39
 msgid "775, 755, 770, 750 or 705"
-msgstr ""
+msgstr "775, 755, 770, 750 ali 705"
 
-#: check/views/file-permissions.phtml:36
+#: check/views/file-permissions.phtml:43
 msgid "Creating a test file"
-msgstr "Criando um arquivo de teste"
+msgstr "Ustvarjanje testne datoteke"
 
-#: check/views/file-permissions.phtml:38
+#: check/views/file-permissions.phtml:45
 #, php-format
 msgid "The test file could be created (owner: %s, chmod: %s)."
-msgstr "O arquivo de teste fui criado (proprietário: %s, chmod: %s)."
+msgstr "Testna datoteka je lahko ustvarjena (lastnik: %s, chmod: %s)."
 
-#: check/views/file-permissions.phtml:40
+#: check/views/file-permissions.phtml:47
 msgid "The test file could not be created."
-msgstr "O arquivo de teste não pode ser criado."
+msgstr "Testne datoteke ni bilo mogoče ustvariti."
 
-#: check/views/file-permissions.phtml:41
+#: check/views/file-permissions.phtml:48
 msgid ""
 "It seems that the PHP process does not have enough permissions to create "
 "files on your server."
-msgstr "Parece que o processo de PHP não tem permissões suficientes para criar arquivos em seu servidor."
+msgstr "Kaže, da PHP proces nima zadosti pravic, da bi ustvaril datoteke na vašem strežniku."
 
-#: check/views/file-permissions.phtml:43
+#: check/views/file-permissions.phtml:50
 msgid "The test file does not have the correct owner or chmod settings."
-msgstr "O arquivo de teste não pertence ao proprietário correto ou a configuração chmod."
+msgstr "Testna datoteka nima pravilnega lastnika ali chmod nastavitev."
 
-#: check/views/file-permissions.phtml:44
+#: check/views/file-permissions.phtml:51
 #, php-format
 msgid ""
 "The test file is owned by %s (should be %s) and has the chmod settings %s "
 "(should be %s)."
-msgstr "O arquivo de teste pertence em %s (deveria ser %s) e tem a configuração chmod %s (deveria ser %s)."
-
-#: check/views/file-permissions.phtml:44
-msgid "664, 644, 660, 640 or 604"
-msgstr ""
-
-#: check/views/file-permissions.phtml:49
-msgid "The PHP process is allowed to create files on this server."
-msgstr "Parece que o processo de PHP tem permissões suficientes para criar arquivos em seu servidor."
+msgstr "Testna datoteka je v lasti %s (morala bi biti v lasti %s) in ima chmod nastavitve %s (morale bi biti %s)."
 
 #: check/views/file-permissions.phtml:51
+msgid "664, 644, 660, 640 or 604"
+msgstr "664, 644, 660, 640 ali 604"
+
+#: check/views/file-permissions.phtml:58
+msgid "The PHP process is allowed to create files on this server."
+msgstr "PHP procesu je dovoljeno ustvarjanje datotek na tem strežniku."
+
+#: check/views/file-permissions.phtml:60
 msgid "The PHP process is not allowed to create files on this server."
-msgstr "Parece que o processo de PHP não tem permissões suficientes para criar arquivos em seu servidor."
+msgstr "PHP procesu ni dovoljeno ustvarjanje datotek na tem strežniku."
 
 #: check/views/index.phtml:12
 msgid "Overview"
-msgstr "Resumo"
+msgstr "Pregled"
 
 #: check/views/index.phtml:18
 msgid "You can install Contao 2.x"
-msgstr "Você pode instalar Contao 2.x"
+msgstr "Lahko namestite Contao 2.x"
 
 #: check/views/index.phtml:20
 #, php-format
 msgid "You cannot install Contao 2.x (requires PHP %s+)"
-msgstr "Você não pode instalar Contao 2.x (exige PHP %s+)"
+msgstr "Ni mogoče namestiti Contao 2.x (potreben je PHP %s+)"
 
 #: check/views/index.phtml:23
 msgid "You can install Contao 3.x"
-msgstr "Você pode instalar Contao 3.x"
+msgstr "Lahko namestite Contao 3.x"
 
 #: check/views/index.phtml:25
 #, php-format
 msgid "You cannot install Contao 3.x (requires PHP %s+)"
-msgstr "Você não pode instalar Contao 3.x (exige PHP %s+)"
+msgstr "Ni mogoče namestiti Contao 3.x (potreben je PHP %s+)"
 
 #: check/views/index.phtml:28
 msgid "You can install Contao 4.x"
-msgstr "Você pode instalar Contao 4.x"
+msgstr "Lahko namestite Contao 4.x"
 
 #: check/views/index.phtml:30
 #, php-format
 msgid "You cannot install Contao 4.x (requires PHP %s+)"
-msgstr "Você não pode instalar Contao 4.x (exige PHP %s+)"
+msgstr "Ni mogoče namestiti Contao 4.x (potreben je PHP %s+)"
 
-#: check/views/index.phtml:38 check/views/index.phtml:40
-#: check/views/index.phtml:48 check/views/index.phtml:50
-#: check/views/index.phtml:53 check/views/index.phtml:55
-#: check/views/index.phtml:58 check/views/index.phtml:60
+#: check/views/index.phtml:38
+msgid "The file permissions cannot be checked."
+msgstr ""
+
+#: check/views/index.phtml:38 check/views/index.phtml:41
+#: check/views/index.phtml:43 check/views/index.phtml:52
+#: check/views/index.phtml:54 check/views/index.phtml:57
+#: check/views/index.phtml:60 check/views/index.phtml:62
+#: check/views/index.phtml:66 check/views/index.phtml:68
 msgid "More information …"
-msgstr "Mais informações ..."
+msgstr "Več informacij ..."
 
-#: check/views/index.phtml:45
+#: check/views/index.phtml:49
 msgid "Additional services"
-msgstr "Serviços adicionais"
+msgstr "Dodatne storitve"
 
-#: check/views/index.phtml:48
+#: check/views/index.phtml:52
 msgid "You can use the Live Update."
-msgstr "Você pode usar o Live Update."
+msgstr "Lahko uporabljate Live Update."
 
-#: check/views/index.phtml:50
+#: check/views/index.phtml:54
 msgid "You cannot use the Live Update."
-msgstr "Você não pode usar o Live Update."
+msgstr "Live Update ni mogoče uporabljati."
 
-#: check/views/index.phtml:53
-msgid "You can use the Composer package manager."
-msgstr "Você pode usar o Composer, o gerenciador de pacotes."
-
-#: check/views/index.phtml:55
-msgid "You cannot use the Composer package manager."
-msgstr "Você não pode usar o Composer, o gerenciador de pacotes."
-
-#: check/views/index.phtml:58
-msgid "You can use the Extension Repository."
-msgstr "Você pode usar o Repositório de Extensão."
+#: check/views/index.phtml:57
+msgid "The Composer package manager requirements cannot be checked."
+msgstr ""
 
 #: check/views/index.phtml:60
+msgid "You can use the Composer package manager."
+msgstr "Lahko uporabljate upravljalnik paketov Composer."
+
+#: check/views/index.phtml:62
+msgid "You cannot use the Composer package manager."
+msgstr "Upravljalnika paketov Composer ni mogoče uporabljati."
+
+#: check/views/index.phtml:66
+msgid "You can use the Extension Repository."
+msgstr "Lahko uporabljate Extension Repository."
+
+#: check/views/index.phtml:68
 msgid "You cannot use the Extension Repository."
-msgstr "Você não pode usar o Repositório de Extensão."
+msgstr " Extension Repository ni mogoče uporabljati."
 
-#: check/views/index.phtml:65
+#: check/views/index.phtml:73
 msgid "Install Contao"
-msgstr "Instalar Contao"
+msgstr "Namestite Contao"
 
-#: check/views/index.phtml:65
+#: check/views/index.phtml:73
 msgid "Validate an existing installation"
-msgstr "Validar uma instalação existente"
+msgstr "Preverite obstoječo namestitev"
 
 #: check/views/installer.phtml:12 check/views/validator.phtml:16
 msgid "Installation"
-msgstr "Installação"
+msgstr "Namestitev"
 
 #: check/views/installer.phtml:15
 msgid "Web installer"
-msgstr "Instalador web"
+msgstr "Spletna namestitev"
 
 #: check/views/installer.phtml:17
 #, php-format
 msgid "There is a Contao installation already. Are you looking for the %s?"
-msgstr "Existe já uma instalação do Contao. Você está procurando para %s?"
+msgstr "Contao namestitev že obstaja. Ali iščete %s?"
 
 #: check/views/installer.phtml:19
 msgid ""
 "The automatic installation is not possible on your server due to safe_mode "
 "or file permission restrictions."
-msgstr "A instalação automática não é possível no seu servidor devido ao safe_mode ou restrições de permissão de arquivo."
+msgstr "Samodejna namestitev ni mogoče na vašem strežniku zaradi safe_mode ali omejitev pravic datotek."
 
 #: check/views/installer.phtml:21
 msgid "The automatic installation is possible on your server."
-msgstr "A instalação automática é possível em seu servidor."
+msgstr "Samodejna namestitev je mogoča na vašem strežniku."
 
 #: check/views/installer.phtml:23
 msgid "The automatic installation is not possible on your server."
-msgstr "A instalação automática não é possível em seu servidor."
+msgstr "Samodejna namestitev ni mogoča na vašem strežniku."
 
 #: check/views/installer.phtml:24
 msgid ""
 "Your PHP installation either cannot connect to download.contao.org or is "
 "missing the PHP extension cURL or Zip."
-msgstr "Sua instalação do PHP não pode se conectar no Servídor download.contao.org ou está sem PHP extensão cURL ou Zip instalado."
+msgstr "Vaša PHP namestitev se ne more povezati na download.contao.org ali manjkajo PHP razširitve cURL ali Zip."
 
 #: check/views/installer.phtml:30
 msgid "Manual installation"
-msgstr "Instalação manual"
+msgstr "Ročna namestitev"
 
 #: check/views/installer.phtml:32
 #, php-format
 msgid "Go to %s and download the latest Contao version."
-msgstr "Navega-se para %s e baixar-se a última versão do Contao."
+msgstr "Pojdite na %s in prenesite najnovejšo Contao različico."
 
 #: check/views/installer.phtml:33
 msgid ""
 "Extract the download archive and upload the files to your server using an "
 "(S)FTP client."
-msgstr "Extrair o arquivo de download e fazer upload dos arquivos para o seu servidor usando um cliente de (S)FTP."
+msgstr "Razširite prenešeni arhiv in naložite datoteke na vaš strežnik s pomočjo (S)FTP odjemalca."
 
 #: check/views/installer.phtml:34
 msgid ""
 "Open the Contao install tool by adding \"/contao/install.php\" to the URL of"
 " your installation."
-msgstr ""
+msgstr "Odprite Contao namestitveno orodje, tako da dodate \"/contao/install.php\" na konec URLja vaše namestitve."
 
 #: check/views/installer.phtml:37
 msgid "Target version"
-msgstr "Versão de destino"
+msgstr "Ciljna različica"
 
 #: check/views/installer.phtml:48
 msgid "Start the installation"
-msgstr "Iniciar a instalação"
+msgstr "Začnite namestitev"
 
 #: check/views/installer.phtml:52
 msgid "Installation failed"
-msgstr ""
+msgstr "Namestitev je neuspešna"
 
 #: check/views/installer.phtml:55
 msgid "Installation complete"
-msgstr "Instalação completa"
+msgstr "Namestitev končana"
 
 #: check/views/installer.phtml:56
 #, php-format
 msgid "Contao %s has been installed in %s."
-msgstr "Contao %s foi instalado em %s."
+msgstr "Contao %s je bil nameščen v %s."
 
 #: check/views/installer.phtml:57
 msgid "Open the Contao install tool"
-msgstr "Abrir a ferramenta de instalação do Contao"
+msgstr "Odprite Contao namestitveno orodje"
 
 #: check/views/live-update.phtml:12
 msgid "Live Update"
-msgstr "Serviço de Atualização ao vivo (Live Update)"
+msgstr "Live Update"
 
 #: check/views/live-update.phtml:20
 #, php-format
@@ -460,34 +478,34 @@ msgid ""
 "Phar has been added to the PHP core in version 5.3, so you require at least "
 "PHP version %s to use .phar files. If you have PHP 5.2, you might be able to"
 " use .phar files by installing the PECL phar extension (see %s)."
-msgstr "Phar foi adicionado ao núcleo PHP na versão 5.3, para que exigem pelo menos a versão PHP %s para usar .phar arquivos. Se você tiver PHP 5.2, você pode ser capaz de usar .phar arquivos por instalar a extensão PECL phar (veja %s)."
+msgstr "Phar je bil dodan PHP jedru v različici 5.3, tako potrebujete PHP različico najmanj %s da bi uporabili .phar datoteke. Če imate PHP 5.2 lahko mogoče uporabite .phar datoteke z namestitvijo PECL phar razširitve (preverite %s)."
 
 #: check/views/live-update.phtml:33 check/views/repository.phtml:24
 msgid "PHP OpenSSL extension"
-msgstr "PHP extensão OpenSSL"
+msgstr "PHP OpenSSL razširitev"
 
 #: check/views/live-update.phtml:35 check/views/repository.phtml:26
 msgid "The PHP OpenSSL extension is enabled."
-msgstr "A extensão PHP OpenSSL está ativado."
+msgstr "PHP OpenSSL razširitev je nameščena."
 
 #: check/views/live-update.phtml:37 check/views/repository.phtml:28
 msgid "The PHP OpenSSL extension is not enabled."
-msgstr "A extensão PHP OpenSSL não está ativado."
+msgstr "PHP OpenSSL razširitev ni nameščena."
 
 #: check/views/live-update.phtml:38 check/views/repository.phtml:29
 msgid ""
 "The PHP OpenSSL extension is required to set up a secure connection to the "
 "Live Update server. Enable it in your php.ini."
-msgstr "A extensão PHP OpenSSL é necessário para estabelecer uma conexão segura com o servidor Live Update. Habilitá-lo no seu php.ini."
+msgstr "PHP OpenSSL razširitev je potrebna za vspostavitev varne povezave z Live Update strežnikom. Omogočite jo v vaših php.ini nastavitvah."
 
 #: check/views/live-update.phtml:44
 msgid "The ionCube Loader is not enabled or at least at version 4.0.9."
-msgstr "O Carregador ionCube não está habilitado ou pelo menos a versão 4.0.9."
+msgstr "ionCube Loader ni nameščen ali ni 4.0.9.+ različica."
 
 #: check/views/live-update.phtml:46
 msgid ""
 "An old version of the ionCube Loader prior to version 4.0.9 is installed."
-msgstr "Uma versão antiga do carregador ionCube antes da versão 4.0.9 está instalado."
+msgstr "Nameščena je starejša ionCube Loader različica kot 4.0.9."
 
 #: check/views/live-update.phtml:47
 #, php-format
@@ -495,20 +513,20 @@ msgid ""
 "Before version 4.0.9, the ionCube Loader was incompatible with Phar "
 "archives. Either upgrade to the latest version or disable the module. More "
 "information is available here: %s"
-msgstr "Antes da versão 4.0.9, o Loader ionCube era incompatível com Phar arquivos.  Aatualiza para a versão mais recente ou desativar o módulo. Mais informações estão disponíveis aqui: %s"
+msgstr "Pred različico 4.0.9. ionCube Loader ni bil združljiv z Phar arhivi. Ali posodobite na najnovejšo različico ali izklopite modul. Več informacij je na voljo tukaj: %s"
 
 #: check/views/live-update.phtml:60
 msgid "Detect Unicode"
-msgstr "Detectar Unicode"
+msgstr "Zaznaj Unicode"
 
 #: check/views/live-update.phtml:62
 msgid ""
 "The --enable-zend-multibyte flag is not set or detect_unicode is disabled."
-msgstr "A opção --enable-zend-multibyte não está definido ou detect_unicode está desativado."
+msgstr "Zastavica --enable-zend-multibyte je nastavljena ali detect_unicode ni omogočen."
 
 #: check/views/live-update.phtml:64
 msgid "The detect_unicode settings on your server are not correct."
-msgstr "As configurações detect_unicode em seu servidor não são corretas."
+msgstr "detect_unicode nastavitve na vašem strežniki niso pravilne."
 
 #: check/views/live-update.phtml:65
 #, php-format
@@ -517,15 +535,15 @@ msgid ""
 "explicitly disable detect_unicode in your php.ini: <code>detect_unicode = "
 "Off</code>. This is a PHP bug which might be fixed in the future. More "
 "information is available here: %s"
-msgstr "Se o PHP é compilado com a opção --enable-zend-multibyte, você tem que desativar explicitamente detect_unicode no seu php.ini:  <code>detect_unicode = Off</code>.\nEste é um bug do PHP que pode ser corrigido no futuro. Mais informações estão disponíveis aqui: %s"
+msgstr "Če je PHP preveden z --enable-zend-multibyte zastavico, morate obvezno onemogočiti detect_unicode v vaših php.ini nastavitvah: <code>detect_unicode = Off</code>. Ta PHP hrošč bo mogoče odpravljen v prihodnosti. Več informacij je na voljo tukaj: %s"
 
 #: check/views/live-update.phtml:71
 msgid "You are not using FastCGI and eAccelerator."
-msgstr "Você não está usando FastCGI e eAccelerator."
+msgstr "Ne uporabljate FastCGI in eAccelerator."
 
 #: check/views/live-update.phtml:73
 msgid "You are using FastCGI and eAccelerator."
-msgstr "Você está usando FastCGI e eAccelerator."
+msgstr "Uporabljate FastCGI in eAccelerator."
 
 #: check/views/live-update.phtml:74
 msgid ""
@@ -533,49 +551,49 @@ msgid ""
 "buggy when it comes to Phar archives. You can either disable the "
 "eAccelerator extension or use a different PHP cache instead (e.g. "
 "FastCGI+APC)."
-msgstr "Parece que FastCGI em combinação com a extensão eAccelerator é defeituoso quando se trata de Phar arquivos. Você pode desativar a extensão eAccelerator ou usar um cache de PHP diferente, em vez (por exemplo, FastCGI + APC)."
+msgstr "Kaže, da je FastCGI v kombinaciji z eAccelerator razširitvijo nekoliko hroščast kadar se uporabljajo Phar arhivi. Lahko onemogočite eAccelerator razširitev ali uporabite različno PHP cache metodo (recimo FastCGI+APC). "
 
 #: check/views/live-update.phtml:78 check/views/repository.phtml:33
 msgid "Connection test"
-msgstr "Teste de conexão"
+msgstr "Test povezave"
 
 #: check/views/live-update.phtml:80
 msgid "A connection to update.contao.org could be established."
-msgstr "Foi possível estabelecer uma conexão com update.contao.org."
+msgstr "Povezava z update.contao.org je bila vspostavljena."
 
 #: check/views/live-update.phtml:82
 msgid "A connection to update.contao.org could not be established."
-msgstr "Não foi possível estabelecer uma conexão com update.contao.org."
+msgstr "Povezave z update.contao.org ni bilo mogoče vzpostaviti."
 
 #: check/views/live-update.phtml:83 check/views/repository.phtml:38
 msgid ""
 "Maybe the request has been blocked by a firewall. Please contact your server"
 " administrator."
-msgstr "Talvez o pedido tenha sido bloqueado por um firewall. Por favor, contate o administrador do servidor."
+msgstr "Zahtevo je mogoče zaustavil požarni zid. Kontaktirajte vašega sistemskega administratorja."
 
 #: check/views/live-update.phtml:88
 msgid "You can use the Live Update on this server."
-msgstr "Você pode usar o Live Update no servidor."
+msgstr "Na tem strežniku je mogoče uporabljati Live Update."
 
 #: check/views/live-update.phtml:90
 msgid "You cannot use the Live Update on this server."
-msgstr "Você não pode usar o Live Update no servidor."
+msgstr "Na tem strežniku ni mogoče uporabljati Live Update."
 
 #: check/views/repository.phtml:12
 msgid "Extension Repository"
-msgstr "Repositório de extensão"
+msgstr "Extension Repository"
 
 #: check/views/repository.phtml:15
 msgid "PHP SOAP extension"
-msgstr "PHP extensão SOAP"
+msgstr "PHP SAOP razširitev"
 
 #: check/views/repository.phtml:17
 msgid "The PHP SOAP extension is available."
-msgstr "A extensão SOAP PHP está disponível."
+msgstr "PHP SAOP razširitev je na voljo."
 
 #: check/views/repository.phtml:19
 msgid "The PHP SOAP extension is not available."
-msgstr "A extensão SOAP PHP não está disponível."
+msgstr "PHP SAOP razširitev ni na voljo."
 
 #: check/views/repository.phtml:20
 #, php-format
@@ -584,79 +602,79 @@ msgid ""
 "Repository server. You can enable it by compiling PHP with the --enable-soap"
 " flag. Depending on your Contao version, you might also be able to use the "
 "%s extension."
-msgstr "A extensão SOAP PHP é necessário para se comunicar com o servidor do repositório de extensão. Você pode habilitá-lo compilar o PHP com a opção --enable-soap. Dependendo da sua versão Contao, você também pode ser capaz de usar a extensão %s."
+msgstr "PHP SAOP razširitev je potrebna za povezavo z Extension Repository strežnikom. Razširitev lahko omogočite z prevodom PHP in nastavljeno --enable-saop zastavico. Odvisno od Contao različice, lahko mogoče uporabite tudi %s razširitev."
 
 #: check/views/repository.phtml:35
 msgid "A connection to contao.org could be established."
-msgstr "Uma conexão para contao.org pôde ser estabelecida."
+msgstr "Povezava z contao.org je bila vzpostavljena."
 
 #: check/views/repository.phtml:37
 msgid "A connection to contao.org could not be established."
-msgstr "Uma conexão para contao.org não pôde ser estabelecida."
+msgstr "Povezave z contao.org ni bilo mogoče vzpostaviti."
 
 #: check/views/repository.phtml:43
 msgid "You can use the Extension Repository on this server."
-msgstr "Você pode usar o Repositório de Extensão em este servidor."
+msgstr "Na tem strežniku lahko uporabljate Extension Repository."
 
 #: check/views/repository.phtml:45
 msgid "You cannot use the Extension Repository on this server."
-msgstr "Você não pode usar o Repositório de Extensão em este servidor."
+msgstr "Na tem strežniku ni mogoče uporabljati Extension Repository."
 
 #: check/views/validator.phtml:12
 msgid "Validate an installation"
-msgstr "Validar uma instalação"
+msgstr "Preverite namestitev"
 
 #: check/views/validator.phtml:17
 msgid "Could not find a Contao installation."
-msgstr "Não foi possível encontrar uma instalação do Contao."
+msgstr "Contao namestitve ni bilo mogoče najti."
 
 #: check/views/validator.phtml:18
 msgid ""
 "To validate an existing installation, please upload the \"check\" folder to "
 "your installation directory."
-msgstr "Para validar uma instalação existente, por favor, fazer o upload da pasta \"cheque\" para o diretório de instalação."
+msgstr "Da bi preverili namestitev, naložite \"check\" direktorij v vaš namestitveni direktorij."
 
 #: check/views/validator.phtml:22
 msgid "Unknown version"
-msgstr "Versão desconhecida"
+msgstr "Neznana različica"
 
 #: check/views/validator.phtml:23
 #, php-format
 msgid "The installed version %s is not (yet) supported."
-msgstr "A versão instalado %s (ainda) não é suportado."
+msgstr "Namestitvena različica %s (še) ni podprta."
 
 #: check/views/validator.phtml:24
 msgid ""
 "There is no version file for your Contao installation. Are you using a "
 "stable Contao version and do you have the latest version of the Contao "
 "Check?"
-msgstr "Não há nenhum arquivo versão para a sua instalação Contao. Você está usando uma versão estável do Contao é você tem a versão mais recente do Contao Check?"
+msgstr "Manjka datoteka z različico vaše Contao namestitve. Ali uporabljate stabilno Contao različico in ali imate najnovejšo Contao Check različico?"
 
 #: check/views/validator.phtml:28
 msgid "Version"
-msgstr "Versão"
+msgstr "Različica"
 
 #: check/views/validator.phtml:29
 #, php-format
 msgid "Found a Contao %s installation."
-msgstr "Encontrado uma instalação de Contao %s."
+msgstr "Najdena Contao %s namestitev."
 
 #: check/views/validator.phtml:33
 msgid "Missing files"
-msgstr "Arquivos ausentes"
+msgstr "Manjkajoče datoteke"
 
 #: check/views/validator.phtml:43
 msgid "Corrupt files"
-msgstr "Arquivos corrompidos"
+msgstr "Poškodovane datoteke"
 
 #: check/views/validator.phtml:53
 msgid "Missing optional files"
-msgstr "Arquivos opcionais ausentes"
+msgstr "Manjkajoče neobvezne datoteke"
 
 #: check/views/validator.phtml:63
 msgid "Your installation is up to date."
-msgstr "Sua instalação é atualizado."
+msgstr "Vaša namestitev je posodobljena."
 
 #: check/views/validator.phtml:65
 msgid "Your installation is not up to date."
-msgstr "Sua instalação não está atualizado."
+msgstr "Vaša namestitev ni posodobljena."

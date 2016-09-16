@@ -1,4 +1,4 @@
-# Contao Open Source CMS
+# Contao check
 #
 # Copyright (c) 2005-2015 Leo Feyer
 #
@@ -8,17 +8,17 @@
 # Cyril Ponce, 2013,2015
 # cpo, 2015
 # Eric Vantroeyen, 2013
-# Lionel Maccaud, 2014-2015
+# Lionel Maccaud, 2014-2016
 # tosca30, 2013
 # Lionel Maccaud, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: Check\n"
+"Project-Id-Version: check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-05-15 10:12+0000\n"
-"Last-Translator: Cyril Ponce\n"
-"Language-Team: French (http://www.transifex.com/projects/p/contao-check/language/fr/)\n"
+"PO-Revision-Date: 2016-09-16 18:11+0000\n"
+"Last-Translator: Lionel Maccaud\n"
+"Language-Team: French (http://www.transifex.com/contao/contao-check/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -139,69 +139,79 @@ msgid ""
 msgstr "Pour télécharger les fichiers d'installation, Composer nécessite que l'option \"allow_url_fopen\" soit définie dans php.ini."
 
 #: check/views/composer.phtml:69 check/views/file-permissions.phtml:12
-#: check/views/index.phtml:35
+#: check/views/file-permissions.phtml:25 check/views/index.phtml:35
 msgid "File permissions"
 msgstr "Permissions sur les fichiers"
 
-#: check/views/composer.phtml:71 check/views/index.phtml:38
+#: check/views/composer.phtml:71 check/views/file-permissions.phtml:26
+msgid "The \"posix_getpwuid\" function is not available."
+msgstr "La fonction \"posix_getpwuid\" n'est pas disponible."
+
+#: check/views/composer.phtml:72 check/views/file-permissions.phtml:27
+msgid ""
+"File permissions cannot be tested, because the <code>posix_getpwuid</code> "
+"function has been disabled. Please contact your server administrator."
+msgstr "Les permissions sur les fichiers ne peuvent pas être testées, parce que la fonction <code>posix_getpwuid</code> a été désactivée. Veuillez, s'il vous plaît, contacter l'administrateur du serveur."
+
+#: check/views/composer.phtml:75 check/views/index.phtml:41
 msgid "The PHP process is allowed to create files."
 msgstr "Le processus de PHP est autorisé à créer des fichiers."
 
-#: check/views/composer.phtml:73 check/views/index.phtml:40
+#: check/views/composer.phtml:77 check/views/index.phtml:43
 msgid "The PHP process is not allowed to create files."
 msgstr "Le processus de PHP n'est pas autorisé à créer des fichiers."
 
-#: check/views/composer.phtml:74
+#: check/views/composer.phtml:78
 msgid ""
 "The PHP process is not allowed to create or manipulate files. Please adjust "
 "your server configuration accordingly."
 msgstr "Le processus de PHP n'est pas autorisé à créer ou manipuler des fichiers. Veuillez ajuster votre configuration serveur en conséquence."
 
-#: check/views/composer.phtml:78
+#: check/views/composer.phtml:83
 msgid "shell_exec (optional)"
 msgstr "shell_exec (optionnelle)"
 
-#: check/views/composer.phtml:80
+#: check/views/composer.phtml:85
 msgid "The PHP function \"shell_exec\" is available."
 msgstr "La fonction PHP \"shell_exec\" est disponible."
 
-#: check/views/composer.phtml:82
+#: check/views/composer.phtml:87
 msgid "The PHP function \"shell_exec\" is not available."
 msgstr "La fonction PHP \"shell_exec\" n'est pas disponible."
 
-#: check/views/composer.phtml:83
+#: check/views/composer.phtml:88
 msgid ""
 "The \"shell_exec\" function is optionally required to run the Composer "
 "process in the background."
 msgstr "La fonction \"shell_exec\" est optionnellement requise pour exécuter le processus de Composer en arrière plan."
 
-#: check/views/composer.phtml:87
+#: check/views/composer.phtml:92
 msgid "proc_open (optional)"
 msgstr "proc_open (optionnelle)"
 
-#: check/views/composer.phtml:89
+#: check/views/composer.phtml:94
 msgid "The PHP function \"proc_open\" is available."
 msgstr "La fonction PHP \"proc_open\" est disponible."
 
-#: check/views/composer.phtml:91
+#: check/views/composer.phtml:96
 msgid "The PHP function \"proc_open\" is not available."
 msgstr "La fonction PHP \"proc_open\" n'est pas disponible."
 
-#: check/views/composer.phtml:92
+#: check/views/composer.phtml:97
 msgid ""
 "The \"proc_open\" function is optionally required to run the package manager"
 " in dev mode."
 msgstr "La fonction \"proc_open\" est optionnellement requise pour exécuter le gestionnaire de paquets en mode dev."
 
-#: check/views/composer.phtml:97
+#: check/views/composer.phtml:102
 msgid "You can use the Composer package manager on this server."
 msgstr "Vous pouvez utiliser le gestionnaire de paquets Composer sur ce serveur."
 
-#: check/views/composer.phtml:99
+#: check/views/composer.phtml:104
 msgid "You cannot use the Composer package manager on this server."
 msgstr "Vous ne pouvez pas utiliser le gestionnaire de paquets Composer sur ce serveur."
 
-#: check/views/composer.phtml:102 check/views/file-permissions.phtml:54
+#: check/views/composer.phtml:107 check/views/file-permissions.phtml:64
 #: check/views/installer.phtml:62 check/views/live-update.phtml:93
 #: check/views/repository.phtml:48 check/views/validator.phtml:69
 msgid "Go back"
@@ -226,79 +236,79 @@ msgid ""
 "files and Contao cannot work properly."
 msgstr "Il est recommandé de désactiver le safe_mode dans le fichier php.ini ou à partir du panneau de contrôle du serveur, sinon le processus de PHP ne possèdera pas les autorisations pour créer ou manipuler des fichiers. Contao peut ne pas fonctionner correctement."
 
-#: check/views/file-permissions.phtml:24
+#: check/views/file-permissions.phtml:31
 msgid "Creating a test folder"
 msgstr "Création d'un dossier de test"
 
-#: check/views/file-permissions.phtml:26
+#: check/views/file-permissions.phtml:33
 #, php-format
 msgid "The test folder could be created (owner: %s, chmod: %s)."
 msgstr "Le dossier de test a été créé (propriétaire : %s, chmod : %s)."
 
-#: check/views/file-permissions.phtml:28
+#: check/views/file-permissions.phtml:35
 msgid "The test folder could not be created."
 msgstr "Le dossier de test n'a pas pu être créé."
 
-#: check/views/file-permissions.phtml:29
+#: check/views/file-permissions.phtml:36
 msgid ""
 "It seems that the PHP process does not have enough permissions to create "
 "folders on your server."
 msgstr "Il semble que le processus PHP ne dispose pas d'autorisations suffisantes pour créer des dossiers sur votre serveur."
 
-#: check/views/file-permissions.phtml:31
+#: check/views/file-permissions.phtml:38
 msgid "The test folder does not have the correct owner or chmod settings."
 msgstr "Le dossier de test n'a pas le bon propriétaire ou réglages chmod."
 
-#: check/views/file-permissions.phtml:32
+#: check/views/file-permissions.phtml:39
 #, php-format
 msgid ""
 "The test folder is owned by %s (should be %s) and has the chmod settings %s "
 "(should be %s)."
 msgstr "Le propriétaire du dossier de test est %s (devrait être %s) et possède les paramètres chmod %s (devrait être %s)."
 
-#: check/views/file-permissions.phtml:32
+#: check/views/file-permissions.phtml:39
 msgid "775, 755, 770, 750 or 705"
 msgstr "775, 755, 770, 750 ou 705"
 
-#: check/views/file-permissions.phtml:36
+#: check/views/file-permissions.phtml:43
 msgid "Creating a test file"
 msgstr "Création d'un fichier de test"
 
-#: check/views/file-permissions.phtml:38
+#: check/views/file-permissions.phtml:45
 #, php-format
 msgid "The test file could be created (owner: %s, chmod: %s)."
 msgstr "Le fichier de test a été créé (propriétaire : %s, chmod : %s)."
 
-#: check/views/file-permissions.phtml:40
+#: check/views/file-permissions.phtml:47
 msgid "The test file could not be created."
 msgstr "Le fichier de test n'a pas pu être créé."
 
-#: check/views/file-permissions.phtml:41
+#: check/views/file-permissions.phtml:48
 msgid ""
 "It seems that the PHP process does not have enough permissions to create "
 "files on your server."
 msgstr "Il semble que le processus PHP ne dispose pas d'autorisations suffisantes pour créer des fichiers sur votre serveur."
 
-#: check/views/file-permissions.phtml:43
+#: check/views/file-permissions.phtml:50
 msgid "The test file does not have the correct owner or chmod settings."
 msgstr "Le fichier de test n'a pas le bon propriétaire ou réglages chmod."
 
-#: check/views/file-permissions.phtml:44
+#: check/views/file-permissions.phtml:51
 #, php-format
 msgid ""
 "The test file is owned by %s (should be %s) and has the chmod settings %s "
 "(should be %s)."
 msgstr "Le propriétaire du fichier de test est %s (devrait être %s) et possède les paramètres chmod %s (devrait être %s)."
 
-#: check/views/file-permissions.phtml:44
+#: check/views/file-permissions.phtml:51
 msgid "664, 644, 660, 640 or 604"
 msgstr "664, 644, 660, 640 ou 604"
 
-#: check/views/file-permissions.phtml:49
+#: check/views/file-permissions.phtml:58
 msgid "The PHP process is allowed to create files on this server."
 msgstr "Le processus PHP dispose d'autorisations suffisantes pour créer des fichiers sur ce serveur."
 
-#: check/views/file-permissions.phtml:51
+#: check/views/file-permissions.phtml:60
 msgid "The PHP process is not allowed to create files on this server."
 msgstr "Le processus PHP ne dispose pas d'autorisations suffisantes pour créer des fichiers sur ce serveur."
 
@@ -333,46 +343,55 @@ msgstr "Vous pouvez installer Contao 4.x"
 msgid "You cannot install Contao 4.x (requires PHP %s+)"
 msgstr "Vous ne pouvez pas installer Contao 4.x (nécessite PHP %s+)"
 
-#: check/views/index.phtml:38 check/views/index.phtml:40
-#: check/views/index.phtml:48 check/views/index.phtml:50
-#: check/views/index.phtml:53 check/views/index.phtml:55
-#: check/views/index.phtml:58 check/views/index.phtml:60
+#: check/views/index.phtml:38
+msgid "The file permissions cannot be checked."
+msgstr "Les permissions sur les fichiers ne peuvent pas être vérifiées."
+
+#: check/views/index.phtml:38 check/views/index.phtml:41
+#: check/views/index.phtml:43 check/views/index.phtml:52
+#: check/views/index.phtml:54 check/views/index.phtml:57
+#: check/views/index.phtml:60 check/views/index.phtml:62
+#: check/views/index.phtml:66 check/views/index.phtml:68
 msgid "More information …"
 msgstr "Plus d'informations..."
 
-#: check/views/index.phtml:45
+#: check/views/index.phtml:49
 msgid "Additional services"
 msgstr "Services additionnels"
 
-#: check/views/index.phtml:48
+#: check/views/index.phtml:52
 msgid "You can use the Live Update."
 msgstr "Vous pouvez utiliser Live Update."
 
-#: check/views/index.phtml:50
+#: check/views/index.phtml:54
 msgid "You cannot use the Live Update."
 msgstr "Vous ne pouvez pas utiliser Live Update."
 
-#: check/views/index.phtml:53
+#: check/views/index.phtml:57
+msgid "The Composer package manager requirements cannot be checked."
+msgstr "Les exigences du gestionnaire de paquets Composer ne peuvent pas être vérifiées."
+
+#: check/views/index.phtml:60
 msgid "You can use the Composer package manager."
 msgstr "Vous pouvez utiliser le gestionnaire de paquets Composer."
 
-#: check/views/index.phtml:55
+#: check/views/index.phtml:62
 msgid "You cannot use the Composer package manager."
 msgstr "Vous ne pouvez pas utiliser le gestionnaire de paquets Composer."
 
-#: check/views/index.phtml:58
+#: check/views/index.phtml:66
 msgid "You can use the Extension Repository."
 msgstr "Vous pouvez utiliser le référentiel d'extensions."
 
-#: check/views/index.phtml:60
+#: check/views/index.phtml:68
 msgid "You cannot use the Extension Repository."
 msgstr "Vous ne pouvez pas utiliser le référentiel d'extensions."
 
-#: check/views/index.phtml:65
+#: check/views/index.phtml:73
 msgid "Install Contao"
 msgstr "Installer Contao"
 
-#: check/views/index.phtml:65
+#: check/views/index.phtml:73
 msgid "Validate an existing installation"
 msgstr "Valider une installation existante"
 
@@ -556,7 +575,7 @@ msgstr "Une connexion à update.contao.org n'a pas pu être établie."
 msgid ""
 "Maybe the request has been blocked by a firewall. Please contact your server"
 " administrator."
-msgstr "Peut-être que la requête a été bloquée par un pare-feu. Veuillez contactez votre administrateur serveur."
+msgstr "Peut-être que la requête a été bloquée par un pare-feu. Veuillez, s'il vous plaît, contacter votre administrateur du serveur."
 
 #: check/views/live-update.phtml:88
 msgid "You can use the Live Update on this server."
