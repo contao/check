@@ -97,13 +97,15 @@
       <p class="explain"><?php echo _('The "proc_open" function is optionally required to run the package manager in dev mode.') ?></p>
     <?php endif; ?>
   </div>
-  <div class="row">
-    <?php if ($this->isAvailable()): ?>
-      <p class="confirm large"><?php echo _('You can use the Composer package manager on this server.') ?></p>
-    <?php else: ?>
-      <p class="error large"><?php echo _('You cannot use the Composer package manager on this server.') ?></p>
-    <?php endif; ?>
-  </div>
+  <?php if (!function_disabled('posix_getpwuid')): ?>
+    <div class="row">
+      <?php if ($this->isAvailable()): ?>
+        <p class="confirm large"><?php echo _('You can use the Composer package manager on this server.') ?></p>
+      <?php else: ?>
+        <p class="error large"><?php echo _('You cannot use the Composer package manager on this server.') ?></p>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
   <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
 </div>
 </body>
