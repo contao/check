@@ -1,18 +1,17 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * Contao check
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2016 Leo Feyer
  *
  * @license LGPL-3.0+
  */
 
-require_once 'composer.php';
-require_once 'file-permissions.php';
-require_once 'live-update.php';
-require_once 'repository.php';
-
+require_once __DIR__ . '/composer.php';
+require_once __DIR__ . '/file-permissions.php';
+require_once __DIR__ . '/live-update.php';
+require_once __DIR__ . '/repository.php';
 
 /**
  * Check the PHP version requirements
@@ -25,13 +24,10 @@ class Index
 	const CONTAO3_VERSION = '5.4.0';
 	const CONTAO4_VERSION = '5.5.0';
 
-
 	/**
-	 * File permissions
 	 * @var boolean
 	 */
 	protected $filePermissions;
-
 
 	/**
 	 * Execute the command
@@ -43,7 +39,6 @@ class Index
 		include __DIR__ . '/../views/index.phtml';
 	}
 
-
 	/**
 	 * Return true if Contao 2 can be installed
 	 *
@@ -53,7 +48,6 @@ class Index
 	{
 		return version_compare(phpversion(), static::CONTAO2_VERSION, '>=');
 	}
-
 
 	/**
 	 * Return true if Contao 3 can be installed
@@ -65,7 +59,6 @@ class Index
 		return version_compare(phpversion(), static::CONTAO3_VERSION, '>=');
 	}
 
-
 	/**
 	 * Return true if Contao 4 can be installed
 	 *
@@ -76,7 +69,6 @@ class Index
 		return version_compare(phpversion(), static::CONTAO4_VERSION, '>=');
 	}
 
-
 	/**
 	 * Return true if the PHP process is allowed to create files
 	 *
@@ -86,7 +78,6 @@ class Index
 	{
 		return $this->filePermissions;
 	}
-
 
 	/**
 	 * Return true if the Live Update can be used
@@ -132,7 +123,6 @@ class Index
 		return true;
 	}
 
-
 	/**
 	 * Return true if the Extension Repository can be used
 	 *
@@ -169,7 +159,6 @@ class Index
 		return true;
 	}
 
-
 	/**
 	 * Return true if the Extension Repository can be used
 	 *
@@ -189,7 +178,6 @@ class Index
 
 		return true;
 	}
-
 
 	/**
 	 * Return true if the PHP process is allowed to create files

@@ -1,15 +1,14 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * Contao check
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2016 Leo Feyer
  *
  * @license LGPL-3.0+
  */
 
-require_once 'file-permissions.php';
-
+require_once __DIR__ . '/file-permissions.php';
 
 /**
  * Check the Composer package manager requirements
@@ -21,11 +20,14 @@ class Composer
 	const PHP_VERSION = '5.3.4';
 
 	/**
-	 * File permissions
 	 * @var boolean
 	 */
 	protected $filePermissions;
 
+	/**
+	 * @var boolean
+	 */
+	protected $available = true;
 
 	/**
 	 * Execute the command
@@ -37,14 +39,6 @@ class Composer
 		include __DIR__ . '/../views/composer.phtml';
 	}
 
-
-	/**
-	 * Availability
-	 * @var boolean
-	 */
-	protected $available = true;
-
-
 	/**
 	 * Return the availability of the Composer package manager
 	 *
@@ -54,7 +48,6 @@ class Composer
 	{
 		return $this->available;
 	}
-
 
 	/**
 	 * Check whether the PHP version meets the requirements
@@ -72,7 +65,6 @@ class Composer
 		return false;
 	}
 
-
 	/**
 	 * Check whether the PHP Phar extension is available
 	 *
@@ -88,7 +80,6 @@ class Composer
 
 		return false;
 	}
-
 
 	/**
 	 * Check whether the PHP cURL extension is available
@@ -106,7 +97,6 @@ class Composer
 		return false;
 	}
 
-
 	/**
 	 * Check whether the PHP APC extension is installed
 	 *
@@ -122,7 +112,6 @@ class Composer
 
 		return true;
 	}
-
 
 	/**
 	 * Check whether the PHP Suhosin extension is enabled
@@ -149,7 +138,6 @@ class Composer
 		return true;
 	}
 
-
 	/**
 	 * Check whether "allow_url_fopen" is enabled
 	 *
@@ -165,7 +153,6 @@ class Composer
 
 		return false;
 	}
-
 
 	/**
 	 * Return true if the PHP process is allowed to create files
@@ -183,7 +170,6 @@ class Composer
 		return false;
 	}
 
-
 	/**
 	 * Check whether the PHP shell_exec function is available
 	 *
@@ -198,7 +184,6 @@ class Composer
 		return false;
 	}
 
-
 	/**
 	 * Check whether the PHP proc_open function is available
 	 *
@@ -212,7 +197,6 @@ class Composer
 
 		return false;
 	}
-
 
 	/**
 	 * Return true if the PHP process is allowed to create files

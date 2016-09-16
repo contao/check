@@ -1,15 +1,14 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * Contao check
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2016 Leo Feyer
  *
  * @license LGPL-3.0+
  */
 
-require 'controller/bootstrap.php';
-
+require __DIR__ . '/controller/bootstrap.php';
 
 /**
  * Route the request to a controller
@@ -18,7 +17,6 @@ require 'controller/bootstrap.php';
  */
 class Router
 {
-
 	/**
 	 * Dispatch a request and send the response
 	 *
@@ -48,7 +46,6 @@ class Router
 		$controller = new $class();
 		$controller->run();
 	}
-
 
 	/**
 	 * Insecure path potentially containing directory traversal

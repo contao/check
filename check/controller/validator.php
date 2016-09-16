@@ -1,13 +1,12 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * Contao check
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2016 Leo Feyer
  *
  * @license LGPL-3.0+
  */
-
 
 /**
  * Validate and existing Contao installation
@@ -16,31 +15,25 @@
  */
 class Validator
 {
-
 	/**
-	 * Valid installation
 	 * @var boolean
 	 */
 	protected $valid = true;
 
 	/**
-	 * Constants found
 	 * @var boolean
 	 */
 	protected $constants = true;
 
 	/**
-	 * Version found
 	 * @var boolean
 	 */
 	protected $version = true;
 
 	/**
-	 * Errors
 	 * @var array
 	 */
 	protected $errors = array();
-
 
 	/**
 	 * Check whether there is a Contao installation
@@ -56,7 +49,6 @@ class Validator
 		include __DIR__ . '/../views/validator.phtml';
 	}
 
-
 	/**
 	 * Check whether the constants.php file has been found
 	 *
@@ -66,7 +58,6 @@ class Validator
 	{
 		return $this->constants;
 	}
-
 
 	/**
 	 * Check whether the Contao version is supported
@@ -78,7 +69,6 @@ class Validator
 		return $this->version;
 	}
 
-
 	/**
 	 * Check whether there are missing files
 	 *
@@ -88,7 +78,6 @@ class Validator
 	{
 		return !empty($this->errors['missing']);
 	}
-
 
 	/**
 	 * Return the missing files as array
@@ -100,7 +89,6 @@ class Validator
 		return $this->errors['missing'];
 	}
 
-
 	/**
 	 * Check whether there are corrupt files
 	 *
@@ -110,7 +98,6 @@ class Validator
 	{
 		return !empty($this->errors['corrupt']);
 	}
-
 
 	/**
 	 * Return the corrupt files as array
@@ -122,7 +109,6 @@ class Validator
 		return $this->errors['corrupt'];
 	}
 
-
 	/**
 	 * Check whether there are optional files
 	 *
@@ -132,7 +118,6 @@ class Validator
 	{
 		return !empty($this->errors['optional']);
 	}
-
 
 	/**
 	 * Return the optional files as array
@@ -144,7 +129,6 @@ class Validator
 		return $this->errors['optional'];
 	}
 
-
 	/**
 	 * Check whether the installation is vaild
 	 *
@@ -154,7 +138,6 @@ class Validator
 	{
 		return $this->valid;
 	}
-
 
 	/**
 	 * Find the constants.php file
@@ -178,7 +161,6 @@ class Validator
 		return true;
 	}
 
-
 	/**
 	 * Check whether the Contao version is supported
 	 *
@@ -196,7 +178,6 @@ class Validator
 
 		return true;
 	}
-
 
 	/**
 	 * Validate the installation
@@ -243,7 +224,6 @@ class Validator
 			}
 		}
 	}
-
 
 	/**
 	 * Check if a file is optional

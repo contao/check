@@ -1,13 +1,12 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * Contao check
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2016 Leo Feyer
  *
  * @license LGPL-3.0+
  */
-
 
 /**
  * Check if the PHP process is allowed to create files
@@ -16,49 +15,40 @@
  */
 class FilePermissions
 {
-
 	/**
-	 * Folder owner
 	 * @var string
 	 */
 	protected $folderOwner;
 
 	/**
-	 * Test folder owner
 	 * @var string
 	 */
 	protected $testFolderOwner;
 
 	/**
-	 * Test folder permissions
 	 * @var integer
 	 */
 	protected $testFolderChmod;
 
 	/**
-	 * File owner
 	 * @var string
 	 */
 	protected $fileOwner;
 
 	/**
-	 * Test file owner
 	 * @var string
 	 */
 	protected $testFileOwner;
 
 	/**
-	 * Test file permissions
 	 * @var integer
 	 */
 	protected $testFileChmod;
 
 	/**
-	 * Failure
 	 * @var boolean
 	 */
 	protected $failure = false;
-
 
 	/**
 	 * Execute the command
@@ -67,7 +57,6 @@ class FilePermissions
 	{
 		include __DIR__ . '/../views/file-permissions.phtml';
 	}
-
 
 	/**
 	 * Return true if the PHP process could not create the file
@@ -78,7 +67,6 @@ class FilePermissions
 	{
 		return $this->failure;
 	}
-
 
 	/**
 	 * Check whether the PHP safe_mode is enabled
@@ -108,7 +96,6 @@ class FilePermissions
 		return $this->folderOwner['name'];
 	}
 
-
 	/**
 	 * Return the owner of the "test" folder
 	 *
@@ -119,7 +106,6 @@ class FilePermissions
 		return $this->testFolderOwner['name'];
 	}
 
-
 	/**
 	 * Return the permissions of the "test" folder
 	 *
@@ -129,7 +115,6 @@ class FilePermissions
 	{
 		return $this->testFolderChmod;
 	}
-
 
 	/**
 	 * Check whether PHP is allowed to create folders
@@ -165,7 +150,6 @@ class FilePermissions
 		return false;
 	}
 
-
 	/**
 	 * Return the owner of the "check/safe-mode-hack.php" file
 	 *
@@ -175,7 +159,6 @@ class FilePermissions
 	{
 		return $this->fileOwner['name'];
 	}
-
 
 	/**
 	 * Return the owner of the "test.txt" file
@@ -187,7 +170,6 @@ class FilePermissions
 		return $this->testFileOwner['name'];
 	}
 
-
 	/**
 	 * Return the permissions of the "test.txt" file
 	 *
@@ -197,7 +179,6 @@ class FilePermissions
 	{
 		return $this->testFileChmod;
 	}
-
 
 	/**
 	 * Check whether PHP is allowed to create files

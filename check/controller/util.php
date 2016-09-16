@@ -1,9 +1,9 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * Contao check
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2016 Leo Feyer
  *
  * @license LGPL-3.0+
  */
@@ -13,7 +13,7 @@
  *
  * @param string $func
  *
- * @return bool True if the function is disabled
+ * @return boolean True if the function is disabled
  */
 function function_disabled($func)
 {

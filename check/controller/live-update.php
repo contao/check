@@ -1,13 +1,12 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * Contao check
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2016 Leo Feyer
  *
  * @license LGPL-3.0+
  */
-
 
 /**
  * Check the Live Update requirements
@@ -18,13 +17,10 @@ class LiveUpdate
 {
 	const PHP_VERSION = '5.3.2';
 
-
 	/**
-	 * Availability
 	 * @var boolean
 	 */
 	protected $available = true;
-
 
 	/**
 	 * Execute the command
@@ -33,7 +29,6 @@ class LiveUpdate
 	{
 		include __DIR__ . '/../views/live-update.phtml';
 	}
-
 
 	/**
 	 * Return the availability of the Live Update
@@ -44,7 +39,6 @@ class LiveUpdate
 	{
 		return $this->available;
 	}
-
 
 	/**
 	 * Check whether the PHP version meets the requirements
@@ -62,7 +56,6 @@ class LiveUpdate
 		return false;
 	}
 
-
 	/**
 	 * Check whether the PHP Phar extension is available
 	 *
@@ -79,7 +72,6 @@ class LiveUpdate
 		return false;
 	}
 
-
 	/**
 	 * Check whether the PHP OpenSSL extension is available
 	 *
@@ -95,7 +87,6 @@ class LiveUpdate
 
 		return false;
 	}
-
 
 	/**
 	 * Check whether the ionCube Loader is enabled
@@ -117,7 +108,6 @@ class LiveUpdate
 
 		return true;
 	}
-
 
 	/**
 	 * Check whether the PHP Suhosin extension is enabled
@@ -143,7 +133,6 @@ class LiveUpdate
 
 		return true;
 	}
-
 
 	/**
 	 * Check whether detect_unicode is enabled
@@ -180,7 +169,6 @@ class LiveUpdate
 		return true;
 	}
 
-
 	/**
 	 * Check whether PHP is run as FastCGI with the eAccelerator
 	 *
@@ -199,7 +187,6 @@ class LiveUpdate
 
 		return true;
 	}
-
 
 	/**
 	 * Check whether a connection can be established
