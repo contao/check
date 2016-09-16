@@ -8,6 +8,7 @@
  * @license LGPL-3.0+
  */
 
+require_once __DIR__ . '/util.php';
 
 /**
  * Initialize the Contao Check
@@ -157,20 +158,6 @@ class Bootstrap
 		bindtextdomain('messages', dirname(dirname(__FILE__)) . '/locale');
 		textdomain('messages');
 		bind_textdomain_codeset('messages', 'UTF-8');
-	}
-}
-
-// Add the gettext function
-if (!extension_loaded('gettext')) {
-	function _($str) {
-		return $str;
-	}
-}
-
-// Add the posix_getpwuid function
-if (!function_exists('posix_getpwuid') && !in_array('posix_getpwuid', explode(',', ini_get('disable_functions')))) {
-	function posix_getpwuid($int) {
-		return array('name'=>$int);
 	}
 }
 

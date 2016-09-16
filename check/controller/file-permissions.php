@@ -98,24 +98,6 @@ class FilePermissions
 		return true;
 	}
 
-
-	/**
-	 * Check whether the user posix_getpwuid() function is not disabled
-	 *
-	 * @return boolean True if the posix_getpwuid() function is not disabled
-	 */
-	public function canGetUserInfo()
-	{
-		if (!in_array('posix_getpwuid', explode(',', ini_get('disable_functions')))) {
-			return true;
-		}
-
-		$this->failure = true;
-
-		return false;
-	}
-
-
 	/**
 	 * Return the owner of the "check" folder
 	 *

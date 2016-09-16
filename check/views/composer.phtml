@@ -67,16 +67,16 @@
   </div>
   <div class="row">
     <h3><?php echo _('File permissions') ?></h3>
-    <?php if ($this->canGetUserInfo()): ?>
+    <?php if (function_disabled('posix_getpwuid')): ?>
+      <p class="error"><?php echo _('The "posix_getpwuid" function is not available.') ?></p>
+      <p class="explain"><?php echo _('File permissions cannot be tested, because the <code>posix_getpwuid</code> function has been disabled. Please contact your server administrator.') ?></p>
+    <?php else: ?>
       <?php if ($this->canCreateFiles()): ?>
         <p class="confirm"><?php echo _('The PHP process is allowed to create files.') ?></p>
       <?php else: ?>
         <p class="error"><?php echo _('The PHP process is not allowed to create files.') ?></p>
         <p class="explain"><?php echo _('The PHP process is not allowed to create or manipulate files. Please adjust your server configuration accordingly.') ?></p>
       <?php endif; ?>
-    <?php else: ?>
-      <p class="error"><?php echo _('The <code>posix_getpwuid</code> function is disabled.') ?></p>
-      <p class="explain"><?php echo _('File and folder ownership cannot be tested because the function is disabled in the PHP setting <code>disable_functions</code>. Please contact your server administrator.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">

@@ -20,11 +20,11 @@
       <p class="explain"><?php echo _('It is recommended to disable the safe_mode in your php.ini or server control panel, otherwise the PHP process it not allowed to create or manipulate files and Contao cannot work properly.') ?></p>
     <?php endif; ?>
   </div>
-  <?php if (!$this->canGetUserInfo()): ?>
+  <?php if (function_disabled('posix_getpwuid')): ?>
     <div class="row">
-      <h3><?php echo _('Cannot get user info') ?></h3>
-      <p class="error"><?php echo _('The <code>posix_getpwuid</code> function is disabled.') ?></p>
-      <p class="explain"><?php echo _('File and folder ownership cannot be tested because the function is disabled in the PHP setting <code>disable_functions</code>. Please contact your server administrator.') ?></p>
+      <h3><?php echo _('File permissions') ?></h3>
+      <p class="error"><?php echo _('The "posix_getpwuid" function is not available.') ?></p>
+      <p class="explain"><?php echo _('File permissions cannot be tested, because the <code>posix_getpwuid</code> function has been disabled. Please contact your server administrator.') ?></p>
     </div>
   <?php else: ?>
     <div class="row">
@@ -52,7 +52,7 @@
       <?php endif; ?>
     </div>
   <?php endif; ?>
-  <?php if ($this->canGetUserInfo()): ?>
+  <?php if (!function_disabled('posix_getpwuid')): ?>
     <div class="row">
       <?php if (!$this->failed()): ?>
         <p class="confirm large"><?php echo _('The PHP process is allowed to create files on this server.') ?></p>
