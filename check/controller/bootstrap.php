@@ -1,13 +1,14 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * Contao check
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2016 Leo Feyer
  *
  * @license LGPL-3.0+
  */
 
+require_once __DIR__ . '/util.php';
 
 /**
  * Initialize the Contao Check
@@ -16,7 +17,6 @@
  */
 class Bootstrap
 {
-
 	/**
 	 * Start the session and set the locale
 	 */
@@ -26,13 +26,12 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '10.20');
-		define('CURRENT_VERSION', '4.2.2');
+		define('CONTAO_CHECK_VERSION', '11.00');
+		define('CURRENT_VERSION', '4.2.3');
 		define('CURRENT_LTS_VERSION', '3.5.16');
 
 		$this->setLocale($this->getLanguage());
 	}
-
 
 	/**
 	 * Determine the user language and return the locale
@@ -87,7 +86,6 @@ class Bootstrap
 		return $locale;
 	}
 
-
 	/**
 	 * Validate a locale
 	 *
@@ -99,7 +97,6 @@ class Bootstrap
 	{
 		return preg_match('/^[a-z]{2}(_[A-Z]{2})?$/', $locale);
 	}
-
 
 	/**
 	 * Return the first eight accepted languages as an array
@@ -134,7 +131,6 @@ class Bootstrap
 		return array_slice(array_unique($return), 0, 8);
 	}
 
-
 	/**
 	 * Set a locale and initialize the PHP gettext extension
 	 *
@@ -157,20 +153,6 @@ class Bootstrap
 		bindtextdomain('messages', dirname(dirname(__FILE__)) . '/locale');
 		textdomain('messages');
 		bind_textdomain_codeset('messages', 'UTF-8');
-	}
-}
-
-// Add the gettext function
-if (!extension_loaded('gettext')) {
-	function _($str) {
-		return $str;
-	}
-}
-
-// Add the posix_getpwuid function
-if (!function_exists('posix_getpwuid')) {
-	function posix_getpwuid($int) {
-		return array('name'=>$int);
 	}
 }
 

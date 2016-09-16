@@ -1,7 +1,7 @@
-# Contao Open Source CMS
-# 
+# Contao check
+#
 # Copyright (c) 2005-2015 Leo Feyer
-# 
+#
 # @license LGPL-3.0+
 # Translators:
 # Dmitri Kuznetsov, 2014-2015
@@ -10,12 +10,12 @@
 # Leo Feyer, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: Check\n"
+"Project-Id-Version: check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
 "PO-Revision-Date: 2015-05-15 10:12+0000\n"
 "Last-Translator: Dmitri Kuznetsov\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/contao-check/language/ru/)\n"
+"Language-Team: Russian (http://www.transifex.com/contao/contao-check/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -136,69 +136,79 @@ msgid ""
 msgstr "Чтобы загрузить файлы установки менеджера пакетов Composer необходимо активировать флаг \"allow_url_fopen\" в php.ini."
 
 #: check/views/composer.phtml:69 check/views/file-permissions.phtml:12
-#: check/views/index.phtml:35
+#: check/views/file-permissions.phtml:25 check/views/index.phtml:35
 msgid "File permissions"
 msgstr "Разрешения файла"
 
-#: check/views/composer.phtml:71 check/views/index.phtml:38
+#: check/views/composer.phtml:71 check/views/file-permissions.phtml:26
+msgid "The \"posix_getpwuid\" function is not available."
+msgstr ""
+
+#: check/views/composer.phtml:72 check/views/file-permissions.phtml:27
+msgid ""
+"File permissions cannot be tested, because the <code>posix_getpwuid</code> "
+"function has been disabled. Please contact your server administrator."
+msgstr ""
+
+#: check/views/composer.phtml:75 check/views/index.phtml:41
 msgid "The PHP process is allowed to create files."
 msgstr "PHP процесс может создавать файлы."
 
-#: check/views/composer.phtml:73 check/views/index.phtml:40
+#: check/views/composer.phtml:77 check/views/index.phtml:43
 msgid "The PHP process is not allowed to create files."
 msgstr "PHP процесс не может создавать файлы."
 
-#: check/views/composer.phtml:74
+#: check/views/composer.phtml:78
 msgid ""
 "The PHP process is not allowed to create or manipulate files. Please adjust "
 "your server configuration accordingly."
 msgstr "Процессу PHP не разрешено создание или управление файлами. Настройте конфигурацию сервера соответствующим образом."
 
-#: check/views/composer.phtml:78
+#: check/views/composer.phtml:83
 msgid "shell_exec (optional)"
 msgstr "shell_exec (дополнительно)"
 
-#: check/views/composer.phtml:80
+#: check/views/composer.phtml:85
 msgid "The PHP function \"shell_exec\" is available."
 msgstr "PHP функция \"shell_exec\" доступна."
 
-#: check/views/composer.phtml:82
+#: check/views/composer.phtml:87
 msgid "The PHP function \"shell_exec\" is not available."
 msgstr "PHP функция \"shell_exec\" не доступна."
 
-#: check/views/composer.phtml:83
+#: check/views/composer.phtml:88
 msgid ""
 "The \"shell_exec\" function is optionally required to run the Composer "
 "process in the background."
 msgstr "Функция \"shell_exec\" необходима, но необязательна, для запуска процесса менеджера пакетов Composer в фоновом режиме."
 
-#: check/views/composer.phtml:87
+#: check/views/composer.phtml:92
 msgid "proc_open (optional)"
 msgstr "proc_open (дополнительно)"
 
-#: check/views/composer.phtml:89
+#: check/views/composer.phtml:94
 msgid "The PHP function \"proc_open\" is available."
 msgstr "PHP функция \"proc_open\" доступна."
 
-#: check/views/composer.phtml:91
+#: check/views/composer.phtml:96
 msgid "The PHP function \"proc_open\" is not available."
 msgstr "PHP функция \"proc_open\" не доступна."
 
-#: check/views/composer.phtml:92
+#: check/views/composer.phtml:97
 msgid ""
 "The \"proc_open\" function is optionally required to run the package manager"
 " in dev mode."
 msgstr "Функция \"proc_open\" необходима, но необязательна, для запуска менеджера пакетов Composer в режиме разработчика."
 
-#: check/views/composer.phtml:97
+#: check/views/composer.phtml:102
 msgid "You can use the Composer package manager on this server."
 msgstr "Вы можете использовать менеджер пакетов Composer на этом сервере."
 
-#: check/views/composer.phtml:99
+#: check/views/composer.phtml:104
 msgid "You cannot use the Composer package manager on this server."
 msgstr "Вы не можете использовать менеджер пакетов Composer на этом сервере."
 
-#: check/views/composer.phtml:102 check/views/file-permissions.phtml:54
+#: check/views/composer.phtml:107 check/views/file-permissions.phtml:64
 #: check/views/installer.phtml:62 check/views/live-update.phtml:93
 #: check/views/repository.phtml:48 check/views/validator.phtml:69
 msgid "Go back"
@@ -223,79 +233,79 @@ msgid ""
 "files and Contao cannot work properly."
 msgstr "Рекомендуется отключить safe_mode в php.ini или в панели управления сервером, в противном случае, т.к. процессу PHP не разрешено создание или управление файлами, Contao не сможет работать как положено."
 
-#: check/views/file-permissions.phtml:24
+#: check/views/file-permissions.phtml:31
 msgid "Creating a test folder"
 msgstr "Создание тестового каталога"
 
-#: check/views/file-permissions.phtml:26
+#: check/views/file-permissions.phtml:33
 #, php-format
 msgid "The test folder could be created (owner: %s, chmod: %s)."
 msgstr "Тестовый каталог может быть создан (владелец: %s, chmod: %s)."
 
-#: check/views/file-permissions.phtml:28
+#: check/views/file-permissions.phtml:35
 msgid "The test folder could not be created."
 msgstr "Не удалось создать тестовый каталог."
 
-#: check/views/file-permissions.phtml:29
+#: check/views/file-permissions.phtml:36
 msgid ""
 "It seems that the PHP process does not have enough permissions to create "
 "folders on your server."
 msgstr "Вероятно, PHP процесс не имеет необходимые разрешения для создания каталогов на сервере."
 
-#: check/views/file-permissions.phtml:31
+#: check/views/file-permissions.phtml:38
 msgid "The test folder does not have the correct owner or chmod settings."
 msgstr "У тестового каталога нет корректного владельца или параметров chmod."
 
-#: check/views/file-permissions.phtml:32
+#: check/views/file-permissions.phtml:39
 #, php-format
 msgid ""
 "The test folder is owned by %s (should be %s) and has the chmod settings %s "
 "(should be %s)."
 msgstr "Тестовый каталог принадлежит %s, (а должен %s) и имеет параметры chmod %s, (а должен %s)."
 
-#: check/views/file-permissions.phtml:32
+#: check/views/file-permissions.phtml:39
 msgid "775, 755, 770, 750 or 705"
 msgstr "775, 755, 770, 750 или 705"
 
-#: check/views/file-permissions.phtml:36
+#: check/views/file-permissions.phtml:43
 msgid "Creating a test file"
 msgstr "Создание тестового файла"
 
-#: check/views/file-permissions.phtml:38
+#: check/views/file-permissions.phtml:45
 #, php-format
 msgid "The test file could be created (owner: %s, chmod: %s)."
 msgstr "Тестовый файл может быть создан (владелец: %s, chmod: %s)."
 
-#: check/views/file-permissions.phtml:40
+#: check/views/file-permissions.phtml:47
 msgid "The test file could not be created."
 msgstr "Не удалось создать тестовый файл."
 
-#: check/views/file-permissions.phtml:41
+#: check/views/file-permissions.phtml:48
 msgid ""
 "It seems that the PHP process does not have enough permissions to create "
 "files on your server."
 msgstr "Вероятно, PHP процесс не имеет необходимые разрешения для создания файлов на сервере."
 
-#: check/views/file-permissions.phtml:43
+#: check/views/file-permissions.phtml:50
 msgid "The test file does not have the correct owner or chmod settings."
 msgstr "У тестового файла нет корректного владельца или параметров chmod."
 
-#: check/views/file-permissions.phtml:44
+#: check/views/file-permissions.phtml:51
 #, php-format
 msgid ""
 "The test file is owned by %s (should be %s) and has the chmod settings %s "
 "(should be %s)."
 msgstr "Тестовый файл принадлежит %s, (а должен %s) и имеет параметры chmod %s, (а должен %s)."
 
-#: check/views/file-permissions.phtml:44
+#: check/views/file-permissions.phtml:51
 msgid "664, 644, 660, 640 or 604"
 msgstr "664, 644, 660, 640 или 604"
 
-#: check/views/file-permissions.phtml:49
+#: check/views/file-permissions.phtml:58
 msgid "The PHP process is allowed to create files on this server."
 msgstr "PHP процесс может создавать файлы на этом сервере."
 
-#: check/views/file-permissions.phtml:51
+#: check/views/file-permissions.phtml:60
 msgid "The PHP process is not allowed to create files on this server."
 msgstr "PHP процесс не может создавать файлы на этом сервере."
 
@@ -330,46 +340,55 @@ msgstr "Вы можете установить Contao 4.x"
 msgid "You cannot install Contao 4.x (requires PHP %s+)"
 msgstr "Вы не можете установить Contao 4.x (требуется PHP %s+)"
 
-#: check/views/index.phtml:38 check/views/index.phtml:40
-#: check/views/index.phtml:48 check/views/index.phtml:50
-#: check/views/index.phtml:53 check/views/index.phtml:55
-#: check/views/index.phtml:58 check/views/index.phtml:60
+#: check/views/index.phtml:38
+msgid "The file permissions cannot be checked."
+msgstr ""
+
+#: check/views/index.phtml:38 check/views/index.phtml:41
+#: check/views/index.phtml:43 check/views/index.phtml:52
+#: check/views/index.phtml:54 check/views/index.phtml:57
+#: check/views/index.phtml:60 check/views/index.phtml:62
+#: check/views/index.phtml:66 check/views/index.phtml:68
 msgid "More information …"
 msgstr "Подробнее..."
 
-#: check/views/index.phtml:45
+#: check/views/index.phtml:49
 msgid "Additional services"
 msgstr "Дополнительные сервисы"
 
-#: check/views/index.phtml:48
+#: check/views/index.phtml:52
 msgid "You can use the Live Update."
 msgstr "Вы можете использовать онлайн обновление."
 
-#: check/views/index.phtml:50
+#: check/views/index.phtml:54
 msgid "You cannot use the Live Update."
 msgstr "Вы не можете использовать онлайн обновление."
 
-#: check/views/index.phtml:53
+#: check/views/index.phtml:57
+msgid "The Composer package manager requirements cannot be checked."
+msgstr ""
+
+#: check/views/index.phtml:60
 msgid "You can use the Composer package manager."
 msgstr "Вы можете использовать менеджер пакетов Composer."
 
-#: check/views/index.phtml:55
+#: check/views/index.phtml:62
 msgid "You cannot use the Composer package manager."
 msgstr "Вы не можете использовать менеджер пакетов Composer."
 
-#: check/views/index.phtml:58
+#: check/views/index.phtml:66
 msgid "You can use the Extension Repository."
 msgstr "Вы можете использовать хранилище расширений."
 
-#: check/views/index.phtml:60
+#: check/views/index.phtml:68
 msgid "You cannot use the Extension Repository."
 msgstr "Вы не можете использовать хранилище расширений."
 
-#: check/views/index.phtml:65
+#: check/views/index.phtml:73
 msgid "Install Contao"
 msgstr "Установка Contao"
 
-#: check/views/index.phtml:65
+#: check/views/index.phtml:73
 msgid "Validate an existing installation"
 msgstr "Проверка существующей инсталляции"
 

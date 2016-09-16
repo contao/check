@@ -1,13 +1,12 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * Contao check
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2016 Leo Feyer
  *
  * @license LGPL-3.0+
  */
-
 
 /**
  * Download a Contao .zip archive and extract it
@@ -16,31 +15,25 @@
  */
 class Installer
 {
-
 	/**
-	 * Installer availability
 	 * @var boolean
 	 */
 	protected $available = true;
 
 	/**
-	 * FTP required
 	 * @var boolean
 	 */
 	protected $ftp = false;
 
 	/**
-	 * Existing installation
 	 * @var boolean
 	 */
 	protected $existing = null;
 
 	/**
-	 * Error message
 	 * @var string
 	 */
 	protected $message = '';
-
 
 	/**
 	 * Execute the command
@@ -59,7 +52,6 @@ class Installer
 
 		include __DIR__ . '/../views/installer.phtml';
 	}
-
 
 	/**
 	 * Make sure there is no existing installation
@@ -106,7 +98,6 @@ class Installer
 		return true;
 	}
 
-
 	/**
 	 * Check whether a connection can be established
 	 */
@@ -122,7 +113,6 @@ class Installer
 
 		return false;
 	}
-
 
 	/**
 	 * Check whether PHP can be used to install Contao
@@ -145,7 +135,6 @@ class Installer
 
 		return true;
 	}
-
 
 	/**
 	 * Retrieve information using cURL
@@ -245,7 +234,6 @@ class Installer
 		return $return;
 	}
 
-
 	/**
 	 * Check whether the automatic installation is possible
 	 *
@@ -256,7 +244,6 @@ class Installer
 		return $this->available;
 	}
 
-
 	/**
 	 * Check whether FTP is required to install Contao
 	 *
@@ -266,7 +253,6 @@ class Installer
 	{
 		return $this->ftp;
 	}
-
 
 	/**
 	 * Check whether there is an existing installation already
@@ -287,7 +273,6 @@ class Installer
 
 		return $this->existing;
 	}
-
 
 	/**
 	 * Return the available version numbers
@@ -311,7 +296,6 @@ class Installer
 
 		return $versions;
 	}
-
 
 	/**
 	 * Start the installation

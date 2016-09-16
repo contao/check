@@ -1,13 +1,12 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * Contao check
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2016 Leo Feyer
  *
  * @license LGPL-3.0+
  */
-
 
 /**
  * Check the Extension Repository requirements
@@ -16,6 +15,10 @@
  */
 class Repository
 {
+	/**
+	 * @var boolean
+	 */
+	protected $available = true;
 
 	/**
 	 * Execute the command
@@ -24,14 +27,6 @@ class Repository
 	{
 		include __DIR__ . '/../views/repository.phtml';
 	}
-
-
-	/**
-	 * Availability
-	 * @var boolean
-	 */
-	protected $available = true;
-
 
 	/**
 	 * Return the availability of the Extension Repository
@@ -42,7 +37,6 @@ class Repository
 	{
 		return $this->available;
 	}
-
 
 	/**
 	 * Check whether the PHP SOAP extension is available
@@ -60,7 +54,6 @@ class Repository
 		return false;
 	}
 
-
 	/**
 	 * Check whether the PHP OpenSSL extension is available
 	 *
@@ -76,7 +69,6 @@ class Repository
 
 		return false;
 	}
-
 
 	/**
 	 * Check whether a connection can be established
