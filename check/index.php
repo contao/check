@@ -43,6 +43,7 @@ class Router
 
 		include $file;
 
+		header('Content-Type: text/html; charset=utf-8');
 		$controller = new $class();
 		$controller->run();
 	}
