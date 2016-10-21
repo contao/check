@@ -43,7 +43,9 @@ class Router
 
 		include $file;
 
+		// Send the correct content type (see #106)
 		header('Content-Type: text/html; charset=utf-8');
+
 		$controller = new $class();
 		$controller->run();
 	}
