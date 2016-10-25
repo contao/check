@@ -1,7 +1,7 @@
 # Contao check
-#
+# 
 # Copyright (c) 2005-2015 Leo Feyer
-#
+# 
 # @license LGPL-3.0+
 # Translators:
 # Cyril Ponce, 2012
@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2016-09-16 18:11+0000\n"
+"PO-Revision-Date: 2016-09-16 18:23+0000\n"
 "Last-Translator: Lionel Maccaud\n"
 "Language-Team: French (http://www.transifex.com/contao/contao-check/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -401,7 +401,7 @@ msgstr "Installation"
 
 #: check/views/installer.phtml:15
 msgid "Web installer"
-msgstr "Instalateur Web"
+msgstr "Installateur Web"
 
 #: check/views/installer.phtml:17
 #, php-format
@@ -459,7 +459,7 @@ msgstr "Démarrer l'installation"
 
 #: check/views/installer.phtml:52
 msgid "Installation failed"
-msgstr "L'installation a échoué"
+msgstr "L'installation a échouée"
 
 #: check/views/installer.phtml:55
 msgid "Installation complete"
@@ -511,7 +511,7 @@ msgstr "Le chargeur ionCube n'est pas activé ou tout au moins la version 4.0.9.
 #: check/views/live-update.phtml:46
 msgid ""
 "An old version of the ionCube Loader prior to version 4.0.9 is installed."
-msgstr "Une ancienne version du chargeur de ionCube antérieures à la version 4.0.9 est installée."
+msgstr "Une ancienne version de ionCube Loader antérieure à la version 4.0.9 est installée."
 
 #: check/views/live-update.phtml:47
 #, php-format
@@ -519,7 +519,7 @@ msgid ""
 "Before version 4.0.9, the ionCube Loader was incompatible with Phar "
 "archives. Either upgrade to the latest version or disable the module. More "
 "information is available here: %s"
-msgstr "Avant la version 4.0.9, le chargeur ionCube était incompatible avec les archives Phar. Mettez le à niveau vers la dernière version ou désactivez le module. Plus d'informations sont disponibles ici : %s"
+msgstr "Avant la version 4.0.9, ionCube Loader était incompatible avec les archives Phar. Mettez-le à niveau vers la dernière version ou désactivez le module. Plus d'informations sont disponibles ici : %s"
 
 #: check/views/live-update.phtml:60
 msgid "Detect Unicode"

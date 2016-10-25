@@ -1,10 +1,10 @@
 # Contao check
-#
+# 
 # Copyright (c) 2005-2015 Leo Feyer
-#
+# 
 # @license LGPL-3.0+
 # Translators:
-# Dmitri Kuznetsov, 2014-2015
+# Dmitri Kuznetsov, 2014-2016
 # Dmitri Kuznetsov, 2013-2014
 # Dmitri Kuznetsov, 2012
 # Leo Feyer, 2013
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-05-15 10:12+0000\n"
+"PO-Revision-Date: 2016-09-16 19:23+0000\n"
 "Last-Translator: Dmitri Kuznetsov\n"
 "Language-Team: Russian (http://www.transifex.com/contao/contao-check/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -142,13 +142,13 @@ msgstr "Разрешения файла"
 
 #: check/views/composer.phtml:71 check/views/file-permissions.phtml:26
 msgid "The \"posix_getpwuid\" function is not available."
-msgstr ""
+msgstr "Функция \"posix_getpwuid\" не доступна."
 
 #: check/views/composer.phtml:72 check/views/file-permissions.phtml:27
 msgid ""
 "File permissions cannot be tested, because the <code>posix_getpwuid</code> "
 "function has been disabled. Please contact your server administrator."
-msgstr ""
+msgstr "Права доступа к файлам невозможно проверить, поскольку функция <code>posix_getpwuid</code> отключена. Обратитесь к администратору сервера."
 
 #: check/views/composer.phtml:75 check/views/index.phtml:41
 msgid "The PHP process is allowed to create files."
@@ -342,7 +342,7 @@ msgstr "Вы не можете установить Contao 4.x (требуетс
 
 #: check/views/index.phtml:38
 msgid "The file permissions cannot be checked."
-msgstr ""
+msgstr "Права доступа к файлам не могут быть проверены."
 
 #: check/views/index.phtml:38 check/views/index.phtml:41
 #: check/views/index.phtml:43 check/views/index.phtml:52
@@ -366,7 +366,7 @@ msgstr "Вы не можете использовать онлайн обнов�
 
 #: check/views/index.phtml:57
 msgid "The Composer package manager requirements cannot be checked."
-msgstr ""
+msgstr "Требования менеджера пакетов Composer не могут быть проверены."
 
 #: check/views/index.phtml:60
 msgid "You can use the Composer package manager."

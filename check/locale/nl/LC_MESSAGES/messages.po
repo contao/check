@@ -1,17 +1,17 @@
 # Contao check
-#
+# 
 # Copyright (c) 2005-2015 Leo Feyer
-#
+# 
 # @license LGPL-3.0+
 # Translators:
 # Leo Feyer, 2013
-# P.Hamers, 2013-2015
+# P.Hamers, 2013-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: check\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-05 12:47+0100\n"
-"PO-Revision-Date: 2015-05-15 10:12+0000\n"
+"PO-Revision-Date: 2016-09-19 13:55+0000\n"
 "Last-Translator: P.Hamers\n"
 "Language-Team: Dutch (http://www.transifex.com/contao/contao-check/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -140,13 +140,13 @@ msgstr "Bestand permissies"
 
 #: check/views/composer.phtml:71 check/views/file-permissions.phtml:26
 msgid "The \"posix_getpwuid\" function is not available."
-msgstr ""
+msgstr "De \"posix_getpwuid\" functie is niet beschikbaar."
 
 #: check/views/composer.phtml:72 check/views/file-permissions.phtml:27
 msgid ""
 "File permissions cannot be tested, because the <code>posix_getpwuid</code> "
 "function has been disabled. Please contact your server administrator."
-msgstr ""
+msgstr "Bestandsrechten kunnen niet worden getest, omdat de <code>posix_getpwuid</ code> functie is uitgeschakeld. Neem contact op met uw serverbeheerder."
 
 #: check/views/composer.phtml:75 check/views/index.phtml:41
 msgid "The PHP process is allowed to create files."
@@ -340,7 +340,7 @@ msgstr "U kunt Contao 4.x  niet installeren (vereist PHP %s+)"
 
 #: check/views/index.phtml:38
 msgid "The file permissions cannot be checked."
-msgstr ""
+msgstr "Bestandsrechten kunnen niet worden gecontroleerd."
 
 #: check/views/index.phtml:38 check/views/index.phtml:41
 #: check/views/index.phtml:43 check/views/index.phtml:52
@@ -364,7 +364,7 @@ msgstr "U kunt geen gebruik maken van Live Update."
 
 #: check/views/index.phtml:57
 msgid "The Composer package manager requirements cannot be checked."
-msgstr ""
+msgstr "Vereisten voor Composer pakketbeheer kunnen niet worden gecontroleerd. "
 
 #: check/views/index.phtml:60
 msgid "You can use the Composer package manager."

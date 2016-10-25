@@ -26,9 +26,9 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '11.1');
-		define('CURRENT_VERSION', '4.2.3');
-		define('CURRENT_LTS_VERSION', '3.5.17');
+		define('CONTAO_CHECK_VERSION', '11.2');
+		define('CURRENT_VERSION', '4.2.4');
+		define('CURRENT_LTS_VERSION', '3.5.18');
 
 		$this->setLocale($this->getLanguage());
 	}
