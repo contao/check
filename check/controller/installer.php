@@ -103,7 +103,7 @@ class Installer
 	 */
 	public function canConnect()
 	{
-		$connection = fsockopen('download.contao.org', 80, $errno, $errstr, 10);
+		$connection = @fsockopen('download.contao.org', 80, $errno, $errstr, 10);
 		$connected = ($connection !== false);
 		fclose($connection);
 
