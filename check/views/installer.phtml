@@ -38,11 +38,7 @@
         <form method="post">
           <div class="versions">
             <select name="version" class="select">
-            <?php
-              foreach ($this->getVersions() as $version=>$label) {
-                echo '<option value="' . $version . '">' . $label . '</option>';
-              }
-            ?>
+              <option value="<?php echo CURRENT_LTS_VERSION; ?>"><?php echo CURRENT_LTS_VERSION; ?> (LTS)</option>
             </select>
           </div>
           <p class="mt"><input class="button orange" type="submit" value="<?php echo __('Start the installation') ?>"></p>
