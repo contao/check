@@ -46,8 +46,8 @@ class Translator
 	 */
 	public static function translate($str)
 	{
-		if (isset($labels[$str])) {
-			return $labels[$str];
+		if (isset(self::$labels[$str])) {
+			return self::$labels[$str];
 		}
 
 		return $str;

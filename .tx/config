@@ -2,7 +2,7 @@
 host = https://www.transifex.com
 type = PHP_ARRAY
 
-[contao-live-update.client]
+[contao-check.i18n]
 source_file = check/i18n/en.php
 source_lang = en
 file_filter = check/i18n/<lang>.php
