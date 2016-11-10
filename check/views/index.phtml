@@ -9,68 +9,68 @@
 <div id="wrapper">
   <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
   <div class="row">
-    <h2><?php echo _('Overview') ?></h2>
+    <h2><?php echo __('Overview') ?></h2>
   </div>
   <div class="row">
     <h3>PHP <?php echo phpversion() ?></h3>
     <ul>
       <?php if ($this->supportsContao2()): ?>
-        <li class="confirm"><?php echo _('You can install Contao 2.x') ?></li>
+        <li class="confirm"><?php echo __('You can install Contao 2.x') ?></li>
       <?php else: ?>
-        <li class="error"><?php printf(_('You cannot install Contao 2.x (requires PHP %s+)'), static::CONTAO2_VERSION) ?></li>
+        <li class="error"><?php printf(__('You cannot install Contao 2.x (requires PHP %s+)'), static::CONTAO2_VERSION) ?></li>
       <?php endif; ?>
       <?php if ($this->supportsContao3()): ?>
-        <li class="confirm"><?php echo _('You can install Contao 3.x') ?></li>
+        <li class="confirm"><?php echo __('You can install Contao 3.x') ?></li>
       <?php else: ?>
-        <li class="error"><?php printf(_('You cannot install Contao 3.x (requires PHP %s+)'), static::CONTAO3_VERSION) ?></li>
+        <li class="error"><?php printf(__('You cannot install Contao 3.x (requires PHP %s+)'), static::CONTAO3_VERSION) ?></li>
       <?php endif; ?>
       <?php if ($this->supportsContao4()): ?>
-        <li class="confirm"><?php echo _('You can install Contao 4.x') ?></li>
+        <li class="confirm"><?php echo __('You can install Contao 4.x') ?></li>
       <?php else: ?>
-        <li class="error"><?php printf(_('You cannot install Contao 4.x (requires PHP %s+)'), static::CONTAO4_VERSION) ?></li>
+        <li class="error"><?php printf(__('You cannot install Contao 4.x (requires PHP %s+)'), static::CONTAO4_VERSION) ?></li>
       <?php endif; ?>
     </ul>
   </div>
   <div class="row">
-    <h3><?php echo _('File permissions') ?></h3>
+    <h3><?php echo __('File permissions') ?></h3>
     <ul>
       <?php if (function_disabled('posix_getpwuid')): ?>
-        <li class="error"><?php echo _('The file permissions cannot be checked.') ?> <a href="./?c=file-permissions"><?php echo _('More information …') ?></a></li>
+        <li class="error"><?php echo __('The file permissions cannot be checked.') ?> <a href="./?c=file-permissions"><?php echo __('More information …') ?></a></li>
       <?php else: ?>
         <?php if (!$this->canCreateFiles()): ?>
-          <li class="confirm"><?php echo _('The PHP process is allowed to create files.') ?> <a href="./?c=file-permissions"><?php echo _('More information …') ?></a></li>
+          <li class="confirm"><?php echo __('The PHP process is allowed to create files.') ?> <a href="./?c=file-permissions"><?php echo __('More information …') ?></a></li>
         <?php else: ?>
-          <li class="error"><?php echo _('The PHP process is not allowed to create files.') ?> <a href="./?c=file-permissions"><?php echo _('More information …') ?></a></li>
+          <li class="error"><?php echo __('The PHP process is not allowed to create files.') ?> <a href="./?c=file-permissions"><?php echo __('More information …') ?></a></li>
         <?php endif; ?>
       <?php endif; ?>
     </ul>
   </div>
   <div class="row">
-    <h3><?php echo _('Additional services') ?></h3>
+    <h3><?php echo __('Additional services') ?></h3>
     <ul>
       <?php if ($this->canUseLiveUpdate()): ?>
-        <li class="confirm"><?php echo _('You can use the Live Update.') ?> <a href="./?c=live-update"><?php echo _('More information …') ?></a></li>
+        <li class="confirm"><?php echo __('You can use the Live Update.') ?> <a href="./?c=live-update"><?php echo __('More information …') ?></a></li>
       <?php else: ?>
-        <li class="error"><?php echo _('You cannot use the Live Update.') ?> <a href="./?c=live-update"><?php echo _('More information …') ?></a></li>
+        <li class="error"><?php echo __('You cannot use the Live Update.') ?> <a href="./?c=live-update"><?php echo __('More information …') ?></a></li>
       <?php endif; ?>
       <?php if (function_disabled('posix_getpwuid')): ?>
-        <li class="error"><?php echo _('The Composer package manager requirements cannot be checked.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
+        <li class="error"><?php echo __('The Composer package manager requirements cannot be checked.') ?> <a href="./?c=composer"><?php echo __('More information …') ?></a></li>
       <?php else: ?>
         <?php if ($this->canUseComposer()): ?>
-          <li class="confirm"><?php echo _('You can use the Composer package manager.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
+          <li class="confirm"><?php echo __('You can use the Composer package manager.') ?> <a href="./?c=composer"><?php echo __('More information …') ?></a></li>
         <?php else: ?>
-          <li class="error"><?php echo _('You cannot use the Composer package manager.') ?> <a href="./?c=composer"><?php echo _('More information …') ?></a></li>
+          <li class="error"><?php echo __('You cannot use the Composer package manager.') ?> <a href="./?c=composer"><?php echo __('More information …') ?></a></li>
         <?php endif; ?>
       <?php endif; ?>
       <?php if ($this->canUseRepository()): ?>
-        <li class="confirm"><?php echo _('You can use the Extension Repository.') ?> <a href="./?c=repository"><?php echo _('More information …') ?></a></li>
+        <li class="confirm"><?php echo __('You can use the Extension Repository.') ?> <a href="./?c=repository"><?php echo __('More information …') ?></a></li>
       <?php else: ?>
-        <li class="error"><?php echo _('You cannot use the Extension Repository.') ?> <a href="./?c=repository"><?php echo _('More information …') ?></a></li>
+        <li class="error"><?php echo __('You cannot use the Extension Repository.') ?> <a href="./?c=repository"><?php echo __('More information …') ?></a></li>
       <?php endif; ?>
     </ul>
   </div>
   <div class="row">
-    <p class="mt"><a href="./?c=installer" class="button orange"><?php echo _('Install Contao') ?></a> <a href="./?c=validator" class="button"><?php echo _('Validate an existing installation') ?></a></p>
+    <p class="mt"><a href="./?c=installer" class="button orange"><?php echo __('Install Contao') ?></a> <a href="./?c=validator" class="button"><?php echo __('Validate an existing installation') ?></a></p>
   </div>
 </div>
 </body>

@@ -1,3 +1,0 @@
-#!/bin/bash
-
-find . -name "*.phtml" | xargs xgettext --language=PHP --from-code=UTF-8 --keyword=__:1,2 --output=check/locale/en/LC_MESSAGES/messages.pot
