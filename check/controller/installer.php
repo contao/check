@@ -103,7 +103,7 @@ class Installer
 	 */
 	public function canConnect()
 	{
-		$connection = fsockopen('download.contao.org', 80, $errno, $errstr, 10);
+		$connection = fsockopen('ssl://download.contao.org', 443, $errno, $errstr, 10);
 		$connected = ($connection !== false);
 		fclose($connection);
 
@@ -315,7 +315,7 @@ class Installer
 			throw new RuntimeException("Invalid version number $version");
 		}
 
-		$url = "http://download.contao.org/$version/zip";
+		$url = "https://download.contao.org/$version/zip";
 		$prefix = version_compare($version, '3.3.0', '>=') ? 'contao' : 'core';
 
 		try {

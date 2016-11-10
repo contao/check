@@ -9,59 +9,59 @@
 <div id="wrapper">
   <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
   <div class="row">
-    <h2><?php echo _('File permissions') ?></2>
+    <h2><?php echo __('File permissions') ?></2>
   </div>
   <div class="row">
-    <h3><?php echo _('php.ini settings') ?></h3>
+    <h3><?php echo __('php.ini settings') ?></h3>
     <?php if (!$this->hasSafeMode()): ?>
-      <p class="confirm"><?php echo _('The PHP safe_mode is not enabled.') ?></p>
+      <p class="confirm"><?php echo __('The PHP safe_mode is not enabled.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP safe_mode is enabled.') ?></p>
-      <p class="explain"><?php echo _('It is recommended to disable the safe_mode in your php.ini or server control panel, otherwise the PHP process it not allowed to create or manipulate files and Contao cannot work properly.') ?></p>
+      <p class="error"><?php echo __('The PHP safe_mode is enabled.') ?></p>
+      <p class="explain"><?php echo __('It is recommended to disable the safe_mode in your php.ini or server control panel, otherwise the PHP process it not allowed to create or manipulate files and Contao cannot work properly.') ?></p>
     <?php endif; ?>
   </div>
   <?php if (function_disabled('posix_getpwuid')): ?>
     <div class="row">
-      <h3><?php echo _('File permissions') ?></h3>
-      <p class="error"><?php echo _('The "posix_getpwuid" function is not available.') ?></p>
-      <p class="explain"><?php echo _('File permissions cannot be tested, because the <code>posix_getpwuid</code> function has been disabled. Please contact your server administrator.') ?></p>
+      <h3><?php echo __('File permissions') ?></h3>
+      <p class="error"><?php echo __('The "posix_getpwuid" function is not available.') ?></p>
+      <p class="explain"><?php echo __('File permissions cannot be tested, because the <code>posix_getpwuid</code> function has been disabled. Please contact your server administrator.') ?></p>
     </div>
   <?php else: ?>
     <div class="row">
-      <h3><?php echo _('Creating a test folder') ?></h3>
+      <h3><?php echo __('Creating a test folder') ?></h3>
       <?php if ($this->canCreateFolder()): ?>
-        <p class="confirm"><?php printf(_('The test folder could be created (owner: %s, chmod: %s).'), $this->getFolderOwner(), $this->getTestFolderChmod()) ?></p>
+        <p class="confirm"><?php printf(__('The test folder could be created (owner: %s, chmod: %s).'), $this->getFolderOwner(), $this->getTestFolderChmod()) ?></p>
       <?php elseif ($this->getTestFolderChmod() === null): ?>
-        <p class="error"><?php echo _('The test folder could not be created.') ?></p>
-        <p class="explain"><?php echo _('It seems that the PHP process does not have enough permissions to create folders on your server.') ?></p>
+        <p class="error"><?php echo __('The test folder could not be created.') ?></p>
+        <p class="explain"><?php echo __('It seems that the PHP process does not have enough permissions to create folders on your server.') ?></p>
       <?php else: ?>
-        <p class="error"><?php echo _('The test folder does not have the correct owner or chmod settings.') ?></p>
-        <p class="explain"><?php printf(_('The test folder is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $this->getTestFolderOwner(), $this->getFolderOwner(), $this->getTestFolderChmod(), (defined('PHP_WINDOWS_VERSION_BUILD') ? '777' : _('775, 755, 770, 750 or 705'))) ?></p>
+        <p class="error"><?php echo __('The test folder does not have the correct owner or chmod settings.') ?></p>
+        <p class="explain"><?php printf(__('The test folder is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $this->getTestFolderOwner(), $this->getFolderOwner(), $this->getTestFolderChmod(), (defined('PHP_WINDOWS_VERSION_BUILD') ? '777' : __('775, 755, 770, 750 or 705'))) ?></p>
       <?php endif; ?>
     </div>
     <div class="row">
-      <h3><?php echo _('Creating a test file') ?></h3>
+      <h3><?php echo __('Creating a test file') ?></h3>
       <?php if ($this->canCreateFile()): ?>
-        <p class="confirm"><?php printf(_('The test file could be created (owner: %s, chmod: %s).'), $this->getFileOwner(), $this->getTestFileChmod()) ?></p>
+        <p class="confirm"><?php printf(__('The test file could be created (owner: %s, chmod: %s).'), $this->getFileOwner(), $this->getTestFileChmod()) ?></p>
       <?php elseif ($this->getTestFileChmod() === null): ?>
-        <p class="error"><?php echo _('The test file could not be created.') ?></p>
-        <p class="explain"><?php echo _('It seems that the PHP process does not have enough permissions to create files on your server.') ?></p>
+        <p class="error"><?php echo __('The test file could not be created.') ?></p>
+        <p class="explain"><?php echo __('It seems that the PHP process does not have enough permissions to create files on your server.') ?></p>
       <?php else: ?>
-        <p class="error"><?php echo _('The test file does not have the correct owner or chmod settings.') ?></p>
-        <p class="explain"><?php printf(_('The test file is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $this->getTestFileOwner(), $this->getFileOwner(), $this->getTestFileChmod(), (defined('PHP_WINDOWS_VERSION_BUILD') ? '666' : _('664, 644, 660, 640 or 604'))) ?></p>
+        <p class="error"><?php echo __('The test file does not have the correct owner or chmod settings.') ?></p>
+        <p class="explain"><?php printf(__('The test file is owned by %s (should be %s) and has the chmod settings %s (should be %s).'), $this->getTestFileOwner(), $this->getFileOwner(), $this->getTestFileChmod(), (defined('PHP_WINDOWS_VERSION_BUILD') ? '666' : __('664, 644, 660, 640 or 604'))) ?></p>
       <?php endif; ?>
     </div>
   <?php endif; ?>
   <?php if (!function_disabled('posix_getpwuid')): ?>
     <div class="row">
       <?php if (!$this->failed()): ?>
-        <p class="confirm large"><?php echo _('The PHP process is allowed to create files on this server.') ?></p>
+        <p class="confirm large"><?php echo __('The PHP process is allowed to create files on this server.') ?></p>
       <?php else: ?>
-        <p class="error large"><?php echo _('The PHP process is not allowed to create files on this server.') ?></p>
+        <p class="error large"><?php echo __('The PHP process is not allowed to create files on this server.') ?></p>
       <?php endif; ?>
     </div>
   <?php endif; ?>
-  <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
+  <p class="back"><a href="./"><?php echo __('Go back') ?></a></p>
 </div>
 </body>
 </html>

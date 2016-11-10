@@ -8,6 +8,7 @@
  * @license LGPL-3.0+
  */
 
+require_once __DIR__ . '/translator.php';
 require_once __DIR__ . '/util.php';
 
 /**
@@ -22,15 +23,15 @@ class Bootstrap
 	 */
 	public function initialize()
 	{
-		error_reporting(E_ALL^E_NOTICE);
+		error_reporting(E_ALL ^ E_NOTICE);
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '11.2');
-		define('CURRENT_VERSION', '4.2.4');
+		define('CONTAO_CHECK_VERSION', '12.0');
+		define('CURRENT_VERSION', '4.2.5');
 		define('CURRENT_LTS_VERSION', '3.5.18');
 
-		$this->setLocale($this->getLanguage());
+		Translator::load($this->getLanguage());
 	}
 
 	/**
@@ -50,7 +51,7 @@ class Bootstrap
 		} elseif (isset($_SESSION['C_LANGUAGE'])) {
 			$locale = $_SESSION['C_LANGUAGE'];
 		} else {
-			$locales = scandir('locale');
+			$locales = scandir(__DIR__ . '/../i18n');
 			$accepted = $this->getAcceptedLanguages();
 			$limit = min(count($accepted), 8);
 
@@ -59,13 +60,13 @@ class Bootstrap
 				$tag = $accepted[$i];
 
 				// Find the locale or ISO language code
-				if (in_array($tag, $locales)) {
+				if (in_array("$tag.php", $locales)) {
 					$locale = $tag;
 				} else {
 					$matches = array_values(preg_grep("/^$tag/", $locales));
 
 					if (!empty($matches)) {
-						$locale = $matches[0];
+						$locale = basename($matches[0], '.php');
 					}
 				}
 
@@ -129,30 +130,6 @@ class Bootstrap
 		}
 
 		return array_slice(array_unique($return), 0, 8);
-	}
-
-	/**
-	 * Set a locale and initialize the PHP gettext extension
-	 *
-	 * @param string $locale The locale
-	 *
-	 * @throws InvalidArgumentException In case the locale is not valid
-	 */
-	public function setLocale($locale)
-	{
-		if (!$this->isLocale($locale)) {
-			throw new InvalidArgumentException("Unknown locale $locale");
-		}
-
-		if (!extension_loaded('gettext')) {
-			return;
-		}
-
-		putenv("LANG=$locale");
-		setlocale(LC_ALL, $locale);
-		bindtextdomain('messages', dirname(dirname(__FILE__)) . '/locale');
-		textdomain('messages');
-		bind_textdomain_codeset('messages', 'UTF-8');
 	}
 }
 

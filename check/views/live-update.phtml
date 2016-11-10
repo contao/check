@@ -9,88 +9,88 @@
 <div id="wrapper">
   <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
   <div class="row">
-    <h2><?php echo _('Live Update') ?></h2>
+    <h2><?php echo __('Live Update') ?></h2>
   </div>
   <div class="row">
-    <h3><?php printf(_('PHP %s or greater'), static::PHP_VERSION) ?></h3>
+    <h3><?php printf(__('PHP %s or greater'), static::PHP_VERSION) ?></h3>
     <?php if ($this->hasPhp()): ?>
-      <p class="confirm"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
+      <p class="confirm"><?php printf(__('You have PHP version %s.'), phpversion()) ?></p>
     <?php else: ?>
-      <p class="error"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
-      <p class="explain"><?php printf(_('Phar has been added to the PHP core in version 5.3, so you require at least PHP version %s to use .phar files. If you have PHP 5.2, you might be able to use .phar files by installing the PECL phar extension (see %s).'), static::PHP_VERSION, '<a href="http://pecl.php.net/package/phar">http://pecl.php.net/package/phar</a>') ?></p>
+      <p class="error"><?php printf(__('You have PHP version %s.'), phpversion()) ?></p>
+      <p class="explain"><?php printf(__('Phar has been added to the PHP core in version 5.3, so you require at least PHP version %s to use .phar files. If you have PHP 5.2, you might be able to use .phar files by installing the PECL phar extension (see %s).'), static::PHP_VERSION, '<a href="http://pecl.php.net/package/phar">http://pecl.php.net/package/phar</a>') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP Phar extension') ?></h3>
+    <h3><?php echo __('PHP Phar extension') ?></h3>
     <?php if ($this->hasPhar()): ?>
-      <p class="confirm"><?php echo _('The PHP Phar extension is enabled.') ?></p>
+      <p class="confirm"><?php echo __('The PHP Phar extension is enabled.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP Phar extension is not enabled.') ?></p>
-      <p class="explain"><?php echo _('The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be explicitly disabled using the --disable-phar flag. Recompile PHP without the flag.') ?></p>
+      <p class="error"><?php echo __('The PHP Phar extension is not enabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be explicitly disabled using the --disable-phar flag. Recompile PHP without the flag.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP OpenSSL extension') ?></h3>
+    <h3><?php echo __('PHP OpenSSL extension') ?></h3>
     <?php if ($this->hasSsl()): ?>
-      <p class="confirm"><?php echo _('The PHP OpenSSL extension is enabled.') ?></p>
+      <p class="confirm"><?php echo __('The PHP OpenSSL extension is enabled.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP OpenSSL extension is not enabled.') ?></p>
-      <p class="explain"><?php echo _('The PHP OpenSSL extension is required to set up a secure connection to the Live Update server. Enable it in your php.ini.') ?></p>
+      <p class="error"><?php echo __('The PHP OpenSSL extension is not enabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP OpenSSL extension is required to set up a secure connection to the Live Update server. Enable it in your php.ini.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
     <h3>ionCube Loader</h3>
     <?php if (!$this->hasIonCube()): ?>
-      <p class="confirm"><?php echo _('The ionCube Loader is not enabled or at least at version 4.0.9.') ?></p>
+      <p class="confirm"><?php echo __('The ionCube Loader is not enabled or at least at version 4.0.9.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('An old version of the ionCube Loader prior to version 4.0.9 is installed.') ?></p>
-      <p class="explain"><?php printf(_('Before version 4.0.9, the ionCube Loader was incompatible with Phar archives. Either upgrade to the latest version or disable the module. More information is available here: %s'), '<a href="http://forum.ioncube.com/viewtopic.php?p=8867">http://forum.ioncube.com/viewtopic.php?p=8867</a>') ?></p>
+      <p class="error"><?php echo __('An old version of the ionCube Loader prior to version 4.0.9 is installed.') ?></p>
+      <p class="explain"><?php printf(__('Before version 4.0.9, the ionCube Loader was incompatible with Phar archives. Either upgrade to the latest version or disable the module. More information is available here: %s'), '<a href="http://forum.ioncube.com/viewtopic.php?p=8867">http://forum.ioncube.com/viewtopic.php?p=8867</a>') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('Suhosin extension') ?></h3>
+    <h3><?php echo __('Suhosin extension') ?></h3>
     <?php if (!$this->hasSuhosin()): ?>
-      <p class="confirm"><?php echo _('The Suhosin extension is not installed or correctly configured for .phar files.') ?></p>
+      <p class="confirm"><?php echo __('The Suhosin extension is not installed or correctly configured for .phar files.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The Suhosin extension does not allow to run .phar files.') ?></p>
-      <p class="explain"><?php echo _('You have to add "phar" to the list of allowed streams in your php.ini: <code>suhosin.executor.include.whitelist = phar</code>') ?></p>
+      <p class="error"><?php echo __('The Suhosin extension does not allow to run .phar files.') ?></p>
+      <p class="explain"><?php echo __('You have to add "phar" to the list of allowed streams in your php.ini: <code>suhosin.executor.include.whitelist = phar</code>') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('Detect Unicode') ?></h3>
+    <h3><?php echo __('Detect Unicode') ?></h3>
     <?php if (!$this->hasDetectUnicode()): ?>
-      <p class="confirm"><?php echo _('The --enable-zend-multibyte flag is not set or detect_unicode is disabled.') ?></p>
+      <p class="confirm"><?php echo __('The --enable-zend-multibyte flag is not set or detect_unicode is disabled.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The detect_unicode settings on your server are not correct.') ?></p>
-      <p class="explain"><?php printf(_('If PHP is compiled with the --enable-zend-multibyte flag, you have to explicitly disable detect_unicode in your php.ini: <code>detect_unicode = Off</code>. This is a PHP bug which might be fixed in the future. More information is available here: %s'), '<a href="https://bugs.php.net/bug.php?id=53199">https://bugs.php.net/bug.php?id=53199</a>') ?></p>
+      <p class="error"><?php echo __('The detect_unicode settings on your server are not correct.') ?></p>
+      <p class="explain"><?php printf(__('If PHP is compiled with the --enable-zend-multibyte flag, you have to explicitly disable detect_unicode in your php.ini: <code>detect_unicode = Off</code>. This is a PHP bug which might be fixed in the future. More information is available here: %s'), '<a href="https://bugs.php.net/bug.php?id=53199">https://bugs.php.net/bug.php?id=53199</a>') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
     <h3>FastCGI+eAccelerator</h3>
     <?php if (!$this->isFastCgiEaccelerator()): ?>
-      <p class="confirm"><?php echo _('You are not using FastCGI and eAccelerator.') ?></p>
+      <p class="confirm"><?php echo __('You are not using FastCGI and eAccelerator.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('You are using FastCGI and eAccelerator.') ?></p>
-      <p class="explain"><?php echo _('It seems that FastCGI in combination with the eAccelerator extension is buggy when it comes to Phar archives. You can either disable the eAccelerator extension or use a different PHP cache instead (e.g. FastCGI+APC).') ?></p>
+      <p class="error"><?php echo __('You are using FastCGI and eAccelerator.') ?></p>
+      <p class="explain"><?php echo __('It seems that FastCGI in combination with the eAccelerator extension is buggy when it comes to Phar archives. You can either disable the eAccelerator extension or use a different PHP cache instead (e.g. FastCGI+APC).') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('Connection test') ?></h3>
+    <h3><?php echo __('Connection test') ?></h3>
     <?php if ($this->canConnect()): ?>
-      <p class="confirm"><?php echo _('A connection to update.contao.org could be established.') ?></p>
+      <p class="confirm"><?php echo __('A connection to update.contao.org could be established.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('A connection to update.contao.org could not be established.') ?></p>
-      <p class="explain"><?php echo _('Maybe the request has been blocked by a firewall. Please contact your server administrator.') ?></p>
+      <p class="error"><?php echo __('A connection to update.contao.org could not be established.') ?></p>
+      <p class="explain"><?php echo __('Maybe the request has been blocked by a firewall. Please contact your server administrator.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
     <?php if ($this->isAvailable()): ?>
-      <p class="confirm large"><?php echo _('You can use the Live Update on this server.') ?></p>
+      <p class="confirm large"><?php echo __('You can use the Live Update on this server.') ?></p>
     <?php else: ?>
-      <p class="error large"><?php echo _('You cannot use the Live Update on this server.') ?></p>
+      <p class="error large"><?php echo __('You cannot use the Live Update on this server.') ?></p>
     <?php endif; ?>
   </div>
-  <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
+  <p class="back"><a href="./"><?php echo __('Go back') ?></a></p>
 </div>
 </body>
 </html>

@@ -1,8 +1,8 @@
 [main]
 host = https://www.transifex.com
-type = PO
+type = PHP_ARRAY
 
-[contao-check.messages]
-source_file = check/locale/en/LC_MESSAGES/messages.pot
+[contao-live-update.client]
+source_file = check/i18n/en.php
 source_lang = en
-file_filter = check/locale/<lang>/LC_MESSAGES/messages.po
+file_filter = check/i18n/<lang>.php

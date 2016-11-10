@@ -9,43 +9,43 @@
 <div id="wrapper">
   <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
   <div class="row">
-    <h2><?php echo _('Extension Repository') ?></h2>
+    <h2><?php echo __('Extension Repository') ?></h2>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP SOAP extension') ?></h3>
+    <h3><?php echo __('PHP SOAP extension') ?></h3>
     <?php if ($this->hasSoap()): ?>
-      <p class="confirm"><?php echo _('The PHP SOAP extension is available.') ?></p>
+      <p class="confirm"><?php echo __('The PHP SOAP extension is available.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP SOAP extension is not available.') ?></p>
-      <p class="explain"><?php printf(_('The PHP SOAP extension is required to communicate with the Extension Repository server. You can enable it by compiling PHP with the --enable-soap flag. Depending on your Contao version, you might also be able to use the %s extension.'), '<a href="https://contao.org/extension-list/view/nusoap.html">Nusoap</a>') ?></p>
+      <p class="error"><?php echo __('The PHP SOAP extension is not available.') ?></p>
+      <p class="explain"><?php printf(__('The PHP SOAP extension is required to communicate with the Extension Repository server. You can enable it by compiling PHP with the --enable-soap flag. Depending on your Contao version, you might also be able to use the %s extension.'), '<a href="https://contao.org/extension-list/view/nusoap.html">Nusoap</a>') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP OpenSSL extension') ?></h3>
+    <h3><?php echo __('PHP OpenSSL extension') ?></h3>
     <?php if ($this->hasSsl()): ?>
-      <p class="confirm"><?php echo _('The PHP OpenSSL extension is enabled.') ?></p>
+      <p class="confirm"><?php echo __('The PHP OpenSSL extension is enabled.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP OpenSSL extension is not enabled.') ?></p>
-      <p class="explain"><?php echo _('The PHP OpenSSL extension is required to set up a secure connection to the Live Update server. Enable it in your php.ini.') ?></p>
+      <p class="error"><?php echo __('The PHP OpenSSL extension is not enabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP OpenSSL extension is required to set up a secure connection to the Live Update server. Enable it in your php.ini.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('Connection test') ?></h3>
+    <h3><?php echo __('Connection test') ?></h3>
     <?php if ($this->canConnect()): ?>
-      <p class="confirm"><?php echo _('A connection to contao.org could be established.') ?></p>
+      <p class="confirm"><?php echo __('A connection to contao.org could be established.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('A connection to contao.org could not be established.') ?></p>
-      <p class="explain"><?php echo _('Maybe the request has been blocked by a firewall. Please contact your server administrator.') ?></p>
+      <p class="error"><?php echo __('A connection to contao.org could not be established.') ?></p>
+      <p class="explain"><?php echo __('Maybe the request has been blocked by a firewall. Please contact your server administrator.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
     <?php if ($this->isAvailable()): ?>
-      <p class="confirm large"><?php echo _('You can use the Extension Repository on this server.') ?></p>
+      <p class="confirm large"><?php echo __('You can use the Extension Repository on this server.') ?></p>
     <?php else: ?>
-      <p class="error large"><?php echo _('You cannot use the Extension Repository on this server.') ?></p>
+      <p class="error large"><?php echo __('You cannot use the Extension Repository on this server.') ?></p>
     <?php endif; ?>
   </div>
-  <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
+  <p class="back"><a href="./"><?php echo __('Go back') ?></a></p>
 </div>
 </body>
 </html>
