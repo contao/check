@@ -9,104 +9,104 @@
 <div id="wrapper">
   <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
   <div class="row">
-    <h2><?php echo _('Composer package manager') ?></h2>
+    <h2><?php echo __('Composer package manager') ?></h2>
   </div>
   <div class="row">
-    <h3><?php printf(_('PHP %s or greater'), static::PHP_VERSION) ?></h3>
+    <h3><?php printf(__('PHP %s or greater'), static::PHP_VERSION) ?></h3>
     <?php if ($this->hasPhp()): ?>
-      <p class="confirm"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
+      <p class="confirm"><?php printf(__('You have PHP version %s.'), phpversion()) ?></p>
     <?php else: ?>
-      <p class="error"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
-      <p class="explain"><?php printf(_('Composer requires at least PHP version %s.'), static::PHP_VERSION) ?></p>
+      <p class="error"><?php printf(__('You have PHP version %s.'), phpversion()) ?></p>
+      <p class="explain"><?php printf(__('Composer requires at least PHP version %s.'), static::PHP_VERSION) ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP Phar extension') ?></h3>
+    <h3><?php echo __('PHP Phar extension') ?></h3>
     <?php if ($this->hasPhar()): ?>
-      <p class="confirm"><?php echo _('The PHP Phar extension is enabled.') ?></p>
+      <p class="confirm"><?php echo __('The PHP Phar extension is enabled.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP Phar extension is not enabled.') ?></p>
-      <p class="explain"><?php echo _('The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be explicitly disabled using the --disable-phar flag. Recompile PHP without the flag.') ?></p>
+      <p class="error"><?php echo __('The PHP Phar extension is not enabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP Phar extension is part of the PHP core since PHP 5.3 and has to be explicitly disabled using the --disable-phar flag. Recompile PHP without the flag.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP cURL extension') ?></h3>
+    <h3><?php echo __('PHP cURL extension') ?></h3>
     <?php if ($this->hasCurl()): ?>
-      <p class="confirm"><?php echo _('The PHP cURL extension is available.') ?></p>
+      <p class="confirm"><?php echo __('The PHP cURL extension is available.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP cURL extension is not available.') ?></p>
-      <p class="explain"><?php echo _('The PHP cURL extension is required to communicate with the package server. You can enable it by compiling PHP with the --enable-curl flag.') ?></p>
+      <p class="error"><?php echo __('The PHP cURL extension is not available.') ?></p>
+      <p class="explain"><?php echo __('The PHP cURL extension is required to communicate with the package server. You can enable it by compiling PHP with the --enable-curl flag.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP APC extension') ?></h3>
+    <h3><?php echo __('PHP APC extension') ?></h3>
     <?php if (!$this->hasApc()): ?>
-      <p class="confirm"><?php echo _('The PHP APC extension is not installed.') ?></p>
+      <p class="confirm"><?php echo __('The PHP APC extension is not installed.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP APC extension is installed.') ?></p>
-      <p class="explain"><?php echo _('Using the PHP APC extension with Composer can lead to unexpected "cannot redeclare class" errors.') ?></p>
+      <p class="error"><?php echo __('The PHP APC extension is installed.') ?></p>
+      <p class="explain"><?php echo __('Using the PHP APC extension with Composer can lead to unexpected "cannot redeclare class" errors.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('Suhosin extension') ?></h3>
+    <h3><?php echo __('Suhosin extension') ?></h3>
     <?php if (!$this->hasSuhosin()): ?>
-      <p class="confirm"><?php echo _('The Suhosin extension is not installed or correctly configured for .phar files.') ?></p>
+      <p class="confirm"><?php echo __('The Suhosin extension is not installed or correctly configured for .phar files.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The Suhosin extension does not allow to run .phar files.') ?></p>
-      <p class="explain"><?php echo _('You have to add "phar" to the list of allowed streams in your php.ini: <code>suhosin.executor.include.whitelist = phar</code>') ?></p>
+      <p class="error"><?php echo __('The Suhosin extension does not allow to run .phar files.') ?></p>
+      <p class="explain"><?php echo __('You have to add "phar" to the list of allowed streams in your php.ini: <code>suhosin.executor.include.whitelist = phar</code>') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('allow_url_fopen') ?></h3>
+    <h3><?php echo __('allow_url_fopen') ?></h3>
     <?php if ($this->hasAllowUrlFopen()): ?>
-      <p class="confirm"><?php echo _('The PHP flag "allow_url_fopen" is set.') ?></p>
+      <p class="confirm"><?php echo __('The PHP flag "allow_url_fopen" is set.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP flag "allow_url_fopen" is not set.') ?></p>
-      <p class="explain"><?php echo _('To download the installation files, Composer requires the "allow_url_fopen" flag to be set in the php.ini.') ?></p>
+      <p class="error"><?php echo __('The PHP flag "allow_url_fopen" is not set.') ?></p>
+      <p class="explain"><?php echo __('To download the installation files, Composer requires the "allow_url_fopen" flag to be set in the php.ini.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('File permissions') ?></h3>
+    <h3><?php echo __('File permissions') ?></h3>
     <?php if (function_disabled('posix_getpwuid')): ?>
-      <p class="error"><?php echo _('The "posix_getpwuid" function is not available.') ?></p>
-      <p class="explain"><?php echo _('File permissions cannot be tested, because the <code>posix_getpwuid</code> function has been disabled. Please contact your server administrator.') ?></p>
+      <p class="error"><?php echo __('The "posix_getpwuid" function is not available.') ?></p>
+      <p class="explain"><?php echo __('File permissions cannot be tested, because the <code>posix_getpwuid</code> function has been disabled. Please contact your server administrator.') ?></p>
     <?php else: ?>
       <?php if ($this->canCreateFiles()): ?>
-        <p class="confirm"><?php echo _('The PHP process is allowed to create files.') ?></p>
+        <p class="confirm"><?php echo __('The PHP process is allowed to create files.') ?></p>
       <?php else: ?>
-        <p class="error"><?php echo _('The PHP process is not allowed to create files.') ?></p>
-        <p class="explain"><?php echo _('The PHP process is not allowed to create or manipulate files. Please adjust your server configuration accordingly.') ?></p>
+        <p class="error"><?php echo __('The PHP process is not allowed to create files.') ?></p>
+        <p class="explain"><?php echo __('The PHP process is not allowed to create or manipulate files. Please adjust your server configuration accordingly.') ?></p>
       <?php endif; ?>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('shell_exec (optional)') ?></h3>
+    <h3><?php echo __('shell_exec (optional)') ?></h3>
     <?php if ($this->hasShellExec()): ?>
-      <p class="confirm"><?php echo _('The PHP function "shell_exec" is available.') ?></p>
+      <p class="confirm"><?php echo __('The PHP function "shell_exec" is available.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP function "shell_exec" is not available.') ?></p>
-      <p class="explain"><?php echo _('The "shell_exec" function is optionally required to run the Composer process in the background.') ?></p>
+      <p class="error"><?php echo __('The PHP function "shell_exec" is not available.') ?></p>
+      <p class="explain"><?php echo __('The "shell_exec" function is optionally required to run the Composer process in the background.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('proc_open (optional)') ?></h3>
+    <h3><?php echo __('proc_open (optional)') ?></h3>
     <?php if ($this->hasProcOpen()): ?>
-      <p class="confirm"><?php echo _('The PHP function "proc_open" is available.') ?></p>
+      <p class="confirm"><?php echo __('The PHP function "proc_open" is available.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP function "proc_open" is not available.') ?></p>
-      <p class="explain"><?php echo _('The "proc_open" function is optionally required to run the package manager in dev mode.') ?></p>
+      <p class="error"><?php echo __('The PHP function "proc_open" is not available.') ?></p>
+      <p class="explain"><?php echo __('The "proc_open" function is optionally required to run the package manager in dev mode.') ?></p>
     <?php endif; ?>
   </div>
   <?php if (!function_disabled('posix_getpwuid')): ?>
     <div class="row">
       <?php if ($this->isAvailable()): ?>
-        <p class="confirm large"><?php echo _('You can use the Composer package manager on this server.') ?></p>
+        <p class="confirm large"><?php echo __('You can use the Composer package manager on this server.') ?></p>
       <?php else: ?>
-        <p class="error large"><?php echo _('You cannot use the Composer package manager on this server.') ?></p>
+        <p class="error large"><?php echo __('You cannot use the Composer package manager on this server.') ?></p>
       <?php endif; ?>
     </div>
   <?php endif; ?>
-  <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
+  <p class="back"><a href="./"><?php echo __('Go back') ?></a></p>
 </div>
 </body>
 </html>

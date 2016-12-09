@@ -8,7 +8,7 @@
  * @license LGPL-3.0+
  */
 
-require __DIR__ . '/controller/bootstrap.php';
+require __DIR__ . '/includes/bootstrap.php';
 
 /**
  * Route the request to a controller
