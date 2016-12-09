@@ -40,7 +40,7 @@ class Validator
 	 */
 	public function run()
 	{
-		if (!$this->findConstants() || !$this->checkVersion()) {
+		if (!$this->findConstants() || !$this->getVersionFile()) {
 			$this->valid = false;
 		} else {
 			$this->validate();
@@ -162,18 +162,29 @@ class Validator
 	}
 
 	/**
-	 * Check whether the Contao version is supported
+	 * Download the version file
 	 *
 	 * @return boolean True if the Contao version is supported
 	 */
-	protected function checkVersion()
+	protected function getVersionFile()
 	{
 		$file = 'versions/' . VERSION . '.' . BUILD . '.json';
 
 		if (!file_exists($file)) {
-			$this->version = false;
+			try {
+				$url = "https://download.contao.org/$file";
+				file_put_contents($file, curl($url));
 
-			return false;
+				if (!file_exists($file) || filesize($file) < 1) {
+					$this->version = false;
+
+					return false;
+				}
+			} catch (RuntimeException $e) {
+				$this->version = false;
+
+				return false;
+			}
 		}
 
 		return true;

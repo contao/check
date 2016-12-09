@@ -8,7 +8,7 @@
  * @license LGPL-3.0+
  */
 
-require __DIR__ . '/controller/bootstrap.php';
+require __DIR__ . '/includes/bootstrap.php';
 
 /**
  * Route the request to a controller
@@ -42,6 +42,9 @@ class Router
 		}
 
 		include $file;
+
+		// Send the correct content type (see #106)
+		header('Content-Type: text/html; charset=utf-8');
 
 		$controller = new $class();
 		$controller->run();
