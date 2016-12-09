@@ -8,6 +8,9 @@
  * @license LGPL-3.0+
  */
 
+require_once __DIR__ . '/contao2.php';
+require_once __DIR__ . '/contao3.php';
+require_once __DIR__ . '/contao4.php';
 require_once __DIR__ . '/composer.php';
 require_once __DIR__ . '/file-permissions.php';
 require_once __DIR__ . '/live-update.php';
@@ -20,10 +23,6 @@ require_once __DIR__ . '/repository.php';
  */
 class Index
 {
-	const CONTAO2_VERSION = '5.2.0';
-	const CONTAO3_VERSION = '5.4.0';
-	const CONTAO4_VERSION = '5.5.0';
-
 	/**
 	 * @var boolean
 	 */
@@ -46,7 +45,25 @@ class Index
 	 */
 	public function supportsContao2()
 	{
-		return version_compare(phpversion(), static::CONTAO2_VERSION, '>=');
+		$contao = new Contao2;
+
+		if (!$contao->hasPhp()) {
+			return false;
+		}
+
+		if (!$contao->hasNotPhp7()) {
+			return false;
+		}
+
+		if (!$contao->hasGd()) {
+			return false;
+		}
+
+		if (!$contao->hasDom()) {
+			return false;
+		}
+
+		return true;
 	}
 
 	/**
@@ -56,7 +73,21 @@ class Index
 	 */
 	public function supportsContao3()
 	{
-		return version_compare(phpversion(), static::CONTAO3_VERSION, '>=');
+		$contao = new Contao3;
+
+		if (!$contao->hasPhp()) {
+			return false;
+		}
+
+		if (!$contao->hasGd()) {
+			return false;
+		}
+
+		if (!$contao->hasDom()) {
+			return false;
+		}
+
+		return true;
 	}
 
 	/**
@@ -66,7 +97,25 @@ class Index
 	 */
 	public function supportsContao4()
 	{
-		return version_compare(phpversion(), static::CONTAO4_VERSION, '>=');
+		$contao = new Contao4;
+
+		if (!$contao->hasPhp()) {
+			return false;
+		}
+
+		if (!$contao->hasGd()) {
+			return false;
+		}
+
+		if (!$contao->hasDom()) {
+			return false;
+		}
+
+		if (!$contao->hasIntl()) {
+			return false;
+		}
+
+		return true;
 	}
 
 	/**
