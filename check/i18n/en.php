@@ -178,5 +178,9 @@ return array(
 	'The PHP GDlib extension is not enabled.' => 'The PHP GDlib extension is not enabled.',
 	'The PHP GDlib extension is not part of the PHP core and has to be explicitly enabled using the --with-gd flag. Recompile PHP with the flag.' => 'The PHP GDlib extension is not part of the PHP core and has to be explicitly enabled using the --with-gd flag. Recompile PHP with the flag.',
 	'You can install Contao 4.x on this server.' => 'You can install Contao 4.x on this server.',
-	'You cannot install Contao 4.x on this server.' => 'You cannot install Contao 4.x on this server.'
+	'You cannot install Contao 4.x on this server.' => 'You cannot install Contao 4.x on this server.',
+	'PHP image processing' => 'PHP image processing',
+	'At least one of the supported image processing libraries is available.' => 'At least one of the supported image processing libraries is available.',
+	'None of the supported image processing libraries are available.' => 'None of the supported image processing libraries are available.',
+	'As of Contao 4.3 one of the supported image processing libraries must be availble (GD, Imagick or Gmagick).' => 'As of Contao 4.3 one of the supported image processing libraries must be availble (GD, Imagick or Gmagick).'
 );
