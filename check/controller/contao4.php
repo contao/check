@@ -63,11 +63,11 @@ class Contao4
 	 */
 	public function hasGraphicsLib()
 	{
-        if (function_exists('gd_info')) {
-             if (version_compare(GD_VERSION, '2.0.1', '<')) {
-             	return true;
-             }
-        }
+		if (function_exists('gd_info')) {
+			 if (version_compare(GD_VERSION, '2.0.1', '<')) {
+			 	return true;
+			 }
+		}
 
 		if (class_exists('Imagick')) {
 			return true;
