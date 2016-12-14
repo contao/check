@@ -9,52 +9,52 @@
 <div id="wrapper">
   <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
   <div class="row">
-    <h2><?php echo _('Contao 2.x') ?></h2>
+    <h2><?php echo __('Contao 2.x') ?></h2>
   </div>
   <div class="row">
-    <h3><?php printf(_('PHP %s or greater'), static::PHP_VERSION) ?></h3>
+    <h3><?php printf(__('PHP %s or greater'), static::PHP_VERSION) ?></h3>
     <?php if ($this->hasPhp()): ?>
-      <p class="confirm"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
+      <p class="confirm"><?php printf(__('You have PHP version %s.'), phpversion()) ?></p>
     <?php else: ?>
-      <p class="error"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
-      <p class="explain"><?php printf(_('You need at least PHP %s.'), static::PHP_VERSION) ?></p>
+      <p class="error"><?php printf(__('You have PHP version %s.'), phpversion()) ?></p>
+      <p class="explain"><?php printf(__('You need at least PHP %s.'), static::PHP_VERSION) ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP 7.x') ?></h3>
+    <h3><?php echo __('PHP 7.x') ?></h3>
     <?php if ($this->hasNotPhp7()): ?>
-      <p class="confirm"><?php printf(_('The PHP version is lower than 7.0.0.'), phpversion()) ?></p>
+      <p class="confirm"><?php printf(__('The PHP version is lower than 7.0.0.'), phpversion()) ?></p>
     <?php else: ?>
-      <p class="error"><?php printf(_('You have PHP version %s.'), phpversion()) ?></p>
-      <p class="explain"><?php printf(_('Contao 2.x is incompatible with PHP 7.'), static::PHP_VERSION) ?></p>
+      <p class="error"><?php printf(__('You have PHP version %s.'), phpversion()) ?></p>
+      <p class="explain"><?php printf(__('Contao 2.x is incompatible with PHP 7.'), static::PHP_VERSION) ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP GDlib extension') ?></h3>
+    <h3><?php echo __('PHP GDlib extension') ?></h3>
     <?php if ($this->hasGd()): ?>
-      <p class="confirm"><?php echo _('The PHP GDlib extension is enabled.') ?></p>
+      <p class="confirm"><?php echo __('The PHP GDlib extension is enabled.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP GDlib extension is not enabled.') ?></p>
-      <p class="explain"><?php echo _('The PHP GDlib extension is not part of the PHP core and has to be explicitly enabled using the --with-gd flag. Recompile PHP with the flag.') ?></p>
+      <p class="error"><?php echo __('The PHP GDlib extension is not enabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP GDlib extension is not part of the PHP core and has to be explicitly enabled using the --with-gd flag. Recompile PHP with the flag.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
-    <h3><?php echo _('PHP DOM extension') ?></h3>
+    <h3><?php echo __('PHP DOM extension') ?></h3>
     <?php if ($this->hasGd()): ?>
-      <p class="confirm"><?php echo _('The PHP DOM extension is enabled.') ?></p>
+      <p class="confirm"><?php echo __('The PHP DOM extension is enabled.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo _('The PHP DOM extension is not enabled.') ?></p>
-      <p class="explain"><?php echo _('The PHP DOM extension is part of the PHP core and has to be explicitly disabled using the --disable-dom flag. Recompile PHP without the flag.') ?></p>
+      <p class="error"><?php echo __('The PHP DOM extension is not enabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP DOM extension is part of the PHP core and has to be explicitly disabled using the --disable-dom flag. Recompile PHP without the flag.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
     <?php if ($this->isCompatible()): ?>
-      <p class="confirm large"><?php echo _('You can install Contao 2.x on this server.') ?></p>
+      <p class="confirm large"><?php echo __('You can install Contao 2.x on this server.') ?></p>
     <?php else: ?>
-      <p class="error large"><?php echo _('You cannot install Contao 2.x on this server.') ?></p>
+      <p class="error large"><?php echo __('You cannot install Contao 2.x on this server.') ?></p>
     <?php endif; ?>
   </div>
-  <p class="back"><a href="./"><?php echo _('Go back') ?></a></p>
+  <p class="back"><a href="./"><?php echo __('Go back') ?></a></p>
 </div>
 </body>
 </html>
