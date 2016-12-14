@@ -57,13 +57,23 @@ class Contao4
 	}
 
 	/**
-	 * Check whether the PHP GDlib extension is available
+	 * Check whether any of the supported graphics libraries are available
 	 *
-	 * @return boolean True if the PHP GDlib extension is available
+	 * @return boolean True if any of the supported graphics libraries are available
 	 */
-	public function hasGd()
+	public function hasGraphicsLib()
 	{
-		if (extension_loaded('gd')) {
+        if (function_exists('gd_info')) {
+             if (version_compare(GD_VERSION, '2.0.1', '<')) {
+             	return true;
+             }
+        }
+
+		if (class_exists('Imagick')) {
+			return true;
+		}
+
+		if (class_exists('Gmagick')) {
 			return true;
 		}
 

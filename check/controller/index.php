@@ -103,7 +103,7 @@ class Index
 			return false;
 		}
 
-		if (!$contao->hasGd()) {
+		if (!$contao->hasGraphicsLib()) {
 			return false;
 		}
 
