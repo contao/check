@@ -125,7 +125,7 @@ return array(
 	'Connection test' => 'Connection test',
 	'A connection to update.contao.org could be established.' => 'A connection to update.contao.org could be established.',
 	'A connection to update.contao.org could not be established.' => 'A connection to update.contao.org could not be established.',
-	'Maybe the request has been blocked by a firewall or the OpenSSL version is too old. Please contact your server administrator.' => 'Maybe the request has been blocked by a firewall or the OpenSSL version is too old. Please contact your server administrator.',
+	'Maybe the request has been blocked by a firewall or your OpenSSL version is too old. Please contact your server administrator.' => 'Maybe the request has been blocked by a firewall or your OpenSSL version is too old. Please contact your server administrator.',
 	'You can use the Live Update on this server.' => 'You can use the Live Update on this server.',
 	'You cannot use the Live Update on this server.' => 'You cannot use the Live Update on this server.',
 	'Extension Repository' => 'Extension Repository',
