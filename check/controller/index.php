@@ -136,6 +136,10 @@ class Index
 			return false;
 		}
 
+		if (!$composer->hasPhar()) {
+			return false;
+		}
+
 		if (!$composer->hasCurl()) {
 			return false;
 		}
