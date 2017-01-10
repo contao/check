@@ -38,7 +38,7 @@ class Installer
 	/**
 	 * @var string
 	 */
-	protected $lts_version = '';
+	protected $ltsVersion = '';
 
 	/**
 	 * Execute the command
@@ -190,7 +190,7 @@ class Installer
 	protected function getCurrentLtsVersion()
 	{
 		try {
-			$this->lts_version = file_get_contents('https://update.contao.org/service/lts-version.txt');
+			$this->ltsVersion = file_get_contents('https://update.contao.org/service/lts-version.txt');
 		} catch (RuntimeException $e) {
 			$this->message = $e->getMessage();
 		}

@@ -34,12 +34,12 @@
           <li><?php echo __('Open the Contao install tool by adding "/contao/install.php" to the URL of your installation.') ?></li>
         </ul>
       <?php elseif (!isset($_POST['version'])): ?>
-        <?php if ($this->lts_version): ?>
+        <?php if ($this->ltsVersion): ?>
           <h3><?php echo __('Target version') ?></h3>
           <form method="post">
             <div class="versions">
               <select name="version" class="select">
-                <option value="<?php echo $this->lts_version; ?>"><?php echo $this->lts_version; ?> (LTS)</option>
+                <option value="<?php echo $this->ltsVersion; ?>"><?php echo $this->ltsVersion; ?> (LTS)</option>
               </select>
             </div>
             <p class="mt"><input class="button orange" type="submit" value="<?php echo __('Start the installation') ?>"></p>
