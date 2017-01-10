@@ -15,19 +15,19 @@
     <h3>PHP <?php echo phpversion() ?></h3>
     <ul>
       <?php if ($this->supportsContao2()): ?>
-        <li class="confirm"><?php echo __('You can install Contao 2.x') ?></li>
+        <li class="confirm"><?php echo __('You can install Contao 2.x') ?> <a href="./?c=contao2"><?php echo __('More information …') ?></a></li>
       <?php else: ?>
-        <li class="error"><?php printf(__('You cannot install Contao 2.x (requires PHP %s+)'), static::CONTAO2_VERSION) ?></li>
+        <li class="error"><?php echo __('You cannot install Contao 2.x') ?> <a href="./?c=contao2"><?php echo __('More information …') ?></a></li>
       <?php endif; ?>
       <?php if ($this->supportsContao3()): ?>
-        <li class="confirm"><?php echo __('You can install Contao 3.x') ?></li>
+        <li class="confirm"><?php echo __('You can install Contao 3.x') ?> <a href="./?c=contao3"><?php echo __('More information …') ?></a></li>
       <?php else: ?>
-        <li class="error"><?php printf(__('You cannot install Contao 3.x (requires PHP %s+)'), static::CONTAO3_VERSION) ?></li>
+        <li class="error"><?php echo __('You cannot install Contao 3.x') ?> <a href="./?c=contao3"><?php echo __('More information …') ?></a></li>
       <?php endif; ?>
       <?php if ($this->supportsContao4()): ?>
-        <li class="confirm"><?php echo __('You can install Contao 4.x') ?></li>
+        <li class="confirm"><?php echo __('You can install Contao 4.x') ?> <a href="./?c=contao4"><?php echo __('More information …') ?></a></li>
       <?php else: ?>
-        <li class="error"><?php printf(__('You cannot install Contao 4.x (requires PHP %s+)'), static::CONTAO4_VERSION) ?></li>
+        <li class="error"><?php echo __('You cannot install Contao 4.x') ?> <a href="./?c=contao4"><?php echo __('More information …') ?></a></li>
       <?php endif; ?>
     </ul>
   </div>
