@@ -182,5 +182,6 @@ return array(
 	'PHP image processing' => 'PHP image processing',
 	'At least one of the supported image processing libraries is available.' => 'At least one of the supported image processing libraries is available.',
 	'None of the supported image processing libraries are available.' => 'None of the supported image processing libraries are available.',
-	'As of Contao 4.3 one of the supported image processing libraries must be availble (GD, Imagick or Gmagick).' => 'As of Contao 4.3 one of the supported image processing libraries must be availble (GD, Imagick or Gmagick).'
+	'As of Contao 4.3 one of the supported image processing libraries must be availble (GD, Imagick or Gmagick).' => 'As of Contao 4.3 one of the supported image processing libraries must be availble (GD, Imagick or Gmagick).',
+	'An unknown error occurred while getting the newest LTS version.' => 'An unknown error occurred while getting the newest LTS version.'
 );
