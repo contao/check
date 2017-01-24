@@ -17,6 +17,12 @@
       <p class="error"><?php echo __('Could not find a Contao installation.') ?></p>
       <p class="explain"><?php echo __('To validate an existing installation, please upload the "check" folder to your installation directory.') ?></p>
     </div>
+  <?php elseif ($this->hasVersionFileError()): ?>
+    <div class="row">
+      <h3><?php echo __('Version file error') ?></h3>
+      <p class="error"><?php printf(__('Error while retrieving version file: %s.'), $this->getVersionFileError()) ?></p>
+      <p class="explain"><?php echo __('There was an error retrieving the version file from contao.org for your Contao version.') ?></p>
+    </div>
   <?php elseif (!$this->isSupportedVersion()): ?>
     <div class="row">
       <h3><?php echo __('Unknown version') ?></h3>

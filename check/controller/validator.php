@@ -140,6 +140,26 @@ class Validator
 	}
 
 	/**
+	 * Check whether there was an error retrieving the version file
+	 *
+	 * @return boolean True if there was an error retrieving the version file
+	 */
+	public function hasVersionFileError()
+	{
+		return isset($this->errors['versionFile']);
+	}
+
+	/**
+	 * Return the version file error
+	 *
+	 * @return string The version file error
+	 */
+	public function getVersionFileError()
+	{
+		return $this->errors['versionFile'];
+	}
+
+	/**
 	 * Find the constants.php file
 	 *
 	 * @return boolean True if the constants.php file was found
@@ -182,6 +202,7 @@ class Validator
 				}
 			} catch (RuntimeException $e) {
 				$this->version = false;
+				$this->errors['versionFile'] = $e->getMessage();
 
 				return false;
 			}
