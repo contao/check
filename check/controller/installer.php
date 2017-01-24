@@ -36,6 +36,11 @@ class Installer
 	protected $message = '';
 
 	/**
+	 * @var string
+	 */
+	protected $ltsVersion = '';
+
+	/**
 	 * Execute the command
 	 */
 	public function run()
@@ -46,6 +51,7 @@ class Installer
 			} elseif (!$this->canConnect() || !$this->canUsePhp()) {
 				$this->available = false;
 			} else {
+				$this->getCurrentLtsVersion();
 				$this->install();
 			}
 		}
@@ -174,6 +180,20 @@ class Installer
 		}
 
 		return $this->existing;
+	}
+
+	/**
+	 * Retrieves the current LTS version from contao.org
+	 *
+	 * @return void
+	 */
+	protected function getCurrentLtsVersion()
+	{
+		try {
+			$this->ltsVersion = file_get_contents('https://update.contao.org/service/lts-version.txt');
+		} catch (RuntimeException $e) {
+			$this->message = $e->getMessage();
+		}
 	}
 
 	/**
