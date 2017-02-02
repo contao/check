@@ -50,6 +50,10 @@ function function_disabled($func)
  */
 function curl($url)
 {
+	if (!function_exists('curl_init')) {
+		throw new RuntimeException('The installation package could not be downloaded: cURL is not available');
+	}
+
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_HEADER, false);
