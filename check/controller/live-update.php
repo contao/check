@@ -194,10 +194,9 @@ class LiveUpdate
 	public function canConnect()
 	{
 		$connection = @fsockopen('ssl://update.contao.org', 443, $errno, $errstr, 10);
-		$connected = ($connection !== false);
-		fclose($connection);
 
-		if ($connected) {
+		if ($connection !== false) {
+			fclose($connection);
 			return true;
 		}
 
