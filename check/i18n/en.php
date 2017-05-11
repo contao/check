@@ -186,5 +186,9 @@ return array(
 	'An unknown error occurred while getting the newest LTS version.' => 'An unknown error occurred while getting the newest LTS version.',
 	'Version file error' => 'Version file error',
 	'Error while retrieving version file: %s.' => 'Error while retrieving version file: %s.',
-	'There was an error retrieving the version file from contao.org for your Contao version.' => 'There was an error retrieving the version file from contao.org for your Contao version.'
+	'There was an error retrieving the version file from contao.org for your Contao version.' => 'There was an error retrieving the version file from contao.org for your Contao version.',
+	'System temp directory' => 'System temp directory',
+	'The system temp directory is writable.' => 'The system temp directory is writable.',
+	'The system temp directory is not writable.' => 'The system temp directory is not writable.',
+	'Make sure the correct directory is configured via the TMP, TMPDIR or TEMP environment variable or the sys_temp_dir PHP variable.' => 'Make sure the correct directory is configured via the TMP, TMPDIR or TEMP environment variable or the sys_temp_dir PHP variable.'
 );
