@@ -113,4 +113,20 @@ class Contao4
 
 		return false;
 	}
+
+	/**
+	 * Check whether the system tmp directory is writeable
+	 *
+	 * @return boolean True if the system tmp directory is writeable
+	 */
+	public function canWriteTmpDir()
+	{
+		if (is_writable(sys_get_temp_dir())) {
+			return true;
+		}
+
+		$this->compatible = false;
+
+		return false;
+	}
 }

@@ -115,6 +115,10 @@ class Index
 			return false;
 		}
 
+		if (!$contao->canWriteTmpDir()) {
+			return false;
+		}
+
 		return true;
 	}
 

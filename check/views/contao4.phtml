@@ -48,6 +48,15 @@
     <?php endif; ?>
   </div>
   <div class="row">
+    <h3><?php echo __('System temp directory') ?></h3>
+    <?php if ($this->canWriteTmpDir()): ?>
+      <p class="confirm"><?php echo __('The system temp directory is writable.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo __('The system temp directory is not writable.') ?></p>
+      <p class="explain"><?php echo __('Make sure the correct directory is configured via the TMP, TMPDIR or TEMP environment variable or the sys_temp_dir PHP variable.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
     <?php if ($this->isCompatible()): ?>
       <p class="confirm large"><?php echo __('You can install Contao 4.x on this server.') ?></p>
     <?php else: ?>
