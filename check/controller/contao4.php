@@ -15,7 +15,7 @@
  */
 class Contao4
 {
-	const PHP_VERSION = '5.5.0';
+	const PHP_VERSION = '5.6.0';
 
 	/**
 	 * @var boolean
