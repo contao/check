@@ -191,7 +191,10 @@ return array(
 	'The system temp directory is writable.' => 'The system temp directory is writable.',
 	'The system temp directory is not writable.' => 'The system temp directory is not writable.',
 	'Make sure the correct directory is configured via the TMP, TMPDIR or TEMP environment variable or the sys_temp_dir PHP variable.' => 'Make sure the correct directory is configured via the TMP, TMPDIR or TEMP environment variable or the sys_temp_dir PHP variable.',
-	'The PHP symlink() function is not disabled.' => 'The PHP symlink() function is not disabled.',
+	'Symlinks' => 'Symlinks',
+	'Symlinks can successfully be created.' => 'Symlinks can successfully be created.',
+	'Symlinks could not be created.' => 'Symlinks could not be created.',
+	'Working symlinks are required to run Contao 4. Please contact your server administrator.' => 'Working symlinks are required to run Contao 4. Please contact your server administrator.',
 	'The PHP symlink() function is disabled.' => 'The PHP symlink() function is disabled.',
-	'The "symlink()" function is required to run Contao 4. Please contact your server administrator.' => 'The "symlink()" function is required to run Contao 4. Please contact your server administrator.'
+	'The PHP symlink() function is required to run Contao 4. Please contact your server administrator.' => 'The PHP symlink() function is required to run Contao 4. Please contact your server administrator.',
 );

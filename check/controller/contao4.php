@@ -131,13 +131,33 @@ class Contao4
 	}
 
 	/**
-	 * Check whether the PHP symlink function is available
+	 * Check whether the PHP symlink() function is available
 	 *
-	 * @return boolean True if the PHP symlink function is available
+	 * @return boolean True if the PHP symlink() function is available
 	 */
 	public function canUseSymlink()
 	{
 		if (function_exists('symlink')) {
+			return true;
+		}
+
+		$this->compatible = false;
+
+		return false;
+	}
+
+	/**
+	 * Check whether a symlink can successfully be created
+	 *
+	 * @return boolean True if a symlink was successfully created
+	 */
+	public function canCreateSymlinks()
+	{
+		@unlink('test');
+		$result = @symlink(__FILE__, 'test');
+		@unlink('test');
+
+		if (true === $result) {
 			return true;
 		}
 

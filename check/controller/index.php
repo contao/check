@@ -123,6 +123,10 @@ class Index
 			return false;
 		}
 
+		if (!$contao->canCreateSymlinks()) {
+			return false;
+		}
+
 		return true;
 	}
 
