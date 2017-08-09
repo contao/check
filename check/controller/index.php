@@ -119,7 +119,7 @@ class Index
 			return false;
 		}
 
-		if (!$contao->hasSymlink()) {
+		if (!$contao->canUseSymlink()) {
 			return false;
 		}
 

@@ -135,7 +135,7 @@ class Contao4
 	 *
 	 * @return boolean True if the PHP symlink function is available
 	 */
-	public function hasSymlink()
+	public function canUseSymlink()
 	{
 		if (function_exists('symlink')) {
 			return true;

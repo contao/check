@@ -58,11 +58,11 @@
   </div>
   <div class="row">
     <h3><?php echo __('PHP symlink function') ?></h3>
-    <?php if ($this->hasSymlink()): ?>
-      <p class="confirm"><?php echo __('The PHP symlink function is available.') ?></p>
+    <?php if ($this->canUseSymlink()): ?>
+      <p class="confirm"><?php echo __('The PHP symlink() function is not disabled.') ?></p>
     <?php else: ?>
-      <p class="error"><?php echo __('The PHP symlink function is not available.') ?></p>
-      <p class="explain"><?php echo __('The "symlink" function is required to run Contao 4. Please contact your server administrator.') ?></p>
+      <p class="error"><?php echo __('The PHP symlink() function is disabled.') ?></p>
+      <p class="explain"><?php echo __('The "symlink()" function is required to run Contao 4. Please contact your server administrator.') ?></p>
     <?php endif; ?>
   </div>
   <div class="row">
