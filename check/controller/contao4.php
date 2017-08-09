@@ -129,4 +129,20 @@ class Contao4
 
 		return false;
 	}
+
+	/**
+	 * Check whether the PHP symlink function is available
+	 *
+	 * @return boolean True if the PHP symlink function is available
+	 */
+	public function hasSymlink()
+	{
+		if (function_exists('symlink')) {
+			return true;
+		}
+
+		$this->compatible = false;
+
+		return false;
+	}
 }

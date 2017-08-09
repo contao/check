@@ -119,6 +119,10 @@ class Index
 			return false;
 		}
 
+		if (!$contao->hasSymlink()) {
+			return false;
+		}
+
 		return true;
 	}
 
