@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+    # Turn off any rewrites from parent folders
+    RewriteEngine Off
+</IfModule>
