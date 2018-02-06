@@ -157,6 +157,10 @@ class Index
 			return false;
 		}
 
+		if ($update->hasXCache()) {
+			return false;
+		}
+
 		if (!$update->hasSsl()) {
 			return false;
 		}
@@ -198,6 +202,10 @@ class Index
 		}
 
 		if (!$composer->hasPhar()) {
+			return false;
+		}
+
+		if ($composer->hasXCache()) {
 			return false;
 		}
 

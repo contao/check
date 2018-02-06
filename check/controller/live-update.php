@@ -73,6 +73,22 @@ class LiveUpdate
 	}
 
 	/**
+	 * Check whether the XCache extension is loaded
+	 *
+	 * @return boolean True if the PHP Phar extension is loaded
+	 */
+	public function hasXCache()
+	{
+		if (!extension_loaded('XCache')) {
+			return false;
+		}
+
+		$this->available = false;
+
+		return true;
+	}
+
+	/**
 	 * Check whether the PHP OpenSSL extension is available
 	 *
 	 * @return boolean True if the PHP OpenSSL extension is available

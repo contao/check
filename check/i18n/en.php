@@ -197,4 +197,8 @@ return array(
 	'Working symlinks are required to run Contao 4. Please contact your server administrator.' => 'Working symlinks are required to run Contao 4. Please contact your server administrator.',
 	'The PHP symlink() function is disabled.' => 'The PHP symlink() function is disabled.',
 	'The PHP symlink() function is required to run Contao 4. Please contact your server administrator.' => 'The PHP symlink() function is required to run Contao 4. Please contact your server administrator.',
+	'PHP XCache extension' => 'PHP XCache extension',
+	'The PHP XCache extension is not enabled.' => 'The PHP XCache extension is not enabled.',
+	'The PHP XCache extension is enabled.' => 'The PHP XCache extension is enabled.',
+	'The PHP XCache extension prevents the execution of .phar files. Disable this extension in your php.ini.' => 'The PHP XCache extension prevents the execution of .phar files. Disable this extension in your php.ini.',
 );
