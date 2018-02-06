@@ -31,6 +31,15 @@
     <?php endif; ?>
   </div>
   <div class="row">
+    <h3><?php echo __('PHP XCache extension') ?></h3>
+    <?php if (!$this->hasXCache()): ?>
+      <p class="confirm"><?php echo __('The PHP XCache extension is not enabled.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo __('The PHP XCache extension is enabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP XCache extension prevents the execution of .phar files. Disable this extension in your php.ini.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
     <h3><?php echo __('PHP cURL extension') ?></h3>
     <?php if ($this->hasCurl()): ?>
       <p class="confirm"><?php echo __('The PHP cURL extension is available.') ?></p>
