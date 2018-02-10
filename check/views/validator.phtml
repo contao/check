@@ -22,7 +22,7 @@
     <div class="row">
       <h3><?php echo __('Version file error') ?></h3>
       <p class="error"><?php printf(__('Error while retrieving version file: %s.'), $this->getVersionFileError()) ?></p>
-      <p class="explain"><?php echo __('There was an error retrieving the version file from contao.org for your Contao version.') ?></p>
+      <p class="explain"><?php printf(__('There was an error retrieving the version file from contao.org for your Contao version. You can download the file manually from %s and put it into the "versions" directory of the Contao Check.'), '<a href="' . $this->getVersionFileUrl() . '" target="_blank" download>' . $this->getVersionFileUrl() . '</a>') ?></p>
     </div>
   <?php elseif (!$this->isSupportedVersion()): ?>
     <div class="row">

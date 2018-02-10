@@ -186,7 +186,7 @@ return array(
 	'An unknown error occurred while getting the newest LTS version.' => 'An unknown error occurred while getting the newest LTS version.',
 	'Version file error' => 'Version file error',
 	'Error while retrieving version file: %s.' => 'Error while retrieving version file: %s.',
-	'There was an error retrieving the version file from contao.org for your Contao version.' => 'There was an error retrieving the version file from contao.org for your Contao version.',
+	'There was an error retrieving the version file from contao.org for your Contao version. You can download the file manually from %s and put it into the "versions" directory of the Contao Check.' => 'There was an error retrieving the version file from contao.org for your Contao version. You can download the file manually from %s and put it into the "versions" directory of the Contao Check.',
 	'System temp directory' => 'System temp directory',
 	'The system temp directory is writable.' => 'The system temp directory is writable.',
 	'The system temp directory is not writable.' => 'The system temp directory is not writable.',
