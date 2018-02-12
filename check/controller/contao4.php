@@ -41,6 +41,44 @@ class Contao4
 	}
 
 	/**
+	 * Executes all compatibility checks.
+	 *
+	 * @return boolean True if Contao 4.x can be run
+	 */
+	public function checkCompatibility()
+	{
+		if (!$this->hasPhp()) {
+			return false;
+		}
+
+		if (!$this->hasGraphicsLib()) {
+			return false;
+		}
+
+		if (!$this->hasDom()) {
+			return false;
+		}
+
+		if (!$this->hasIntl()) {
+			return false;
+		}
+
+		if (!$this->canWriteTmpDir()) {
+			return false;
+		}
+
+		if (!$this->canUseSymlink()) {
+			return false;
+		}
+
+		if (!$this->canCreateSymlinks()) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Check whether the PHP version meets the requirements
 	 *
 	 * @return boolean True if the PHP version meets the requirements

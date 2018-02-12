@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Contao Check <?php echo CONTAO_CHECK_VERSION ?></title>
+  <link rel="stylesheet" href="assets/style.css">
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div id="wrapper">
+  <h1>Contao Check <?php echo CONTAO_CHECK_VERSION ?></h1>
+  <div class="row">
+    <h2><?php echo __('Contao 4.5') ?></h2>
+  </div>
+  <div class="row">
+    <h3><?php printf(__('PHP %s or greater'), static::PHP_VERSION) ?></h3>
+    <?php if ($this->hasPhp()): ?>
+      <p class="confirm"><?php printf(__('You have PHP version %s.'), phpversion()) ?></p>
+    <?php else: ?>
+      <p class="error"><?php printf(__('You have PHP version %s.'), phpversion()) ?></p>
+      <p class="explain"><?php printf(__('As of Contao 4.1 you need at least PHP %s.'), static::PHP_VERSION) ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo __('PHP image processing') ?></h3>
+    <?php if ($this->hasGraphicsLib()): ?>
+      <p class="confirm"><?php echo __('At least one of the supported image processing libraries is available.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo __('None of the supported image processing libraries are available.') ?></p>
+      <p class="explain"><?php echo __('As of Contao 4.3 one of the supported image processing libraries must be availble (GD, Imagick or Gmagick).') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo __('PHP DOM extension') ?></h3>
+    <?php if ($this->hasDom()): ?>
+      <p class="confirm"><?php echo __('The PHP DOM extension is enabled.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo __('The PHP DOM extension is not enabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP DOM extension is part of the PHP core and has to be explicitly disabled using the --disable-dom flag. Recompile PHP without the flag.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo __('PHP intl extension') ?></h3>
+    <?php if ($this->hasIntl()): ?>
+      <p class="confirm"><?php echo __('The PHP intl extension is enabled.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo __('The PHP intl extension is not enabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP intl extension is bundled with the PHP core since PHP 5.3 and has to be explicitly enabled using the --enable-intl flag. Recompile PHP with the flag.') ?></p>
+    <?php endif; ?>
+  </div>
+  <?php if ($this->hasIntl()): ?>
+    <div class="row">
+      <h3><?php echo __('ICU library') ?></h3>
+      <?php if ($this->hasIcu()): ?>
+        <p class="confirm"><?php printf(__('The ICU library version is %s.'), $this->getIcuVersion()) ?></p>
+      <?php else: ?>
+        <p class="error"><?php printf(__('The ICU library version is %s.'), $this->getIcuVersion()) ?></p>
+        <p class="explain"><?php printf(__('The ICU library version on your system needs to be at least %s. Please contact your server administrator.'), static::ICU_VERSION) ?></p>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
+  <div class="row">
+    <h3><?php echo __('System temp directory') ?></h3>
+    <?php if ($this->canWriteTmpDir()): ?>
+      <p class="confirm"><?php echo __('The system temp directory is writable.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo __('The system temp directory is not writable.') ?></p>
+      <p class="explain"><?php echo __('Make sure the correct directory is configured via the TMP, TMPDIR or TEMP environment variable or the sys_temp_dir PHP variable.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <h3><?php echo __('Symlinks') ?></h3>
+    <?php if ($this->canUseSymlink()): ?>
+      <?php if ($this->canCreateSymlinks()): ?>
+        <p class="confirm"><?php echo __('Symlinks can successfully be created.') ?></p>
+      <?php else: ?>
+        <p class="error"><?php echo __('Symlinks could not be created.') ?></p>
+        <p class="explain"><?php echo __('Working symlinks are required to run Contao 4. Please contact your server administrator.') ?></p>
+      <?php endif; ?>
+    <?php else: ?>
+      <p class="error"><?php echo __('The PHP symlink() function is disabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP symlink() function is required to run Contao 4. Please contact your server administrator.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
+    <?php if ($this->isCompatible()): ?>
+      <p class="confirm large"><?php echo __('You can install Contao 4.5 on this server.') ?></p>
+    <?php else: ?>
+      <p class="error large"><?php echo __('You cannot install Contao 4.5 on this server.') ?></p>
+    <?php endif; ?>
+  </div>
+  <p class="back"><a href="./"><?php echo __('Go back') ?></a></p>
+</div>
+</body>
+</html>

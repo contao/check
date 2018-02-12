@@ -11,6 +11,7 @@
 require_once __DIR__ . '/contao2.php';
 require_once __DIR__ . '/contao3.php';
 require_once __DIR__ . '/contao4.php';
+require_once __DIR__ . '/contao45.php';
 require_once __DIR__ . '/composer.php';
 require_once __DIR__ . '/file-permissions.php';
 require_once __DIR__ . '/live-update.php';
@@ -99,35 +100,19 @@ class Index
 	{
 		$contao = new Contao4;
 
-		if (!$contao->hasPhp()) {
-			return false;
-		}
+		return $contao->checkCompatibility();
+	}
 
-		if (!$contao->hasGraphicsLib()) {
-			return false;
-		}
+	/**
+	 * Return true if Contao 4 can be installed
+	 *
+	 * @return boolean True if Contao 4 can be installed
+	 */
+	public function supportsContao45()
+	{
+		$contao = new Contao45;
 
-		if (!$contao->hasDom()) {
-			return false;
-		}
-
-		if (!$contao->hasIntl()) {
-			return false;
-		}
-
-		if (!$contao->canWriteTmpDir()) {
-			return false;
-		}
-
-		if (!$contao->canUseSymlink()) {
-			return false;
-		}
-
-		if (!$contao->canCreateSymlinks()) {
-			return false;
-		}
-
-		return true;
+		return $contao->checkCompatibility();
 	}
 
 	/**

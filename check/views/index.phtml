@@ -13,7 +13,7 @@
     <h2><?php echo __('Overview') ?></h2>
   </div>
   <div class="row">
-    <h3>PHP <?php echo phpversion() ?></h3>
+    <h3><?php echo __('Contao system requirements') ?></h3>
     <ul>
       <?php if ($this->supportsContao2()): ?>
         <li class="confirm"><?php echo __('You can install Contao 2.x') ?> <a href="./?c=contao2"><?php echo __('More information …') ?></a></li>
@@ -29,6 +29,11 @@
         <li class="confirm"><?php echo __('You can install Contao 4.x') ?> <a href="./?c=contao4"><?php echo __('More information …') ?></a></li>
       <?php else: ?>
         <li class="error"><?php echo __('You cannot install Contao 4.x') ?> <a href="./?c=contao4"><?php echo __('More information …') ?></a></li>
+      <?php endif; ?>
+      <?php if ($this->supportsContao45()): ?>
+        <li class="confirm"><?php echo __('You can install Contao 4.5') ?> <a href="./?c=contao45"><?php echo __('More information …') ?></a></li>
+      <?php else: ?>
+        <li class="error"><?php echo __('You cannot install Contao 4.5') ?> <a href="./?c=contao45"><?php echo __('More information …') ?></a></li>
       <?php endif; ?>
     </ul>
   </div>
