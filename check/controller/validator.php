@@ -182,17 +182,37 @@ class Validator
 	}
 
 	/**
+	 * Get the name of the version file
+	 *
+	 * @return string The version file name
+	 */
+	protected function getVersionFilePath()
+	{
+		return 'versions/' . VERSION . '.' . BUILD . '.json';
+	}
+
+	/**
+	 * Get the URL to the version file
+	 *
+	 * @return string The url to the version file
+	 */
+	public function getVersionFileUrl()
+	{
+		return 'https://download.contao.org/' . $this->getVersionFilePath();
+	}
+
+	/**
 	 * Download the version file
 	 *
 	 * @return boolean True if the Contao version is supported
 	 */
 	protected function getVersionFile()
 	{
-		$file = 'versions/' . VERSION . '.' . BUILD . '.json';
+		$file = $this->getVersionFilePath();
 
 		if (!file_exists($file)) {
 			try {
-				$url = "https://download.contao.org/$file";
+				$url = $this->getVersionFileUrl();
 				file_put_contents($file, curl($url));
 
 				if (!file_exists($file) || filesize($file) < 1) {
