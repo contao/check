@@ -210,4 +210,7 @@ return array(
 	'The ICU library version on your system needs to be at least %s. Please contact your server administrator.' => 'The ICU library version on your system needs to be at least %s. Please contact your server administrator.',
 	'ICU library' => 'ICU library',
 	'Contao system requirements' => 'Contao system requirements',
+	'The PHP xmlreader extension is enabled.' => 'The PHP xmlreader extension is enabled.',
+	'The PHP xmlreader extension is not enabled.' => 'The PHP xmlreader extension is not enabled.',
+	'The PHP xmlreader extension is bundled with the PHP core since PHP 5.1 and has to be explicitly disabled using the --disable-xmlreader flag. Recompile PHP without the flag.' => 'The PHP xmlreader extension is bundled with the PHP core since PHP 5.1 and has to be explicitly disabled using the --disable-xmlreader flag. Recompile PHP without the flag.',
 );

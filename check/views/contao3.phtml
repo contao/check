@@ -40,6 +40,15 @@
     <?php endif; ?>
   </div>
   <div class="row">
+    <h3><?php echo __('PHP xmlreader extension') ?></h3>
+    <?php if ($this->hasXmlReader()): ?>
+      <p class="confirm"><?php echo __('The PHP xmlreader extension is enabled.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo __('The PHP xmlreader extension is not enabled.') ?></p>
+      <p class="explain"><?php echo __('The PHP xmlreader extension is bundled with the PHP core since PHP 5.1 and has to be explicitly disabled using the --disable-xmlreader flag. Recompile PHP without the flag.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
     <?php if ($this->isCompatible()): ?>
       <p class="confirm large"><?php echo __('You can install Contao 3.x on this server.') ?></p>
     <?php else: ?>

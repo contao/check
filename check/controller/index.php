@@ -64,6 +64,10 @@ class Index
 			return false;
 		}
 
+		if (!$contao->hasXmlReader()) {
+			return false;
+		}
+
 		return true;
 	}
 
@@ -85,6 +89,10 @@ class Index
 		}
 
 		if (!$contao->hasDom()) {
+			return false;
+		}
+
+		if (!$contao->hasXmlReader()) {
 			return false;
 		}
 

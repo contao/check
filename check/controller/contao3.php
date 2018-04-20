@@ -87,4 +87,20 @@ class Contao3
 
 		return false;
 	}
+
+	/**
+	 * Check whether the PHP xmlreader extension is available
+	 *
+	 * @return boolean True if the PHP xmlreader extension is available
+	 */
+	public function hasXmlReader()
+	{
+		if (extension_loaded('xmlreader')) {
+			return true;
+		}
+
+		$this->compatible = false;
+
+		return false;
+	}
 }

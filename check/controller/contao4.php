@@ -75,6 +75,10 @@ class Contao4
 			return false;
 		}
 
+		if (!$this->hasXmlReader()) {
+			return false;
+		}
+
 		return true;
 	}
 
@@ -196,6 +200,22 @@ class Contao4
 		@unlink('test');
 
 		if (true === $result) {
+			return true;
+		}
+
+		$this->compatible = false;
+
+		return false;
+	}
+
+	/**
+	 * Check whether the PHP xmlreader extension is available
+	 *
+	 * @return boolean True if the PHP xmlreader extension is available
+	 */
+	public function hasXmlReader()
+	{
+		if (extension_loaded('xmlreader')) {
 			return true;
 		}
 
