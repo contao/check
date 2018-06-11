@@ -50,6 +50,48 @@ class Composer
 	}
 
 	/**
+	 * Executes all compatibility checks.
+	 *
+	 * @return boolean True if Composer can be run
+	 */
+	public function checkCompatibility()
+	{
+		if (!$this->hasPhp()) {
+			return false;
+		}
+
+		if (!$this->hasPhar()) {
+			return false;
+		}
+
+		if ($this->hasXCache()) {
+			return false;
+		}
+
+		if (!$this->hasCurl()) {
+			return false;
+		}
+
+		if ($this->hasApc()) {
+			return false;
+		}
+
+		if ($this->hasSuhosin()) {
+			return false;
+		}
+
+		if (!$this->hasAllowUrlFopen()) {
+			return false;
+		}
+
+		if (!$this->canCreateFiles()) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Check whether the PHP version meets the requirements
 	 *
 	 * @return boolean True if the PHP version meets the requirements

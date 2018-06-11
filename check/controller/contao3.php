@@ -41,6 +41,32 @@ class Contao3
 	}
 
 	/**
+	 * Executes all compatibility checks.
+	 *
+	 * @return boolean True if Contao 3.x can be run
+	 */
+	public function checkCompatibility()
+	{
+		if (!$this->hasPhp()) {
+			return false;
+		}
+
+		if (!$this->hasGd()) {
+			return false;
+		}
+
+		if (!$this->hasDom()) {
+			return false;
+		}
+
+		if (!$this->hasXmlReader()) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Check whether the PHP version meets the requirements
 	 *
 	 * @return boolean True if the PHP version meets the requirements

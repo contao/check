@@ -48,27 +48,7 @@ class Index
 	{
 		$contao = new Contao2;
 
-		if (!$contao->hasPhp()) {
-			return false;
-		}
-
-		if (!$contao->hasNotPhp7()) {
-			return false;
-		}
-
-		if (!$contao->hasGd()) {
-			return false;
-		}
-
-		if (!$contao->hasDom()) {
-			return false;
-		}
-
-		if (!$contao->hasXmlReader()) {
-			return false;
-		}
-
-		return true;
+		return $contao->checkCompatibility();
 	}
 
 	/**
@@ -80,23 +60,7 @@ class Index
 	{
 		$contao = new Contao3;
 
-		if (!$contao->hasPhp()) {
-			return false;
-		}
-
-		if (!$contao->hasGd()) {
-			return false;
-		}
-
-		if (!$contao->hasDom()) {
-			return false;
-		}
-
-		if (!$contao->hasXmlReader()) {
-			return false;
-		}
-
-		return true;
+		return $contao->checkCompatibility();
 	}
 
 	/**
