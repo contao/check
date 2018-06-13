@@ -81,6 +81,15 @@
     <?php endif; ?>
   </div>
   <div class="row">
+    <h3><?php echo __('File locks') ?></h3>
+    <?php if ($this->canCreateFileLocks()): ?>
+      <p class="confirm"><?php echo __('A file lock could be established.') ?></p>
+    <?php else: ?>
+      <p class="error"><?php echo __('A file lock could not be established.') ?></p>
+      <p class="explain"><?php echo __('PHP was unable to get a file lock on an existing file. Please contact your server administrator.') ?></p>
+    <?php endif; ?>
+  </div>
+  <div class="row">
     <?php if ($this->isCompatible()): ?>
       <p class="confirm large"><?php echo __('You can install Contao 4.x on this server.') ?></p>
     <?php else: ?>

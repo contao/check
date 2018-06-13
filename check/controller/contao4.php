@@ -79,6 +79,10 @@ class Contao4
 			return false;
 		}
 
+		if (!$this->canCreateFileLocks()) {
+			return false;
+		}
+
 		return true;
 	}
 
@@ -216,6 +220,27 @@ class Contao4
 	public function hasXmlReader()
 	{
 		if (extension_loaded('xmlreader')) {
+			return true;
+		}
+
+		$this->compatible = false;
+
+		return false;
+	}
+
+	/**
+	 * Check whether PHP can get file locks on existing files
+	 *
+	 * @return boolean True if a file lock can be established
+	 */
+	public function canCreateFileLocks()
+	{
+		$file = __DIR__ . '/../assets/test.lock';
+
+		$handle = @fopen($file, 'r');
+
+		if ($handle && flock($handle, LOCK_EX | LOCK_NB)) {
+			flock($handle, LOCK_UN | LOCK_NB);
 			return true;
 		}
 

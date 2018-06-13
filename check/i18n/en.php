@@ -213,4 +213,8 @@ return array(
 	'The PHP xmlreader extension is enabled.' => 'The PHP xmlreader extension is enabled.',
 	'The PHP xmlreader extension is not enabled.' => 'The PHP xmlreader extension is not enabled.',
 	'The PHP xmlreader extension is bundled with the PHP core since PHP 5.1 and has to be explicitly disabled using the --disable-xmlreader flag. Recompile PHP without the flag.' => 'The PHP xmlreader extension is bundled with the PHP core since PHP 5.1 and has to be explicitly disabled using the --disable-xmlreader flag. Recompile PHP without the flag.',
+	'File locks' => 'File locks',
+	'A file lock could be established.' => 'A file lock could be established.',
+	'A file lock could not be established.' => 'A file lock could not be established.',
+	'PHP was unable to get a file lock on an existing file. Please contact your server administrator.' => 'PHP was unable to get a file lock on an existing file. Please contact your server administrator.',
 );
