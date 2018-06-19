@@ -20,6 +20,9 @@
       <p class="error"><?php echo __('The automatic installation is not possible on your server due to safe_mode or file permission restrictions.') ?></p>
     <?php elseif ($this->isAvailable()): ?>
       <p class="confirm"><?php echo __('The automatic installation is possible on your server.') ?></p>
+    <?php elseif (!$this->hasAllowUrlFopen()): ?>
+      <p class="error"><?php echo __('The PHP flag "allow_url_fopen" is not set.') ?></p>
+      <p class="explain"><?php echo __('The installer requires the "allow_url_fopen" flag to be set in the php.ini.') ?></p>
     <?php else: ?>
       <p class="error"><?php echo __('The automatic installation is not possible on your server.') ?></p>
       <p class="explain"><?php echo __('Your PHP installation either cannot connect to download.contao.org or is missing the PHP extension cURL or Zip.') ?></p>

@@ -48,7 +48,7 @@ class Installer
 		if (!$this->hasInstallation()) {
 			if (!$this->canInstall()) {
 				$this->ftp = true;
-			} elseif (!$this->canConnect() || !$this->canUsePhp()) {
+			} elseif (!$this->canConnect() || !$this->canUsePhp() || !$this->hasAllowUrlFopen()) {
 				$this->available = false;
 			} else {
 				$this->getCurrentLtsVersion();
@@ -139,6 +139,22 @@ class Installer
 		@unlink('download');
 
 		return true;
+	}
+
+	/**
+	 * Check whether "allow_url_fopen" is enabled
+	 *
+	 * @return boolean True if "allow_url_fopen" is enabled
+	 */
+	public function hasAllowUrlFopen()
+	{
+		if (ini_get('allow_url_fopen')) {
+			return true;
+		}
+
+		$this->available = false;
+
+		return false;
 	}
 
 	/**
