@@ -237,7 +237,7 @@ class Contao4
 	{
 		$file = __DIR__ . '/../assets/test.lock';
 
-		$handle = @fopen($file, 'r');
+		$handle = @fopen($file, 'r+') ?: @fopen($file, 'r');
 
 		if ($handle && flock($handle, LOCK_EX | LOCK_NB)) {
 			flock($handle, LOCK_UN | LOCK_NB);
