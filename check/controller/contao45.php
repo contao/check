@@ -18,7 +18,7 @@ require_once __DIR__ . '/contao4.php';
 class Contao45 extends Contao4
 {
     const PHP_VERSION = '7.1.0';
-    const ICU_VERSION = '4.6';
+    const ICU_VERSION = '4.2.1';
 
     /**
      * @var string
