@@ -174,7 +174,7 @@ return array(
 	'You cannot install Contao 3.x on this server.' => 'You cannot install Contao 3.x on this server.',
 	'Contao 4.x' => 'Contao 4.x',
 	'Contao 4.5' => 'Contao 4.5',
-	'As of Contao 4.1 you need at least PHP %s.' => 'As of Contao 4.1 you need at least PHP %s.',
+	'As of Contao 4.5 you need at least PHP %s.' => 'As of Contao 4.5 you need at least PHP %s.',
 	'PHP intl extension' => 'PHP intl extension',
 	'The PHP intl extension is enabled.' => 'The PHP intl extension is enabled.',
 	'The PHP intl extension is not enabled.' => 'The PHP intl extension is not enabled.',
