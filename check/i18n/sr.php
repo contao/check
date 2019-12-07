@@ -1,11 +1,12 @@
 <?php
 
 /*
- * Contao check
+ * This file is part of the Contao Check.
  *
- * Copyright (c) 2005-2016 Leo Feyer
+ * (c) Fritz Michael Gschwantner
+ * (c) Leo Feyer
  *
- * @license LGPL-3.0+
+ * @license LGPL-3.0-or-later
  */
 
 return array(
@@ -173,7 +174,7 @@ return array(
 	'You cannot install Contao 3.x on this server.' => 'На овај сервер не можете инсталирати Contao 3.x.',
 	'Contao 4.x' => 'Contao 4.x',
 	'Contao 4.5' => 'Contao 4.5',
-	'As of Contao 4.1 you need at least PHP %s.' => 'Од верзије Contao 4.1 морате да користите барем  PHP %s.',
+	'As of Contao 4.5 you need at least PHP %s.' => 'Од верзије Contao 4.5 морате да користите барем  PHP %s.',
 	'PHP intl extension' => 'Екстензија PHP intl',
 	'The PHP intl extension is enabled.' => 'Екстензија PHP intl је омогућена.',
 	'The PHP intl extension is not enabled.' => 'Екстензија PHP intl није омогућена.',

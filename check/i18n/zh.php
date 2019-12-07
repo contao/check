@@ -1,11 +1,12 @@
 <?php
 
 /*
- * Contao check
+ * This file is part of the Contao Check.
  *
- * Copyright (c) 2005-2016 Leo Feyer
+ * (c) Fritz Michael Gschwantner
+ * (c) Leo Feyer
  *
- * @license LGPL-3.0+
+ * @license LGPL-3.0-or-later
  */
 
 return array(
@@ -173,7 +174,7 @@ return array(
 	'You cannot install Contao 3.x on this server.' => '无法在当前服务器中安装Contao 3.x',
 	'Contao 4.x' => 'Contao 4.x',
 	'Contao 4.5' => 'Contao 4.5',
-	'As of Contao 4.1 you need at least PHP %s.' => 'Contao 4.1 至少需要 PHP %s.',
+	'As of Contao 4.5 you need at least PHP %s.' => 'Contao 4.5 至少需要 PHP %s.',
 	'PHP intl extension' => 'PHP intl 扩展',
 	'The PHP intl extension is enabled.' => 'PHP intl 扩展已启用。',
 	'The PHP intl extension is not enabled.' => 'PHP intl 扩展未启用。',
