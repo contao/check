@@ -219,4 +219,6 @@ return array(
 	'A file lock could not be established.' => 'A file lock could not be established.',
 	'PHP was unable to get a file lock on an existing file. Please contact your server administrator.' => 'PHP was unable to get a file lock on an existing file. Please contact your server administrator.',
 	'The installer requires the "allow_url_fopen" flag to be set in the php.ini.' => 'The installer requires the "allow_url_fopen" flag to be set in the php.ini.',
+	'Contao 3 has reached its end of life' => 'Contao 3 has reached its end of life',
+	'Go to %s to check out how to install the newest version of Contao.' => 'Go to %s to check out how to install the newest version of Contao.',
 );
