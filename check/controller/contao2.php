@@ -1,11 +1,12 @@
 <?php
 
 /*
- * Contao check
+ * This file is part of the Contao Check.
  *
- * Copyright (c) 2005-2016 Leo Feyer
+ * (c) Fritz Michael Gschwantner
+ * (c) Leo Feyer
  *
- * @license LGPL-3.0+
+ * @license LGPL-3.0-or-later
  */
 
 /**
