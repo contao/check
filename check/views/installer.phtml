@@ -39,6 +39,8 @@
         </ul>
       <?php elseif (!isset($_POST['version'])): ?>
         <?php if ($this->ltsVersion): ?>
+          <h3 class="error"><?php echo __('Contao 3 has reached its end of life') ?></h3>
+          <p><?php echo sprintf(__('Go to %s to check out how to install the newest version of Contao.'), '<a href="https://contao.org/download.html">contao.org/download.html</a>') ?></p>
           <h3><?php echo __('Target version') ?></h3>
           <form method="post">
             <div class="versions">

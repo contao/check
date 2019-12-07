@@ -190,6 +190,10 @@ class Installer
 				$this->existing = true;
 			} elseif (file_exists(__DIR__ . '/../../system/config/constants.php')) {
 				$this->existing = true;
+			} elseif (file_exists(__DIR__ . '/../../../vendor/contao/core-bundle/src/Resources/contao/config/constants.php')) {
+				$this->existing = true;
+			} elseif (file_exists(__DIR__ . '/../../../vendor/contao/contao/core-bundle/src/Resources/contao/config/constants.php')) {
+				$this->existing = true;
 			} else {
 				$this->existing = false;
 			}
