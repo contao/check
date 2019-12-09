@@ -152,7 +152,7 @@ class FilePermissions
 	}
 
 	/**
-	 * Return the owner of the "check/safe-mode-hack.php" file
+	 * Return the owner of the "check/controller/file-permissions.php" file
 	 *
 	 * @return string The owner name
 	 */
