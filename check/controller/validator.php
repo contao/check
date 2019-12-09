@@ -41,10 +41,17 @@ class Validator
 	 */
 	public function run()
 	{
-		if (!$this->findConstants() || !$this->getVersionFile()) {
+		if (!$this->findConstants()) {
 			$this->valid = false;
 		} else {
-			$this->validate();
+			if (version_compare(VERSION, '4', '>=')) {
+				$this->errors['version'] = sprintf(__('Contao %s cannot be validated with the Contao Check.'), explode('.', VERSION)[0]);
+				$this->valid = false;
+			} elseif (!$this->getVersionFile()) {
+				$this->valid = false;
+			} else {
+				$this->validate();
+			}
 		}
 
 		include __DIR__ . '/../views/validator.phtml';
@@ -131,6 +138,26 @@ class Validator
 	}
 
 	/**
+	 * Check whether the Contao version is supported
+	 *
+	 * @return boolean True if the Contao version is not supported
+	 */
+	public function hasVersionError()
+	{
+		return !empty($this->errors['version']);
+	}
+
+	/**
+	 * Return the version error message
+	 *
+	 * @return array The version error message
+	 */
+	public function getVersionError()
+	{
+		return $this->errors['version'];
+	}
+
+	/**
 	 * Check whether the installation is vaild
 	 *
 	 * @return boolean True if the installation is valid
@@ -173,6 +200,10 @@ class Validator
 			include __DIR__ . '/../../system/constants.php';
 		} elseif (file_exists(__DIR__ . '/../../system/config/constants.php')) {
 			include __DIR__ . '/../../system/config/constants.php';
+		} elseif (file_exists(__DIR__ . '/../../../vendor/contao/core-bundle/src/Resources/contao/config/constants.php')) {
+			include __DIR__ . '/../../../vendor/contao/core-bundle/src/Resources/contao/config/constants.php';
+		} elseif (file_exists(__DIR__ . '/../../../vendor/contao/contao/core-bundle/src/Resources/contao/config/constants.php')) {
+			include __DIR__ . '/../../../vendor/contao/contao/core-bundle/src/Resources/contao/config/constants.php';
 		} else {
 			$this->constants = false;
 
