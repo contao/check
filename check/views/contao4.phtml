@@ -60,9 +60,9 @@
   <div class="row">
     <h3><?php echo __('System temp directory') ?></h3>
     <?php if ($this->canWriteTmpDir()): ?>
-      <p class="confirm"><?php echo __('The system temp directory is writable.') ?></p>
+      <p class="confirm"><?php echo sprintf(__('The system temp directory "%s" is writable.'), sys_get_temp_dir()) ?></p>
     <?php else: ?>
-      <p class="error"><?php echo __('The system temp directory is not writable.') ?></p>
+      <p class="error"><?php echo sprintf(__('The system temp directory "%s" is not writable.'), sys_get_temp_dir()) ?></p>
       <p class="explain"><?php echo __('Make sure the correct directory is configured via the TMP, TMPDIR or TEMP environment variable or the sys_temp_dir PHP variable.') ?></p>
     <?php endif; ?>
   </div>
