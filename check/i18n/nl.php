@@ -219,4 +219,5 @@ return array(
 	'A file lock could not be established.' => 'Bestandsvergrendeling niet mogelijk.',
 	'PHP was unable to get a file lock on an existing file. Please contact your server administrator.' => 'PHP kon geen bestandsvergrendeling tot stand brengen op een bestaand bestand. Neem contact op met uw serverbeheerder.',
 	'The installer requires the "allow_url_fopen" flag to be set in the php.ini.' => 'Het installatieprogramma vereist dat de vlag "allow_url_fopen" wordt ingesteld in php.ini.',
+	'Contao %s cannot be validated with the Contao Check.' => 'Contao %s cannot be validated with the Contao Check.',
 );

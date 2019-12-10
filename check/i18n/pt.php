@@ -220,4 +220,5 @@ Este é um bug do PHP que pode ser corrigido no futuro. Mais informações estã
 	'A file lock could not be established.' => 'Impossível bloquear o arquivo.',
 	'PHP was unable to get a file lock on an existing file. Please contact your server administrator.' => 'O PHP não conseguiu bloquear um ficheiro existente. Por favor contacte o seu administrador de servidor.',
 	'The installer requires the "allow_url_fopen" flag to be set in the php.ini.' => 'O instalador necessita que a opção "alow_url_fopen" esteja definida no php.ini.',
+	'Contao %s cannot be validated with the Contao Check.' => 'Contao %s cannot be validated with the Contao Check.',
 );
