@@ -219,5 +219,5 @@ return array(
 	'A file lock could not be established.' => 'Ein "File Lock" konnte nicht erzeugt werden.',
 	'PHP was unable to get a file lock on an existing file. Please contact your server administrator.' => 'PHP konnte keinen "File Lock" auf bereits existierende Dateien erzeugen. Bitte kontaktieren Sie Ihren System Administrator.',
 	'The installer requires the "allow_url_fopen" flag to be set in the php.ini.' => 'Das PHP-Flag "allow_url_fopen" muss in der php.ini gesetzt sein, damit die Installation funktioniert.',
-	'Contao %s cannot be validated with the Contao Check.' => 'Contao %s cannot be validated with the Contao Check.',
+	'Contao %s cannot be validated with the Contao Check.' => 'Contao %s kann nicht mit dem Contao Check validiert werden.',
 );
