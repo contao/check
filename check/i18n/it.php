@@ -222,5 +222,5 @@ Se si sta utilizzando una versione 5.2 di PHP, per utilizzare i file .phar occor
 	'A file lock could not be established.' => 'Non è stato possibile stabilire un blocco dei file.',
 	'PHP was unable to get a file lock on an existing file. Please contact your server administrator.' => 'PHP non è riuscito ad ottenere il blocco di un file esistente. Contattare l\'amministratore del server.',
 	'The installer requires the "allow_url_fopen" flag to be set in the php.ini.' => 'L\'installatore richiede che il flag "allow_url_url_fopen" sia impostato nel php.ini.',
-	'Contao %s cannot be validated with the Contao Check.' => 'Contao %s cannot be validated with the Contao Check.',
+	'Contao %s cannot be validated with the Contao Check.' => 'Contao %s non può essere convalidato con Contao Check.',
 );
