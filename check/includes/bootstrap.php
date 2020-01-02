@@ -28,7 +28,7 @@ class Bootstrap
 
 		session_start();
 
-		define('CONTAO_CHECK_VERSION', '12.1');
+		define('CONTAO_CHECK_VERSION', '12.2');
 
 		Translator::load($this->getLanguage());
 	}
